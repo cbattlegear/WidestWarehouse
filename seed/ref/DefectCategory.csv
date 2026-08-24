@@ -1,0 +1,22 @@
+DefectCategoryKey,CategoryCode,DefectCategoryName,DefectCategoryDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,DC000001,Ion DefectCategory 1,DefectCategory starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,DC000002,Forge DefectCategory 2,DefectCategory starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,DC000003,Northstar DefectCategory 3,DefectCategory starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,DC000004,Keystone DefectCategory 4,DefectCategory starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,DC000005,Delta DefectCategory 5,DefectCategory starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,DC000006,Zenith DefectCategory 6,DefectCategory starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,DC000007,Pioneer DefectCategory 7,DefectCategory starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,DC000008,Granite DefectCategory 8,DefectCategory starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,DC000009,Harbor DefectCategory 9,DefectCategory starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,DC000010,Atlas DefectCategory 10,DefectCategory starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,DC000011,Vertex DefectCategory 11,DefectCategory starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,DC000012,Riverton DefectCategory 12,DefectCategory starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,DC000013,Vertex DefectCategory 13,DefectCategory starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,DC000014,Junction DefectCategory 14,DefectCategory starter record 14,1,-1,1,2026-08-24T00:00:00.000
+15,DC000015,Delta DefectCategory 15,DefectCategory starter record 15,0,-1,1,2026-08-24T00:00:00.000
+16,DC000016,Cedar DefectCategory 16,DefectCategory starter record 16,1,-1,1,2026-08-24T00:00:00.000
+17,DC000017,Evergreen DefectCategory 17,DefectCategory starter record 17,1,-1,1,2026-08-24T00:00:00.000
+18,DC000018,Titan DefectCategory 18,DefectCategory starter record 18,1,-1,1,2026-08-24T00:00:00.000
+19,DC000019,Meridian DefectCategory 19,DefectCategory starter record 19,1,-1,1,2026-08-24T00:00:00.000
+20,DC000020,Forge DefectCategory 20,DefectCategory starter record 20,0,-1,1,2026-08-24T00:00:00.000

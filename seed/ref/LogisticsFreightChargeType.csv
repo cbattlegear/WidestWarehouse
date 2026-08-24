@@ -1,0 +1,32 @@
+LogisticsFreightChargeTypeKey,FreightChargeTypeCode,FreightChargeTypeName,IsAccessorial,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,LFCT000001,Cedar LogisticsFreightChargeType 1,1,-1,1,2026-08-24T00:00:00.000
+2,LFCT000002,Zenith LogisticsFreightChargeType 2,1,-1,1,2026-08-24T00:00:00.000
+3,LFCT000003,Liberty LogisticsFreightChargeType 3,1,-1,1,2026-08-24T00:00:00.000
+4,LFCT000004,Keystone LogisticsFreightChargeType 4,1,-1,1,2026-08-24T00:00:00.000
+5,LFCT000005,Unity LogisticsFreightChargeType 5,0,-1,1,2026-08-24T00:00:00.000
+6,LFCT000006,Evergreen LogisticsFreightChargeType 6,1,-1,1,2026-08-24T00:00:00.000
+7,LFCT000007,Titan LogisticsFreightChargeType 7,1,-1,1,2026-08-24T00:00:00.000
+8,LFCT000008,Harbor LogisticsFreightChargeType 8,1,-1,1,2026-08-24T00:00:00.000
+9,LFCT000009,Riverton LogisticsFreightChargeType 9,1,-1,1,2026-08-24T00:00:00.000
+10,LFCT000010,Delta LogisticsFreightChargeType 10,0,-1,1,2026-08-24T00:00:00.000
+11,LFCT000011,Evergreen LogisticsFreightChargeType 11,1,-1,1,2026-08-24T00:00:00.000
+12,LFCT000012,Atlas LogisticsFreightChargeType 12,1,-1,1,2026-08-24T00:00:00.000
+13,LFCT000013,Zenith LogisticsFreightChargeType 13,1,-1,1,2026-08-24T00:00:00.000
+14,LFCT000014,Willow LogisticsFreightChargeType 14,1,-1,1,2026-08-24T00:00:00.000
+15,LFCT000015,Pioneer LogisticsFreightChargeType 15,0,-1,1,2026-08-24T00:00:00.000
+16,LFCT000016,Evergreen LogisticsFreightChargeType 16,1,-1,1,2026-08-24T00:00:00.000
+17,LFCT000017,Riverton LogisticsFreightChargeType 17,1,-1,1,2026-08-24T00:00:00.000
+18,LFCT000018,Quartz LogisticsFreightChargeType 18,1,-1,1,2026-08-24T00:00:00.000
+19,LFCT000019,Liberty LogisticsFreightChargeType 19,1,-1,1,2026-08-24T00:00:00.000
+20,LFCT000020,Quartz LogisticsFreightChargeType 20,0,-1,1,2026-08-24T00:00:00.000
+21,LFCT000021,Evergreen LogisticsFreightChargeType 21,1,-1,1,2026-08-24T00:00:00.000
+22,LFCT000022,Cedar LogisticsFreightChargeType 22,1,-1,1,2026-08-24T00:00:00.000
+23,LFCT000023,Vertex LogisticsFreightChargeType 23,1,-1,1,2026-08-24T00:00:00.000
+24,LFCT000024,Quartz LogisticsFreightChargeType 24,1,-1,1,2026-08-24T00:00:00.000
+25,LFCT000025,Atlas LogisticsFreightChargeType 25,0,-1,1,2026-08-24T00:00:00.000
+26,LFCT000026,Liberty LogisticsFreightChargeType 26,1,-1,1,2026-08-24T00:00:00.000
+27,LFCT000027,Harbor LogisticsFreightChargeType 27,1,-1,1,2026-08-24T00:00:00.000
+28,LFCT000028,Unity LogisticsFreightChargeType 28,1,-1,1,2026-08-24T00:00:00.000
+29,LFCT000029,Riverton LogisticsFreightChargeType 29,1,-1,1,2026-08-24T00:00:00.000
+30,LFCT000030,Willow LogisticsFreightChargeType 30,0,-1,1,2026-08-24T00:00:00.000

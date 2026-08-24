@@ -1,0 +1,12 @@
+RoutingTypeKey,RoutingTypeCode,RoutingTypeName,RoutingTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,RT000001,Zenith RoutingType 1,RoutingType starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,RT000002,Northstar RoutingType 2,RoutingType starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,RT000003,Vertex RoutingType 3,RoutingType starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,RT000004,Harbor RoutingType 4,RoutingType starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,RT000005,Orion RoutingType 5,RoutingType starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,RT000006,Titan RoutingType 6,RoutingType starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,RT000007,Willow RoutingType 7,RoutingType starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,RT000008,Liberty RoutingType 8,RoutingType starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,RT000009,Forge RoutingType 9,RoutingType starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,RT000010,Evergreen RoutingType 10,RoutingType starter record 10,0,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,12 @@
+CycleCountStatusKey,StatusCode,CycleCountStatusName,CycleCountStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,CCS000001,Titan CycleCountStatus 1,CycleCountStatus starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,CCS000002,Junction CycleCountStatus 2,CycleCountStatus starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,CCS000003,Northstar CycleCountStatus 3,CycleCountStatus starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,CCS000004,Orion CycleCountStatus 4,CycleCountStatus starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,CCS000005,Northstar CycleCountStatus 5,CycleCountStatus starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,CCS000006,Titan CycleCountStatus 6,CycleCountStatus starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,CCS000007,Evergreen CycleCountStatus 7,CycleCountStatus starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,CCS000008,Beacon CycleCountStatus 8,CycleCountStatus starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,CCS000009,Granite CycleCountStatus 9,CycleCountStatus starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,CCS000010,Forge CycleCountStatus 10,CycleCountStatus starter record 10,0,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,12 @@
+SalesAllocationStatusKey,AllocationStatusCode,AllocationStatusName,ReservesInventory,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SAS000001,Orion SalesAllocationStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,SAS000002,Willow SalesAllocationStatus 2,0,-1,1,2026-08-24T00:00:00.000
+3,SAS000003,Summit SalesAllocationStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,SAS000004,Quartz SalesAllocationStatus 4,0,-1,1,2026-08-24T00:00:00.000
+5,SAS000005,Pioneer SalesAllocationStatus 5,1,-1,1,2026-08-24T00:00:00.000
+6,SAS000006,Vertex SalesAllocationStatus 6,0,-1,1,2026-08-24T00:00:00.000
+7,SAS000007,Ion SalesAllocationStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,SAS000008,Orion SalesAllocationStatus 8,0,-1,1,2026-08-24T00:00:00.000
+9,SAS000009,Quartz SalesAllocationStatus 9,1,-1,1,2026-08-24T00:00:00.000
+10,SAS000010,Quartz SalesAllocationStatus 10,0,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,10 @@
+SalesCreditStatusKey,CreditStatusCode,CreditStatusName,BlocksRelease,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SCS000001,Orion SalesCreditStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,SCS000002,Beacon SalesCreditStatus 2,0,-1,1,2026-08-24T00:00:00.000
+3,SCS000003,Evergreen SalesCreditStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,SCS000004,Vertex SalesCreditStatus 4,0,-1,1,2026-08-24T00:00:00.000
+5,SCS000005,Summit SalesCreditStatus 5,1,-1,1,2026-08-24T00:00:00.000
+6,SCS000006,Delta SalesCreditStatus 6,0,-1,1,2026-08-24T00:00:00.000
+7,SCS000007,Harbor SalesCreditStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,SCS000008,Atlas SalesCreditStatus 8,0,-1,1,2026-08-24T00:00:00.000

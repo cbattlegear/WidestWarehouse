@@ -1,0 +1,14 @@
+MaintenanceOrderStatusKey,OrderStatusCode,OrderStatusName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MOS000001,Junction MaintenanceOrderStatus 1,-1,1,2026-08-24T00:00:00.000
+2,MOS000002,Forge MaintenanceOrderStatus 2,-1,1,2026-08-24T00:00:00.000
+3,MOS000003,Evergreen MaintenanceOrderStatus 3,-1,1,2026-08-24T00:00:00.000
+4,MOS000004,Evergreen MaintenanceOrderStatus 4,-1,1,2026-08-24T00:00:00.000
+5,MOS000005,Meridian MaintenanceOrderStatus 5,-1,1,2026-08-24T00:00:00.000
+6,MOS000006,Riverton MaintenanceOrderStatus 6,-1,1,2026-08-24T00:00:00.000
+7,MOS000007,Summit MaintenanceOrderStatus 7,-1,1,2026-08-24T00:00:00.000
+8,MOS000008,Liberty MaintenanceOrderStatus 8,-1,1,2026-08-24T00:00:00.000
+9,MOS000009,Evergreen MaintenanceOrderStatus 9,-1,1,2026-08-24T00:00:00.000
+10,MOS000010,Cedar MaintenanceOrderStatus 10,-1,1,2026-08-24T00:00:00.000
+11,MOS000011,Liberty MaintenanceOrderStatus 11,-1,1,2026-08-24T00:00:00.000
+12,MOS000012,Atlas MaintenanceOrderStatus 12,-1,1,2026-08-24T00:00:00.000

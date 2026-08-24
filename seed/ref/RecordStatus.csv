@@ -1,0 +1,6 @@
+RecordStatusKey,StatusCode,StatusName,IsCurrentStatus,SortOrder,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,0,-1,0,1900-01-01T00:00:00.000
+1,ACTIVE,Active,1,10,-1,1,2026-08-24T00:00:00.000
+2,INACTIVE,Inactive,0,20,-1,1,2026-08-24T00:00:00.000
+3,PENDING,Pending,1,30,-1,1,2026-08-24T00:00:00.000
+4,RETIRED,Retired,0,40,-1,1,2026-08-24T00:00:00.000

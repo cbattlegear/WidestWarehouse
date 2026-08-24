@@ -1,0 +1,9 @@
+ServiceContractStatusKey,ServiceContractStatusCode,ServiceContractStatusName,IsActiveStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SCS000001,Meridian ServiceContractStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,SCS000002,Keystone ServiceContractStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,SCS000003,Cedar ServiceContractStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,SCS000004,Harbor ServiceContractStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,SCS000005,Unity ServiceContractStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,SCS000006,Liberty ServiceContractStatus 6,1,-1,1,2026-08-24T00:00:00.000
+7,SCS000007,Northstar ServiceContractStatus 7,1,-1,1,2026-08-24T00:00:00.000

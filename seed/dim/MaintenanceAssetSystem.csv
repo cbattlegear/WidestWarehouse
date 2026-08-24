@@ -1,0 +1,22 @@
+MaintenanceAssetSystemKey,MaintenanceAssetSystemCode,MaintenanceAssetSystemName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MAS000001,Zenith MaintenanceAssetSystem 1,1,1,2026-08-24T00:00:00.000
+2,MAS000002,Zenith MaintenanceAssetSystem 2,1,1,2026-08-24T00:00:00.000
+3,MAS000003,Keystone MaintenanceAssetSystem 3,1,1,2026-08-24T00:00:00.000
+4,MAS000004,Evergreen MaintenanceAssetSystem 4,1,1,2026-08-24T00:00:00.000
+5,MAS000005,Meridian MaintenanceAssetSystem 5,1,1,2026-08-24T00:00:00.000
+6,MAS000006,Harbor MaintenanceAssetSystem 6,1,1,2026-08-24T00:00:00.000
+7,MAS000007,Liberty MaintenanceAssetSystem 7,1,1,2026-08-24T00:00:00.000
+8,MAS000008,Evergreen MaintenanceAssetSystem 8,1,1,2026-08-24T00:00:00.000
+9,MAS000009,Quartz MaintenanceAssetSystem 9,1,1,2026-08-24T00:00:00.000
+10,MAS000010,Cedar MaintenanceAssetSystem 10,1,1,2026-08-24T00:00:00.000
+11,MAS000011,Granite MaintenanceAssetSystem 11,1,1,2026-08-24T00:00:00.000
+12,MAS000012,Titan MaintenanceAssetSystem 12,1,1,2026-08-24T00:00:00.000
+13,MAS000013,Evergreen MaintenanceAssetSystem 13,1,1,2026-08-24T00:00:00.000
+14,MAS000014,Delta MaintenanceAssetSystem 14,1,1,2026-08-24T00:00:00.000
+15,MAS000015,Summit MaintenanceAssetSystem 15,1,1,2026-08-24T00:00:00.000
+16,MAS000016,Quartz MaintenanceAssetSystem 16,1,1,2026-08-24T00:00:00.000
+17,MAS000017,Ion MaintenanceAssetSystem 17,1,1,2026-08-24T00:00:00.000
+18,MAS000018,Junction MaintenanceAssetSystem 18,1,1,2026-08-24T00:00:00.000
+19,MAS000019,Summit MaintenanceAssetSystem 19,1,1,2026-08-24T00:00:00.000
+20,MAS000020,Titan MaintenanceAssetSystem 20,1,1,2026-08-24T00:00:00.000

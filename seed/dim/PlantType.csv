@@ -1,0 +1,22 @@
+PlantTypeKey,PlantTypeCode,UnitOfMeasureKey,RecordStatusKey,PlantTypeName,PlantTypeDescription,OwnerName,EffectiveStartDate,EffectiveEndDate,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,-1,Unknown,N/A,Unknown,1900-01-01,1900-01-01,0,-1,0,1900-01-01T00:00:00.000
+1,PT000001,6,2,Orion PlantType 1,PlantType starter record 1,Blair Chen,2020-01-02,2021-01-01,1,1,1,2026-08-24T00:00:00.000
+2,PT000002,1,3,Unity PlantType 2,PlantType starter record 2,Blair Singh,2020-01-03,2021-01-02,1,1,1,2026-08-24T00:00:00.000
+3,PT000003,3,1,Forge PlantType 3,PlantType starter record 3,Harper Singh,2020-01-04,2021-01-03,1,1,1,2026-08-24T00:00:00.000
+4,PT000004,6,2,Delta PlantType 4,PlantType starter record 4,Riley Singh,2020-01-05,2021-01-04,1,1,1,2026-08-24T00:00:00.000
+5,PT000005,4,2,Cedar PlantType 5,PlantType starter record 5,Alex Khan,2020-01-06,2021-01-05,0,1,1,2026-08-24T00:00:00.000
+6,PT000006,5,3,Liberty PlantType 6,PlantType starter record 6,Alex Bennett,2020-01-07,2021-01-06,1,1,1,2026-08-24T00:00:00.000
+7,PT000007,6,4,Vertex PlantType 7,PlantType starter record 7,Devon Reed,2020-01-08,2021-01-07,1,1,1,2026-08-24T00:00:00.000
+8,PT000008,2,3,Willow PlantType 8,PlantType starter record 8,Quinn Garcia,2020-01-09,2021-01-08,1,1,1,2026-08-24T00:00:00.000
+9,PT000009,5,3,Forge PlantType 9,PlantType starter record 9,Finley Singh,2020-01-10,2021-01-09,1,1,1,2026-08-24T00:00:00.000
+10,PT000010,3,3,Northstar PlantType 10,PlantType starter record 10,Quinn Singh,2020-01-11,2021-01-10,0,1,1,2026-08-24T00:00:00.000
+11,PT000011,4,3,Zenith PlantType 11,PlantType starter record 11,Blair Adams,2020-01-12,2021-01-11,1,1,1,2026-08-24T00:00:00.000
+12,PT000012,1,4,Vertex PlantType 12,PlantType starter record 12,Harper Hughes,2020-01-13,2021-01-12,1,1,1,2026-08-24T00:00:00.000
+13,PT000013,4,2,Summit PlantType 13,PlantType starter record 13,Jordan Patel,2020-01-14,2021-01-13,1,1,1,2026-08-24T00:00:00.000
+14,PT000014,3,3,Junction PlantType 14,PlantType starter record 14,Harper Adams,2020-01-15,2021-01-14,1,1,1,2026-08-24T00:00:00.000
+15,PT000015,6,2,Riverton PlantType 15,PlantType starter record 15,Casey Khan,2020-01-16,2021-01-15,0,1,1,2026-08-24T00:00:00.000
+16,PT000016,6,4,Cedar PlantType 16,PlantType starter record 16,Emerson Hughes,2020-01-17,2021-01-16,1,1,1,2026-08-24T00:00:00.000
+17,PT000017,3,4,Titan PlantType 17,PlantType starter record 17,Alex Chen,2020-01-18,2021-01-17,1,1,1,2026-08-24T00:00:00.000
+18,PT000018,7,2,Junction PlantType 18,PlantType starter record 18,Jordan Martin,2020-01-19,2021-01-18,1,1,1,2026-08-24T00:00:00.000
+19,PT000019,2,2,Meridian PlantType 19,PlantType starter record 19,Emerson Adams,2020-01-20,2021-01-19,1,1,1,2026-08-24T00:00:00.000
+20,PT000020,6,1,Willow PlantType 20,PlantType starter record 20,Jordan Patel,2020-01-21,2021-01-20,0,1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,4 @@
+OrgEnterpriseKey,OrgEnterpriseCode,OrgEnterpriseName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,OE000001,Liberty OrgEnterprise 1,1,1,2026-08-24T00:00:00.000
+2,OE000002,Willow OrgEnterprise 2,1,1,2026-08-24T00:00:00.000

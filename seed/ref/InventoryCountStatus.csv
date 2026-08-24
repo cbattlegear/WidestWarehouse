@@ -1,0 +1,10 @@
+InventoryCountStatusKey,CountStatusCode,CountStatusName,AllowsPosting,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,ICS000001,Keystone InventoryCountStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,ICS000002,Unity InventoryCountStatus 2,0,-1,1,2026-08-24T00:00:00.000
+3,ICS000003,Quartz InventoryCountStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,ICS000004,Northstar InventoryCountStatus 4,0,-1,1,2026-08-24T00:00:00.000
+5,ICS000005,Keystone InventoryCountStatus 5,1,-1,1,2026-08-24T00:00:00.000
+6,ICS000006,Titan InventoryCountStatus 6,0,-1,1,2026-08-24T00:00:00.000
+7,ICS000007,Pioneer InventoryCountStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,ICS000008,Unity InventoryCountStatus 8,0,-1,1,2026-08-24T00:00:00.000

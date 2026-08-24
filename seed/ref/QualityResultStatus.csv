@@ -1,0 +1,14 @@
+QualityResultStatusKey,ResultStatusCode,ResultStatusName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,QRS000001,Quartz QualityResultStatus 1,-1,1,2026-08-24T00:00:00.000
+2,QRS000002,Orion QualityResultStatus 2,-1,1,2026-08-24T00:00:00.000
+3,QRS000003,Titan QualityResultStatus 3,-1,1,2026-08-24T00:00:00.000
+4,QRS000004,Cedar QualityResultStatus 4,-1,1,2026-08-24T00:00:00.000
+5,QRS000005,Atlas QualityResultStatus 5,-1,1,2026-08-24T00:00:00.000
+6,QRS000006,Pioneer QualityResultStatus 6,-1,1,2026-08-24T00:00:00.000
+7,QRS000007,Keystone QualityResultStatus 7,-1,1,2026-08-24T00:00:00.000
+8,QRS000008,Atlas QualityResultStatus 8,-1,1,2026-08-24T00:00:00.000
+9,QRS000009,Riverton QualityResultStatus 9,-1,1,2026-08-24T00:00:00.000
+10,QRS000010,Granite QualityResultStatus 10,-1,1,2026-08-24T00:00:00.000
+11,QRS000011,Willow QualityResultStatus 11,-1,1,2026-08-24T00:00:00.000
+12,QRS000012,Unity QualityResultStatus 12,-1,1,2026-08-24T00:00:00.000

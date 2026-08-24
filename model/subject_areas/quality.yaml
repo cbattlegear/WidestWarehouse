@@ -1,0 +1,559 @@
+subject_area: quality
+reference:
+- name: QualityInspectionType
+  description: QualityInspectionType lookup values.
+  business_key:
+    name: InspectionTypeCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: InspectionTypeName
+    type: "nvarchar(120)"
+    nullable: false
+- name: QualityResultStatus
+  description: QualityResultStatus lookup values.
+  business_key:
+    name: ResultStatusCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: ResultStatusName
+    type: "nvarchar(120)"
+    nullable: false
+- name: QualityDefectSeverity
+  description: QualityDefectSeverity lookup values.
+  business_key:
+    name: DefectSeverityCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: DefectSeverityName
+    type: "nvarchar(120)"
+    nullable: false
+- name: QualityCapaType
+  description: QualityCapaType lookup values.
+  business_key:
+    name: CapaTypeCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: CapaTypeName
+    type: "nvarchar(120)"
+    nullable: false
+- name: QualityCalibrationStatus
+  description: QualityCalibrationStatus lookup values.
+  business_key:
+    name: CalibrationStatusCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: CalibrationStatusName
+    type: "nvarchar(120)"
+    nullable: false
+hierarchies:
+- name: QualityDefectTaxonomy
+  schema: dim
+  description: QualityDefectTaxonomy subject hierarchy.
+  levels:
+  - name: QualityDefectFamily
+    description: QualityDefectFamily level for qualitydefecttaxonomy subject hierarchy.
+    row_count: 16
+  - name: QualityDefectCategory
+    description: QualityDefectCategory level for qualitydefecttaxonomy subject hierarchy.
+    row_count: 80
+  - name: QualityDefectSubCategory
+    description: QualityDefectSubCategory level for qualitydefecttaxonomy subject hierarchy.
+    row_count: 300
+  - name: QualityDefectCode
+    description: QualityDefectCode level for qualitydefecttaxonomy subject hierarchy.
+    row_count: 1400
+- name: QualityCharacteristicTaxonomy
+  schema: dim
+  description: QualityCharacteristicTaxonomy subject hierarchy.
+  levels:
+  - name: QualityCharacteristicDomain
+    description: QualityCharacteristicDomain level for qualitycharacteristictaxonomy subject hierarchy.
+    row_count: 12
+  - name: QualityCharacteristicClass
+    description: QualityCharacteristicClass level for qualitycharacteristictaxonomy subject hierarchy.
+    row_count: 70
+  - name: QualityCharacteristicGroup
+    description: QualityCharacteristicGroup level for qualitycharacteristictaxonomy subject hierarchy.
+    row_count: 260
+  - name: QualityCharacteristicType
+    description: QualityCharacteristicType level for qualitycharacteristictaxonomy subject hierarchy.
+    row_count: 1300
+- name: QualityMethodTaxonomy
+  schema: dim
+  description: QualityMethodTaxonomy subject hierarchy.
+  levels:
+  - name: QualityMethodFamily
+    description: QualityMethodFamily level for qualitymethodtaxonomy subject hierarchy.
+    row_count: 10
+  - name: QualityMethodClass
+    description: QualityMethodClass level for qualitymethodtaxonomy subject hierarchy.
+    row_count: 50
+  - name: QualityMethodProcedure
+    description: QualityMethodProcedure level for qualitymethodtaxonomy subject hierarchy.
+    row_count: 240
+  - name: QualityMethodStep
+    description: QualityMethodStep level for qualitymethodtaxonomy subject hierarchy.
+    row_count: 1200
+- name: QualityOrganizationTaxonomy
+  schema: dim
+  description: QualityOrganizationTaxonomy subject hierarchy.
+  levels:
+  - name: QualityOrganizationRegion
+    description: QualityOrganizationRegion level for qualityorganizationtaxonomy subject hierarchy.
+    row_count: 8
+  - name: QualityOrganizationSite
+    description: QualityOrganizationSite level for qualityorganizationtaxonomy subject hierarchy.
+    row_count: 40
+  - name: QualityLabGroup
+    description: QualityLabGroup level for qualityorganizationtaxonomy subject hierarchy.
+    row_count: 160
+  - name: QualityLabCell
+    description: QualityLabCell level for qualityorganizationtaxonomy subject hierarchy.
+    row_count: 550
+dimensions:
+- name: QualityInspectionPlan
+  description: Quality inspection plan for products and suppliers.
+  row_count: 70000
+  business_key:
+    name: InspectionPlanNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: QualityInspectionPlanName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Product
+    nullable: true
+  - name: Supplier
+    nullable: true
+  - name: QualityMethodProcedure
+  ref_parents:
+  - name: QualityInspectionType
+  - name: EngineeringLifecycleStatus
+    nullable: true
+  scd: type2
+- name: QualityInspectionCharacteristic
+  description: Measurable characteristic in an inspection plan.
+  row_count: 350000
+  business_key:
+    name: InspectionCharacteristicCode
+    type: "nvarchar(40)"
+  columns:
+  - name: QualityInspectionCharacteristicName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: QualityCharacteristicType
+  ref_parents:
+  - name: UnitOfMeasure
+  - name: QualityResultStatus
+  scd: type2
+- name: QualityInspectionLot
+  description: Quality inspection lot for receipt or production.
+  row_count: 850000
+  business_key:
+    name: InspectionLotNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: QualityInspectionLotName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Product
+  - name: Plant
+  - name: Supplier
+    nullable: true
+  - name: ProductionLot
+    nullable: true
+  ref_parents:
+  - name: QualityInspectionType
+  - name: QualityResultStatus
+  - name: UnitOfMeasure
+  scd: type2
+- name: QualityGauge
+  description: Inspection gauge and measurement instrument.
+  row_count: 45000
+  business_key:
+    name: GaugeNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: QualityGaugeName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Asset
+    nullable: true
+  - name: QualityLabCell
+  ref_parents:
+  - name: QualityCalibrationStatus
+  - name: UnitOfMeasure
+  scd: type2
+- name: QualityNonConformance
+  description: Non-conformance report master record.
+  row_count: 180000
+  business_key:
+    name: NonConformanceNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: QualityNonConformanceName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Product
+    nullable: true
+  - name: Plant
+  - name: QualityDefectCode
+  ref_parents:
+  - name: QualityDefectSeverity
+  - name: Severity
+  - name: QualityResultStatus
+  scd: type2
+- name: QualityCertificateAnalysis
+  description: Certificate of analysis definition and issuer.
+  row_count: 90000
+  business_key:
+    name: CertificateAnalysisNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: QualityCertificateAnalysisName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Product
+  - name: Supplier
+    nullable: true
+  - name: QualityMethodProcedure
+  ref_parents:
+  - name: ComplianceStandard
+  - name: ApprovalStatus
+  scd: type2
+bridges:
+- name: QualityInspectionPlanCharacteristic
+  description: Associates inspection plans with characteristics.
+  row_count: 450000
+  members:
+  - name: QualityInspectionPlan
+  - name: QualityInspectionCharacteristic
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+- name: QualityDefectCharacteristic
+  description: Maps defects to inspection characteristics.
+  row_count: 220000
+  members:
+  - name: QualityDefectCode
+  - name: QualityInspectionCharacteristic
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+- name: QualityGaugeCharacteristic
+  description: Authorizes gauges for characteristics.
+  row_count: 160000
+  members:
+  - name: QualityGauge
+  - name: QualityInspectionCharacteristic
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+- name: QualitySupplierProductApproval
+  description: Approved supplier-product quality relationships.
+  row_count: 120000
+  members:
+  - name: Supplier
+  - name: Product
+  - name: QualityInspectionPlan
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+  ref_parents:
+  - name: ApprovalStatus
+facts:
+- name: QualityInspectionResult
+  description: Inspection characteristic measurement results.
+  type: transaction
+  grain: One row per inspection sample characteristic result.
+  row_count: 5000000
+  columnstore: true
+  date_roles:
+  - Inspection
+  time_roles:
+  - Inspection
+  dimensions:
+  - name: QualityInspectionLot
+  - name: QualityInspectionPlan
+  - name: QualityInspectionCharacteristic
+  - name: QualityGauge
+    nullable: true
+  - name: Product
+  - name: Plant
+  - name: Supplier
+    nullable: true
+  - name: Employee
+    role: Inspector
+    nullable: true
+  ref_parents:
+  - name: QualityInspectionType
+  - name: QualityResultStatus
+  - name: UnitOfMeasure
+  degenerate:
+  - name: SampleNumber
+    type: "nvarchar(40)"
+  - name: ResultSequenceNumber
+    type: int
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: QualityNonConformanceEvent
+  description: Events and costs for non-conformance records.
+  type: transaction
+  grain: One row per non-conformance event.
+  row_count: 750000
+  columnstore: true
+  date_roles:
+  - Event
+  time_roles:
+  - Event
+  dimensions:
+  - name: QualityNonConformance
+  - name: Product
+    nullable: true
+  - name: Plant
+  - name: Supplier
+    nullable: true
+  - name: Employee
+    role: Owner
+    nullable: true
+  ref_parents:
+  - name: QualityDefectSeverity
+  - name: QualityResultStatus
+  - name: UnitOfMeasure
+  degenerate:
+  - name: NonConformanceEventNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: QualityCapaLifecycle
+  description: Corrective action milestone tracking.
+  type: accumulating_snapshot
+  grain: One row per CAPA lifecycle.
+  row_count: 160000
+  date_roles:
+  - Opened
+  - Approved
+  - Implemented
+  - Verified
+  - Closed
+  dimensions:
+  - name: QualityNonConformance
+    nullable: true
+  - name: Product
+    nullable: true
+  - name: Plant
+  - name: Employee
+    role: Owner
+    nullable: true
+  ref_parents:
+  - name: QualityCapaType
+  - name: ApprovalStatus
+  - name: QualityResultStatus
+  degenerate:
+  - name: CapaNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: QualitySpcSample
+  description: Statistical process control sample results.
+  type: periodic_snapshot
+  grain: One row per sample subgroup for a control chart.
+  row_count: 2400000
+  columnstore: true
+  date_roles:
+  - Sample
+  time_roles:
+  - Sample
+  dimensions:
+  - name: QualityInspectionCharacteristic
+  - name: Product
+  - name: WorkCenter
+  - name: Plant
+  ref_parents:
+  - name: QualityResultStatus
+  - name: UnitOfMeasure
+  degenerate:
+  - name: ControlChartNumber
+    type: "nvarchar(40)"
+  - name: SubgroupNumber
+    type: int
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: QualityGaugeCalibration
+  description: Gauge calibration activity results.
+  type: transaction
+  grain: One row per gauge calibration event.
+  row_count: 220000
+  date_roles:
+  - Calibration
+  - Due
+  dimensions:
+  - name: QualityGauge
+  - name: Asset
+    nullable: true
+  - name: Employee
+    role: Technician
+    nullable: true
+  - name: QualityLabCell
+  ref_parents:
+  - name: QualityCalibrationStatus
+  - name: UnitOfMeasure
+  degenerate:
+  - name: CalibrationCertificateNumber
+    type: "nvarchar(50)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true

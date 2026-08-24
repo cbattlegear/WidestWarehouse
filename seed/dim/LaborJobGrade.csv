@@ -1,0 +1,36 @@
+LaborJobGradeKey,LaborJobGradeCode,LaborJobRoleKey,LaborJobGradeName,LaborGradeBand,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,-1,0,1900-01-01T00:00:00.000
+1,LJG000001,87,Liberty LaborJobGrade 1,LaborJobGrade-LaborGradeBand-1,1,1,2026-08-24T00:00:00.000
+2,LJG000002,151,Zenith LaborJobGrade 2,LaborJobGrade-LaborGradeBand-2,1,1,2026-08-24T00:00:00.000
+3,LJG000003,162,Vertex LaborJobGrade 3,LaborJobGrade-LaborGradeBand-3,1,1,2026-08-24T00:00:00.000
+4,LJG000004,171,Pioneer LaborJobGrade 4,LaborJobGrade-LaborGradeBand-4,1,1,2026-08-24T00:00:00.000
+5,LJG000005,258,Northstar LaborJobGrade 5,LaborJobGrade-LaborGradeBand-5,1,1,2026-08-24T00:00:00.000
+6,LJG000006,173,Northstar LaborJobGrade 6,LaborJobGrade-LaborGradeBand-6,1,1,2026-08-24T00:00:00.000
+7,LJG000007,96,Titan LaborJobGrade 7,LaborJobGrade-LaborGradeBand-7,1,1,2026-08-24T00:00:00.000
+8,LJG000008,172,Harbor LaborJobGrade 8,LaborJobGrade-LaborGradeBand-8,1,1,2026-08-24T00:00:00.000
+9,LJG000009,158,Forge LaborJobGrade 9,LaborJobGrade-LaborGradeBand-9,1,1,2026-08-24T00:00:00.000
+10,LJG000010,126,Cedar LaborJobGrade 10,LaborJobGrade-LaborGradeBand-1,1,1,2026-08-24T00:00:00.000
+11,LJG000011,40,Liberty LaborJobGrade 11,LaborJobGrade-LaborGradeBand-1,1,1,2026-08-24T00:00:00.000
+12,LJG000012,247,Junction LaborJobGrade 12,LaborJobGrade-LaborGradeBand-1,1,1,2026-08-24T00:00:00.000
+13,LJG000013,161,Beacon LaborJobGrade 13,LaborJobGrade-LaborGradeBand-1,1,1,2026-08-24T00:00:00.000
+14,LJG000014,43,Delta LaborJobGrade 14,LaborJobGrade-LaborGradeBand-1,1,1,2026-08-24T00:00:00.000
+15,LJG000015,173,Quartz LaborJobGrade 15,LaborJobGrade-LaborGradeBand-1,1,1,2026-08-24T00:00:00.000
+16,LJG000016,119,Beacon LaborJobGrade 16,LaborJobGrade-LaborGradeBand-1,1,1,2026-08-24T00:00:00.000
+17,LJG000017,182,Vertex LaborJobGrade 17,LaborJobGrade-LaborGradeBand-1,1,1,2026-08-24T00:00:00.000
+18,LJG000018,196,Beacon LaborJobGrade 18,LaborJobGrade-LaborGradeBand-1,1,1,2026-08-24T00:00:00.000
+19,LJG000019,238,Junction LaborJobGrade 19,LaborJobGrade-LaborGradeBand-1,1,1,2026-08-24T00:00:00.000
+20,LJG000020,140,Willow LaborJobGrade 20,LaborJobGrade-LaborGradeBand-2,1,1,2026-08-24T00:00:00.000
+21,LJG000021,90,Riverton LaborJobGrade 21,LaborJobGrade-LaborGradeBand-2,1,1,2026-08-24T00:00:00.000
+22,LJG000022,95,Junction LaborJobGrade 22,LaborJobGrade-LaborGradeBand-2,1,1,2026-08-24T00:00:00.000
+23,LJG000023,217,Beacon LaborJobGrade 23,LaborJobGrade-LaborGradeBand-2,1,1,2026-08-24T00:00:00.000
+24,LJG000024,186,Northstar LaborJobGrade 24,LaborJobGrade-LaborGradeBand-2,1,1,2026-08-24T00:00:00.000
+25,LJG000025,18,Pioneer LaborJobGrade 25,LaborJobGrade-LaborGradeBand-2,1,1,2026-08-24T00:00:00.000
+26,LJG000026,250,Junction LaborJobGrade 26,LaborJobGrade-LaborGradeBand-2,1,1,2026-08-24T00:00:00.000
+27,LJG000027,138,Meridian LaborJobGrade 27,LaborJobGrade-LaborGradeBand-2,1,1,2026-08-24T00:00:00.000
+28,LJG000028,76,Harbor LaborJobGrade 28,LaborJobGrade-LaborGradeBand-2,1,1,2026-08-24T00:00:00.000
+29,LJG000029,168,Pioneer LaborJobGrade 29,LaborJobGrade-LaborGradeBand-2,1,1,2026-08-24T00:00:00.000
+30,LJG000030,132,Riverton LaborJobGrade 30,LaborJobGrade-LaborGradeBand-3,1,1,2026-08-24T00:00:00.000
+31,LJG000031,248,Keystone LaborJobGrade 31,LaborJobGrade-LaborGradeBand-3,1,1,2026-08-24T00:00:00.000
+32,LJG000032,54,Unity LaborJobGrade 32,LaborJobGrade-LaborGradeBand-3,1,1,2026-08-24T00:00:00.000
+33,LJG000033,144,Summit LaborJobGrade 33,LaborJobGrade-LaborGradeBand-3,1,1,2026-08-24T00:00:00.000
+34,LJG000034,159,Meridian LaborJobGrade 34,LaborJobGrade-LaborGradeBand-3,1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,20 @@
+LaborShiftPatternKey,LaborShiftPatternCode,LaborShiftPatternName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,LSP000001,Granite LaborShiftPattern 1,1,1,2026-08-24T00:00:00.000
+2,LSP000002,Beacon LaborShiftPattern 2,1,1,2026-08-24T00:00:00.000
+3,LSP000003,Meridian LaborShiftPattern 3,1,1,2026-08-24T00:00:00.000
+4,LSP000004,Atlas LaborShiftPattern 4,1,1,2026-08-24T00:00:00.000
+5,LSP000005,Beacon LaborShiftPattern 5,1,1,2026-08-24T00:00:00.000
+6,LSP000006,Ion LaborShiftPattern 6,1,1,2026-08-24T00:00:00.000
+7,LSP000007,Zenith LaborShiftPattern 7,1,1,2026-08-24T00:00:00.000
+8,LSP000008,Meridian LaborShiftPattern 8,1,1,2026-08-24T00:00:00.000
+9,LSP000009,Pioneer LaborShiftPattern 9,1,1,2026-08-24T00:00:00.000
+10,LSP000010,Cedar LaborShiftPattern 10,1,1,2026-08-24T00:00:00.000
+11,LSP000011,Northstar LaborShiftPattern 11,1,1,2026-08-24T00:00:00.000
+12,LSP000012,Northstar LaborShiftPattern 12,1,1,2026-08-24T00:00:00.000
+13,LSP000013,Orion LaborShiftPattern 13,1,1,2026-08-24T00:00:00.000
+14,LSP000014,Northstar LaborShiftPattern 14,1,1,2026-08-24T00:00:00.000
+15,LSP000015,Liberty LaborShiftPattern 15,1,1,2026-08-24T00:00:00.000
+16,LSP000016,Evergreen LaborShiftPattern 16,1,1,2026-08-24T00:00:00.000
+17,LSP000017,Quartz LaborShiftPattern 17,1,1,2026-08-24T00:00:00.000
+18,LSP000018,Riverton LaborShiftPattern 18,1,1,2026-08-24T00:00:00.000

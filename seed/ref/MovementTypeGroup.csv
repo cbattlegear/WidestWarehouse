@@ -1,0 +1,6 @@
+MovementTypeGroupKey,GroupCode,MovementTypeGroupName,MovementTypeGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,RECEIPT,Receipts,Inbound movement types,1,-1,1,2026-08-24T00:00:00.000
+2,ISSUE,Issues,Outbound movement types,1,-1,1,2026-08-24T00:00:00.000
+3,TRANSFER,Transfers,Location transfer types,1,-1,1,2026-08-24T00:00:00.000
+4,ADJUST,Adjustments,Inventory correction types,1,-1,1,2026-08-24T00:00:00.000

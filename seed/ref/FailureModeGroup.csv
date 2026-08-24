@@ -1,0 +1,6 @@
+FailureModeGroupKey,GroupCode,FailureModeGroupName,FailureModeGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,MECHANICAL,Mechanical,Mechanical failures,1,-1,1,2026-08-24T00:00:00.000
+2,ELECTRICAL,Electrical,Electrical failures,1,-1,1,2026-08-24T00:00:00.000
+3,CONTROL,Control,Automation and controls failures,1,-1,1,2026-08-24T00:00:00.000
+4,PROCESS,Process,Process-induced failures,1,-1,1,2026-08-24T00:00:00.000

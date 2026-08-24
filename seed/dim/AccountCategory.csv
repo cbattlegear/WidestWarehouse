@@ -1,0 +1,10 @@
+AccountCategoryKey,AccountCategoryCode,AccountCategoryName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,AC000001,Riverton AccountCategory 1,1,1,2026-08-24T00:00:00.000
+2,AC000002,Zenith AccountCategory 2,1,1,2026-08-24T00:00:00.000
+3,AC000003,Orion AccountCategory 3,1,1,2026-08-24T00:00:00.000
+4,AC000004,Liberty AccountCategory 4,1,1,2026-08-24T00:00:00.000
+5,AC000005,Riverton AccountCategory 5,1,1,2026-08-24T00:00:00.000
+6,AC000006,Orion AccountCategory 6,1,1,2026-08-24T00:00:00.000
+7,AC000007,Willow AccountCategory 7,1,1,2026-08-24T00:00:00.000
+8,AC000008,Beacon AccountCategory 8,1,1,2026-08-24T00:00:00.000

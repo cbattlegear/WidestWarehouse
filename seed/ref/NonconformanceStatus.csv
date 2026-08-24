@@ -1,0 +1,14 @@
+NonconformanceStatusKey,StatusCode,NonconformanceStatusName,NonconformanceStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,NS000001,Riverton NonconformanceStatus 1,NonconformanceStatus starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,NS000002,Northstar NonconformanceStatus 2,NonconformanceStatus starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,NS000003,Quartz NonconformanceStatus 3,NonconformanceStatus starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,NS000004,Liberty NonconformanceStatus 4,NonconformanceStatus starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,NS000005,Pioneer NonconformanceStatus 5,NonconformanceStatus starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,NS000006,Summit NonconformanceStatus 6,NonconformanceStatus starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,NS000007,Atlas NonconformanceStatus 7,NonconformanceStatus starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,NS000008,Forge NonconformanceStatus 8,NonconformanceStatus starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,NS000009,Beacon NonconformanceStatus 9,NonconformanceStatus starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,NS000010,Evergreen NonconformanceStatus 10,NonconformanceStatus starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,NS000011,Ion NonconformanceStatus 11,NonconformanceStatus starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,NS000012,Meridian NonconformanceStatus 12,NonconformanceStatus starter record 12,1,-1,1,2026-08-24T00:00:00.000

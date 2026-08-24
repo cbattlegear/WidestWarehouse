@@ -1,0 +1,39 @@
+subject_area: manufacturing
+hierarchies:
+  - name: ProductTaxonomy
+    levels:
+      - name: ProductDivision
+      - name: ProductLine
+      - name: ProductFamily
+dimensions:
+  - name: Product
+    scd: type2
+    business_key: {name: ProductNumber, type: "nvarchar(40)"}
+    columns:
+      - {name: ProductName, type: "nvarchar(200)", nullable: false}
+    parents:
+      - {name: ProductFamily}
+    ref_parents:
+      - {name: UnitOfMeasure}
+      - {name: ProductStatus}
+bridges:
+  - name: ProductSubstitute
+    members:
+      - {name: Product, role: Primary}
+      - {name: Product, role: Substitute}
+    columns:
+      - {name: PreferenceRank, type: int, nullable: false}
+facts:
+  - name: ProductionOrder
+    type: transaction
+    columnstore: true
+    date_roles: [Order]
+    time_roles: [Start]
+    dimensions:
+      - {name: Product}
+    ref_parents:
+      - {name: ProductStatus}
+    degenerate:
+      - {name: WorkOrderNumber, type: "nvarchar(30)"}
+    measures:
+      - {name: OrderQuantity, type: "decimal(18,4)", nullable: false}

@@ -1,0 +1,20 @@
+PackagingTypeKey,PackagingTypeCode,PackagingTypeName,PackagingTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,PT000001,Quartz PackagingType 1,PackagingType starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,PT000002,Evergreen PackagingType 2,PackagingType starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,PT000003,Beacon PackagingType 3,PackagingType starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,PT000004,Riverton PackagingType 4,PackagingType starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,PT000005,Granite PackagingType 5,PackagingType starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,PT000006,Meridian PackagingType 6,PackagingType starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,PT000007,Meridian PackagingType 7,PackagingType starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,PT000008,Riverton PackagingType 8,PackagingType starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,PT000009,Harbor PackagingType 9,PackagingType starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,PT000010,Beacon PackagingType 10,PackagingType starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,PT000011,Forge PackagingType 11,PackagingType starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,PT000012,Orion PackagingType 12,PackagingType starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,PT000013,Forge PackagingType 13,PackagingType starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,PT000014,Forge PackagingType 14,PackagingType starter record 14,1,-1,1,2026-08-24T00:00:00.000
+15,PT000015,Evergreen PackagingType 15,PackagingType starter record 15,0,-1,1,2026-08-24T00:00:00.000
+16,PT000016,Keystone PackagingType 16,PackagingType starter record 16,1,-1,1,2026-08-24T00:00:00.000
+17,PT000017,Forge PackagingType 17,PackagingType starter record 17,1,-1,1,2026-08-24T00:00:00.000
+18,PT000018,Titan PackagingType 18,PackagingType starter record 18,1,-1,1,2026-08-24T00:00:00.000

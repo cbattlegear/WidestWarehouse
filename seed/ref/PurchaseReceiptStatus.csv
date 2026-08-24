@@ -1,0 +1,10 @@
+PurchaseReceiptStatusKey,ReceiptStatusCode,ReceiptStatusName,IsQuantityFinal,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,PRS000001,Cedar PurchaseReceiptStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,PRS000002,Liberty PurchaseReceiptStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,PRS000003,Quartz PurchaseReceiptStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,PRS000004,Ion PurchaseReceiptStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,PRS000005,Atlas PurchaseReceiptStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,PRS000006,Keystone PurchaseReceiptStatus 6,1,-1,1,2026-08-24T00:00:00.000
+7,PRS000007,Delta PurchaseReceiptStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,PRS000008,Pioneer PurchaseReceiptStatus 8,1,-1,1,2026-08-24T00:00:00.000

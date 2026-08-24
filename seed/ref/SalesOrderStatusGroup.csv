@@ -1,0 +1,10 @@
+SalesOrderStatusGroupKey,GroupCode,SalesOrderStatusGroupName,SalesOrderStatusGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SOSG000001,Ion SalesOrderStatusGroup 1,SalesOrderStatusGroup starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,SOSG000002,Granite SalesOrderStatusGroup 2,SalesOrderStatusGroup starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,SOSG000003,Delta SalesOrderStatusGroup 3,SalesOrderStatusGroup starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,SOSG000004,Orion SalesOrderStatusGroup 4,SalesOrderStatusGroup starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,SOSG000005,Unity SalesOrderStatusGroup 5,SalesOrderStatusGroup starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,SOSG000006,Granite SalesOrderStatusGroup 6,SalesOrderStatusGroup starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,SOSG000007,Summit SalesOrderStatusGroup 7,SalesOrderStatusGroup starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,SOSG000008,Unity SalesOrderStatusGroup 8,SalesOrderStatusGroup starter record 8,1,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,12 @@
+TrainingStatusKey,StatusCode,TrainingStatusName,TrainingStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,TS000001,Vertex TrainingStatus 1,TrainingStatus starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,TS000002,Harbor TrainingStatus 2,TrainingStatus starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,TS000003,Forge TrainingStatus 3,TrainingStatus starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,TS000004,Summit TrainingStatus 4,TrainingStatus starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,TS000005,Willow TrainingStatus 5,TrainingStatus starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,TS000006,Liberty TrainingStatus 6,TrainingStatus starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,TS000007,Northstar TrainingStatus 7,TrainingStatus starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,TS000008,Harbor TrainingStatus 8,TrainingStatus starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,TS000009,Cedar TrainingStatus 9,TrainingStatus starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,TS000010,Granite TrainingStatus 10,TrainingStatus starter record 10,0,1,1,2026-08-24T00:00:00.000

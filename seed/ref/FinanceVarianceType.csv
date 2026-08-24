@@ -1,0 +1,22 @@
+FinanceVarianceTypeKey,VarianceTypeCode,VarianceTypeName,IsManufacturingVariance,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,FVT000001,Pioneer FinanceVarianceType 1,1,-1,1,2026-08-24T00:00:00.000
+2,FVT000002,Junction FinanceVarianceType 2,1,-1,1,2026-08-24T00:00:00.000
+3,FVT000003,Liberty FinanceVarianceType 3,1,-1,1,2026-08-24T00:00:00.000
+4,FVT000004,Orion FinanceVarianceType 4,1,-1,1,2026-08-24T00:00:00.000
+5,FVT000005,Liberty FinanceVarianceType 5,0,-1,1,2026-08-24T00:00:00.000
+6,FVT000006,Summit FinanceVarianceType 6,1,-1,1,2026-08-24T00:00:00.000
+7,FVT000007,Cedar FinanceVarianceType 7,1,-1,1,2026-08-24T00:00:00.000
+8,FVT000008,Riverton FinanceVarianceType 8,1,-1,1,2026-08-24T00:00:00.000
+9,FVT000009,Forge FinanceVarianceType 9,1,-1,1,2026-08-24T00:00:00.000
+10,FVT000010,Ion FinanceVarianceType 10,0,-1,1,2026-08-24T00:00:00.000
+11,FVT000011,Granite FinanceVarianceType 11,1,-1,1,2026-08-24T00:00:00.000
+12,FVT000012,Forge FinanceVarianceType 12,1,-1,1,2026-08-24T00:00:00.000
+13,FVT000013,Titan FinanceVarianceType 13,1,-1,1,2026-08-24T00:00:00.000
+14,FVT000014,Vertex FinanceVarianceType 14,1,-1,1,2026-08-24T00:00:00.000
+15,FVT000015,Cedar FinanceVarianceType 15,0,-1,1,2026-08-24T00:00:00.000
+16,FVT000016,Atlas FinanceVarianceType 16,1,-1,1,2026-08-24T00:00:00.000
+17,FVT000017,Willow FinanceVarianceType 17,1,-1,1,2026-08-24T00:00:00.000
+18,FVT000018,Junction FinanceVarianceType 18,1,-1,1,2026-08-24T00:00:00.000
+19,FVT000019,Summit FinanceVarianceType 19,1,-1,1,2026-08-24T00:00:00.000
+20,FVT000020,Willow FinanceVarianceType 20,0,-1,1,2026-08-24T00:00:00.000

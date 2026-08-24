@@ -1,0 +1,18 @@
+MaintenanceTypeKey,TypeCode,MaintenanceTypeName,MaintenanceTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,MT000001,Cedar MaintenanceType 1,MaintenanceType starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,MT000002,Keystone MaintenanceType 2,MaintenanceType starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,MT000003,Meridian MaintenanceType 3,MaintenanceType starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,MT000004,Delta MaintenanceType 4,MaintenanceType starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,MT000005,Cedar MaintenanceType 5,MaintenanceType starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,MT000006,Ion MaintenanceType 6,MaintenanceType starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,MT000007,Liberty MaintenanceType 7,MaintenanceType starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,MT000008,Unity MaintenanceType 8,MaintenanceType starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,MT000009,Liberty MaintenanceType 9,MaintenanceType starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,MT000010,Titan MaintenanceType 10,MaintenanceType starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,MT000011,Vertex MaintenanceType 11,MaintenanceType starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,MT000012,Unity MaintenanceType 12,MaintenanceType starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,MT000013,Atlas MaintenanceType 13,MaintenanceType starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,MT000014,Meridian MaintenanceType 14,MaintenanceType starter record 14,1,-1,1,2026-08-24T00:00:00.000
+15,MT000015,Meridian MaintenanceType 15,MaintenanceType starter record 15,0,-1,1,2026-08-24T00:00:00.000
+16,MT000016,Titan MaintenanceType 16,MaintenanceType starter record 16,1,-1,1,2026-08-24T00:00:00.000

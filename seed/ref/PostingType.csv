@@ -1,0 +1,18 @@
+PostingTypeKey,PostingTypeCode,PostingTypeName,PostingTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,PT000001,Evergreen PostingType 1,PostingType starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,PT000002,Beacon PostingType 2,PostingType starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,PT000003,Vertex PostingType 3,PostingType starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,PT000004,Riverton PostingType 4,PostingType starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,PT000005,Evergreen PostingType 5,PostingType starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,PT000006,Vertex PostingType 6,PostingType starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,PT000007,Junction PostingType 7,PostingType starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,PT000008,Vertex PostingType 8,PostingType starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,PT000009,Ion PostingType 9,PostingType starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,PT000010,Keystone PostingType 10,PostingType starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,PT000011,Beacon PostingType 11,PostingType starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,PT000012,Atlas PostingType 12,PostingType starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,PT000013,Granite PostingType 13,PostingType starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,PT000014,Cedar PostingType 14,PostingType starter record 14,1,-1,1,2026-08-24T00:00:00.000
+15,PT000015,Keystone PostingType 15,PostingType starter record 15,0,-1,1,2026-08-24T00:00:00.000
+16,PT000016,Zenith PostingType 16,PostingType starter record 16,1,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,16 @@
+EnergyTariffChargeTypeKey,TariffChargeTypeCode,TariffChargeTypeName,IsDemandCharge,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,ETCT000001,Pioneer EnergyTariffChargeType 1,1,-1,1,2026-08-24T00:00:00.000
+2,ETCT000002,Granite EnergyTariffChargeType 2,1,-1,1,2026-08-24T00:00:00.000
+3,ETCT000003,Zenith EnergyTariffChargeType 3,1,-1,1,2026-08-24T00:00:00.000
+4,ETCT000004,Riverton EnergyTariffChargeType 4,1,-1,1,2026-08-24T00:00:00.000
+5,ETCT000005,Atlas EnergyTariffChargeType 5,0,-1,1,2026-08-24T00:00:00.000
+6,ETCT000006,Pioneer EnergyTariffChargeType 6,1,-1,1,2026-08-24T00:00:00.000
+7,ETCT000007,Willow EnergyTariffChargeType 7,1,-1,1,2026-08-24T00:00:00.000
+8,ETCT000008,Titan EnergyTariffChargeType 8,1,-1,1,2026-08-24T00:00:00.000
+9,ETCT000009,Granite EnergyTariffChargeType 9,1,-1,1,2026-08-24T00:00:00.000
+10,ETCT000010,Harbor EnergyTariffChargeType 10,0,-1,1,2026-08-24T00:00:00.000
+11,ETCT000011,Harbor EnergyTariffChargeType 11,1,-1,1,2026-08-24T00:00:00.000
+12,ETCT000012,Pioneer EnergyTariffChargeType 12,1,-1,1,2026-08-24T00:00:00.000
+13,ETCT000013,Northstar EnergyTariffChargeType 13,1,-1,1,2026-08-24T00:00:00.000
+14,ETCT000014,Vertex EnergyTariffChargeType 14,1,-1,1,2026-08-24T00:00:00.000

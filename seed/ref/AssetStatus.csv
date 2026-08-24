@@ -1,0 +1,18 @@
+AssetStatusKey,StatusCode,AssetStatusGroupKey,AssetStatusName,AssetStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,AS000001,5,Junction AssetStatus 1,AssetStatus starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,AS000002,5,Ion AssetStatus 2,AssetStatus starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,AS000003,1,Harbor AssetStatus 3,AssetStatus starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,AS000004,3,Quartz AssetStatus 4,AssetStatus starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,AS000005,7,Beacon AssetStatus 5,AssetStatus starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,AS000006,1,Junction AssetStatus 6,AssetStatus starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,AS000007,2,Summit AssetStatus 7,AssetStatus starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,AS000008,4,Riverton AssetStatus 8,AssetStatus starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,AS000009,1,Harbor AssetStatus 9,AssetStatus starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,AS000010,5,Willow AssetStatus 10,AssetStatus starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,AS000011,1,Evergreen AssetStatus 11,AssetStatus starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,AS000012,4,Forge AssetStatus 12,AssetStatus starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,AS000013,6,Keystone AssetStatus 13,AssetStatus starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,AS000014,2,Titan AssetStatus 14,AssetStatus starter record 14,1,1,1,2026-08-24T00:00:00.000
+15,AS000015,7,Granite AssetStatus 15,AssetStatus starter record 15,0,1,1,2026-08-24T00:00:00.000
+16,AS000016,1,Atlas AssetStatus 16,AssetStatus starter record 16,1,1,1,2026-08-24T00:00:00.000

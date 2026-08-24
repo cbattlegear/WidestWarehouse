@@ -1,0 +1,14 @@
+MachineCapacityFamilyKey,MachineCapacityFamilyCode,MachineCapacityFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MCF000001,Northstar MachineCapacityFamily 1,1,1,2026-08-24T00:00:00.000
+2,MCF000002,Granite MachineCapacityFamily 2,1,1,2026-08-24T00:00:00.000
+3,MCF000003,Ion MachineCapacityFamily 3,1,1,2026-08-24T00:00:00.000
+4,MCF000004,Ion MachineCapacityFamily 4,1,1,2026-08-24T00:00:00.000
+5,MCF000005,Zenith MachineCapacityFamily 5,1,1,2026-08-24T00:00:00.000
+6,MCF000006,Keystone MachineCapacityFamily 6,1,1,2026-08-24T00:00:00.000
+7,MCF000007,Delta MachineCapacityFamily 7,1,1,2026-08-24T00:00:00.000
+8,MCF000008,Junction MachineCapacityFamily 8,1,1,2026-08-24T00:00:00.000
+9,MCF000009,Riverton MachineCapacityFamily 9,1,1,2026-08-24T00:00:00.000
+10,MCF000010,Unity MachineCapacityFamily 10,1,1,2026-08-24T00:00:00.000
+11,MCF000011,Keystone MachineCapacityFamily 11,1,1,2026-08-24T00:00:00.000
+12,MCF000012,Quartz MachineCapacityFamily 12,1,1,2026-08-24T00:00:00.000

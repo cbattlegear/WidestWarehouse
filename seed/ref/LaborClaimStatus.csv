@@ -1,0 +1,9 @@
+LaborClaimStatusKey,LaborClaimStatusCode,ApprovalStatusKey,LaborClaimStatusName,IsFinalStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,LCS000001,2,Evergreen LaborClaimStatus 1,1,1,1,2026-08-24T00:00:00.000
+2,LCS000002,3,Liberty LaborClaimStatus 2,1,1,1,2026-08-24T00:00:00.000
+3,LCS000003,2,Northstar LaborClaimStatus 3,1,1,1,2026-08-24T00:00:00.000
+4,LCS000004,2,Junction LaborClaimStatus 4,1,1,1,2026-08-24T00:00:00.000
+5,LCS000005,4,Vertex LaborClaimStatus 5,0,1,1,2026-08-24T00:00:00.000
+6,LCS000006,4,Evergreen LaborClaimStatus 6,1,1,1,2026-08-24T00:00:00.000
+7,LCS000007,5,Liberty LaborClaimStatus 7,1,1,1,2026-08-24T00:00:00.000

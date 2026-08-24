@@ -1,0 +1,12 @@
+SampleDispositionKey,DispositionCode,SampleDispositionName,SampleDispositionDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SD000001,Liberty SampleDisposition 1,SampleDisposition starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,SD000002,Vertex SampleDisposition 2,SampleDisposition starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,SD000003,Willow SampleDisposition 3,SampleDisposition starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,SD000004,Forge SampleDisposition 4,SampleDisposition starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,SD000005,Meridian SampleDisposition 5,SampleDisposition starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,SD000006,Delta SampleDisposition 6,SampleDisposition starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,SD000007,Forge SampleDisposition 7,SampleDisposition starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,SD000008,Junction SampleDisposition 8,SampleDisposition starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,SD000009,Unity SampleDisposition 9,SampleDisposition starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,SD000010,Orion SampleDisposition 10,SampleDisposition starter record 10,0,-1,1,2026-08-24T00:00:00.000

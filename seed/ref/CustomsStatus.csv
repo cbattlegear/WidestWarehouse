@@ -1,0 +1,10 @@
+CustomsStatusKey,StatusCode,CustomsStatusName,CustomsStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,CS000001,Liberty CustomsStatus 1,CustomsStatus starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,CS000002,Meridian CustomsStatus 2,CustomsStatus starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,CS000003,Summit CustomsStatus 3,CustomsStatus starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,CS000004,Evergreen CustomsStatus 4,CustomsStatus starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,CS000005,Northstar CustomsStatus 5,CustomsStatus starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,CS000006,Cedar CustomsStatus 6,CustomsStatus starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,CS000007,Northstar CustomsStatus 7,CustomsStatus starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,CS000008,Cedar CustomsStatus 8,CustomsStatus starter record 8,1,-1,1,2026-08-24T00:00:00.000

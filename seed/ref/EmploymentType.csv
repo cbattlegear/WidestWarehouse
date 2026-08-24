@@ -1,0 +1,10 @@
+EmploymentTypeKey,EmploymentTypeCode,EmploymentTypeName,EmploymentTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,ET000001,Unity EmploymentType 1,EmploymentType starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,ET000002,Unity EmploymentType 2,EmploymentType starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,ET000003,Riverton EmploymentType 3,EmploymentType starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,ET000004,Granite EmploymentType 4,EmploymentType starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,ET000005,Cedar EmploymentType 5,EmploymentType starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,ET000006,Vertex EmploymentType 6,EmploymentType starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,ET000007,Delta EmploymentType 7,EmploymentType starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,ET000008,Quartz EmploymentType 8,EmploymentType starter record 8,1,-1,1,2026-08-24T00:00:00.000

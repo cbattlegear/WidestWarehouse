@@ -1,0 +1,14 @@
+OperationStatusKey,StatusCode,OperationStatusGroupKey,OperationStatusName,OperationStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,OS000001,3,Vertex OperationStatus 1,OperationStatus starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,OS000002,5,Forge OperationStatus 2,OperationStatus starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,OS000003,1,Keystone OperationStatus 3,OperationStatus starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,OS000004,6,Forge OperationStatus 4,OperationStatus starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,OS000005,4,Keystone OperationStatus 5,OperationStatus starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,OS000006,3,Pioneer OperationStatus 6,OperationStatus starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,OS000007,3,Cedar OperationStatus 7,OperationStatus starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,OS000008,5,Atlas OperationStatus 8,OperationStatus starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,OS000009,5,Northstar OperationStatus 9,OperationStatus starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,OS000010,6,Pioneer OperationStatus 10,OperationStatus starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,OS000011,5,Beacon OperationStatus 11,OperationStatus starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,OS000012,3,Delta OperationStatus 12,OperationStatus starter record 12,1,1,1,2026-08-24T00:00:00.000

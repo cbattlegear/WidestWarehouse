@@ -1,0 +1,14 @@
+SafetyInjuryClassificationKey,InjuryClassificationCode,SeverityKey,InjuryClassificationName,IsRecordable,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SIC000001,5,Liberty SafetyInjuryClassification 1,1,1,1,2026-08-24T00:00:00.000
+2,SIC000002,2,Junction SafetyInjuryClassification 2,1,1,1,2026-08-24T00:00:00.000
+3,SIC000003,3,Cedar SafetyInjuryClassification 3,1,1,1,2026-08-24T00:00:00.000
+4,SIC000004,2,Northstar SafetyInjuryClassification 4,1,1,1,2026-08-24T00:00:00.000
+5,SIC000005,1,Harbor SafetyInjuryClassification 5,0,1,1,2026-08-24T00:00:00.000
+6,SIC000006,1,Vertex SafetyInjuryClassification 6,1,1,1,2026-08-24T00:00:00.000
+7,SIC000007,3,Liberty SafetyInjuryClassification 7,1,1,1,2026-08-24T00:00:00.000
+8,SIC000008,4,Quartz SafetyInjuryClassification 8,1,1,1,2026-08-24T00:00:00.000
+9,SIC000009,4,Atlas SafetyInjuryClassification 9,1,1,1,2026-08-24T00:00:00.000
+10,SIC000010,5,Willow SafetyInjuryClassification 10,0,1,1,2026-08-24T00:00:00.000
+11,SIC000011,5,Evergreen SafetyInjuryClassification 11,1,1,1,2026-08-24T00:00:00.000
+12,SIC000012,5,Quartz SafetyInjuryClassification 12,1,1,1,2026-08-24T00:00:00.000

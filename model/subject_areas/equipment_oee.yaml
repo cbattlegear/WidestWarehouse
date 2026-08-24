@@ -1,0 +1,523 @@
+subject_area: equipment_oee
+reference:
+- name: MachineStateType
+  description: MachineStateType lookup values.
+  business_key:
+    name: StateTypeCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: StateTypeName
+    type: "nvarchar(120)"
+    nullable: false
+- name: MachineLossCategory
+  description: MachineLossCategory lookup values.
+  business_key:
+    name: LossCategoryCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: LossCategoryName
+    type: "nvarchar(120)"
+    nullable: false
+- name: MachineSensorType
+  description: MachineSensorType lookup values.
+  business_key:
+    name: SensorTypeCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: SensorTypeName
+    type: "nvarchar(120)"
+    nullable: false
+- name: OeeCalculationMethod
+  description: OeeCalculationMethod lookup values.
+  business_key:
+    name: CalculationMethodCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: CalculationMethodName
+    type: "nvarchar(120)"
+    nullable: false
+- name: MachineUtilityType
+  description: MachineUtilityType lookup values.
+  business_key:
+    name: UtilityTypeCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: UtilityTypeName
+    type: "nvarchar(120)"
+    nullable: false
+hierarchies:
+- name: MachineCellTaxonomy
+  schema: dim
+  description: MachineCellTaxonomy subject hierarchy.
+  levels:
+  - name: MachineShop
+    description: MachineShop level for machinecelltaxonomy subject hierarchy.
+    row_count: 20
+  - name: MachineArea
+    description: MachineArea level for machinecelltaxonomy subject hierarchy.
+    row_count: 80
+  - name: MachineCell
+    description: MachineCell level for machinecelltaxonomy subject hierarchy.
+    row_count: 300
+  - name: MachineStation
+    description: MachineStation level for machinecelltaxonomy subject hierarchy.
+    row_count: 1200
+- name: MachineStateTaxonomy
+  schema: dim
+  description: MachineStateTaxonomy subject hierarchy.
+  levels:
+  - name: MachineStateFamily
+    description: MachineStateFamily level for machinestatetaxonomy subject hierarchy.
+    row_count: 8
+  - name: MachineStateClass
+    description: MachineStateClass level for machinestatetaxonomy subject hierarchy.
+    row_count: 36
+  - name: MachineStateReasonGroup
+    description: MachineStateReasonGroup level for machinestatetaxonomy subject hierarchy.
+    row_count: 160
+  - name: MachineStateReason
+    description: MachineStateReason level for machinestatetaxonomy subject hierarchy.
+    row_count: 900
+- name: OeeLossTaxonomy
+  schema: dim
+  description: OeeLossTaxonomy subject hierarchy.
+  levels:
+  - name: OeeLossPillar
+    description: OeeLossPillar level for oeelosstaxonomy subject hierarchy.
+    row_count: 6
+  - name: OeeLossClass
+    description: OeeLossClass level for oeelosstaxonomy subject hierarchy.
+    row_count: 40
+  - name: OeeLossReasonGroup
+    description: OeeLossReasonGroup level for oeelosstaxonomy subject hierarchy.
+    row_count: 180
+  - name: OeeLossReason
+    description: OeeLossReason level for oeelosstaxonomy subject hierarchy.
+    row_count: 1000
+- name: MachineCapacityTaxonomy
+  schema: dim
+  description: MachineCapacityTaxonomy subject hierarchy.
+  levels:
+  - name: MachineCapacityFamily
+    description: MachineCapacityFamily level for machinecapacitytaxonomy subject hierarchy.
+    row_count: 12
+  - name: MachineCapacityClass
+    description: MachineCapacityClass level for machinecapacitytaxonomy subject hierarchy.
+    row_count: 60
+  - name: MachineCapacityBand
+    description: MachineCapacityBand level for machinecapacitytaxonomy subject hierarchy.
+    row_count: 220
+  - name: MachineCapacityRating
+    description: MachineCapacityRating level for machinecapacitytaxonomy subject hierarchy.
+    row_count: 700
+dimensions:
+- name: Machine
+  description: Physical manufacturing machine for OEE measurement.
+  row_count: 85000
+  business_key:
+    name: MachineNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: MachineName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Asset
+  - name: WorkCenter
+  - name: Plant
+  - name: MachineStation
+  - name: MachineCapacityRating
+  ref_parents:
+  - name: RecordStatus
+  scd: type2
+- name: MachineState
+  description: OEE machine state definition.
+  row_count: 2500
+  business_key:
+    name: MachineStateCode
+    type: "nvarchar(40)"
+  columns:
+  - name: MachineStateName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: MachineStateReason
+  ref_parents:
+  - name: MachineStateType
+- name: MachineSensorTag
+  description: Sensor tag installed on a machine.
+  row_count: 350000
+  business_key:
+    name: SensorTagName
+    type: "nvarchar(40)"
+  columns:
+  - name: MachineSensorTagName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Machine
+  - name: MachineStation
+  ref_parents:
+  - name: MachineSensorType
+  - name: UnitOfMeasure
+  scd: type2
+- name: MachineChangeover
+  description: Changeover setup definition between products.
+  row_count: 120000
+  business_key:
+    name: ChangeoverCode
+    type: "nvarchar(40)"
+  columns:
+  - name: MachineChangeoverName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Machine
+  - name: Product
+    role: From
+    nullable: true
+  - name: Product
+    role: To
+    nullable: true
+  ref_parents:
+  - name: OeeCalculationMethod
+  scd: type2
+- name: MachineUtilityMeter
+  description: Utility meter associated with machines.
+  row_count: 90000
+  business_key:
+    name: UtilityMeterNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: MachineUtilityMeterName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Machine
+  - name: Plant
+  ref_parents:
+  - name: MachineUtilityType
+  - name: UnitOfMeasure
+  scd: type2
+- name: OeeTargetProfile
+  description: Target OEE profile for machines and products.
+  row_count: 75000
+  business_key:
+    name: OeeTargetProfileCode
+    type: "nvarchar(40)"
+  columns:
+  - name: OeeTargetProfileName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: MachineCapacityRating
+  - name: Product
+    nullable: true
+  - name: Plant
+  ref_parents:
+  - name: OeeCalculationMethod
+  scd: type2
+bridges:
+- name: MachineSensorAssignment
+  description: Associates machines with sensor tags.
+  row_count: 350000
+  members:
+  - name: Machine
+  - name: MachineSensorTag
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+- name: MachineUtilityAssignment
+  description: Associates utility meters with machines.
+  row_count: 180000
+  members:
+  - name: Machine
+  - name: MachineUtilityMeter
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+  ref_parents:
+  - name: MachineUtilityType
+- name: MachineStateLossMapping
+  description: Maps machine states to OEE loss reasons.
+  row_count: 120000
+  members:
+  - name: MachineState
+  - name: OeeLossReason
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+  ref_parents:
+  - name: MachineLossCategory
+facts:
+- name: MachineStateEvent
+  description: Machine state transition events.
+  type: transaction
+  grain: One row per machine state interval.
+  row_count: 4500000
+  columnstore: true
+  date_roles:
+  - Start
+  - End
+  time_roles:
+  - Start
+  - End
+  dimensions:
+  - name: Machine
+  - name: MachineState
+  - name: WorkCenter
+  - name: Plant
+  - name: ProductionShift
+    nullable: true
+  ref_parents:
+  - name: MachineStateType
+  degenerate:
+  - name: StateEventNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: OeeLossEvent
+  description: "Availability, performance, and quality loss events."
+  type: transaction
+  grain: One row per OEE loss event.
+  row_count: 2000000
+  columnstore: true
+  date_roles:
+  - Event
+  time_roles:
+  - Event
+  dimensions:
+  - name: Machine
+  - name: OeeLossReason
+  - name: Product
+    nullable: true
+  - name: WorkCenter
+  - name: Plant
+  ref_parents:
+  - name: MachineLossCategory
+  - name: Severity
+  degenerate:
+  - name: LossEventNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: OeePeriodicSnapshot
+  description: Periodic OEE KPI snapshot by machine and product.
+  type: periodic_snapshot
+  grain: "One row per machine, product, shift, and date."
+  row_count: 2600000
+  columnstore: true
+  date_roles:
+  - Snapshot
+  dimensions:
+  - name: Machine
+  - name: OeeTargetProfile
+    nullable: true
+  - name: Product
+    nullable: true
+  - name: ProductionShift
+    nullable: true
+  - name: WorkCenter
+  - name: Plant
+  ref_parents:
+  - name: OeeCalculationMethod
+  - name: UnitOfMeasure
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: MachineSensorReading
+  description: Machine sensor measurements collected over time.
+  type: transaction
+  grain: One row per sensor tag reading timestamp.
+  row_count: 15000000
+  columnstore: true
+  date_roles:
+  - Reading
+  time_roles:
+  - Reading
+  dimensions:
+  - name: Machine
+  - name: MachineSensorTag
+  - name: WorkCenter
+  - name: Plant
+  ref_parents:
+  - name: MachineSensorType
+  - name: UnitOfMeasure
+  degenerate:
+  - name: ReadingSequenceNumber
+    type: bigint
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: MachineChangeoverEvent
+  description: Machine changeover timing and loss tracking.
+  type: transaction
+  grain: One row per machine changeover event.
+  row_count: 650000
+  columnstore: true
+  date_roles:
+  - Start
+  - End
+  time_roles:
+  - Start
+  - End
+  dimensions:
+  - name: Machine
+  - name: MachineChangeover
+  - name: Product
+    role: From
+    nullable: true
+  - name: Product
+    role: To
+    nullable: true
+  - name: WorkCenter
+  - name: Plant
+  - name: Employee
+    role: Lead
+    nullable: true
+  ref_parents:
+  - name: OeeCalculationMethod
+  degenerate:
+  - name: ChangeoverEventNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true

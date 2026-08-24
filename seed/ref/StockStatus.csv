@@ -1,0 +1,20 @@
+StockStatusKey,StatusCode,StockStatusGroupKey,StockStatusName,StockStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SS000001,3,Ion StockStatus 1,StockStatus starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,SS000002,7,Northstar StockStatus 2,StockStatus starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,SS000003,3,Pioneer StockStatus 3,StockStatus starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,SS000004,5,Titan StockStatus 4,StockStatus starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,SS000005,5,Evergreen StockStatus 5,StockStatus starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,SS000006,4,Meridian StockStatus 6,StockStatus starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,SS000007,3,Atlas StockStatus 7,StockStatus starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,SS000008,6,Vertex StockStatus 8,StockStatus starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,SS000009,5,Summit StockStatus 9,StockStatus starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,SS000010,6,Delta StockStatus 10,StockStatus starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,SS000011,1,Unity StockStatus 11,StockStatus starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,SS000012,4,Orion StockStatus 12,StockStatus starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,SS000013,6,Riverton StockStatus 13,StockStatus starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,SS000014,6,Willow StockStatus 14,StockStatus starter record 14,1,1,1,2026-08-24T00:00:00.000
+15,SS000015,8,Riverton StockStatus 15,StockStatus starter record 15,0,1,1,2026-08-24T00:00:00.000
+16,SS000016,7,Granite StockStatus 16,StockStatus starter record 16,1,1,1,2026-08-24T00:00:00.000
+17,SS000017,7,Beacon StockStatus 17,StockStatus starter record 17,1,1,1,2026-08-24T00:00:00.000
+18,SS000018,1,Unity StockStatus 18,StockStatus starter record 18,1,1,1,2026-08-24T00:00:00.000

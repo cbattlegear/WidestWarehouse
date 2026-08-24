@@ -1,0 +1,16 @@
+PurchaseOrderStatusKey,StatusCode,PurchaseOrderStatusGroupKey,PurchaseOrderStatusName,PurchaseOrderStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,POS000001,7,Forge PurchaseOrderStatus 1,PurchaseOrderStatus starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,POS000002,4,Meridian PurchaseOrderStatus 2,PurchaseOrderStatus starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,POS000003,7,Zenith PurchaseOrderStatus 3,PurchaseOrderStatus starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,POS000004,4,Quartz PurchaseOrderStatus 4,PurchaseOrderStatus starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,POS000005,5,Liberty PurchaseOrderStatus 5,PurchaseOrderStatus starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,POS000006,3,Ion PurchaseOrderStatus 6,PurchaseOrderStatus starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,POS000007,1,Unity PurchaseOrderStatus 7,PurchaseOrderStatus starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,POS000008,4,Titan PurchaseOrderStatus 8,PurchaseOrderStatus starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,POS000009,4,Cedar PurchaseOrderStatus 9,PurchaseOrderStatus starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,POS000010,4,Evergreen PurchaseOrderStatus 10,PurchaseOrderStatus starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,POS000011,6,Delta PurchaseOrderStatus 11,PurchaseOrderStatus starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,POS000012,7,Summit PurchaseOrderStatus 12,PurchaseOrderStatus starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,POS000013,5,Keystone PurchaseOrderStatus 13,PurchaseOrderStatus starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,POS000014,6,Forge PurchaseOrderStatus 14,PurchaseOrderStatus starter record 14,1,1,1,2026-08-24T00:00:00.000

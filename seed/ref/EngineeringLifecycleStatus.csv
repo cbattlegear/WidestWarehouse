@@ -1,0 +1,12 @@
+EngineeringLifecycleStatusKey,LifecycleStatusCode,LifecycleStatusName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,ELS000001,Orion EngineeringLifecycleStatus 1,-1,1,2026-08-24T00:00:00.000
+2,ELS000002,Evergreen EngineeringLifecycleStatus 2,-1,1,2026-08-24T00:00:00.000
+3,ELS000003,Keystone EngineeringLifecycleStatus 3,-1,1,2026-08-24T00:00:00.000
+4,ELS000004,Delta EngineeringLifecycleStatus 4,-1,1,2026-08-24T00:00:00.000
+5,ELS000005,Forge EngineeringLifecycleStatus 5,-1,1,2026-08-24T00:00:00.000
+6,ELS000006,Summit EngineeringLifecycleStatus 6,-1,1,2026-08-24T00:00:00.000
+7,ELS000007,Titan EngineeringLifecycleStatus 7,-1,1,2026-08-24T00:00:00.000
+8,ELS000008,Titan EngineeringLifecycleStatus 8,-1,1,2026-08-24T00:00:00.000
+9,ELS000009,Northstar EngineeringLifecycleStatus 9,-1,1,2026-08-24T00:00:00.000
+10,ELS000010,Zenith EngineeringLifecycleStatus 10,-1,1,2026-08-24T00:00:00.000

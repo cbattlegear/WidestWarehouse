@@ -1,0 +1,14 @@
+WarrantyDispositionKey,DispositionCode,WarrantyDispositionName,WarrantyDispositionDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,WD000001,Summit WarrantyDisposition 1,WarrantyDisposition starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,WD000002,Northstar WarrantyDisposition 2,WarrantyDisposition starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,WD000003,Harbor WarrantyDisposition 3,WarrantyDisposition starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,WD000004,Ion WarrantyDisposition 4,WarrantyDisposition starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,WD000005,Orion WarrantyDisposition 5,WarrantyDisposition starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,WD000006,Willow WarrantyDisposition 6,WarrantyDisposition starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,WD000007,Granite WarrantyDisposition 7,WarrantyDisposition starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,WD000008,Delta WarrantyDisposition 8,WarrantyDisposition starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,WD000009,Keystone WarrantyDisposition 9,WarrantyDisposition starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,WD000010,Titan WarrantyDisposition 10,WarrantyDisposition starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,WD000011,Beacon WarrantyDisposition 11,WarrantyDisposition starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,WD000012,Orion WarrantyDisposition 12,WarrantyDisposition starter record 12,1,1,1,2026-08-24T00:00:00.000

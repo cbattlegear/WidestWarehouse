@@ -1,0 +1,7 @@
+CurrencyKey,CurrencyCode,CurrencyRegionKey,CurrencyName,MinorUnitCount,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,0,0,-1,0,1900-01-01T00:00:00.000
+1,USD,1,US Dollar,2,1,1,1,2026-08-24T00:00:00.000
+2,EUR,1,Euro,2,1,1,1,2026-08-24T00:00:00.000
+3,GBP,2,Pound Sterling,2,1,1,1,2026-08-24T00:00:00.000
+4,JPY,1,Japanese Yen,0,1,1,1,2026-08-24T00:00:00.000
+5,CAD,3,Canadian Dollar,2,1,1,1,2026-08-24T00:00:00.000

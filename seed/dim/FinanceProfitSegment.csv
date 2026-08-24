@@ -1,0 +1,22 @@
+FinanceProfitSegmentKey,FinanceProfitSegmentCode,FinanceProfitSegmentName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,FPS000001,Pioneer FinanceProfitSegment 1,1,1,2026-08-24T00:00:00.000
+2,FPS000002,Evergreen FinanceProfitSegment 2,1,1,2026-08-24T00:00:00.000
+3,FPS000003,Orion FinanceProfitSegment 3,1,1,2026-08-24T00:00:00.000
+4,FPS000004,Zenith FinanceProfitSegment 4,1,1,2026-08-24T00:00:00.000
+5,FPS000005,Riverton FinanceProfitSegment 5,1,1,2026-08-24T00:00:00.000
+6,FPS000006,Keystone FinanceProfitSegment 6,1,1,2026-08-24T00:00:00.000
+7,FPS000007,Northstar FinanceProfitSegment 7,1,1,2026-08-24T00:00:00.000
+8,FPS000008,Granite FinanceProfitSegment 8,1,1,2026-08-24T00:00:00.000
+9,FPS000009,Vertex FinanceProfitSegment 9,1,1,2026-08-24T00:00:00.000
+10,FPS000010,Meridian FinanceProfitSegment 10,1,1,2026-08-24T00:00:00.000
+11,FPS000011,Zenith FinanceProfitSegment 11,1,1,2026-08-24T00:00:00.000
+12,FPS000012,Vertex FinanceProfitSegment 12,1,1,2026-08-24T00:00:00.000
+13,FPS000013,Granite FinanceProfitSegment 13,1,1,2026-08-24T00:00:00.000
+14,FPS000014,Pioneer FinanceProfitSegment 14,1,1,2026-08-24T00:00:00.000
+15,FPS000015,Riverton FinanceProfitSegment 15,1,1,2026-08-24T00:00:00.000
+16,FPS000016,Granite FinanceProfitSegment 16,1,1,2026-08-24T00:00:00.000
+17,FPS000017,Liberty FinanceProfitSegment 17,1,1,2026-08-24T00:00:00.000
+18,FPS000018,Delta FinanceProfitSegment 18,1,1,2026-08-24T00:00:00.000
+19,FPS000019,Unity FinanceProfitSegment 19,1,1,2026-08-24T00:00:00.000
+20,FPS000020,Ion FinanceProfitSegment 20,1,1,2026-08-24T00:00:00.000

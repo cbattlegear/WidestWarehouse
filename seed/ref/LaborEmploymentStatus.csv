@@ -1,0 +1,10 @@
+LaborEmploymentStatusKey,EmploymentStatusCode,EmploymentStatusName,IsActiveStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,LES000001,Forge LaborEmploymentStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,LES000002,Zenith LaborEmploymentStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,LES000003,Pioneer LaborEmploymentStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,LES000004,Willow LaborEmploymentStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,LES000005,Riverton LaborEmploymentStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,LES000006,Ion LaborEmploymentStatus 6,1,-1,1,2026-08-24T00:00:00.000
+7,LES000007,Northstar LaborEmploymentStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,LES000008,Atlas LaborEmploymentStatus 8,1,-1,1,2026-08-24T00:00:00.000

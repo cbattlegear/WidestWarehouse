@@ -1,0 +1,37 @@
+ScrapReasonKey,ReasonCode,ScrapReasonGroupKey,ScrapReasonName,ScrapReasonDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SR000001,5,Atlas ScrapReason 1,ScrapReason starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,SR000002,6,Willow ScrapReason 2,ScrapReason starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,SR000003,1,Beacon ScrapReason 3,ScrapReason starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,SR000004,3,Titan ScrapReason 4,ScrapReason starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,SR000005,6,Riverton ScrapReason 5,ScrapReason starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,SR000006,8,Vertex ScrapReason 6,ScrapReason starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,SR000007,1,Zenith ScrapReason 7,ScrapReason starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,SR000008,3,Atlas ScrapReason 8,ScrapReason starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,SR000009,7,Willow ScrapReason 9,ScrapReason starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,SR000010,6,Orion ScrapReason 10,ScrapReason starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,SR000011,3,Atlas ScrapReason 11,ScrapReason starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,SR000012,8,Riverton ScrapReason 12,ScrapReason starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,SR000013,5,Orion ScrapReason 13,ScrapReason starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,SR000014,1,Cedar ScrapReason 14,ScrapReason starter record 14,1,1,1,2026-08-24T00:00:00.000
+15,SR000015,5,Ion ScrapReason 15,ScrapReason starter record 15,0,1,1,2026-08-24T00:00:00.000
+16,SR000016,6,Delta ScrapReason 16,ScrapReason starter record 16,1,1,1,2026-08-24T00:00:00.000
+17,SR000017,1,Willow ScrapReason 17,ScrapReason starter record 17,1,1,1,2026-08-24T00:00:00.000
+18,SR000018,4,Riverton ScrapReason 18,ScrapReason starter record 18,1,1,1,2026-08-24T00:00:00.000
+19,SR000019,3,Cedar ScrapReason 19,ScrapReason starter record 19,1,1,1,2026-08-24T00:00:00.000
+20,SR000020,7,Vertex ScrapReason 20,ScrapReason starter record 20,0,1,1,2026-08-24T00:00:00.000
+21,SR000021,1,Meridian ScrapReason 21,ScrapReason starter record 21,1,1,1,2026-08-24T00:00:00.000
+22,SR000022,3,Granite ScrapReason 22,ScrapReason starter record 22,1,1,1,2026-08-24T00:00:00.000
+23,SR000023,6,Pioneer ScrapReason 23,ScrapReason starter record 23,1,1,1,2026-08-24T00:00:00.000
+24,SR000024,6,Zenith ScrapReason 24,ScrapReason starter record 24,1,1,1,2026-08-24T00:00:00.000
+25,SR000025,5,Junction ScrapReason 25,ScrapReason starter record 25,0,1,1,2026-08-24T00:00:00.000
+26,SR000026,4,Vertex ScrapReason 26,ScrapReason starter record 26,1,1,1,2026-08-24T00:00:00.000
+27,SR000027,7,Liberty ScrapReason 27,ScrapReason starter record 27,1,1,1,2026-08-24T00:00:00.000
+28,SR000028,1,Beacon ScrapReason 28,ScrapReason starter record 28,1,1,1,2026-08-24T00:00:00.000
+29,SR000029,3,Junction ScrapReason 29,ScrapReason starter record 29,1,1,1,2026-08-24T00:00:00.000
+30,SR000030,6,Atlas ScrapReason 30,ScrapReason starter record 30,0,1,1,2026-08-24T00:00:00.000
+31,SR000031,1,Riverton ScrapReason 31,ScrapReason starter record 31,1,1,1,2026-08-24T00:00:00.000
+32,SR000032,1,Beacon ScrapReason 32,ScrapReason starter record 32,1,1,1,2026-08-24T00:00:00.000
+33,SR000033,3,Beacon ScrapReason 33,ScrapReason starter record 33,1,1,1,2026-08-24T00:00:00.000
+34,SR000034,1,Forge ScrapReason 34,ScrapReason starter record 34,1,1,1,2026-08-24T00:00:00.000
+35,SR000035,4,Pioneer ScrapReason 35,ScrapReason starter record 35,0,1,1,2026-08-24T00:00:00.000

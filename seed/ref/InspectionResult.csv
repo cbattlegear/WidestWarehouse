@@ -1,0 +1,6 @@
+InspectionResultKey,ResultCode,InspectionResultName,InspectionResultDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,PASS,Pass,Accepted without defect,1,-1,1,2026-08-24T00:00:00.000
+2,FAIL,Fail,Rejected by criteria,1,-1,1,2026-08-24T00:00:00.000
+3,CONDITIONAL,Conditional pass,Accepted with concession,1,-1,1,2026-08-24T00:00:00.000
+4,REWORK,Rework required,Requires rework,1,-1,1,2026-08-24T00:00:00.000

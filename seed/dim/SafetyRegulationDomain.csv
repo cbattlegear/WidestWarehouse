@@ -1,0 +1,12 @@
+SafetyRegulationDomainKey,SafetyRegulationDomainCode,SafetyRegulationDomainName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,SRD000001,Delta SafetyRegulationDomain 1,1,1,2026-08-24T00:00:00.000
+2,SRD000002,Summit SafetyRegulationDomain 2,1,1,2026-08-24T00:00:00.000
+3,SRD000003,Delta SafetyRegulationDomain 3,1,1,2026-08-24T00:00:00.000
+4,SRD000004,Riverton SafetyRegulationDomain 4,1,1,2026-08-24T00:00:00.000
+5,SRD000005,Liberty SafetyRegulationDomain 5,1,1,2026-08-24T00:00:00.000
+6,SRD000006,Unity SafetyRegulationDomain 6,1,1,2026-08-24T00:00:00.000
+7,SRD000007,Atlas SafetyRegulationDomain 7,1,1,2026-08-24T00:00:00.000
+8,SRD000008,Summit SafetyRegulationDomain 8,1,1,2026-08-24T00:00:00.000
+9,SRD000009,Pioneer SafetyRegulationDomain 9,1,1,2026-08-24T00:00:00.000
+10,SRD000010,Summit SafetyRegulationDomain 10,1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,1 @@
+"""WidestWarehouse scheduled loader."""

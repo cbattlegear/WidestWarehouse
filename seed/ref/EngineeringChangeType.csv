@@ -1,0 +1,10 @@
+EngineeringChangeTypeKey,ChangeTypeCode,ChangeTypeName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,ECT000001,Keystone EngineeringChangeType 1,-1,1,2026-08-24T00:00:00.000
+2,ECT000002,Northstar EngineeringChangeType 2,-1,1,2026-08-24T00:00:00.000
+3,ECT000003,Atlas EngineeringChangeType 3,-1,1,2026-08-24T00:00:00.000
+4,ECT000004,Zenith EngineeringChangeType 4,-1,1,2026-08-24T00:00:00.000
+5,ECT000005,Atlas EngineeringChangeType 5,-1,1,2026-08-24T00:00:00.000
+6,ECT000006,Meridian EngineeringChangeType 6,-1,1,2026-08-24T00:00:00.000
+7,ECT000007,Beacon EngineeringChangeType 7,-1,1,2026-08-24T00:00:00.000
+8,ECT000008,Junction EngineeringChangeType 8,-1,1,2026-08-24T00:00:00.000

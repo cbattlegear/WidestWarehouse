@@ -1,0 +1,14 @@
+ProductionScrapReasonKey,ScrapReasonCode,ScrapReasonName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,PSR000001,Atlas ProductionScrapReason 1,-1,1,2026-08-24T00:00:00.000
+2,PSR000002,Riverton ProductionScrapReason 2,-1,1,2026-08-24T00:00:00.000
+3,PSR000003,Titan ProductionScrapReason 3,-1,1,2026-08-24T00:00:00.000
+4,PSR000004,Meridian ProductionScrapReason 4,-1,1,2026-08-24T00:00:00.000
+5,PSR000005,Pioneer ProductionScrapReason 5,-1,1,2026-08-24T00:00:00.000
+6,PSR000006,Quartz ProductionScrapReason 6,-1,1,2026-08-24T00:00:00.000
+7,PSR000007,Atlas ProductionScrapReason 7,-1,1,2026-08-24T00:00:00.000
+8,PSR000008,Ion ProductionScrapReason 8,-1,1,2026-08-24T00:00:00.000
+9,PSR000009,Summit ProductionScrapReason 9,-1,1,2026-08-24T00:00:00.000
+10,PSR000010,Junction ProductionScrapReason 10,-1,1,2026-08-24T00:00:00.000
+11,PSR000011,Pioneer ProductionScrapReason 11,-1,1,2026-08-24T00:00:00.000
+12,PSR000012,Forge ProductionScrapReason 12,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,14 @@
+EngineeringToleranceGradeKey,ToleranceGradeCode,ToleranceGradeName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,ETG000001,Unity EngineeringToleranceGrade 1,-1,1,2026-08-24T00:00:00.000
+2,ETG000002,Granite EngineeringToleranceGrade 2,-1,1,2026-08-24T00:00:00.000
+3,ETG000003,Northstar EngineeringToleranceGrade 3,-1,1,2026-08-24T00:00:00.000
+4,ETG000004,Meridian EngineeringToleranceGrade 4,-1,1,2026-08-24T00:00:00.000
+5,ETG000005,Quartz EngineeringToleranceGrade 5,-1,1,2026-08-24T00:00:00.000
+6,ETG000006,Granite EngineeringToleranceGrade 6,-1,1,2026-08-24T00:00:00.000
+7,ETG000007,Keystone EngineeringToleranceGrade 7,-1,1,2026-08-24T00:00:00.000
+8,ETG000008,Atlas EngineeringToleranceGrade 8,-1,1,2026-08-24T00:00:00.000
+9,ETG000009,Riverton EngineeringToleranceGrade 9,-1,1,2026-08-24T00:00:00.000
+10,ETG000010,Beacon EngineeringToleranceGrade 10,-1,1,2026-08-24T00:00:00.000
+11,ETG000011,Ion EngineeringToleranceGrade 11,-1,1,2026-08-24T00:00:00.000
+12,ETG000012,Evergreen EngineeringToleranceGrade 12,-1,1,2026-08-24T00:00:00.000

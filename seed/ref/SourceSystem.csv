@@ -1,0 +1,7 @@
+SourceSystemKey,SourceSystemCode,SourceSystemName,SystemCategory,IsAuthoritative,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,0,1900-01-01T00:00:00.000
+1,ERP,Enterprise resource planning,Internal,1,1,2026-08-24T00:00:00.000
+2,MES,Manufacturing execution,Internal,1,1,2026-08-24T00:00:00.000
+3,QMS,Quality management,Internal,1,1,2026-08-24T00:00:00.000
+4,WMS,Warehouse management,Internal,1,1,2026-08-24T00:00:00.000
+5,CRM,Customer relationship,Internal,1,1,2026-08-24T00:00:00.000

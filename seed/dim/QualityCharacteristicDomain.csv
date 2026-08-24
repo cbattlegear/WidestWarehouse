@@ -1,0 +1,14 @@
+QualityCharacteristicDomainKey,QualityCharacteristicDomainCode,QualityCharacteristicDomainName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,QCD000001,Meridian QualityCharacteristicDomain 1,1,1,2026-08-24T00:00:00.000
+2,QCD000002,Northstar QualityCharacteristicDomain 2,1,1,2026-08-24T00:00:00.000
+3,QCD000003,Meridian QualityCharacteristicDomain 3,1,1,2026-08-24T00:00:00.000
+4,QCD000004,Northstar QualityCharacteristicDomain 4,1,1,2026-08-24T00:00:00.000
+5,QCD000005,Willow QualityCharacteristicDomain 5,1,1,2026-08-24T00:00:00.000
+6,QCD000006,Willow QualityCharacteristicDomain 6,1,1,2026-08-24T00:00:00.000
+7,QCD000007,Zenith QualityCharacteristicDomain 7,1,1,2026-08-24T00:00:00.000
+8,QCD000008,Harbor QualityCharacteristicDomain 8,1,1,2026-08-24T00:00:00.000
+9,QCD000009,Riverton QualityCharacteristicDomain 9,1,1,2026-08-24T00:00:00.000
+10,QCD000010,Pioneer QualityCharacteristicDomain 10,1,1,2026-08-24T00:00:00.000
+11,QCD000011,Zenith QualityCharacteristicDomain 11,1,1,2026-08-24T00:00:00.000
+12,QCD000012,Orion QualityCharacteristicDomain 12,1,1,2026-08-24T00:00:00.000

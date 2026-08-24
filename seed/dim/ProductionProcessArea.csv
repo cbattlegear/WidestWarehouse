@@ -1,0 +1,16 @@
+ProductionProcessAreaKey,ProductionProcessAreaCode,ProductionProcessAreaName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,PPA000001,Evergreen ProductionProcessArea 1,1,1,2026-08-24T00:00:00.000
+2,PPA000002,Titan ProductionProcessArea 2,1,1,2026-08-24T00:00:00.000
+3,PPA000003,Orion ProductionProcessArea 3,1,1,2026-08-24T00:00:00.000
+4,PPA000004,Orion ProductionProcessArea 4,1,1,2026-08-24T00:00:00.000
+5,PPA000005,Northstar ProductionProcessArea 5,1,1,2026-08-24T00:00:00.000
+6,PPA000006,Unity ProductionProcessArea 6,1,1,2026-08-24T00:00:00.000
+7,PPA000007,Beacon ProductionProcessArea 7,1,1,2026-08-24T00:00:00.000
+8,PPA000008,Vertex ProductionProcessArea 8,1,1,2026-08-24T00:00:00.000
+9,PPA000009,Willow ProductionProcessArea 9,1,1,2026-08-24T00:00:00.000
+10,PPA000010,Granite ProductionProcessArea 10,1,1,2026-08-24T00:00:00.000
+11,PPA000011,Evergreen ProductionProcessArea 11,1,1,2026-08-24T00:00:00.000
+12,PPA000012,Liberty ProductionProcessArea 12,1,1,2026-08-24T00:00:00.000
+13,PPA000013,Liberty ProductionProcessArea 13,1,1,2026-08-24T00:00:00.000
+14,PPA000014,Unity ProductionProcessArea 14,1,1,2026-08-24T00:00:00.000

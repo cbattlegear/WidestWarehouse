@@ -1,0 +1,309 @@
+subject_area: energy_utilities
+
+reference:
+  - name: EnergyReadingQuality
+    description: Quality and validation statuses for utility meter readings.
+    business_key: {name: ReadingQualityCode, type: "nvarchar(20)"}
+    seed_rows: 8
+    columns:
+      - {name: ReadingQualityName, type: "nvarchar(80)", nullable: false}
+      - {name: IsEstimatedReading, type: bit, nullable: false, default: "0"}
+  - name: EnergyTariffChargeType
+    description: Charge types used on tariffs and utility invoices.
+    business_key: {name: TariffChargeTypeCode, type: "nvarchar(20)"}
+    seed_rows: 14
+    columns:
+      - {name: TariffChargeTypeName, type: "nvarchar(100)", nullable: false}
+      - {name: IsDemandCharge, type: bit, nullable: false, default: "0"}
+  - name: EnergyEmissionScope
+    description: Greenhouse gas accounting scopes for emissions reporting.
+    business_key: {name: EmissionScopeCode, type: "nvarchar(20)"}
+    seed_rows: 5
+    columns:
+      - {name: EmissionScopeName, type: "nvarchar(80)", nullable: false}
+      - {name: SortSequence, type: smallint, nullable: false}
+  - name: EnergyUtilityAccountStatus
+    description: Lifecycle statuses for external and internal utility accounts.
+    business_key: {name: UtilityAccountStatusCode, type: "nvarchar(20)"}
+    seed_rows: 6
+    columns:
+      - {name: UtilityAccountStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsActiveStatus, type: bit, nullable: false, default: "1"}
+  - name: EnergyEfficiencyProjectStatus
+    description: Project lifecycle statuses for energy efficiency initiatives.
+    business_key: {name: EfficiencyProjectStatusCode, type: "nvarchar(20)"}
+    seed_rows: 8
+    columns:
+      - {name: EfficiencyProjectStatusName, type: "nvarchar(90)", nullable: false}
+      - {name: IsCompletedStatus, type: bit, nullable: false, default: "0"}
+
+hierarchies:
+  - name: EnergySourceTaxonomy
+    schema: dim
+    description: Energy source hierarchy from source down to meter point class.
+    levels:
+      - name: EnergySourceCategory
+        row_count: 18
+      - name: EnergyCarrier
+        row_count: 55
+      - name: EnergyMeterType
+        row_count: 180
+      - name: EnergyMeterPointClass
+        row_count: 520
+        columns:
+          - {name: IsIntervalMetered, type: bit, nullable: false, default: "1"}
+  - name: EnergyTariffTaxonomy
+    schema: dim
+    description: Utility tariff hierarchy from market down to rate tier.
+    levels:
+      - name: EnergyTariffMarket
+        row_count: 40
+      - name: EnergyTariffProvider
+        row_count: 300
+      - name: EnergyRateSchedule
+        row_count: 1800
+      - name: EnergyRateTier
+        row_count: 9000
+        columns:
+          - {name: TierMinimumQuantity, type: "decimal(18,4)", nullable: true}
+          - {name: TierMaximumQuantity, type: "decimal(18,4)", nullable: true}
+  - name: EnergyUtilityTaxonomy
+    schema: dim
+    description: Utility distribution hierarchy from category down to submeter zone.
+    levels:
+      - name: EnergyUtilityCategory
+        row_count: 10
+      - name: EnergyUtilitySystem
+        row_count: 160
+      - name: EnergyUtilityCircuit
+        row_count: 2400
+      - name: EnergySubmeterZone
+        row_count: 16000
+  - name: EnergyProjectTaxonomy
+    schema: dim
+    description: Energy efficiency initiative structure from portfolio to measure.
+    levels:
+      - name: EnergyProjectPortfolio
+        row_count: 18
+      - name: EnergyProjectProgram
+        row_count: 90
+      - name: EnergyProjectType
+        row_count: 420
+      - name: EnergyEfficiencyMeasure
+        row_count: 2100
+        columns:
+          - {name: ExpectedUsefulLifeYears, type: smallint, nullable: true}
+
+dimensions:
+  - name: EnergyMeterPoint
+    description: Physical or virtual metering point for energy, water, gas, or compressed air.
+    scd: type2
+    row_count: 180000
+    business_key: {name: MeterPointNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: MeterPointName, type: "nvarchar(180)", nullable: false}
+      - {name: MeterSerialNumber, type: "nvarchar(80)", nullable: true}
+      - {name: MultiplierValue, type: "decimal(18,6)", nullable: false, default: "1.000000"}
+    parents:
+      - {name: Plant}
+      - {name: Site, nullable: true}
+      - {name: EnergyMeterPointClass}
+      - {name: EnergySubmeterZone}
+    ref_parents:
+      - {name: EnergySource}
+      - {name: UnitOfMeasure}
+  - name: EnergyUtilityAccount
+    description: Utility billing account or internal allocation account.
+    scd: type2
+    row_count: 25000
+    business_key: {name: UtilityAccountNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: UtilityAccountName, type: "nvarchar(180)", nullable: false}
+      - {name: BillingCycleCode, type: "nvarchar(20)", nullable: true}
+      - {name: IsInternalAccount, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: Plant}
+      - {name: Supplier, role: UtilityProvider, nullable: true}
+      - {name: CostCenter, nullable: true}
+    ref_parents:
+      - {name: EnergyUtilityAccountStatus}
+      - {name: Currency}
+  - name: EnergyEmissionFactor
+    description: Emissions factor by energy carrier, location, and accounting scope.
+    scd: type2
+    row_count: 180000
+    business_key: {name: EmissionFactorCode, type: "nvarchar(60)"}
+    columns:
+      - {name: FactorValue, type: "decimal(18,8)", nullable: false}
+      - {name: FactorSourceName, type: "nvarchar(160)", nullable: true}
+      - {name: CarbonDioxideEquivalentRatio, type: "decimal(18,8)", nullable: false}
+    parents:
+      - {name: EnergyCarrier}
+      - {name: Plant, nullable: true}
+    ref_parents:
+      - {name: EnergySource}
+      - {name: EnergyEmissionScope}
+      - {name: UnitOfMeasure}
+  - name: EnergyTariff
+    description: Tariff and rate schedule assigned to utility accounts or meter points.
+    scd: type2
+    row_count: 85000
+    business_key: {name: TariffCode, type: "nvarchar(50)"}
+    columns:
+      - {name: TariffName, type: "nvarchar(180)", nullable: false}
+      - {name: BaseChargeAmount, type: money, nullable: true}
+      - {name: UnitRateAmount, type: money, nullable: true}
+    parents:
+      - {name: EnergyRateTier}
+    ref_parents:
+      - {name: EnergyTariffChargeType}
+      - {name: Currency}
+  - name: EnergyDemandContract
+    description: Contract demand commitments and thresholds for utility service.
+    scd: type2
+    row_count: 12000
+    business_key: {name: DemandContractNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: ContractDemandQuantity, type: "decimal(18,4)", nullable: false}
+      - {name: DemandPenaltyAmount, type: money, nullable: true}
+      - {name: MinimumBillingQuantity, type: "decimal(18,4)", nullable: true}
+    parents:
+      - {name: EnergyUtilityAccount}
+      - {name: EnergyTariff}
+    ref_parents:
+      - {name: UnitOfMeasure}
+  - name: EnergyEfficiencyProject
+    description: Energy efficiency project, conservation measure, or capital initiative.
+    scd: type2
+    row_count: 32000
+    business_key: {name: EfficiencyProjectNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: EfficiencyProjectName, type: "nvarchar(200)", nullable: false}
+      - {name: EstimatedSavingsAmount, type: money, nullable: true}
+      - {name: EstimatedAnnualSavingsQuantity, type: "decimal(18,4)", nullable: true}
+    parents:
+      - {name: Plant}
+      - {name: EnergyEfficiencyMeasure}
+      - {name: CostCenter, nullable: true}
+    ref_parents:
+      - {name: EnergyEfficiencyProjectStatus}
+      - {name: Currency}
+
+bridges:
+  - name: EnergyMeterAsset
+    description: Resolves meter points to assets or machines they measure.
+    row_count: 420000
+    members:
+      - {name: EnergyMeterPoint}
+      - {name: Asset}
+    columns:
+      - {name: AllocationRatio, type: "decimal(9,6)", nullable: false, default: "1.000000"}
+      - {name: EffectiveStartDate, type: date, nullable: false}
+      - {name: EffectiveEndDate, type: date, nullable: true}
+  - name: EnergyMeterWorkCenter
+    description: Resolves meter points to work centers for operational submetering.
+    row_count: 260000
+    members:
+      - {name: EnergyMeterPoint}
+      - {name: WorkCenter}
+    columns:
+      - {name: AllocationRatio, type: "decimal(9,6)", nullable: false, default: "1.000000"}
+      - {name: EffectiveStartDate, type: date, nullable: false}
+      - {name: EffectiveEndDate, type: date, nullable: true}
+  - name: EnergyProjectMeterPoint
+    description: Resolves efficiency projects to affected meter points.
+    row_count: 120000
+    members:
+      - {name: EnergyEfficiencyProject}
+      - {name: EnergyMeterPoint}
+    columns:
+      - {name: BaselineQuantity, type: "decimal(18,4)", nullable: true}
+      - {name: TargetReductionQuantity, type: "decimal(18,4)", nullable: true}
+
+facts:
+  - name: EnergyMeterReading
+    description: High-volume interval and register readings from utility meters.
+    type: transaction
+    grain: "One row per meter point, reading timestamp, and register channel."
+    row_count: 2500000000
+    columnstore: true
+    date_roles: [Reading]
+    time_roles: [Reading]
+    dimensions:
+      - {name: EnergyMeterPoint}
+      - {name: Plant}
+      - {name: Site, nullable: true}
+      - {name: WorkCenter, nullable: true}
+      - {name: Asset, nullable: true}
+    ref_parents:
+      - {name: EnergyReadingQuality}
+      - {name: UnitOfMeasure}
+    degenerate:
+      - {name: MeterRegisterCode, type: "nvarchar(30)"}
+      - {name: ReadingBatchNumber, type: "nvarchar(50)"}
+    measures:
+      - {name: ConsumptionQuantity, type: "decimal(18,6)", aggregation: sum}
+      - {name: DemandQuantity, type: "decimal(18,6)", aggregation: max, nullable: true}
+      - {name: ReadingValue, type: "decimal(18,6)", aggregation: max}
+  - name: EnergyDemandPeak
+    description: Demand peak events for electrical, gas, water, and compressed air systems.
+    type: transaction
+    grain: "One row per meter point and detected demand peak event."
+    row_count: 36000000
+    date_roles: [Peak]
+    time_roles: [Peak]
+    dimensions:
+      - {name: EnergyMeterPoint}
+      - {name: EnergyDemandContract, nullable: true}
+      - {name: Plant}
+    ref_parents:
+      - {name: UnitOfMeasure}
+    degenerate:
+      - {name: DemandPeakEventNumber, type: "nvarchar(50)"}
+    measures:
+      - {name: PeakDemandQuantity, type: "decimal(18,6)", aggregation: max}
+      - {name: ContractExcessQuantity, type: "decimal(18,6)", aggregation: sum, nullable: true}
+      - {name: PenaltyCostAmount, type: money, aggregation: sum, nullable: true}
+  - name: EnergyGreenhouseGasSnapshot
+    description: Periodic greenhouse gas emissions accounting by plant and energy carrier.
+    type: periodic_snapshot
+    grain: "One row per accounting period, plant, energy carrier, and emissions scope."
+    row_count: 18000000
+    columnstore: true
+    date_roles: [Snapshot]
+    dimensions:
+      - {name: Plant}
+      - {name: EnergyCarrier}
+      - {name: EnergyEmissionFactor}
+      - {name: BusinessUnit, nullable: true}
+    ref_parents:
+      - {name: EnergyEmissionScope}
+      - {name: UnitOfMeasure}
+    measures:
+      - {name: ActivityQuantity, type: "decimal(18,6)", aggregation: sum}
+      - {name: CarbonDioxideEquivalentTonnes, type: "decimal(18,6)", aggregation: sum}
+      - {name: BiogenicCarbonDioxideTonnes, type: "decimal(18,6)", aggregation: sum, nullable: true}
+  - name: EnergyUtilityCost
+    description: Utility invoice and internal allocation cost lines.
+    type: transaction
+    grain: "One row per utility invoice line or internal allocation line."
+    row_count: 72000000
+    date_roles: [ServiceStart, ServiceEnd, Invoice]
+    dimensions:
+      - {name: EnergyUtilityAccount}
+      - {name: EnergyTariff}
+      - {name: EnergyMeterPoint, nullable: true}
+      - {name: Plant}
+      - {name: CostCenter, nullable: true}
+      - {name: GlAccount}
+    ref_parents:
+      - {name: EnergyTariffChargeType}
+      - {name: Currency}
+      - {name: UnitOfMeasure}
+    degenerate:
+      - {name: UtilityInvoiceNumber, type: "nvarchar(50)"}
+      - {name: UtilityInvoiceLineNumber, type: int}
+    measures:
+      - {name: BilledQuantity, type: "decimal(18,6)", aggregation: sum, nullable: true}
+      - {name: ChargeAmount, type: money, aggregation: sum}
+      - {name: TaxAmount, type: money, aggregation: sum, nullable: true}

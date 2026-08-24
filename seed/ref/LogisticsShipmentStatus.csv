@@ -1,0 +1,16 @@
+LogisticsShipmentStatusKey,ShipmentStatusCode,ShipmentStatusName,IsTerminal,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,LSS000001,Junction LogisticsShipmentStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,LSS000002,Keystone LogisticsShipmentStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,LSS000003,Forge LogisticsShipmentStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,LSS000004,Harbor LogisticsShipmentStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,LSS000005,Vertex LogisticsShipmentStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,LSS000006,Evergreen LogisticsShipmentStatus 6,1,-1,1,2026-08-24T00:00:00.000
+7,LSS000007,Liberty LogisticsShipmentStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,LSS000008,Beacon LogisticsShipmentStatus 8,1,-1,1,2026-08-24T00:00:00.000
+9,LSS000009,Junction LogisticsShipmentStatus 9,1,-1,1,2026-08-24T00:00:00.000
+10,LSS000010,Liberty LogisticsShipmentStatus 10,0,-1,1,2026-08-24T00:00:00.000
+11,LSS000011,Forge LogisticsShipmentStatus 11,1,-1,1,2026-08-24T00:00:00.000
+12,LSS000012,Summit LogisticsShipmentStatus 12,1,-1,1,2026-08-24T00:00:00.000
+13,LSS000013,Evergreen LogisticsShipmentStatus 13,1,-1,1,2026-08-24T00:00:00.000
+14,LSS000014,Keystone LogisticsShipmentStatus 14,1,-1,1,2026-08-24T00:00:00.000

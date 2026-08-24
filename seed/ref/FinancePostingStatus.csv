@@ -1,0 +1,12 @@
+FinancePostingStatusKey,PostingStatusCode,PostingStatusName,AllowsReporting,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,FPS000001,Unity FinancePostingStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,FPS000002,Titan FinancePostingStatus 2,0,-1,1,2026-08-24T00:00:00.000
+3,FPS000003,Meridian FinancePostingStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,FPS000004,Granite FinancePostingStatus 4,0,-1,1,2026-08-24T00:00:00.000
+5,FPS000005,Vertex FinancePostingStatus 5,1,-1,1,2026-08-24T00:00:00.000
+6,FPS000006,Meridian FinancePostingStatus 6,0,-1,1,2026-08-24T00:00:00.000
+7,FPS000007,Riverton FinancePostingStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,FPS000008,Evergreen FinancePostingStatus 8,0,-1,1,2026-08-24T00:00:00.000
+9,FPS000009,Vertex FinancePostingStatus 9,1,-1,1,2026-08-24T00:00:00.000
+10,FPS000010,Zenith FinancePostingStatus 10,0,-1,1,2026-08-24T00:00:00.000

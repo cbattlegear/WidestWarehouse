@@ -1,0 +1,5 @@
+MeasurementSystemKey,MeasurementSystemCode,MeasurementSystemName,DefaultLengthUomCode,DefaultMassUomCode,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,UNKNOWN,UNKNOWN,-1,0,1900-01-01T00:00:00.000
+1,METRIC,Metric,M,KG,-1,1,2026-08-24T00:00:00.000
+2,US_CUSTOMARY,US customary,FT,LB,-1,1,2026-08-24T00:00:00.000
+3,IMPERIAL,Imperial,FT,LB,-1,1,2026-08-24T00:00:00.000

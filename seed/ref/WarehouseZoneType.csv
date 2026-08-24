@@ -1,0 +1,14 @@
+WarehouseZoneTypeKey,ZoneTypeCode,WarehouseZoneTypeName,WarehouseZoneTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,WZT000001,Evergreen WarehouseZoneType 1,WarehouseZoneType starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,WZT000002,Granite WarehouseZoneType 2,WarehouseZoneType starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,WZT000003,Zenith WarehouseZoneType 3,WarehouseZoneType starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,WZT000004,Granite WarehouseZoneType 4,WarehouseZoneType starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,WZT000005,Junction WarehouseZoneType 5,WarehouseZoneType starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,WZT000006,Zenith WarehouseZoneType 6,WarehouseZoneType starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,WZT000007,Granite WarehouseZoneType 7,WarehouseZoneType starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,WZT000008,Ion WarehouseZoneType 8,WarehouseZoneType starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,WZT000009,Harbor WarehouseZoneType 9,WarehouseZoneType starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,WZT000010,Summit WarehouseZoneType 10,WarehouseZoneType starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,WZT000011,Zenith WarehouseZoneType 11,WarehouseZoneType starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,WZT000012,Pioneer WarehouseZoneType 12,WarehouseZoneType starter record 12,1,1,1,2026-08-24T00:00:00.000

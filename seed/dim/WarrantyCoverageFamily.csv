@@ -1,0 +1,14 @@
+WarrantyCoverageFamilyKey,WarrantyCoverageFamilyCode,WarrantyCoverageFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,WCF000001,Pioneer WarrantyCoverageFamily 1,1,1,2026-08-24T00:00:00.000
+2,WCF000002,Quartz WarrantyCoverageFamily 2,1,1,2026-08-24T00:00:00.000
+3,WCF000003,Keystone WarrantyCoverageFamily 3,1,1,2026-08-24T00:00:00.000
+4,WCF000004,Forge WarrantyCoverageFamily 4,1,1,2026-08-24T00:00:00.000
+5,WCF000005,Junction WarrantyCoverageFamily 5,1,1,2026-08-24T00:00:00.000
+6,WCF000006,Cedar WarrantyCoverageFamily 6,1,1,2026-08-24T00:00:00.000
+7,WCF000007,Ion WarrantyCoverageFamily 7,1,1,2026-08-24T00:00:00.000
+8,WCF000008,Quartz WarrantyCoverageFamily 8,1,1,2026-08-24T00:00:00.000
+9,WCF000009,Vertex WarrantyCoverageFamily 9,1,1,2026-08-24T00:00:00.000
+10,WCF000010,Vertex WarrantyCoverageFamily 10,1,1,2026-08-24T00:00:00.000
+11,WCF000011,Beacon WarrantyCoverageFamily 11,1,1,2026-08-24T00:00:00.000
+12,WCF000012,Vertex WarrantyCoverageFamily 12,1,1,2026-08-24T00:00:00.000

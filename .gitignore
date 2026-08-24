@@ -1,0 +1,31 @@
+# Generated output is committed, but never hand-edited.
+# (sql/ and seed/ ARE committed — see README. Only transient artifacts are ignored.)
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Loader runtime
+loader/data/
+loader/logs/
+.env
+
+# Editors / OS
+.vs/
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# SQL Server local artifacts
+*.mdf
+*.ldf
+*.bak

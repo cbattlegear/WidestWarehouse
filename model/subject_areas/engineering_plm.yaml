@@ -1,0 +1,513 @@
+subject_area: engineering_plm
+reference:
+- name: EngineeringLifecycleStatus
+  description: Lifecycle states for engineering master data.
+  business_key:
+    name: LifecycleStatusCode
+    type: "nvarchar(30)"
+  seed_rows: 10
+  columns:
+  - name: LifecycleStatusName
+    type: "nvarchar(120)"
+    nullable: false
+- name: EngineeringChangeType
+  description: Engineering change order classifications.
+  business_key:
+    name: ChangeTypeCode
+    type: "nvarchar(30)"
+  seed_rows: 8
+  columns:
+  - name: ChangeTypeName
+    type: "nvarchar(120)"
+    nullable: false
+- name: EngineeringDocumentType
+  description: "CAD, drawing, and specification document classes."
+  business_key:
+    name: DocumentTypeCode
+    type: "nvarchar(30)"
+  seed_rows: 10
+  columns:
+  - name: DocumentTypeName
+    type: "nvarchar(120)"
+    nullable: false
+- name: EngineeringToleranceGrade
+  description: Tolerance grade lookup for engineered characteristics.
+  business_key:
+    name: ToleranceGradeCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: ToleranceGradeName
+    type: "nvarchar(120)"
+    nullable: false
+- name: EngineeringReleaseMethod
+  description: Methods used to release engineering definitions.
+  business_key:
+    name: ReleaseMethodCode
+    type: "nvarchar(30)"
+  seed_rows: 6
+  columns:
+  - name: ReleaseMethodName
+    type: "nvarchar(120)"
+    nullable: false
+hierarchies:
+- name: EngineeringDisciplineTaxonomy
+  schema: dim
+  description: Engineering discipline ownership structure.
+  levels:
+  - name: EngineeringDomain
+    description: EngineeringDomain level for engineering discipline ownership structure.
+    row_count: 10
+  - name: EngineeringDiscipline
+    description: EngineeringDiscipline level for engineering discipline ownership structure.
+    row_count: 35
+  - name: EngineeringGroup
+    description: EngineeringGroup level for engineering discipline ownership structure.
+    row_count: 120
+  - name: EngineeringTeam
+    description: EngineeringTeam level for engineering discipline ownership structure.
+    row_count: 450
+- name: BomStructureTaxonomy
+  schema: dim
+  description: BOM structure classification.
+  levels:
+  - name: BomFamily
+    description: BomFamily level for bom structure classification.
+    row_count: 20
+  - name: BomClass
+    description: BomClass level for bom structure classification.
+    row_count: 80
+  - name: BomSubClass
+    description: BomSubClass level for bom structure classification.
+    row_count: 250
+  - name: BomUsageCategory
+    description: BomUsageCategory level for bom structure classification.
+    row_count: 900
+- name: RoutingProcessTaxonomy
+  schema: dim
+  description: Routing process classification.
+  levels:
+  - name: RoutingProcessFamily
+    description: RoutingProcessFamily level for routing process classification.
+    row_count: 18
+  - name: RoutingProcessGroup
+    description: RoutingProcessGroup level for routing process classification.
+    row_count: 75
+  - name: RoutingOperationClass
+    description: RoutingOperationClass level for routing process classification.
+    row_count: 260
+  - name: RoutingOperationType
+    description: RoutingOperationType level for routing process classification.
+    row_count: 1100
+- name: EngineeringDocumentTaxonomy
+  schema: dim
+  description: Engineering document classification.
+  levels:
+  - name: EngineeringDocumentDomain
+    description: EngineeringDocumentDomain level for engineering document classification.
+    row_count: 8
+  - name: EngineeringDocumentClass
+    description: EngineeringDocumentClass level for engineering document classification.
+    row_count: 45
+  - name: EngineeringDocumentSubClass
+    description: EngineeringDocumentSubClass level for engineering document classification.
+    row_count: 180
+  - name: EngineeringDocumentCategory
+    description: EngineeringDocumentCategory level for engineering document classification.
+    row_count: 650
+dimensions:
+- name: EngineeringPartRevision
+  description: Part revision master with released design attributes.
+  row_count: 150000
+  business_key:
+    name: PartRevisionNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: EngineeringPartRevisionName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Product
+  - name: EngineeringTeam
+  ref_parents:
+  - name: EngineeringLifecycleStatus
+  - name: UnitOfMeasure
+  scd: type2
+- name: BomHeader
+  description: Bill of material header for assembly revisions.
+  row_count: 60000
+  business_key:
+    name: BomNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: BomHeaderName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Product
+  - name: BomUsageCategory
+  ref_parents:
+  - name: EngineeringLifecycleStatus
+  scd: type2
+- name: RoutingHeader
+  description: Engineered routing header for product revisions.
+  row_count: 55000
+  business_key:
+    name: RoutingNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: RoutingHeaderName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Product
+  - name: RoutingOperationType
+  ref_parents:
+  - name: EngineeringLifecycleStatus
+  scd: type2
+- name: EngineeringChangeOrder
+  description: Engineering change order master record.
+  row_count: 45000
+  business_key:
+    name: EngineeringChangeOrderNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: EngineeringChangeOrderName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: EngineeringTeam
+  - name: Employee
+    role: Owner
+    nullable: true
+  ref_parents:
+  - name: EngineeringChangeType
+  - name: ApprovalStatus
+  - name: Priority
+  scd: type2
+- name: EngineeringCadDocument
+  description: Controlled CAD and drawing document.
+  row_count: 120000
+  business_key:
+    name: CadDocumentNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: EngineeringCadDocumentName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: EngineeringDocumentCategory
+  - name: Employee
+    role: Designer
+    nullable: true
+  ref_parents:
+  - name: EngineeringDocumentType
+  - name: EngineeringLifecycleStatus
+  scd: type2
+- name: EngineeringMaterialSpecification
+  description: Material specification used by parts and drawings.
+  row_count: 18000
+  business_key:
+    name: MaterialSpecificationCode
+    type: "nvarchar(40)"
+  columns:
+  - name: EngineeringMaterialSpecificationName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: EngineeringDiscipline
+  ref_parents:
+  - name: MeasurementSystem
+  - name: ComplianceStandard
+  scd: type2
+bridges:
+- name: BomComponentResolution
+  description: Resolves BOM headers to component part revisions.
+  row_count: 500000
+  members:
+  - name: BomHeader
+  - name: EngineeringPartRevision
+    role: Component
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+  ref_parents:
+  - name: UnitOfMeasure
+- name: RoutingWorkCenterAssignment
+  description: Maps engineered routing operations to eligible work centers.
+  row_count: 140000
+  members:
+  - name: RoutingHeader
+  - name: WorkCenter
+  - name: RoutingOperationType
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+- name: EngineeringChangeAffectedItem
+  description: Lists items affected by engineering changes.
+  row_count: 180000
+  members:
+  - name: EngineeringChangeOrder
+  - name: EngineeringPartRevision
+  - name: EngineeringCadDocument
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+- name: EngineeringDocumentPartLink
+  description: Associates controlled documents with part revisions.
+  row_count: 260000
+  members:
+  - name: EngineeringCadDocument
+  - name: EngineeringPartRevision
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+facts:
+- name: EngineeringChangeLifecycle
+  description: Milestone durations for engineering change orders.
+  type: accumulating_snapshot
+  grain: One row per engineering change order lifecycle.
+  row_count: 45000
+  date_roles:
+  - Created
+  - Approved
+  - Released
+  - Closed
+  dimensions:
+  - name: EngineeringChangeOrder
+  - name: Employee
+    role: Owner
+    nullable: true
+  - name: BusinessUnit
+  ref_parents:
+  - name: EngineeringChangeType
+  - name: ApprovalStatus
+  degenerate:
+  - name: EngineeringChangeOrderNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: BomComponentUsage
+  description: Quantified component usage by BOM version.
+  type: transaction
+  grain: One row per BOM component relationship.
+  row_count: 500000
+  columnstore: true
+  date_roles:
+  - Effective
+  - Expiration
+  dimensions:
+  - name: BomHeader
+  - name: Product
+    role: Assembly
+  - name: EngineeringPartRevision
+    role: Component
+  ref_parents:
+  - name: UnitOfMeasure
+  degenerate:
+  - name: BomLineNumber
+    type: "nvarchar(30)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: RoutingOperationStandard
+  description: Standard setup and run values for routing operations.
+  type: transaction
+  grain: One row per routing operation standard.
+  row_count: 220000
+  date_roles:
+  - Effective
+  - Expiration
+  dimensions:
+  - name: RoutingHeader
+  - name: RoutingOperationType
+  - name: WorkCenter
+  ref_parents:
+  - name: UnitOfMeasure
+  degenerate:
+  - name: RoutingOperationCode
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: EngineeringDocumentRevisionEvent
+  description: Document revision and release events.
+  type: transaction
+  grain: One row per controlled document revision event.
+  row_count: 300000
+  columnstore: true
+  date_roles:
+  - Event
+  time_roles:
+  - Event
+  dimensions:
+  - name: EngineeringCadDocument
+  - name: EngineeringPartRevision
+    nullable: true
+  - name: Employee
+    role: Designer
+    nullable: true
+  ref_parents:
+  - name: EngineeringDocumentType
+  - name: EngineeringLifecycleStatus
+  degenerate:
+  - name: DocumentRevisionCode
+    type: "nvarchar(30)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: EngineeringSpecificationCoverage
+  description: Monthly active specification coverage by product.
+  type: periodic_snapshot
+  grain: "One row per month, product, and discipline."
+  row_count: 240000
+  date_roles:
+  - Snapshot
+  dimensions:
+  - name: Product
+  - name: EngineeringDiscipline
+  - name: EngineeringMaterialSpecification
+  ref_parents:
+  - name: EngineeringLifecycleStatus
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true

@@ -1,0 +1,6 @@
+AdjustmentReasonKey,ReasonCode,ReasonName,RequiresApproval,IsShrinkage,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,0,-1,0,1900-01-01T00:00:00.000
+1,CYCLE_COUNT,Cycle count variance,1,0,-1,1,2026-08-24T00:00:00.000
+2,DAMAGE,Damaged material,1,1,-1,1,2026-08-24T00:00:00.000
+3,EXPIRATION,Expired material,1,1,-1,1,2026-08-24T00:00:00.000
+4,ROUNDING,Rounding correction,0,0,-1,1,2026-08-24T00:00:00.000

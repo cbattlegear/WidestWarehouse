@@ -1,0 +1,9 @@
+SafetyPermitStatusKey,PermitStatusCode,ApprovalStatusKey,PermitStatusName,IsAuthorizedStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SPS000001,4,Forge SafetyPermitStatus 1,1,1,1,2026-08-24T00:00:00.000
+2,SPS000002,5,Northstar SafetyPermitStatus 2,1,1,1,2026-08-24T00:00:00.000
+3,SPS000003,3,Pioneer SafetyPermitStatus 3,1,1,1,2026-08-24T00:00:00.000
+4,SPS000004,2,Willow SafetyPermitStatus 4,1,1,1,2026-08-24T00:00:00.000
+5,SPS000005,1,Keystone SafetyPermitStatus 5,0,1,1,2026-08-24T00:00:00.000
+6,SPS000006,2,Delta SafetyPermitStatus 6,1,1,1,2026-08-24T00:00:00.000
+7,SPS000007,2,Forge SafetyPermitStatus 7,1,1,1,2026-08-24T00:00:00.000

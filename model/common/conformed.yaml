@@ -1,0 +1,1443 @@
+hierarchies:
+  - name: ProductTaxonomy
+    schema: dim
+    description: Product classification from division down to subfamily.
+    levels:
+      - name: ProductDivision
+        row_count: 5
+      - name: ProductLine
+        row_count: 30
+      - name: ProductFamily
+        row_count: 150
+      - name: ProductSubfamily
+        row_count: 900
+  - name: GeographyTaxonomy
+    schema: dim
+    description: Geographic hierarchy from continent to postal code.
+    levels:
+      - name: GeoContinent
+        row_count: 7
+      - name: GeoCountry
+        row_count: 180
+      - name: GeoStateProvince
+        row_count: 1200
+      - name: GeoCity
+        row_count: 18000
+      - name: GeoPostalCode
+        row_count: 120000
+  - name: OrganizationTaxonomy
+    schema: dim
+    description: Corporate operating organization hierarchy.
+    levels:
+      - name: OrgEnterprise
+        row_count: 2
+      - name: OrgDivision
+        row_count: 8
+      - name: OrgRegion
+        row_count: 35
+      - name: OrgBusinessUnit
+        row_count: 160
+  - name: CalendarTaxonomy
+    schema: dim
+    description: Calendar hierarchy for reporting dates.
+    levels:
+      - name: CalendarYear
+        row_count: 20
+      - name: CalendarQuarter
+        row_count: 80
+      - name: CalendarMonth
+        row_count: 240
+      - name: CalendarWeek
+        row_count: 1040
+  - name: FiscalTaxonomy
+    schema: dim
+    description: Fiscal reporting hierarchy.
+    levels:
+      - name: FiscalYear
+        row_count: 20
+      - name: FiscalQuarter
+        row_count: 80
+      - name: FiscalPeriod
+        row_count: 260
+  - name: AccountTaxonomy
+    schema: dim
+    description: Financial account hierarchy.
+    levels:
+      - name: AccountCategory
+        row_count: 8
+      - name: AccountGroup
+        row_count: 45
+      - name: AccountSubGroup
+        row_count: 220
+dimensions:
+  - name: BrandOwner
+    description: Organizations that own product brands.
+    row_count: 120
+    business_key:
+      name: BrandOwnerCode
+      type: "nvarchar(40)"
+    columns:
+      - name: BrandOwnerName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: BrandOwnerDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: Country
+      - name: RecordStatus
+  - name: ProductBrand
+    description: Product brand and label families.
+    row_count: 800
+    business_key:
+      name: BrandCode
+      type: "nvarchar(40)"
+    columns:
+      - name: BrandName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: BrandDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: BrandOwner
+    ref_parents:
+      - name: RecordStatus
+  - name: ProductLifecyclePhase
+    description: Product lifecycle phase values maintained as a dimension.
+    row_count: 12
+    business_key:
+      name: LifecyclePhaseCode
+      type: "nvarchar(40)"
+    columns:
+      - name: LifecyclePhaseName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: LifecyclePhaseDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: ApprovalStatus
+      - name: RecordStatus
+  - name: ProductCertification
+    description: Certifications applicable to products and materials.
+    row_count: 250
+    business_key:
+      name: CertificationCode
+      type: "nvarchar(40)"
+    columns:
+      - name: CertificationName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: CertificationDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: ComplianceStandard
+      - name: RecordStatus
+  - name: PlantType
+    description: Manufacturing and distribution plant categories.
+    row_count: 20
+    business_key:
+      name: PlantTypeCode
+      type: "nvarchar(40)"
+    columns:
+      - name: PlantTypeName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: PlantTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: UnitOfMeasure
+      - name: RecordStatus
+  - name: PlantCampus
+    description: Industrial campuses containing one or more plants.
+    row_count: 300
+    business_key:
+      name: CampusCode
+      type: "nvarchar(40)"
+    columns:
+      - name: CampusName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: CampusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: GeoCity
+    ref_parents:
+      - name: RecordStatus
+  - name: WorkCenterType
+    description: Categories of production work centers.
+    row_count: 40
+    business_key:
+      name: WorkCenterTypeCode
+      type: "nvarchar(40)"
+    columns:
+      - name: WorkCenterTypeName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: WorkCenterTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: RecordStatus
+  - name: WorkCenterCapability
+    description: Named manufacturing capabilities available at work centers.
+    row_count: 600
+    business_key:
+      name: CapabilityCode
+      type: "nvarchar(40)"
+    columns:
+      - name: CapabilityName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: CapabilityDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: RecordStatus
+  - name: EmployeeJobFamily
+    description: Families grouping related job roles.
+    row_count: 80
+    business_key:
+      name: JobFamilyCode
+      type: "nvarchar(40)"
+    columns:
+      - name: JobFamilyName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: JobFamilyDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: RecordStatus
+  - name: EmployeeJobRole
+    description: Specific employee job roles.
+    row_count: 600
+    business_key:
+      name: JobRoleCode
+      type: "nvarchar(40)"
+    columns:
+      - name: JobRoleName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: JobRoleDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: EmployeeJobFamily
+    ref_parents:
+      - name: LaborGrade
+      - name: RecordStatus
+  - name: EmployeePayGrade
+    description: Human resources pay grades.
+    row_count: 80
+    business_key:
+      name: PayGradeCode
+      type: "nvarchar(40)"
+    columns:
+      - name: PayGradeName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: PayGradeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: Currency
+      - name: RecordStatus
+  - name: EmployeeUnion
+    description: Union or bargaining group membership.
+    row_count: 60
+    business_key:
+      name: UnionCode
+      type: "nvarchar(40)"
+    columns:
+      - name: UnionName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: UnionDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: Country
+      - name: RecordStatus
+  - name: CustomerMarket
+    description: Commercial markets served by customers.
+    row_count: 120
+    business_key:
+      name: MarketCode
+      type: "nvarchar(40)"
+    columns:
+      - name: MarketName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: MarketDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: Currency
+      - name: RecordStatus
+  - name: CustomerSegment
+    description: Customer segmentation below market.
+    row_count: 500
+    business_key:
+      name: SegmentCode
+      type: "nvarchar(40)"
+    columns:
+      - name: SegmentName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: SegmentDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: CustomerMarket
+    ref_parents:
+      - name: RecordStatus
+  - name: CustomerChannel
+    description: Sales and service channels.
+    row_count: 80
+    business_key:
+      name: ChannelCode
+      type: "nvarchar(40)"
+    columns:
+      - name: ChannelName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: ChannelDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: RecordStatus
+  - name: CustomerGroup
+    description: Customer account groups and buying groups.
+    row_count: 400
+    business_key:
+      name: CustomerGroupCode
+      type: "nvarchar(40)"
+    columns:
+      - name: CustomerGroupName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: CustomerGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: ApprovalStatus
+      - name: RecordStatus
+  - name: SupplierTier
+    description: Supplier strategic tiering.
+    row_count: 20
+    business_key:
+      name: SupplierTierCode
+      type: "nvarchar(40)"
+    columns:
+      - name: SupplierTierName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: SupplierTierDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: RecordStatus
+  - name: SupplierCategory
+    description: Supplier category management groups.
+    row_count: 300
+    business_key:
+      name: SupplierCategoryCode
+      type: "nvarchar(40)"
+    columns:
+      - name: SupplierCategoryName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: SupplierCategoryDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: PaymentTerm
+      - name: RecordStatus
+  - name: SupplierRiskClass
+    description: Supplier risk classification.
+    row_count: 12
+    business_key:
+      name: RiskClassCode
+      type: "nvarchar(40)"
+    columns:
+      - name: RiskClassName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: RiskClassDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: Severity
+      - name: RecordStatus
+  - name: AssetCriticality
+    description: Asset criticality assessment bands.
+    row_count: 10
+    business_key:
+      name: CriticalityCode
+      type: "nvarchar(40)"
+    columns:
+      - name: CriticalityName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: CriticalityDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: Priority
+      - name: RecordStatus
+  - name: AssetManufacturer
+    description: Manufacturers of production and facility assets.
+    row_count: 1500
+    business_key:
+      name: ManufacturerCode
+      type: "nvarchar(40)"
+    columns:
+      - name: ManufacturerName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: ManufacturerDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: Country
+      - name: RecordStatus
+  - name: AssetModel
+    description: Asset model and equipment catalog.
+    row_count: 10000
+    business_key:
+      name: AssetModelCode
+      type: "nvarchar(40)"
+    columns:
+      - name: AssetModelName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: AssetModelDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: AssetManufacturer
+    ref_parents:
+      - name: UnitOfMeasure
+      - name: RecordStatus
+  - name: AccountReportingLine
+    description: Financial statement reporting lines.
+    row_count: 200
+    business_key:
+      name: ReportingLineCode
+      type: "nvarchar(40)"
+    columns:
+      - name: ReportingLineName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: ReportingLineDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: RecordStatus
+  - name: CostCenterType
+    description: Cost center classifications.
+    row_count: 40
+    business_key:
+      name: CostCenterTypeCode
+      type: "nvarchar(40)"
+    columns:
+      - name: CostCenterTypeName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: CostCenterTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: RecordStatus
+  - name: BusinessUnitPortfolio
+    description: Portfolios grouping business units.
+    row_count: 80
+    business_key:
+      name: PortfolioCode
+      type: "nvarchar(40)"
+    columns:
+      - name: PortfolioName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: PortfolioDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: OwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    ref_parents:
+      - name: RecordStatus
+  - name: Date
+    description: Calendar date dimension keyed by yyyymmdd.
+    row_count: 36525
+    business_key:
+      name: DateKey
+      type: int
+    columns:
+      - name: FullDate
+        type: date
+        nullable: false
+      - name: DayName
+        type: "nvarchar(20)"
+        nullable: false
+      - name: DayOfWeekNumber
+        type: tinyint
+        nullable: false
+      - name: IsoDayOfWeekNumber
+        type: tinyint
+        nullable: false
+      - name: DayOfMonthNumber
+        type: tinyint
+        nullable: false
+      - name: DayOfYearNumber
+        type: smallint
+        nullable: false
+      - name: WeekOfYearNumber
+        type: tinyint
+        nullable: false
+      - name: IsoWeekNumber
+        type: tinyint
+        nullable: false
+      - name: CalendarMonthNumber
+        type: tinyint
+        nullable: false
+      - name: CalendarMonthName
+        type: "nvarchar(20)"
+        nullable: false
+      - name: CalendarMonthShortName
+        type: "nvarchar(10)"
+        nullable: false
+      - name: CalendarQuarterNumber
+        type: tinyint
+        nullable: false
+      - name: CalendarYearNumber
+        type: smallint
+        nullable: false
+      - name: FiscalPeriodNumber
+        type: tinyint
+        nullable: false
+      - name: FiscalQuarterNumber
+        type: tinyint
+        nullable: false
+      - name: FiscalYearNumber
+        type: smallint
+        nullable: false
+      - name: IsWeekend
+        type: bit
+        nullable: false
+      - name: IsHoliday
+        type: bit
+        nullable: false
+        default: '0'
+      - name: HolidayName
+        type: "nvarchar(80)"
+        nullable: true
+      - name: JulianDayNumber
+        type: int
+        nullable: false
+      - name: DaysFromToday
+        type: int
+        nullable: false
+      - name: WeeksFromToday
+        type: int
+        nullable: false
+      - name: MonthsFromToday
+        type: int
+        nullable: false
+      - name: IsMonthEnd
+        type: bit
+        nullable: false
+      - name: IsQuarterEnd
+        type: bit
+        nullable: false
+      - name: IsYearEnd
+        type: bit
+        nullable: false
+    explicit_key: true
+    parents:
+      - name: CalendarWeek
+      - name: FiscalPeriod
+    ref_parents:
+      - name: YesNoFlag
+  - name: TimeOfDay
+    description: Time of day dimension keyed by seconds from midnight.
+    row_count: 86400
+    business_key:
+      name: TimeOfDayKey
+      type: int
+    columns:
+      - name: TimeValue
+        type: "time(0)"
+        nullable: false
+      - name: HourNumber
+        type: tinyint
+        nullable: false
+      - name: MinuteNumber
+        type: tinyint
+        nullable: false
+      - name: SecondNumber
+        type: tinyint
+        nullable: false
+      - name: MinuteOfDayNumber
+        type: smallint
+        nullable: false
+      - name: SecondOfDayNumber
+        type: int
+        nullable: false
+      - name: AmPmCode
+        type: "char(2)"
+        nullable: false
+      - name: HourBucketName
+        type: "nvarchar(40)"
+        nullable: false
+      - name: ShiftBucketName
+        type: "nvarchar(40)"
+        nullable: false
+      - name: IsBusinessHour
+        type: bit
+        nullable: false
+      - name: DisplayTime
+        type: "nvarchar(20)"
+        nullable: false
+    explicit_key: true
+    ref_parents:
+      - name: ShiftCode
+  - name: Product
+    description: Manufacturable, sellable, or purchasable item master.
+    row_count: 25000
+    business_key:
+      name: ProductNumber
+      type: "nvarchar(40)"
+    columns:
+      - name: ProductName
+        type: "nvarchar(200)"
+        nullable: false
+      - name: ProductDescription
+        type: "nvarchar(500)"
+        nullable: true
+      - name: DrawingNumber
+        type: "nvarchar(60)"
+        nullable: true
+      - name: RevisionCode
+        type: "nvarchar(20)"
+        nullable: true
+      - name: StandardCostAmount
+        type: money
+        nullable: true
+      - name: ListPriceAmount
+        type: money
+        nullable: true
+      - name: NetWeightValue
+        type: "decimal(18,4)"
+        nullable: true
+      - name: GrossWeightValue
+        type: "decimal(18,4)"
+        nullable: true
+      - name: ShelfLifeDays
+        type: int
+        nullable: true
+      - name: LotTrackedFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: SerialTrackedFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: MakeBuyCode
+        type: "nvarchar(20)"
+        nullable: true
+    scd: type2
+    parents:
+      - name: ProductSubfamily
+      - name: ProductBrand
+      - name: ProductLifecyclePhase
+      - name: ProductCertification
+      - name: Product
+        role: Parent
+        nullable: true
+    ref_parents:
+      - name: UnitOfMeasure
+      - name: RecordStatus
+      - name: MeasurementSystem
+      - name: HazardClass
+  - name: Plant
+    description: Manufacturing, distribution, or service facility.
+    row_count: 350
+    business_key:
+      name: PlantCode
+      type: "nvarchar(40)"
+    columns:
+      - name: PlantName
+        type: "nvarchar(160)"
+        nullable: false
+      - name: LegalEntityCode
+        type: "nvarchar(40)"
+        nullable: true
+      - name: PlantManagerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: OpenedDate
+        type: date
+        nullable: true
+      - name: ClosedDate
+        type: date
+        nullable: true
+      - name: TotalFloorAreaSquareMeter
+        type: "decimal(18,2)"
+        nullable: true
+      - name: DefaultCurrencyCode
+        type: "char(3)"
+        nullable: true
+      - name: TimeZoneName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: LatitudeValue
+        type: "decimal(9,6)"
+        nullable: true
+      - name: LongitudeValue
+        type: "decimal(9,6)"
+        nullable: true
+    scd: type2
+    parents:
+      - name: GeoPostalCode
+      - name: OrgBusinessUnit
+      - name: PlantType
+      - name: PlantCampus
+    ref_parents:
+      - name: Currency
+      - name: TimeZone
+      - name: RecordStatus
+      - name: Country
+  - name: Site
+    description: Sub-location or site within a plant.
+    row_count: 2500
+    business_key:
+      name: SiteCode
+      type: "nvarchar(40)"
+    columns:
+      - name: SiteName
+        type: "nvarchar(160)"
+        nullable: false
+      - name: SiteDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: BuildingCode
+        type: "nvarchar(40)"
+        nullable: true
+      - name: FloorCode
+        type: "nvarchar(40)"
+        nullable: true
+      - name: AreaCode
+        type: "nvarchar(40)"
+        nullable: true
+      - name: TemperatureControlledFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: HazmatApprovedFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: DefaultWarehouseFlag
+        type: bit
+        nullable: false
+        default: '0'
+    parents:
+      - name: Plant
+    ref_parents:
+      - name: RecordStatus
+      - name: HazardClass
+  - name: WorkCenter
+    description: Capacity point where manufacturing operations are performed.
+    row_count: 12000
+    business_key:
+      name: WorkCenterCode
+      type: "nvarchar(40)"
+    columns:
+      - name: WorkCenterName
+        type: "nvarchar(160)"
+        nullable: false
+      - name: WorkCenterDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: CapacityPerHourValue
+        type: "decimal(18,4)"
+        nullable: true
+      - name: CrewSizeValue
+        type: "decimal(9,2)"
+        nullable: true
+      - name: SetupTimeMinutes
+        type: "decimal(18,4)"
+        nullable: true
+      - name: QueueTimeMinutes
+        type: "decimal(18,4)"
+        nullable: true
+      - name: FiniteCapacityFlag
+        type: bit
+        nullable: false
+        default: '1'
+      - name: BottleneckFlag
+        type: bit
+        nullable: false
+        default: '0'
+    scd: type2
+    parents:
+      - name: Site
+      - name: WorkCenterType
+      - name: WorkCenterCapability
+    ref_parents:
+      - name: UnitOfMeasure
+      - name: RecordStatus
+      - name: ShiftCode
+  - name: Employee
+    description: Employee and contingent labor master.
+    row_count: 80000
+    business_key:
+      name: EmployeeNumber
+      type: "nvarchar(40)"
+    columns:
+      - name: EmployeeFullName
+        type: "nvarchar(160)"
+        nullable: false
+      - name: PreferredName
+        type: "nvarchar(80)"
+        nullable: true
+      - name: HireDate
+        type: date
+        nullable: true
+      - name: TerminationDate
+        type: date
+        nullable: true
+      - name: EmailAddress
+        type: "nvarchar(160)"
+        nullable: true
+      - name: SupervisorEmployeeNumber
+        type: "nvarchar(40)"
+        nullable: true
+      - name: StandardHourlyRateAmount
+        type: money
+        nullable: true
+      - name: HomePlantCode
+        type: "nvarchar(40)"
+        nullable: true
+      - name: BadgeNumber
+        type: "nvarchar(40)"
+        nullable: true
+      - name: SafetyTrainingCurrentFlag
+        type: bit
+        nullable: false
+        default: '0'
+    scd: type2
+    parents:
+      - name: EmployeeJobRole
+      - name: EmployeePayGrade
+      - name: Employee
+        role: Supervisor
+        nullable: true
+      - name: EmployeeUnion
+    ref_parents:
+      - name: EmploymentType
+      - name: Language
+      - name: RecordStatus
+      - name: ShiftCode
+  - name: Customer
+    description: Customer account master.
+    row_count: 120000
+    business_key:
+      name: CustomerNumber
+      type: "nvarchar(40)"
+    columns:
+      - name: CustomerName
+        type: "nvarchar(200)"
+        nullable: false
+      - name: CustomerLegalName
+        type: "nvarchar(200)"
+        nullable: true
+      - name: AccountOpenedDate
+        type: date
+        nullable: true
+      - name: CreditLimitAmount
+        type: money
+        nullable: true
+      - name: CreditHoldFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: TaxRegistrationNumber
+        type: "nvarchar(60)"
+        nullable: true
+      - name: DefaultCurrencyCode
+        type: "char(3)"
+        nullable: true
+      - name: DefaultIncotermCode
+        type: "nvarchar(30)"
+        nullable: true
+      - name: DefaultPaymentTermCode
+        type: "nvarchar(30)"
+        nullable: true
+      - name: StrategicAccountFlag
+        type: bit
+        nullable: false
+        default: '0'
+    scd: type2
+    parents:
+      - name: GeoPostalCode
+      - name: CustomerSegment
+      - name: CustomerChannel
+      - name: CustomerGroup
+    ref_parents:
+      - name: Currency
+      - name: IncotermCode
+      - name: PaymentTerm
+      - name: CustomerStatus
+      - name: RecordStatus
+  - name: Supplier
+    description: Supplier and vendor account master.
+    row_count: 85000
+    business_key:
+      name: SupplierNumber
+      type: "nvarchar(40)"
+    columns:
+      - name: SupplierName
+        type: "nvarchar(200)"
+        nullable: false
+      - name: SupplierLegalName
+        type: "nvarchar(200)"
+        nullable: true
+      - name: AccountOpenedDate
+        type: date
+        nullable: true
+      - name: TaxRegistrationNumber
+        type: "nvarchar(60)"
+        nullable: true
+      - name: DefaultCurrencyCode
+        type: "char(3)"
+        nullable: true
+      - name: DefaultIncotermCode
+        type: "nvarchar(30)"
+        nullable: true
+      - name: DefaultPaymentTermCode
+        type: "nvarchar(30)"
+        nullable: true
+      - name: MinorityOwnedFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: QualityCertifiedFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: OnTimeTargetPercent
+        type: "decimal(9,4)"
+        nullable: true
+    scd: type2
+    parents:
+      - name: GeoPostalCode
+      - name: SupplierTier
+      - name: SupplierCategory
+      - name: SupplierRiskClass
+    ref_parents:
+      - name: Currency
+      - name: IncotermCode
+      - name: PaymentTerm
+      - name: SupplierQualificationStatus
+      - name: RecordStatus
+  - name: Asset
+    description: Physical production, facility, and utility assets.
+    row_count: 150000
+    business_key:
+      name: AssetNumber
+      type: "nvarchar(40)"
+    columns:
+      - name: AssetName
+        type: "nvarchar(160)"
+        nullable: false
+      - name: AssetDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: SerialNumber
+        type: "nvarchar(80)"
+        nullable: true
+      - name: InstallationDate
+        type: date
+        nullable: true
+      - name: CommissionedDate
+        type: date
+        nullable: true
+      - name: RetirementDate
+        type: date
+        nullable: true
+      - name: ReplacementCostAmount
+        type: money
+        nullable: true
+      - name: NameplateCapacityValue
+        type: "decimal(18,4)"
+        nullable: true
+      - name: WarrantyEndDate
+        type: date
+        nullable: true
+      - name: SafetyCriticalFlag
+        type: bit
+        nullable: false
+        default: '0'
+    scd: type2
+    parents:
+      - name: Site
+      - name: AssetModel
+      - name: AssetCriticality
+      - name: Asset
+        role: Parent
+        nullable: true
+    ref_parents:
+      - name: AssetStatus
+      - name: MaintenanceStrategy
+      - name: UnitOfMeasure
+      - name: RecordStatus
+  - name: GlAccount
+    description: General ledger natural accounts.
+    row_count: 6000
+    business_key:
+      name: GlAccountNumber
+      type: "nvarchar(40)"
+    columns:
+      - name: GlAccountName
+        type: "nvarchar(160)"
+        nullable: false
+      - name: AccountDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: NormalBalanceCode
+        type: "char(1)"
+        nullable: false
+      - name: FinancialStatementName
+        type: "nvarchar(80)"
+        nullable: false
+      - name: AllowPostingFlag
+        type: bit
+        nullable: false
+        default: '1'
+      - name: TaxRelevantFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: IntercompanyFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+    parents:
+      - name: AccountSubGroup
+      - name: AccountReportingLine
+    ref_parents:
+      - name: PostingType
+      - name: CostElementType
+      - name: RecordStatus
+      - name: Currency
+  - name: CostCenter
+    description: Cost collection point for management accounting.
+    row_count: 10000
+    business_key:
+      name: CostCenterCode
+      type: "nvarchar(40)"
+    columns:
+      - name: CostCenterName
+        type: "nvarchar(160)"
+        nullable: false
+      - name: CostCenterDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: ManagerEmployeeNumber
+        type: "nvarchar(40)"
+        nullable: true
+      - name: BudgetOwnerName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+      - name: EffectiveEndDate
+        type: date
+        nullable: true
+      - name: ManufacturingCostFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: CapitalProjectFlag
+        type: bit
+        nullable: false
+        default: '0'
+    parents:
+      - name: OrgBusinessUnit
+      - name: CostCenterType
+    ref_parents:
+      - name: Currency
+      - name: BudgetStatus
+      - name: RecordStatus
+  - name: BusinessUnit
+    description: Business unit master aligned to organization reporting.
+    row_count: 500
+    business_key:
+      name: BusinessUnitCode
+      type: "nvarchar(40)"
+    columns:
+      - name: BusinessUnitName
+        type: "nvarchar(160)"
+        nullable: false
+      - name: BusinessUnitDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: PresidentName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: PrimaryPlantCode
+        type: "nvarchar(40)"
+        nullable: true
+      - name: DefaultCurrencyCode
+        type: "char(3)"
+        nullable: true
+      - name: ProfitCenterCode
+        type: "nvarchar(40)"
+        nullable: true
+      - name: StrategicFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: EffectiveStartDate
+        type: date
+        nullable: true
+    parents:
+      - name: OrgBusinessUnit
+      - name: BusinessUnitPortfolio
+    ref_parents:
+      - name: Currency
+      - name: RecordStatus

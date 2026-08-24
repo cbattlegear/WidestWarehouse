@@ -1,0 +1,645 @@
+etl_tables:
+  - name: EtlSourceSystem
+    primary_key:
+      - SourceSystemId
+    columns:
+      - name: SourceSystemId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: SourceSystemCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: SourceSystemName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ConnectionName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+      - name: CreatedAtUtc
+        type: "datetime2(3)"
+        nullable: false
+  - name: BatchRun
+    primary_key:
+      - BatchId
+    columns:
+      - name: BatchId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: SourceSystemCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: BatchStatusCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: StartedAtUtc
+        type: "datetime2(3)"
+        nullable: false
+      - name: EndedAtUtc
+        type: "datetime2(3)"
+        nullable: true
+      - name: RequestedByName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: CorrelationId
+        type: uniqueidentifier
+        nullable: true
+  - name: BatchRunStep
+    primary_key:
+      - BatchStepId
+    columns:
+      - name: BatchStepId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: StepName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: StepStatusCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: StartedAtUtc
+        type: "datetime2(3)"
+        nullable: false
+      - name: EndedAtUtc
+        type: "datetime2(3)"
+        nullable: true
+      - name: ErrorMessage
+        type: "nvarchar(max)"
+        nullable: true
+  - name: LoadWatermark
+    primary_key:
+      - WatermarkId
+    columns:
+      - name: WatermarkId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: SourceSystemCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: SchemaName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: TableName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: WatermarkColumnName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: WatermarkValue
+        type: "nvarchar(200)"
+        nullable: true
+  - name: LoadError
+    primary_key:
+      - LoadErrorId
+    columns:
+      - name: LoadErrorId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: SchemaName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: TableName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: ErrorCode
+        type: "nvarchar(60)"
+        nullable: true
+      - name: ErrorMessage
+        type: "nvarchar(max)"
+        nullable: false
+      - name: OccurredAtUtc
+        type: "datetime2(3)"
+        nullable: false
+  - name: RowCountAudit
+    primary_key:
+      - RowCountAuditId
+    columns:
+      - name: RowCountAuditId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: SchemaName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: TableName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: SourceRowCount
+        type: bigint
+        nullable: false
+      - name: InsertedRowCount
+        type: bigint
+        nullable: false
+      - name: UpdatedRowCount
+        type: bigint
+        nullable: false
+      - name: RejectedRowCount
+        type: bigint
+        nullable: false
+  - name: DqRule
+    primary_key:
+      - DqRuleId
+    columns:
+      - name: DqRuleId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: RuleCode
+        type: "nvarchar(60)"
+        nullable: false
+      - name: RuleName
+        type: "nvarchar(160)"
+        nullable: false
+      - name: TargetTableName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: RuleExpression
+        type: "nvarchar(max)"
+        nullable: false
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: DqResult
+    primary_key:
+      - DqResultId
+    columns:
+      - name: DqResultId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: DqRuleId
+        type: int
+        nullable: false
+      - name: CheckedRowCount
+        type: bigint
+        nullable: false
+      - name: FailedRowCount
+        type: bigint
+        nullable: false
+      - name: ResultStatusCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: CheckedAtUtc
+        type: "datetime2(3)"
+        nullable: false
+  - name: DqRuleSeverity
+    primary_key:
+      - DqRuleSeverityId
+    columns:
+      - name: DqRuleSeverityId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: SeverityCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: SeverityName
+        type: "nvarchar(80)"
+        nullable: false
+      - name: FailureThresholdPercent
+        type: "decimal(9,4)"
+        nullable: true
+      - name: BlocksLoadFlag
+        type: bit
+        nullable: false
+        default: '0'
+  - name: TableLoadConfig
+    primary_key:
+      - TableLoadConfigId
+    columns:
+      - name: TableLoadConfigId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: SourceObjectName
+        type: "nvarchar(256)"
+        nullable: false
+      - name: TargetSchemaName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: TargetTableName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: LoadPatternName
+        type: "nvarchar(60)"
+        nullable: false
+      - name: IsEnabled
+        type: bit
+        nullable: false
+        default: '1'
+  - name: ColumnLineage
+    primary_key:
+      - ColumnLineageId
+    columns:
+      - name: ColumnLineageId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: SourceColumnName
+        type: "nvarchar(256)"
+        nullable: false
+      - name: TargetColumnName
+        type: "nvarchar(256)"
+        nullable: false
+      - name: TransformExpression
+        type: "nvarchar(max)"
+        nullable: true
+      - name: LineageCapturedAtUtc
+        type: "datetime2(3)"
+        nullable: false
+  - name: TableLineage
+    primary_key:
+      - TableLineageId
+    columns:
+      - name: TableLineageId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: SourceObjectName
+        type: "nvarchar(256)"
+        nullable: false
+      - name: TargetSchemaName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: TargetTableName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: DependencyTypeName
+        type: "nvarchar(60)"
+        nullable: false
+  - name: JobDefinition
+    primary_key:
+      - JobDefinitionId
+    columns:
+      - name: JobDefinitionId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: JobCode
+        type: "nvarchar(60)"
+        nullable: false
+      - name: JobName
+        type: "nvarchar(160)"
+        nullable: false
+      - name: OwnerTeamName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: JobSchedule
+    primary_key:
+      - JobScheduleId
+    columns:
+      - name: JobScheduleId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: JobDefinitionId
+        type: int
+        nullable: false
+      - name: ScheduleName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: CronExpression
+        type: "nvarchar(120)"
+        nullable: true
+      - name: TimeZoneCode
+        type: "nvarchar(60)"
+        nullable: false
+      - name: NextRunAtUtc
+        type: "datetime2(3)"
+        nullable: true
+  - name: JobRunHistory
+    primary_key:
+      - JobRunHistoryId
+    columns:
+      - name: JobRunHistoryId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: JobDefinitionId
+        type: int
+        nullable: false
+      - name: RunStatusCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: StartedAtUtc
+        type: "datetime2(3)"
+        nullable: false
+      - name: EndedAtUtc
+        type: "datetime2(3)"
+        nullable: true
+      - name: AttemptNumber
+        type: int
+        nullable: false
+  - name: RejectedRow
+    primary_key:
+      - RejectedRowId
+    columns:
+      - name: RejectedRowId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: TargetSchemaName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: TargetTableName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: SourceRowNumber
+        type: bigint
+        nullable: true
+      - name: RejectReasonText
+        type: "nvarchar(max)"
+        nullable: false
+      - name: RejectedPayload
+        type: "nvarchar(max)"
+        nullable: true
+  - name: MergeStatistic
+    primary_key:
+      - MergeStatisticId
+    columns:
+      - name: MergeStatisticId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: TargetSchemaName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: TargetTableName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: MatchedRowCount
+        type: bigint
+        nullable: false
+      - name: InsertedRowCount
+        type: bigint
+        nullable: false
+      - name: UpdatedRowCount
+        type: bigint
+        nullable: false
+  - name: SchemaVersion
+    primary_key:
+      - SchemaVersionId
+    columns:
+      - name: SchemaVersionId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: VersionNumber
+        type: "nvarchar(40)"
+        nullable: false
+      - name: AppliedAtUtc
+        type: "datetime2(3)"
+        nullable: false
+      - name: AppliedByName
+        type: "nvarchar(120)"
+        nullable: true
+      - name: ScriptName
+        type: "nvarchar(260)"
+        nullable: false
+      - name: ChecksumValue
+        type: "varbinary(32)"
+        nullable: true
+  - name: DeploymentLog
+    primary_key:
+      - DeploymentLogId
+    columns:
+      - name: DeploymentLogId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: DeploymentName
+        type: "nvarchar(160)"
+        nullable: false
+      - name: EnvironmentName
+        type: "nvarchar(60)"
+        nullable: false
+      - name: DeploymentStatusCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: StartedAtUtc
+        type: "datetime2(3)"
+        nullable: false
+      - name: EndedAtUtc
+        type: "datetime2(3)"
+        nullable: true
+  - name: RetentionPolicy
+    primary_key:
+      - RetentionPolicyId
+    columns:
+      - name: RetentionPolicyId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: TargetSchemaName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: TargetTableName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: RetentionDays
+        type: int
+        nullable: false
+      - name: ArchiveBeforeDeleteFlag
+        type: bit
+        nullable: false
+        default: '0'
+      - name: IsEnabled
+        type: bit
+        nullable: false
+        default: '1'
+  - name: FileIngestLog
+    primary_key:
+      - FileIngestLogId
+    columns:
+      - name: FileIngestLogId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: LandingFileId
+        type: bigint
+        nullable: false
+      - name: IngestStatusCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: RowsReadCount
+        type: bigint
+        nullable: false
+      - name: RowsLoadedCount
+        type: bigint
+        nullable: false
+      - name: IngestedAtUtc
+        type: "datetime2(3)"
+        nullable: false
+  - name: LandingFile
+    primary_key:
+      - LandingFileId
+    columns:
+      - name: LandingFileId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: SourceSystemCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: FilePathText
+        type: "nvarchar(500)"
+        nullable: false
+      - name: FileName
+        type: "nvarchar(260)"
+        nullable: false
+      - name: FileSizeBytes
+        type: bigint
+        nullable: true
+      - name: ReceivedAtUtc
+        type: "datetime2(3)"
+        nullable: false
+  - name: ScdChangeLog
+    primary_key:
+      - ScdChangeLogId
+    columns:
+      - name: ScdChangeLogId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: DimensionName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: BusinessKeyValue
+        type: "nvarchar(200)"
+        nullable: false
+      - name: ChangeTypeCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: PreviousRowHash
+        type: "varbinary(32)"
+        nullable: true
+      - name: NewRowHash
+        type: "varbinary(32)"
+        nullable: true
+  - name: IndexMaintenanceLog
+    primary_key:
+      - IndexMaintenanceLogId
+    columns:
+      - name: IndexMaintenanceLogId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: SchemaName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: TableName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: IndexName
+        type: "nvarchar(128)"
+        nullable: false
+      - name: MaintenanceActionName
+        type: "nvarchar(60)"
+        nullable: false
+      - name: FragmentationPercent
+        type: "decimal(9,4)"
+        nullable: true
+  - name: ProcessLock
+    primary_key:
+      - ProcessLockId
+    columns:
+      - name: ProcessLockId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: LockName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: AcquiredByName
+        type: "nvarchar(120)"
+        nullable: false
+      - name: AcquiredAtUtc
+        type: "datetime2(3)"
+        nullable: false
+      - name: ExpiresAtUtc
+        type: "datetime2(3)"
+        nullable: false
+      - name: LockToken
+        type: uniqueidentifier
+        nullable: false
+  - name: AlertLog
+    primary_key:
+      - AlertLogId
+    columns:
+      - name: AlertLogId
+        type: bigint
+        nullable: false
+        identity: true
+      - name: BatchId
+        type: bigint
+        nullable: false
+      - name: AlertCode
+        type: "nvarchar(60)"
+        nullable: false
+      - name: AlertSeverityCode
+        type: "nvarchar(30)"
+        nullable: false
+      - name: AlertMessage
+        type: "nvarchar(max)"
+        nullable: false
+      - name: RaisedAtUtc
+        type: "datetime2(3)"
+        nullable: false
+      - name: AcknowledgedAtUtc
+        type: "datetime2(3)"
+        nullable: true

@@ -1,0 +1,7 @@
+# Generated SQL and seed CSVs are written with LF. Normalizing them keeps the
+# "sql/ matches the model" CI check honest across Windows and Linux checkouts.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.bak binary

@@ -1,0 +1,14 @@
+ServiceOrderStatusKey,ServiceOrderStatusCode,ServiceOrderStatusName,IsClosedStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SOS000001,Willow ServiceOrderStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,SOS000002,Granite ServiceOrderStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,SOS000003,Zenith ServiceOrderStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,SOS000004,Granite ServiceOrderStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,SOS000005,Quartz ServiceOrderStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,SOS000006,Forge ServiceOrderStatus 6,1,-1,1,2026-08-24T00:00:00.000
+7,SOS000007,Unity ServiceOrderStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,SOS000008,Zenith ServiceOrderStatus 8,1,-1,1,2026-08-24T00:00:00.000
+9,SOS000009,Summit ServiceOrderStatus 9,1,-1,1,2026-08-24T00:00:00.000
+10,SOS000010,Evergreen ServiceOrderStatus 10,0,-1,1,2026-08-24T00:00:00.000
+11,SOS000011,Zenith ServiceOrderStatus 11,1,-1,1,2026-08-24T00:00:00.000
+12,SOS000012,Meridian ServiceOrderStatus 12,1,-1,1,2026-08-24T00:00:00.000

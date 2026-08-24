@@ -1,0 +1,7 @@
+InventoryAbcClassKey,AbcClassCode,AbcClassName,CycleCountFrequencyDays,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,IAC000001,Riverton InventoryAbcClass 1,2,-1,1,2026-08-24T00:00:00.000
+2,IAC000002,Riverton InventoryAbcClass 2,3,-1,1,2026-08-24T00:00:00.000
+3,IAC000003,Ion InventoryAbcClass 3,4,-1,1,2026-08-24T00:00:00.000
+4,IAC000004,Granite InventoryAbcClass 4,5,-1,1,2026-08-24T00:00:00.000
+5,IAC000005,Forge InventoryAbcClass 5,6,-1,1,2026-08-24T00:00:00.000

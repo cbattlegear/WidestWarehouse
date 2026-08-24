@@ -1,0 +1,22 @@
+LaborCrewOrganizationKey,LaborCrewOrganizationCode,LaborCrewOrganizationName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,LCO000001,Atlas LaborCrewOrganization 1,1,1,2026-08-24T00:00:00.000
+2,LCO000002,Junction LaborCrewOrganization 2,1,1,2026-08-24T00:00:00.000
+3,LCO000003,Forge LaborCrewOrganization 3,1,1,2026-08-24T00:00:00.000
+4,LCO000004,Junction LaborCrewOrganization 4,1,1,2026-08-24T00:00:00.000
+5,LCO000005,Delta LaborCrewOrganization 5,1,1,2026-08-24T00:00:00.000
+6,LCO000006,Unity LaborCrewOrganization 6,1,1,2026-08-24T00:00:00.000
+7,LCO000007,Summit LaborCrewOrganization 7,1,1,2026-08-24T00:00:00.000
+8,LCO000008,Evergreen LaborCrewOrganization 8,1,1,2026-08-24T00:00:00.000
+9,LCO000009,Zenith LaborCrewOrganization 9,1,1,2026-08-24T00:00:00.000
+10,LCO000010,Junction LaborCrewOrganization 10,1,1,2026-08-24T00:00:00.000
+11,LCO000011,Orion LaborCrewOrganization 11,1,1,2026-08-24T00:00:00.000
+12,LCO000012,Beacon LaborCrewOrganization 12,1,1,2026-08-24T00:00:00.000
+13,LCO000013,Evergreen LaborCrewOrganization 13,1,1,2026-08-24T00:00:00.000
+14,LCO000014,Cedar LaborCrewOrganization 14,1,1,2026-08-24T00:00:00.000
+15,LCO000015,Evergreen LaborCrewOrganization 15,1,1,2026-08-24T00:00:00.000
+16,LCO000016,Granite LaborCrewOrganization 16,1,1,2026-08-24T00:00:00.000
+17,LCO000017,Forge LaborCrewOrganization 17,1,1,2026-08-24T00:00:00.000
+18,LCO000018,Harbor LaborCrewOrganization 18,1,1,2026-08-24T00:00:00.000
+19,LCO000019,Zenith LaborCrewOrganization 19,1,1,2026-08-24T00:00:00.000
+20,LCO000020,Atlas LaborCrewOrganization 20,1,1,2026-08-24T00:00:00.000

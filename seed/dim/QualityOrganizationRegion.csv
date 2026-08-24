@@ -1,0 +1,10 @@
+QualityOrganizationRegionKey,QualityOrganizationRegionCode,QualityOrganizationRegionName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,QOR000001,Orion QualityOrganizationRegion 1,1,1,2026-08-24T00:00:00.000
+2,QOR000002,Beacon QualityOrganizationRegion 2,1,1,2026-08-24T00:00:00.000
+3,QOR000003,Northstar QualityOrganizationRegion 3,1,1,2026-08-24T00:00:00.000
+4,QOR000004,Vertex QualityOrganizationRegion 4,1,1,2026-08-24T00:00:00.000
+5,QOR000005,Forge QualityOrganizationRegion 5,1,1,2026-08-24T00:00:00.000
+6,QOR000006,Vertex QualityOrganizationRegion 6,1,1,2026-08-24T00:00:00.000
+7,QOR000007,Vertex QualityOrganizationRegion 7,1,1,2026-08-24T00:00:00.000
+8,QOR000008,Delta QualityOrganizationRegion 8,1,1,2026-08-24T00:00:00.000

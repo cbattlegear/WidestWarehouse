@@ -1,0 +1,12 @@
+InventoryStockStatusKey,StockStatusCode,StockStatusName,IsAvailableForSale,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,ISS000001,Quartz InventoryStockStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,ISS000002,Keystone InventoryStockStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,ISS000003,Harbor InventoryStockStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,ISS000004,Forge InventoryStockStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,ISS000005,Cedar InventoryStockStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,ISS000006,Beacon InventoryStockStatus 6,1,-1,1,2026-08-24T00:00:00.000
+7,ISS000007,Pioneer InventoryStockStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,ISS000008,Atlas InventoryStockStatus 8,1,-1,1,2026-08-24T00:00:00.000
+9,ISS000009,Junction InventoryStockStatus 9,1,-1,1,2026-08-24T00:00:00.000
+10,ISS000010,Granite InventoryStockStatus 10,0,-1,1,2026-08-24T00:00:00.000

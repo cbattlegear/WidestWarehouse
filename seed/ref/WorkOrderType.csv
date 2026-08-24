@@ -1,0 +1,17 @@
+WorkOrderTypeKey,TypeCode,WorkOrderTypeGroupKey,WorkOrderTypeName,WorkOrderTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,WOT000001,3,Unity WorkOrderType 1,WorkOrderType starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,WOT000002,6,Quartz WorkOrderType 2,WorkOrderType starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,WOT000003,1,Orion WorkOrderType 3,WorkOrderType starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,WOT000004,5,Pioneer WorkOrderType 4,WorkOrderType starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,WOT000005,5,Evergreen WorkOrderType 5,WorkOrderType starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,WOT000006,3,Forge WorkOrderType 6,WorkOrderType starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,WOT000007,4,Meridian WorkOrderType 7,WorkOrderType starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,WOT000008,4,Summit WorkOrderType 8,WorkOrderType starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,WOT000009,5,Evergreen WorkOrderType 9,WorkOrderType starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,WOT000010,1,Willow WorkOrderType 10,WorkOrderType starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,WOT000011,4,Pioneer WorkOrderType 11,WorkOrderType starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,WOT000012,2,Meridian WorkOrderType 12,WorkOrderType starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,WOT000013,5,Cedar WorkOrderType 13,WorkOrderType starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,WOT000014,1,Ion WorkOrderType 14,WorkOrderType starter record 14,1,1,1,2026-08-24T00:00:00.000
+15,WOT000015,6,Ion WorkOrderType 15,WorkOrderType starter record 15,0,1,1,2026-08-24T00:00:00.000

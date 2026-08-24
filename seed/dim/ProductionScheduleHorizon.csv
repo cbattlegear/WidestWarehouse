@@ -1,0 +1,7 @@
+ProductionScheduleHorizonKey,ProductionScheduleHorizonCode,ProductionScheduleHorizonName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,PSH000001,Forge ProductionScheduleHorizon 1,1,1,2026-08-24T00:00:00.000
+2,PSH000002,Atlas ProductionScheduleHorizon 2,1,1,2026-08-24T00:00:00.000
+3,PSH000003,Pioneer ProductionScheduleHorizon 3,1,1,2026-08-24T00:00:00.000
+4,PSH000004,Willow ProductionScheduleHorizon 4,1,1,2026-08-24T00:00:00.000
+5,PSH000005,Junction ProductionScheduleHorizon 5,1,1,2026-08-24T00:00:00.000

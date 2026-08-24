@@ -1,0 +1,10 @@
+EnergyReadingQualityKey,ReadingQualityCode,ReadingQualityName,IsEstimatedReading,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,ERQ000001,Harbor EnergyReadingQuality 1,1,-1,1,2026-08-24T00:00:00.000
+2,ERQ000002,Ion EnergyReadingQuality 2,1,-1,1,2026-08-24T00:00:00.000
+3,ERQ000003,Liberty EnergyReadingQuality 3,1,-1,1,2026-08-24T00:00:00.000
+4,ERQ000004,Meridian EnergyReadingQuality 4,1,-1,1,2026-08-24T00:00:00.000
+5,ERQ000005,Vertex EnergyReadingQuality 5,0,-1,1,2026-08-24T00:00:00.000
+6,ERQ000006,Junction EnergyReadingQuality 6,1,-1,1,2026-08-24T00:00:00.000
+7,ERQ000007,Riverton EnergyReadingQuality 7,1,-1,1,2026-08-24T00:00:00.000
+8,ERQ000008,Harbor EnergyReadingQuality 8,1,-1,1,2026-08-24T00:00:00.000

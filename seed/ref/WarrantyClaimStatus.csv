@@ -1,0 +1,12 @@
+WarrantyClaimStatusKey,WarrantyClaimStatusCode,WarrantyClaimStatusName,IsFinalStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,WCS000001,Harbor WarrantyClaimStatus 1,1,1,1,2026-08-24T00:00:00.000
+2,WCS000002,Harbor WarrantyClaimStatus 2,1,1,1,2026-08-24T00:00:00.000
+3,WCS000003,Evergreen WarrantyClaimStatus 3,1,1,1,2026-08-24T00:00:00.000
+4,WCS000004,Harbor WarrantyClaimStatus 4,1,1,1,2026-08-24T00:00:00.000
+5,WCS000005,Willow WarrantyClaimStatus 5,0,1,1,2026-08-24T00:00:00.000
+6,WCS000006,Keystone WarrantyClaimStatus 6,1,1,1,2026-08-24T00:00:00.000
+7,WCS000007,Delta WarrantyClaimStatus 7,1,1,1,2026-08-24T00:00:00.000
+8,WCS000008,Granite WarrantyClaimStatus 8,1,1,1,2026-08-24T00:00:00.000
+9,WCS000009,Junction WarrantyClaimStatus 9,1,1,1,2026-08-24T00:00:00.000
+10,WCS000010,Liberty WarrantyClaimStatus 10,0,1,1,2026-08-24T00:00:00.000

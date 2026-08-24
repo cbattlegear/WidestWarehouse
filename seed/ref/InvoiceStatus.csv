@@ -1,0 +1,14 @@
+InvoiceStatusKey,StatusCode,InvoiceStatusName,InvoiceStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,IS000001,Summit InvoiceStatus 1,InvoiceStatus starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,IS000002,Liberty InvoiceStatus 2,InvoiceStatus starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,IS000003,Granite InvoiceStatus 3,InvoiceStatus starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,IS000004,Orion InvoiceStatus 4,InvoiceStatus starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,IS000005,Harbor InvoiceStatus 5,InvoiceStatus starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,IS000006,Orion InvoiceStatus 6,InvoiceStatus starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,IS000007,Evergreen InvoiceStatus 7,InvoiceStatus starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,IS000008,Unity InvoiceStatus 8,InvoiceStatus starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,IS000009,Willow InvoiceStatus 9,InvoiceStatus starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,IS000010,Meridian InvoiceStatus 10,InvoiceStatus starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,IS000011,Summit InvoiceStatus 11,InvoiceStatus starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,IS000012,Meridian InvoiceStatus 12,InvoiceStatus starter record 12,1,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,20 @@
+HazardClassKey,HazardClassCode,ComplianceStandardKey,HazardClassName,HazardClassDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,HC000001,23,Meridian HazardClass 1,HazardClass starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,HC000002,6,Pioneer HazardClass 2,HazardClass starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,HC000003,8,Riverton HazardClass 3,HazardClass starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,HC000004,9,Orion HazardClass 4,HazardClass starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,HC000005,10,Forge HazardClass 5,HazardClass starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,HC000006,24,Junction HazardClass 6,HazardClass starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,HC000007,8,Keystone HazardClass 7,HazardClass starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,HC000008,7,Liberty HazardClass 8,HazardClass starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,HC000009,5,Harbor HazardClass 9,HazardClass starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,HC000010,21,Cedar HazardClass 10,HazardClass starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,HC000011,5,Titan HazardClass 11,HazardClass starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,HC000012,8,Vertex HazardClass 12,HazardClass starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,HC000013,14,Evergreen HazardClass 13,HazardClass starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,HC000014,8,Liberty HazardClass 14,HazardClass starter record 14,1,1,1,2026-08-24T00:00:00.000
+15,HC000015,21,Northstar HazardClass 15,HazardClass starter record 15,0,1,1,2026-08-24T00:00:00.000
+16,HC000016,23,Delta HazardClass 16,HazardClass starter record 16,1,1,1,2026-08-24T00:00:00.000
+17,HC000017,20,Vertex HazardClass 17,HazardClass starter record 17,1,1,1,2026-08-24T00:00:00.000
+18,HC000018,15,Meridian HazardClass 18,HazardClass starter record 18,1,1,1,2026-08-24T00:00:00.000

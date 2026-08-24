@@ -1,0 +1,14 @@
+ProductionRunTypeKey,RunTypeCode,RunTypeName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,PRT000001,Riverton ProductionRunType 1,-1,1,2026-08-24T00:00:00.000
+2,PRT000002,Vertex ProductionRunType 2,-1,1,2026-08-24T00:00:00.000
+3,PRT000003,Junction ProductionRunType 3,-1,1,2026-08-24T00:00:00.000
+4,PRT000004,Atlas ProductionRunType 4,-1,1,2026-08-24T00:00:00.000
+5,PRT000005,Northstar ProductionRunType 5,-1,1,2026-08-24T00:00:00.000
+6,PRT000006,Vertex ProductionRunType 6,-1,1,2026-08-24T00:00:00.000
+7,PRT000007,Granite ProductionRunType 7,-1,1,2026-08-24T00:00:00.000
+8,PRT000008,Orion ProductionRunType 8,-1,1,2026-08-24T00:00:00.000
+9,PRT000009,Pioneer ProductionRunType 9,-1,1,2026-08-24T00:00:00.000
+10,PRT000010,Meridian ProductionRunType 10,-1,1,2026-08-24T00:00:00.000
+11,PRT000011,Zenith ProductionRunType 11,-1,1,2026-08-24T00:00:00.000
+12,PRT000012,Meridian ProductionRunType 12,-1,1,2026-08-24T00:00:00.000

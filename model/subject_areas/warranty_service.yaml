@@ -1,0 +1,297 @@
+subject_area: warranty_service
+
+reference:
+  - name: WarrantyClaimStatus
+    description: Lifecycle statuses for warranty claims.
+    business_key: {name: WarrantyClaimStatusCode, type: "nvarchar(20)"}
+    seed_rows: 10
+    columns:
+      - {name: WarrantyClaimStatusName, type: "nvarchar(90)", nullable: false}
+      - {name: IsFinalStatus, type: bit, nullable: false, default: "0"}
+  - name: WarrantyPolicyType
+    description: Policy types defining coverage terms and commercial programs.
+    business_key: {name: WarrantyPolicyTypeCode, type: "nvarchar(20)"}
+    seed_rows: 8
+    columns:
+      - {name: WarrantyPolicyTypeName, type: "nvarchar(100)", nullable: false}
+      - {name: RequiresRegistration, type: bit, nullable: false, default: "0"}
+  - name: ServiceOrderStatus
+    description: Lifecycle statuses for field service and repair orders.
+    business_key: {name: ServiceOrderStatusCode, type: "nvarchar(20)"}
+    seed_rows: 12
+    columns:
+      - {name: ServiceOrderStatusName, type: "nvarchar(90)", nullable: false}
+      - {name: IsClosedStatus, type: bit, nullable: false, default: "0"}
+  - name: WarrantyRmaStatus
+    description: Lifecycle statuses for return material authorization activity.
+    business_key: {name: WarrantyRmaStatusCode, type: "nvarchar(20)"}
+    seed_rows: 9
+    columns:
+      - {name: WarrantyRmaStatusName, type: "nvarchar(90)", nullable: false}
+      - {name: IsReceivedStatus, type: bit, nullable: false, default: "0"}
+  - name: ServiceContractStatus
+    description: Lifecycle statuses for service contracts and support agreements.
+    business_key: {name: ServiceContractStatusCode, type: "nvarchar(20)"}
+    seed_rows: 7
+    columns:
+      - {name: ServiceContractStatusName, type: "nvarchar(90)", nullable: false}
+      - {name: IsActiveStatus, type: bit, nullable: false, default: "1"}
+
+hierarchies:
+  - name: ServiceGeographyTaxonomy
+    schema: dim
+    description: Service geography from region down to territory.
+    levels:
+      - name: ServiceGeoRegion
+        row_count: 18
+      - name: ServiceGeoDistrict
+        row_count: 120
+      - name: ServiceGeoBranch
+        row_count: 900
+      - name: ServiceTerritory
+        row_count: 7200
+  - name: WarrantyCoverageTaxonomy
+    schema: dim
+    description: Warranty coverage structure from family down to term.
+    levels:
+      - name: WarrantyCoverageFamily
+        row_count: 12
+      - name: WarrantyCoverageProgram
+        row_count: 90
+      - name: WarrantyPolicy
+        row_count: 1400
+      - name: WarrantyTerm
+        row_count: 8500
+        columns:
+          - {name: CoverageMonths, type: smallint, nullable: true}
+          - {name: MileageLimitQuantity, type: int, nullable: true}
+  - name: ServiceRepairTaxonomy
+    schema: dim
+    description: Service repair coding from category down to repair code.
+    levels:
+      - name: ServiceRepairCategory
+        row_count: 35
+      - name: ServiceRepairSubcategory
+        row_count: 280
+      - name: ServiceRepairAction
+        row_count: 2200
+      - name: ServiceRepairCode
+        row_count: 18000
+        columns:
+          - {name: StandardRepairMinutes, type: "decimal(9,2)", nullable: true}
+  - name: ServiceCampaignTaxonomy
+    schema: dim
+    description: Product recall and service campaign structure.
+    levels:
+      - name: ServiceCampaignPortfolio
+        row_count: 14
+      - name: ServiceCampaignProgram
+        row_count: 120
+      - name: ServiceCampaign
+        row_count: 1800
+      - name: ServiceRecallActivity
+        row_count: 9000
+        columns:
+          - {name: IsSafetyRelated, type: bit, nullable: false, default: "0"}
+
+dimensions:
+  - name: WarrantyFailureMode
+    description: Failure mode taxonomy for returned products and warranty claims.
+    row_count: 15000
+    business_key: {name: FailureModeCode, type: "nvarchar(40)"}
+    columns:
+      - {name: FailureModeName, type: "nvarchar(160)", nullable: false}
+      - {name: IsConfirmedFailure, type: bit, nullable: false, default: "1"}
+      - {name: SeverityScore, type: "decimal(9,2)", nullable: true}
+    parents:
+      - {name: ServiceRepairSubcategory}
+    ref_parents:
+      - {name: Severity}
+  - name: WarrantyComplaintType
+    description: Customer complaint categories for warranty and service intake.
+    row_count: 4200
+    business_key: {name: ComplaintTypeCode, type: "nvarchar(40)"}
+    columns:
+      - {name: ComplaintTypeName, type: "nvarchar(160)", nullable: false}
+      - {name: RequiresFollowUp, type: bit, nullable: false, default: "1"}
+    parents:
+      - {name: ServiceRepairCategory}
+    ref_parents:
+      - {name: Priority}
+  - name: ServiceContract
+    description: Service contract, extended warranty, or support agreement.
+    scd: type2
+    row_count: 650000
+    business_key: {name: ServiceContractNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: ServiceContractName, type: "nvarchar(180)", nullable: false}
+      - {name: ContractValueAmount, type: money, nullable: true}
+      - {name: ResponseTimeHours, type: "decimal(9,2)", nullable: true}
+    parents:
+      - {name: Customer}
+      - {name: WarrantyTerm}
+      - {name: ServiceTerritory}
+    ref_parents:
+      - {name: ServiceContractStatus}
+      - {name: Currency}
+  - name: ServiceTechnicianProfile
+    description: Field technician profile extending the conformed employee dimension.
+    scd: type2
+    row_count: 45000
+    business_key: {name: TechnicianProfileNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: TechnicianDisplayName, type: "nvarchar(160)", nullable: false}
+      - {name: DispatchRadiusKm, type: "decimal(9,2)", nullable: true}
+      - {name: RemoteSupportEligible, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: Employee}
+      - {name: ServiceTerritory}
+  - name: ServicePartDisposition
+    description: Disposition outcomes for service parts removed, consumed, or returned.
+    row_count: 550
+    business_key: {name: ServicePartDispositionCode, type: "nvarchar(30)"}
+    columns:
+      - {name: ServicePartDispositionName, type: "nvarchar(120)", nullable: false}
+      - {name: RequiresSupplierRecovery, type: bit, nullable: false, default: "0"}
+    ref_parents:
+      - {name: TransactionType}
+  - name: WarrantyClaimChannel
+    description: Intake channel for claims, RMAs, complaints, and service requests.
+    row_count: 120
+    business_key: {name: ClaimChannelCode, type: "nvarchar(30)"}
+    columns:
+      - {name: ClaimChannelName, type: "nvarchar(120)", nullable: false}
+      - {name: IsSelfServiceChannel, type: bit, nullable: false, default: "0"}
+    ref_parents:
+      - {name: Language}
+
+bridges:
+  - name: WarrantyClaimRepairCode
+    description: Resolves warranty failure modes to repair codes used for claim analysis.
+    row_count: 1200000
+    members:
+      - {name: WarrantyFailureMode}
+      - {name: ServiceRepairCode}
+    columns:
+      - {name: RepairProbabilityRatio, type: "decimal(9,6)", nullable: true}
+      - {name: StandardAllowanceAmount, type: money, nullable: true}
+  - name: ServiceOrderPart
+    description: Resolves service repair codes to parts consumed during repair activity.
+    row_count: 8500000
+    members:
+      - {name: ServiceRepairCode}
+      - {name: Product}
+    ref_parents:
+      - {name: UnitOfMeasure}
+    columns:
+      - {name: StandardPartQuantity, type: "decimal(18,4)", nullable: false}
+      - {name: IsMandatoryPart, type: bit, nullable: false, default: "0"}
+  - name: ServiceContractProduct
+    description: Resolves service contracts to covered products.
+    row_count: 2600000
+    members:
+      - {name: ServiceContract}
+      - {name: Product}
+    columns:
+      - {name: CoverageStartDate, type: date, nullable: false}
+      - {name: CoverageEndDate, type: date, nullable: true}
+
+facts:
+  - name: WarrantyClaimLifecycle
+    description: Warranty claim lifecycle from submission through adjudication and payment.
+    type: accumulating_snapshot
+    grain: "One row per warranty claim lifecycle."
+    row_count: 85000000
+    date_roles: [Claim, Failure, Approved, Paid, Closed]
+    dimensions:
+      - {name: Customer}
+      - {name: Product}
+      - {name: Plant, nullable: true}
+      - {name: WarrantyTerm}
+      - {name: WarrantyFailureMode, nullable: true}
+      - {name: WarrantyClaimChannel}
+      - {name: ServiceTerritory, nullable: true}
+    ref_parents:
+      - {name: WarrantyClaimStatus}
+      - {name: Currency}
+      - {name: Severity}
+    degenerate:
+      - {name: WarrantyClaimNumber, type: "nvarchar(50)"}
+      - {name: ProductSerialNumber, type: "nvarchar(80)"}
+    measures:
+      - {name: ClaimedAmount, type: money, aggregation: sum}
+      - {name: ApprovedAmount, type: money, aggregation: sum, nullable: true}
+      - {name: PaidAmount, type: money, aggregation: sum, nullable: true}
+      - {name: ClaimQuantity, type: "decimal(18,4)", aggregation: sum}
+  - name: WarrantyRmaTransaction
+    description: Return material authorization transactions for customer product returns.
+    type: transaction
+    grain: "One row per RMA line for a returned product."
+    row_count: 24000000
+    date_roles: [Authorized, Shipped, Received, Disposition]
+    dimensions:
+      - {name: Customer}
+      - {name: Product}
+      - {name: Plant, role: Receiving, nullable: true}
+      - {name: ServicePartDisposition}
+      - {name: WarrantyFailureMode, nullable: true}
+    ref_parents:
+      - {name: WarrantyRmaStatus}
+      - {name: UnitOfMeasure}
+      - {name: Currency}
+    degenerate:
+      - {name: RmaNumber, type: "nvarchar(50)"}
+      - {name: RmaLineNumber, type: int}
+    measures:
+      - {name: ReturnedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: CreditAmount, type: money, aggregation: sum, nullable: true}
+      - {name: ScrapAmount, type: money, aggregation: sum, nullable: true}
+  - name: FieldServiceOrderTransaction
+    description: Field service order labor, travel, and service execution activity.
+    type: accumulating_snapshot
+    grain: "One row per field service order lifecycle."
+    row_count: 56000000
+    columnstore: true
+    date_roles: [Opened, Scheduled, Dispatched, Completed, Closed]
+    time_roles: [Scheduled, Dispatched, Completed]
+    dimensions:
+      - {name: Customer}
+      - {name: Product, nullable: true}
+      - {name: ServiceTechnicianProfile, nullable: true}
+      - {name: ServiceContract, nullable: true}
+      - {name: ServiceRepairCode, nullable: true}
+      - {name: ServiceTerritory}
+    ref_parents:
+      - {name: ServiceOrderStatus}
+      - {name: Priority}
+      - {name: Currency}
+    degenerate:
+      - {name: ServiceOrderNumber, type: "nvarchar(50)"}
+      - {name: ProductSerialNumber, type: "nvarchar(80)"}
+    measures:
+      - {name: LaborHours, type: "decimal(18,4)", aggregation: sum}
+      - {name: TravelHours, type: "decimal(18,4)", aggregation: sum, nullable: true}
+      - {name: ServiceCostAmount, type: money, aggregation: sum}
+      - {name: FirstVisitResolutionCount, type: int, aggregation: sum}
+  - name: WarrantyCustomerComplaint
+    description: Customer complaints associated with products, warranties, and service response.
+    type: transaction
+    grain: "One row per customer complaint intake event."
+    row_count: 42000000
+    date_roles: [Complaint, ResponseDue, Resolved]
+    time_roles: [Complaint]
+    dimensions:
+      - {name: Customer}
+      - {name: Product, nullable: true}
+      - {name: WarrantyComplaintType}
+      - {name: WarrantyClaimChannel}
+      - {name: ServiceTerritory, nullable: true}
+    ref_parents:
+      - {name: Priority}
+      - {name: Severity}
+    degenerate:
+      - {name: ComplaintNumber, type: "nvarchar(50)"}
+    measures:
+      - {name: ComplaintCount, type: int, aggregation: sum}
+      - {name: ResponseHours, type: "decimal(18,4)", aggregation: avg, nullable: true}
+      - {name: ResolutionHours, type: "decimal(18,4)", aggregation: avg, nullable: true}

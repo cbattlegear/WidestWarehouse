@@ -1,0 +1,20 @@
+IncidentCategoryKey,CategoryCode,IncidentCategoryName,IncidentCategoryDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,IC000001,Vertex IncidentCategory 1,IncidentCategory starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,IC000002,Harbor IncidentCategory 2,IncidentCategory starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,IC000003,Granite IncidentCategory 3,IncidentCategory starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,IC000004,Pioneer IncidentCategory 4,IncidentCategory starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,IC000005,Delta IncidentCategory 5,IncidentCategory starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,IC000006,Liberty IncidentCategory 6,IncidentCategory starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,IC000007,Vertex IncidentCategory 7,IncidentCategory starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,IC000008,Meridian IncidentCategory 8,IncidentCategory starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,IC000009,Delta IncidentCategory 9,IncidentCategory starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,IC000010,Junction IncidentCategory 10,IncidentCategory starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,IC000011,Junction IncidentCategory 11,IncidentCategory starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,IC000012,Delta IncidentCategory 12,IncidentCategory starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,IC000013,Summit IncidentCategory 13,IncidentCategory starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,IC000014,Forge IncidentCategory 14,IncidentCategory starter record 14,1,-1,1,2026-08-24T00:00:00.000
+15,IC000015,Cedar IncidentCategory 15,IncidentCategory starter record 15,0,-1,1,2026-08-24T00:00:00.000
+16,IC000016,Evergreen IncidentCategory 16,IncidentCategory starter record 16,1,-1,1,2026-08-24T00:00:00.000
+17,IC000017,Unity IncidentCategory 17,IncidentCategory starter record 17,1,-1,1,2026-08-24T00:00:00.000
+18,IC000018,Meridian IncidentCategory 18,IncidentCategory starter record 18,1,-1,1,2026-08-24T00:00:00.000

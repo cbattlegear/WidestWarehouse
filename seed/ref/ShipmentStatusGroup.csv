@@ -1,0 +1,9 @@
+ShipmentStatusGroupKey,GroupCode,ShipmentStatusGroupName,ShipmentStatusGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SSG000001,Harbor ShipmentStatusGroup 1,ShipmentStatusGroup starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,SSG000002,Vertex ShipmentStatusGroup 2,ShipmentStatusGroup starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,SSG000003,Titan ShipmentStatusGroup 3,ShipmentStatusGroup starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,SSG000004,Atlas ShipmentStatusGroup 4,ShipmentStatusGroup starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,SSG000005,Quartz ShipmentStatusGroup 5,ShipmentStatusGroup starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,SSG000006,Granite ShipmentStatusGroup 6,ShipmentStatusGroup starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,SSG000007,Summit ShipmentStatusGroup 7,ShipmentStatusGroup starter record 7,1,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,14 @@
+QualityDefectSeverityKey,DefectSeverityCode,DefectSeverityName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,QDS000001,Harbor QualityDefectSeverity 1,-1,1,2026-08-24T00:00:00.000
+2,QDS000002,Ion QualityDefectSeverity 2,-1,1,2026-08-24T00:00:00.000
+3,QDS000003,Pioneer QualityDefectSeverity 3,-1,1,2026-08-24T00:00:00.000
+4,QDS000004,Vertex QualityDefectSeverity 4,-1,1,2026-08-24T00:00:00.000
+5,QDS000005,Northstar QualityDefectSeverity 5,-1,1,2026-08-24T00:00:00.000
+6,QDS000006,Delta QualityDefectSeverity 6,-1,1,2026-08-24T00:00:00.000
+7,QDS000007,Evergreen QualityDefectSeverity 7,-1,1,2026-08-24T00:00:00.000
+8,QDS000008,Junction QualityDefectSeverity 8,-1,1,2026-08-24T00:00:00.000
+9,QDS000009,Ion QualityDefectSeverity 9,-1,1,2026-08-24T00:00:00.000
+10,QDS000010,Keystone QualityDefectSeverity 10,-1,1,2026-08-24T00:00:00.000
+11,QDS000011,Keystone QualityDefectSeverity 11,-1,1,2026-08-24T00:00:00.000
+12,QDS000012,Granite QualityDefectSeverity 12,-1,1,2026-08-24T00:00:00.000

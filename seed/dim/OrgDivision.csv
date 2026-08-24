@@ -1,0 +1,10 @@
+OrgDivisionKey,OrgDivisionCode,OrgEnterpriseKey,OrgDivisionName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,-1,0,1900-01-01T00:00:00.000
+1,OD000001,1,Titan OrgDivision 1,1,1,2026-08-24T00:00:00.000
+2,OD000002,2,Granite OrgDivision 2,1,1,2026-08-24T00:00:00.000
+3,OD000003,1,Summit OrgDivision 3,1,1,2026-08-24T00:00:00.000
+4,OD000004,2,Vertex OrgDivision 4,1,1,2026-08-24T00:00:00.000
+5,OD000005,1,Riverton OrgDivision 5,1,1,2026-08-24T00:00:00.000
+6,OD000006,2,Granite OrgDivision 6,1,1,2026-08-24T00:00:00.000
+7,OD000007,2,Vertex OrgDivision 7,1,1,2026-08-24T00:00:00.000
+8,OD000008,1,Titan OrgDivision 8,1,1,2026-08-24T00:00:00.000

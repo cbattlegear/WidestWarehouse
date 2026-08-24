@@ -1,0 +1,20 @@
+RegionKey,RegionCode,ContinentKey,RegionName,RegionDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,R000001,7,Keystone Region 1,Region starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,R000002,3,Orion Region 2,Region starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,R000003,6,Cedar Region 3,Region starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,R000004,4,Quartz Region 4,Region starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,R000005,3,Liberty Region 5,Region starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,R000006,3,Forge Region 6,Region starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,R000007,3,Cedar Region 7,Region starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,R000008,2,Liberty Region 8,Region starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,R000009,7,Willow Region 9,Region starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,R000010,3,Junction Region 10,Region starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,R000011,1,Keystone Region 11,Region starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,R000012,6,Pioneer Region 12,Region starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,R000013,2,Beacon Region 13,Region starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,R000014,5,Delta Region 14,Region starter record 14,1,1,1,2026-08-24T00:00:00.000
+15,R000015,7,Junction Region 15,Region starter record 15,0,1,1,2026-08-24T00:00:00.000
+16,R000016,4,Junction Region 16,Region starter record 16,1,1,1,2026-08-24T00:00:00.000
+17,R000017,7,Junction Region 17,Region starter record 17,1,1,1,2026-08-24T00:00:00.000
+18,R000018,4,Beacon Region 18,Region starter record 18,1,1,1,2026-08-24T00:00:00.000

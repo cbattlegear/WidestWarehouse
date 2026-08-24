@@ -1,0 +1,10 @@
+StockStatusGroupKey,GroupCode,StockStatusGroupName,StockStatusGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SSG000001,Beacon StockStatusGroup 1,StockStatusGroup starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,SSG000002,Unity StockStatusGroup 2,StockStatusGroup starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,SSG000003,Pioneer StockStatusGroup 3,StockStatusGroup starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,SSG000004,Harbor StockStatusGroup 4,StockStatusGroup starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,SSG000005,Evergreen StockStatusGroup 5,StockStatusGroup starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,SSG000006,Orion StockStatusGroup 6,StockStatusGroup starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,SSG000007,Meridian StockStatusGroup 7,StockStatusGroup starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,SSG000008,Titan StockStatusGroup 8,StockStatusGroup starter record 8,1,1,1,2026-08-24T00:00:00.000

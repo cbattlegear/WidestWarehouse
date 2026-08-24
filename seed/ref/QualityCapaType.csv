@@ -1,0 +1,14 @@
+QualityCapaTypeKey,CapaTypeCode,CapaTypeName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,QCT000001,Evergreen QualityCapaType 1,-1,1,2026-08-24T00:00:00.000
+2,QCT000002,Atlas QualityCapaType 2,-1,1,2026-08-24T00:00:00.000
+3,QCT000003,Atlas QualityCapaType 3,-1,1,2026-08-24T00:00:00.000
+4,QCT000004,Forge QualityCapaType 4,-1,1,2026-08-24T00:00:00.000
+5,QCT000005,Delta QualityCapaType 5,-1,1,2026-08-24T00:00:00.000
+6,QCT000006,Zenith QualityCapaType 6,-1,1,2026-08-24T00:00:00.000
+7,QCT000007,Granite QualityCapaType 7,-1,1,2026-08-24T00:00:00.000
+8,QCT000008,Delta QualityCapaType 8,-1,1,2026-08-24T00:00:00.000
+9,QCT000009,Willow QualityCapaType 9,-1,1,2026-08-24T00:00:00.000
+10,QCT000010,Pioneer QualityCapaType 10,-1,1,2026-08-24T00:00:00.000
+11,QCT000011,Keystone QualityCapaType 11,-1,1,2026-08-24T00:00:00.000
+12,QCT000012,Orion QualityCapaType 12,-1,1,2026-08-24T00:00:00.000

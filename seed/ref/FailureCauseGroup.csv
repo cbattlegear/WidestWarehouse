@@ -1,0 +1,14 @@
+FailureCauseGroupKey,GroupCode,FailureCauseGroupName,FailureCauseGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,FCG000001,Pioneer FailureCauseGroup 1,FailureCauseGroup starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,FCG000002,Beacon FailureCauseGroup 2,FailureCauseGroup starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,FCG000003,Keystone FailureCauseGroup 3,FailureCauseGroup starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,FCG000004,Cedar FailureCauseGroup 4,FailureCauseGroup starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,FCG000005,Cedar FailureCauseGroup 5,FailureCauseGroup starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,FCG000006,Atlas FailureCauseGroup 6,FailureCauseGroup starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,FCG000007,Keystone FailureCauseGroup 7,FailureCauseGroup starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,FCG000008,Forge FailureCauseGroup 8,FailureCauseGroup starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,FCG000009,Pioneer FailureCauseGroup 9,FailureCauseGroup starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,FCG000010,Liberty FailureCauseGroup 10,FailureCauseGroup starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,FCG000011,Evergreen FailureCauseGroup 11,FailureCauseGroup starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,FCG000012,Keystone FailureCauseGroup 12,FailureCauseGroup starter record 12,1,-1,1,2026-08-24T00:00:00.000

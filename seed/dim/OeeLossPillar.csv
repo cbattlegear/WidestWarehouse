@@ -1,0 +1,8 @@
+OeeLossPillarKey,OeeLossPillarCode,OeeLossPillarName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,OLP000001,Liberty OeeLossPillar 1,1,1,2026-08-24T00:00:00.000
+2,OLP000002,Junction OeeLossPillar 2,1,1,2026-08-24T00:00:00.000
+3,OLP000003,Evergreen OeeLossPillar 3,1,1,2026-08-24T00:00:00.000
+4,OLP000004,Harbor OeeLossPillar 4,1,1,2026-08-24T00:00:00.000
+5,OLP000005,Delta OeeLossPillar 5,1,1,2026-08-24T00:00:00.000
+6,OLP000006,Junction OeeLossPillar 6,1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,18 @@
+QualityDefectFamilyKey,QualityDefectFamilyCode,QualityDefectFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,QDF000001,Northstar QualityDefectFamily 1,1,1,2026-08-24T00:00:00.000
+2,QDF000002,Ion QualityDefectFamily 2,1,1,2026-08-24T00:00:00.000
+3,QDF000003,Evergreen QualityDefectFamily 3,1,1,2026-08-24T00:00:00.000
+4,QDF000004,Northstar QualityDefectFamily 4,1,1,2026-08-24T00:00:00.000
+5,QDF000005,Forge QualityDefectFamily 5,1,1,2026-08-24T00:00:00.000
+6,QDF000006,Pioneer QualityDefectFamily 6,1,1,2026-08-24T00:00:00.000
+7,QDF000007,Unity QualityDefectFamily 7,1,1,2026-08-24T00:00:00.000
+8,QDF000008,Riverton QualityDefectFamily 8,1,1,2026-08-24T00:00:00.000
+9,QDF000009,Beacon QualityDefectFamily 9,1,1,2026-08-24T00:00:00.000
+10,QDF000010,Titan QualityDefectFamily 10,1,1,2026-08-24T00:00:00.000
+11,QDF000011,Keystone QualityDefectFamily 11,1,1,2026-08-24T00:00:00.000
+12,QDF000012,Pioneer QualityDefectFamily 12,1,1,2026-08-24T00:00:00.000
+13,QDF000013,Junction QualityDefectFamily 13,1,1,2026-08-24T00:00:00.000
+14,QDF000014,Northstar QualityDefectFamily 14,1,1,2026-08-24T00:00:00.000
+15,QDF000015,Forge QualityDefectFamily 15,1,1,2026-08-24T00:00:00.000
+16,QDF000016,Liberty QualityDefectFamily 16,1,1,2026-08-24T00:00:00.000

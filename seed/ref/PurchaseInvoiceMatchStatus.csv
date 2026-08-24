@@ -1,0 +1,11 @@
+PurchaseInvoiceMatchStatusKey,InvoiceMatchStatusCode,InvoiceMatchStatusName,RequiresResolution,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,PIMS000001,Delta PurchaseInvoiceMatchStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,PIMS000002,Meridian PurchaseInvoiceMatchStatus 2,0,-1,1,2026-08-24T00:00:00.000
+3,PIMS000003,Cedar PurchaseInvoiceMatchStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,PIMS000004,Evergreen PurchaseInvoiceMatchStatus 4,0,-1,1,2026-08-24T00:00:00.000
+5,PIMS000005,Summit PurchaseInvoiceMatchStatus 5,1,-1,1,2026-08-24T00:00:00.000
+6,PIMS000006,Pioneer PurchaseInvoiceMatchStatus 6,0,-1,1,2026-08-24T00:00:00.000
+7,PIMS000007,Titan PurchaseInvoiceMatchStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,PIMS000008,Northstar PurchaseInvoiceMatchStatus 8,0,-1,1,2026-08-24T00:00:00.000
+9,PIMS000009,Liberty PurchaseInvoiceMatchStatus 9,1,-1,1,2026-08-24T00:00:00.000

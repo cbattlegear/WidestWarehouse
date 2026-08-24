@@ -1,0 +1,22 @@
+ProductionScheduleBucketKey,ProductionScheduleBucketCode,ProductionScheduleHorizonKey,ProductionScheduleBucketName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,-1,0,1900-01-01T00:00:00.000
+1,PSB000001,3,Forge ProductionScheduleBucket 1,1,1,2026-08-24T00:00:00.000
+2,PSB000002,2,Vertex ProductionScheduleBucket 2,1,1,2026-08-24T00:00:00.000
+3,PSB000003,2,Willow ProductionScheduleBucket 3,1,1,2026-08-24T00:00:00.000
+4,PSB000004,5,Granite ProductionScheduleBucket 4,1,1,2026-08-24T00:00:00.000
+5,PSB000005,2,Vertex ProductionScheduleBucket 5,1,1,2026-08-24T00:00:00.000
+6,PSB000006,5,Forge ProductionScheduleBucket 6,1,1,2026-08-24T00:00:00.000
+7,PSB000007,3,Liberty ProductionScheduleBucket 7,1,1,2026-08-24T00:00:00.000
+8,PSB000008,4,Riverton ProductionScheduleBucket 8,1,1,2026-08-24T00:00:00.000
+9,PSB000009,1,Atlas ProductionScheduleBucket 9,1,1,2026-08-24T00:00:00.000
+10,PSB000010,2,Keystone ProductionScheduleBucket 10,1,1,2026-08-24T00:00:00.000
+11,PSB000011,2,Junction ProductionScheduleBucket 11,1,1,2026-08-24T00:00:00.000
+12,PSB000012,3,Evergreen ProductionScheduleBucket 12,1,1,2026-08-24T00:00:00.000
+13,PSB000013,3,Evergreen ProductionScheduleBucket 13,1,1,2026-08-24T00:00:00.000
+14,PSB000014,1,Evergreen ProductionScheduleBucket 14,1,1,2026-08-24T00:00:00.000
+15,PSB000015,1,Granite ProductionScheduleBucket 15,1,1,2026-08-24T00:00:00.000
+16,PSB000016,4,Liberty ProductionScheduleBucket 16,1,1,2026-08-24T00:00:00.000
+17,PSB000017,4,Forge ProductionScheduleBucket 17,1,1,2026-08-24T00:00:00.000
+18,PSB000018,1,Summit ProductionScheduleBucket 18,1,1,2026-08-24T00:00:00.000
+19,PSB000019,2,Northstar ProductionScheduleBucket 19,1,1,2026-08-24T00:00:00.000
+20,PSB000020,3,Riverton ProductionScheduleBucket 20,1,1,2026-08-24T00:00:00.000

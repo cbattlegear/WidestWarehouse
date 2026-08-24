@@ -1,0 +1,8 @@
+EnergyUtilityAccountStatusKey,UtilityAccountStatusCode,UtilityAccountStatusName,IsActiveStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,EUAS000001,Atlas EnergyUtilityAccountStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,EUAS000002,Keystone EnergyUtilityAccountStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,EUAS000003,Titan EnergyUtilityAccountStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,EUAS000004,Granite EnergyUtilityAccountStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,EUAS000005,Summit EnergyUtilityAccountStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,EUAS000006,Titan EnergyUtilityAccountStatus 6,1,-1,1,2026-08-24T00:00:00.000

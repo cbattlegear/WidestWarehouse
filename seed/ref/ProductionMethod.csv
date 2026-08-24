@@ -1,0 +1,14 @@
+ProductionMethodKey,MethodCode,ProductionMethodName,ProductionMethodDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,PM000001,Liberty ProductionMethod 1,ProductionMethod starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,PM000002,Meridian ProductionMethod 2,ProductionMethod starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,PM000003,Riverton ProductionMethod 3,ProductionMethod starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,PM000004,Titan ProductionMethod 4,ProductionMethod starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,PM000005,Liberty ProductionMethod 5,ProductionMethod starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,PM000006,Evergreen ProductionMethod 6,ProductionMethod starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,PM000007,Granite ProductionMethod 7,ProductionMethod starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,PM000008,Zenith ProductionMethod 8,ProductionMethod starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,PM000009,Summit ProductionMethod 9,ProductionMethod starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,PM000010,Beacon ProductionMethod 10,ProductionMethod starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,PM000011,Zenith ProductionMethod 11,ProductionMethod starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,PM000012,Quartz ProductionMethod 12,ProductionMethod starter record 12,1,-1,1,2026-08-24T00:00:00.000

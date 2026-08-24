@@ -1,0 +1,14 @@
+QualityCalibrationStatusKey,CalibrationStatusCode,CalibrationStatusName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,QCS000001,Northstar QualityCalibrationStatus 1,-1,1,2026-08-24T00:00:00.000
+2,QCS000002,Riverton QualityCalibrationStatus 2,-1,1,2026-08-24T00:00:00.000
+3,QCS000003,Northstar QualityCalibrationStatus 3,-1,1,2026-08-24T00:00:00.000
+4,QCS000004,Titan QualityCalibrationStatus 4,-1,1,2026-08-24T00:00:00.000
+5,QCS000005,Northstar QualityCalibrationStatus 5,-1,1,2026-08-24T00:00:00.000
+6,QCS000006,Pioneer QualityCalibrationStatus 6,-1,1,2026-08-24T00:00:00.000
+7,QCS000007,Willow QualityCalibrationStatus 7,-1,1,2026-08-24T00:00:00.000
+8,QCS000008,Meridian QualityCalibrationStatus 8,-1,1,2026-08-24T00:00:00.000
+9,QCS000009,Beacon QualityCalibrationStatus 9,-1,1,2026-08-24T00:00:00.000
+10,QCS000010,Keystone QualityCalibrationStatus 10,-1,1,2026-08-24T00:00:00.000
+11,QCS000011,Junction QualityCalibrationStatus 11,-1,1,2026-08-24T00:00:00.000
+12,QCS000012,Orion QualityCalibrationStatus 12,-1,1,2026-08-24T00:00:00.000

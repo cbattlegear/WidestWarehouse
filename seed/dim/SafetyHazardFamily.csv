@@ -1,0 +1,14 @@
+SafetyHazardFamilyKey,SafetyHazardFamilyCode,SafetyHazardFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,SHF000001,Junction SafetyHazardFamily 1,1,1,2026-08-24T00:00:00.000
+2,SHF000002,Liberty SafetyHazardFamily 2,1,1,2026-08-24T00:00:00.000
+3,SHF000003,Northstar SafetyHazardFamily 3,1,1,2026-08-24T00:00:00.000
+4,SHF000004,Titan SafetyHazardFamily 4,1,1,2026-08-24T00:00:00.000
+5,SHF000005,Beacon SafetyHazardFamily 5,1,1,2026-08-24T00:00:00.000
+6,SHF000006,Keystone SafetyHazardFamily 6,1,1,2026-08-24T00:00:00.000
+7,SHF000007,Summit SafetyHazardFamily 7,1,1,2026-08-24T00:00:00.000
+8,SHF000008,Zenith SafetyHazardFamily 8,1,1,2026-08-24T00:00:00.000
+9,SHF000009,Liberty SafetyHazardFamily 9,1,1,2026-08-24T00:00:00.000
+10,SHF000010,Northstar SafetyHazardFamily 10,1,1,2026-08-24T00:00:00.000
+11,SHF000011,Liberty SafetyHazardFamily 11,1,1,2026-08-24T00:00:00.000
+12,SHF000012,Junction SafetyHazardFamily 12,1,1,2026-08-24T00:00:00.000

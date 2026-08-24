@@ -1,0 +1,14 @@
+MaintenanceWorkTypeKey,WorkTypeCode,WorkTypeName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MWT000001,Liberty MaintenanceWorkType 1,-1,1,2026-08-24T00:00:00.000
+2,MWT000002,Meridian MaintenanceWorkType 2,-1,1,2026-08-24T00:00:00.000
+3,MWT000003,Willow MaintenanceWorkType 3,-1,1,2026-08-24T00:00:00.000
+4,MWT000004,Willow MaintenanceWorkType 4,-1,1,2026-08-24T00:00:00.000
+5,MWT000005,Pioneer MaintenanceWorkType 5,-1,1,2026-08-24T00:00:00.000
+6,MWT000006,Quartz MaintenanceWorkType 6,-1,1,2026-08-24T00:00:00.000
+7,MWT000007,Forge MaintenanceWorkType 7,-1,1,2026-08-24T00:00:00.000
+8,MWT000008,Cedar MaintenanceWorkType 8,-1,1,2026-08-24T00:00:00.000
+9,MWT000009,Evergreen MaintenanceWorkType 9,-1,1,2026-08-24T00:00:00.000
+10,MWT000010,Zenith MaintenanceWorkType 10,-1,1,2026-08-24T00:00:00.000
+11,MWT000011,Ion MaintenanceWorkType 11,-1,1,2026-08-24T00:00:00.000
+12,MWT000012,Ion MaintenanceWorkType 12,-1,1,2026-08-24T00:00:00.000

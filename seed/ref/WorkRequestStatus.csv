@@ -1,0 +1,14 @@
+WorkRequestStatusKey,StatusCode,WorkRequestStatusName,WorkRequestStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,WRS000001,Pioneer WorkRequestStatus 1,WorkRequestStatus starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,WRS000002,Liberty WorkRequestStatus 2,WorkRequestStatus starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,WRS000003,Meridian WorkRequestStatus 3,WorkRequestStatus starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,WRS000004,Orion WorkRequestStatus 4,WorkRequestStatus starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,WRS000005,Junction WorkRequestStatus 5,WorkRequestStatus starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,WRS000006,Granite WorkRequestStatus 6,WorkRequestStatus starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,WRS000007,Junction WorkRequestStatus 7,WorkRequestStatus starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,WRS000008,Summit WorkRequestStatus 8,WorkRequestStatus starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,WRS000009,Zenith WorkRequestStatus 9,WorkRequestStatus starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,WRS000010,Forge WorkRequestStatus 10,WorkRequestStatus starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,WRS000011,Delta WorkRequestStatus 11,WorkRequestStatus starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,WRS000012,Forge WorkRequestStatus 12,WorkRequestStatus starter record 12,1,1,1,2026-08-24T00:00:00.000

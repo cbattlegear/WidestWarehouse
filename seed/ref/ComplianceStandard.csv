@@ -1,0 +1,27 @@
+ComplianceStandardKey,StandardCode,ComplianceStandardName,ComplianceStandardDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,CS000001,Willow ComplianceStandard 1,ComplianceStandard starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,CS000002,Quartz ComplianceStandard 2,ComplianceStandard starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,CS000003,Delta ComplianceStandard 3,ComplianceStandard starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,CS000004,Junction ComplianceStandard 4,ComplianceStandard starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,CS000005,Quartz ComplianceStandard 5,ComplianceStandard starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,CS000006,Liberty ComplianceStandard 6,ComplianceStandard starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,CS000007,Orion ComplianceStandard 7,ComplianceStandard starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,CS000008,Harbor ComplianceStandard 8,ComplianceStandard starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,CS000009,Liberty ComplianceStandard 9,ComplianceStandard starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,CS000010,Titan ComplianceStandard 10,ComplianceStandard starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,CS000011,Granite ComplianceStandard 11,ComplianceStandard starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,CS000012,Summit ComplianceStandard 12,ComplianceStandard starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,CS000013,Forge ComplianceStandard 13,ComplianceStandard starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,CS000014,Unity ComplianceStandard 14,ComplianceStandard starter record 14,1,-1,1,2026-08-24T00:00:00.000
+15,CS000015,Zenith ComplianceStandard 15,ComplianceStandard starter record 15,0,-1,1,2026-08-24T00:00:00.000
+16,CS000016,Willow ComplianceStandard 16,ComplianceStandard starter record 16,1,-1,1,2026-08-24T00:00:00.000
+17,CS000017,Riverton ComplianceStandard 17,ComplianceStandard starter record 17,1,-1,1,2026-08-24T00:00:00.000
+18,CS000018,Northstar ComplianceStandard 18,ComplianceStandard starter record 18,1,-1,1,2026-08-24T00:00:00.000
+19,CS000019,Northstar ComplianceStandard 19,ComplianceStandard starter record 19,1,-1,1,2026-08-24T00:00:00.000
+20,CS000020,Riverton ComplianceStandard 20,ComplianceStandard starter record 20,0,-1,1,2026-08-24T00:00:00.000
+21,CS000021,Vertex ComplianceStandard 21,ComplianceStandard starter record 21,1,-1,1,2026-08-24T00:00:00.000
+22,CS000022,Delta ComplianceStandard 22,ComplianceStandard starter record 22,1,-1,1,2026-08-24T00:00:00.000
+23,CS000023,Forge ComplianceStandard 23,ComplianceStandard starter record 23,1,-1,1,2026-08-24T00:00:00.000
+24,CS000024,Keystone ComplianceStandard 24,ComplianceStandard starter record 24,1,-1,1,2026-08-24T00:00:00.000
+25,CS000025,Atlas ComplianceStandard 25,ComplianceStandard starter record 25,0,-1,1,2026-08-24T00:00:00.000

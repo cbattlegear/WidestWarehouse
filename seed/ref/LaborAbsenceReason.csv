@@ -1,0 +1,20 @@
+LaborAbsenceReasonKey,AbsenceReasonCode,AbsenceReasonName,IsPaidLeave,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,LAR000001,Titan LaborAbsenceReason 1,1,-1,1,2026-08-24T00:00:00.000
+2,LAR000002,Keystone LaborAbsenceReason 2,1,-1,1,2026-08-24T00:00:00.000
+3,LAR000003,Keystone LaborAbsenceReason 3,1,-1,1,2026-08-24T00:00:00.000
+4,LAR000004,Granite LaborAbsenceReason 4,1,-1,1,2026-08-24T00:00:00.000
+5,LAR000005,Meridian LaborAbsenceReason 5,0,-1,1,2026-08-24T00:00:00.000
+6,LAR000006,Zenith LaborAbsenceReason 6,1,-1,1,2026-08-24T00:00:00.000
+7,LAR000007,Northstar LaborAbsenceReason 7,1,-1,1,2026-08-24T00:00:00.000
+8,LAR000008,Evergreen LaborAbsenceReason 8,1,-1,1,2026-08-24T00:00:00.000
+9,LAR000009,Ion LaborAbsenceReason 9,1,-1,1,2026-08-24T00:00:00.000
+10,LAR000010,Unity LaborAbsenceReason 10,0,-1,1,2026-08-24T00:00:00.000
+11,LAR000011,Orion LaborAbsenceReason 11,1,-1,1,2026-08-24T00:00:00.000
+12,LAR000012,Northstar LaborAbsenceReason 12,1,-1,1,2026-08-24T00:00:00.000
+13,LAR000013,Orion LaborAbsenceReason 13,1,-1,1,2026-08-24T00:00:00.000
+14,LAR000014,Willow LaborAbsenceReason 14,1,-1,1,2026-08-24T00:00:00.000
+15,LAR000015,Harbor LaborAbsenceReason 15,0,-1,1,2026-08-24T00:00:00.000
+16,LAR000016,Cedar LaborAbsenceReason 16,1,-1,1,2026-08-24T00:00:00.000
+17,LAR000017,Pioneer LaborAbsenceReason 17,1,-1,1,2026-08-24T00:00:00.000
+18,LAR000018,Evergreen LaborAbsenceReason 18,1,-1,1,2026-08-24T00:00:00.000

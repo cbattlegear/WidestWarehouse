@@ -1,0 +1,9 @@
+GeoContinentKey,GeoContinentCode,GeoContinentName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,GC000001,Zenith GeoContinent 1,1,1,2026-08-24T00:00:00.000
+2,GC000002,Northstar GeoContinent 2,1,1,2026-08-24T00:00:00.000
+3,GC000003,Willow GeoContinent 3,1,1,2026-08-24T00:00:00.000
+4,GC000004,Atlas GeoContinent 4,1,1,2026-08-24T00:00:00.000
+5,GC000005,Pioneer GeoContinent 5,1,1,2026-08-24T00:00:00.000
+6,GC000006,Unity GeoContinent 6,1,1,2026-08-24T00:00:00.000
+7,GC000007,Forge GeoContinent 7,1,1,2026-08-24T00:00:00.000

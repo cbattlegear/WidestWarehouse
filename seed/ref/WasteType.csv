@@ -1,0 +1,22 @@
+WasteTypeKey,WasteTypeCode,WasteTypeName,WasteTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,WT000001,Keystone WasteType 1,WasteType starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,WT000002,Willow WasteType 2,WasteType starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,WT000003,Northstar WasteType 3,WasteType starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,WT000004,Zenith WasteType 4,WasteType starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,WT000005,Northstar WasteType 5,WasteType starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,WT000006,Willow WasteType 6,WasteType starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,WT000007,Ion WasteType 7,WasteType starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,WT000008,Summit WasteType 8,WasteType starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,WT000009,Willow WasteType 9,WasteType starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,WT000010,Granite WasteType 10,WasteType starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,WT000011,Harbor WasteType 11,WasteType starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,WT000012,Meridian WasteType 12,WasteType starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,WT000013,Zenith WasteType 13,WasteType starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,WT000014,Delta WasteType 14,WasteType starter record 14,1,1,1,2026-08-24T00:00:00.000
+15,WT000015,Keystone WasteType 15,WasteType starter record 15,0,1,1,2026-08-24T00:00:00.000
+16,WT000016,Delta WasteType 16,WasteType starter record 16,1,1,1,2026-08-24T00:00:00.000
+17,WT000017,Vertex WasteType 17,WasteType starter record 17,1,1,1,2026-08-24T00:00:00.000
+18,WT000018,Harbor WasteType 18,WasteType starter record 18,1,1,1,2026-08-24T00:00:00.000
+19,WT000019,Northstar WasteType 19,WasteType starter record 19,1,1,1,2026-08-24T00:00:00.000
+20,WT000020,Beacon WasteType 20,WasteType starter record 20,0,1,1,2026-08-24T00:00:00.000

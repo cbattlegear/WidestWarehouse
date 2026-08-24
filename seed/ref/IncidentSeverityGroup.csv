@@ -1,0 +1,7 @@
+IncidentSeverityGroupKey,GroupCode,IncidentSeverityGroupName,IncidentSeverityGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,ISG000001,Beacon IncidentSeverityGroup 1,IncidentSeverityGroup starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,ISG000002,Ion IncidentSeverityGroup 2,IncidentSeverityGroup starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,ISG000003,Harbor IncidentSeverityGroup 3,IncidentSeverityGroup starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,ISG000004,Orion IncidentSeverityGroup 4,IncidentSeverityGroup starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,ISG000005,Titan IncidentSeverityGroup 5,IncidentSeverityGroup starter record 5,0,-1,1,2026-08-24T00:00:00.000

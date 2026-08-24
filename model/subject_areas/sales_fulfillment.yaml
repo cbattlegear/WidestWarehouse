@@ -1,0 +1,333 @@
+subject_area: sales_fulfillment
+reference:
+  - name: SalesOrderLifecycleStatus
+    description: Lifecycle states for sales orders and sales order lines.
+    business_key: {name: SalesOrderLifecycleStatusCode, type: "nvarchar(20)"}
+    seed_rows: 14
+    columns:
+      - {name: SalesOrderLifecycleStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsTerminal, type: bit, nullable: false, default: "0"}
+  - name: SalesAllocationStatus
+    description: Inventory allocation and reservation outcomes for sales demand.
+    business_key: {name: AllocationStatusCode, type: "nvarchar(20)"}
+    seed_rows: 10
+    columns:
+      - {name: AllocationStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: ReservesInventory, type: bit, nullable: false, default: "0"}
+  - name: SalesPriceConditionType
+    description: Pricing condition categories used for sales price calculation.
+    business_key: {name: PriceConditionTypeCode, type: "nvarchar(20)"}
+    seed_rows: 18
+    columns:
+      - {name: PriceConditionTypeName, type: "nvarchar(100)", nullable: false}
+      - {name: IsDiscountCondition, type: bit, nullable: false, default: "0"}
+  - name: SalesCreditStatus
+    description: Credit review statuses for sales customers and orders.
+    business_key: {name: CreditStatusCode, type: "nvarchar(20)"}
+    seed_rows: 8
+    columns:
+      - {name: CreditStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: BlocksRelease, type: bit, nullable: false, default: "0"}
+  - name: SalesBackorderReason
+    description: Business reasons for sales demand becoming backordered.
+    business_key: {name: BackorderReasonCode, type: "nvarchar(20)"}
+    seed_rows: 12
+    columns:
+      - {name: BackorderReasonName, type: "nvarchar(100)", nullable: false}
+      - {name: IsSupplyRelated, type: bit, nullable: false, default: "1"}
+hierarchies:
+  - name: SalesChannelHierarchy
+    schema: dim
+    description: Commercial channel structure from route to selling channel.
+    levels:
+      - name: SalesRouteToMarket
+        row_count: 8
+      - name: SalesChannelFamily
+        row_count: 32
+      - name: SalesChannel
+        row_count: 120
+      - name: SalesChannelSegment
+        row_count: 600
+  - name: SalesTerritoryHierarchy
+    schema: dim
+    description: Sales coverage hierarchy from region to territory account pod.
+    levels:
+      - name: SalesRegion
+        row_count: 12
+      - name: SalesDistrict
+        row_count: 80
+      - name: SalesTerritory
+        row_count: 600
+      - name: SalesTerritoryPod
+        row_count: 2400
+  - name: SalesCustomerHierarchy
+    schema: dim
+    description: Customer commercial hierarchy for parent account reporting.
+    levels:
+      - name: SalesCustomerGroup
+        row_count: 200
+      - name: SalesCustomerChain
+        row_count: 2500
+      - name: SalesCustomerDivision
+        row_count: 12000
+      - name: SalesCustomerNode
+        row_count: 90000
+  - name: SalesPromotionHierarchy
+    schema: dim
+    description: Trade promotion structure from program to promotion tactic.
+    levels:
+      - name: SalesPromotionProgram
+        row_count: 80
+      - name: SalesPromotionCampaign
+        row_count: 900
+      - name: SalesPromotionOffer
+        row_count: 8000
+      - name: SalesPromotionTactic
+        row_count: 40000
+dimensions:
+  - name: SalesOrderHeader
+    description: Sales order header representing customer demand and commercial terms.
+    scd: type2
+    row_count: 7000000
+    business_key: {name: SalesOrderNumber, type: "nvarchar(40)"}
+    columns:
+      - {name: SalesOrderName, type: "nvarchar(160)", nullable: true}
+      - {name: CustomerPurchaseOrderNumber, type: "nvarchar(60)", nullable: true}
+      - {name: RequestedShipDate, type: date, nullable: true}
+    parents:
+      - {name: Customer}
+      - {name: Plant, role: Selling, nullable: true}
+      - {name: SalesChannelSegment}
+      - {name: SalesTerritoryPod}
+    ref_parents:
+      - {name: SalesOrderLifecycleStatus}
+      - {name: SalesCreditStatus}
+      - {name: Currency}
+  - name: SalesOrderLine
+    description: Sales order line for product demand, pricing, and fulfillment tracking.
+    scd: type2
+    row_count: 45000000
+    business_key: {name: SalesOrderLineCode, type: "nvarchar(60)"}
+    columns:
+      - {name: LineSequenceNumber, type: int, nullable: false}
+      - {name: CustomerLineReference, type: "nvarchar(60)", nullable: true}
+      - {name: RequestedDeliveryDate, type: date, nullable: true}
+    parents:
+      - {name: SalesOrderHeader}
+      - {name: Product}
+      - {name: Customer}
+    ref_parents:
+      - {name: SalesOrderLifecycleStatus}
+      - {name: UnitOfMeasure}
+  - name: SalesPriceList
+    description: Sales price list containing product prices for channels and currencies.
+    scd: type2
+    row_count: 1200000
+    business_key: {name: PriceListCode, type: "nvarchar(50)"}
+    columns:
+      - {name: PriceListName, type: "nvarchar(160)", nullable: false}
+      - {name: EffectiveDate, type: date, nullable: false}
+      - {name: ExpirationDate, type: date, nullable: true}
+    parents:
+      - {name: SalesChannelSegment}
+      - {name: Product}
+    ref_parents:
+      - {name: Currency}
+      - {name: UnitOfMeasure}
+  - name: SalesPromotion
+    description: Promotion or discount agreement applied to eligible sales orders.
+    scd: type2
+    row_count: 500000
+    business_key: {name: PromotionCode, type: "nvarchar(50)"}
+    columns:
+      - {name: PromotionName, type: "nvarchar(180)", nullable: false}
+      - {name: EffectiveDate, type: date, nullable: false}
+      - {name: ExpirationDate, type: date, nullable: true}
+      - {name: MaximumDiscountAmount, type: money, nullable: true}
+    parents:
+      - {name: SalesPromotionTactic}
+      - {name: Product, nullable: true}
+      - {name: Customer, nullable: true}
+    ref_parents:
+      - {name: SalesPriceConditionType}
+      - {name: Currency}
+  - name: SalesCustomerCreditProfile
+    description: Customer credit profile outrigger with credit limits and review behavior.
+    scd: type2
+    row_count: 650000
+    business_key: {name: CreditProfileCode, type: "nvarchar(50)"}
+    columns:
+      - {name: CreditLimitAmount, type: money, nullable: false}
+      - {name: ReviewCycleDays, type: int, nullable: false}
+      - {name: RiskScore, type: int, nullable: true}
+    parents:
+      - {name: Customer}
+      - {name: BusinessUnit, nullable: true}
+    ref_parents:
+      - {name: SalesCreditStatus}
+      - {name: Currency}
+  - name: SalesFulfillmentPromise
+    description: Fulfillment promise made to a customer order line by plant and schedule.
+    scd: type2
+    row_count: 35000000
+    business_key: {name: FulfillmentPromiseCode, type: "nvarchar(70)"}
+    columns:
+      - {name: PromiseSequenceNumber, type: int, nullable: false}
+      - {name: PromisedShipDate, type: date, nullable: true}
+      - {name: PromisedDeliveryDate, type: date, nullable: true}
+    parents:
+      - {name: SalesOrderLine}
+      - {name: Plant, role: Fulfillment}
+      - {name: Product}
+    ref_parents:
+      - {name: SalesAllocationStatus}
+bridges:
+  - name: SalesOrderLineAllocation
+    description: Resolves sales order lines to reserved product and fulfillment promises.
+    row_count: 70000000
+    unique_members: false
+    members:
+      - {name: SalesOrderLine}
+      - {name: SalesFulfillmentPromise}
+      - {name: Product}
+      - {name: Plant}
+    ref_parents:
+      - {name: SalesAllocationStatus}
+    columns:
+      - {name: AllocatedQuantity, type: "decimal(18,4)", nullable: false}
+  - name: SalesOrderToCustomerHierarchy
+    description: Resolves sales orders to reporting customer hierarchy nodes.
+    row_count: 9000000
+    members:
+      - {name: SalesOrderHeader}
+      - {name: Customer}
+      - {name: SalesCustomerNode}
+    columns:
+      - {name: AllocationRatio, type: "decimal(9,6)", nullable: false, default: "1"}
+  - name: SalesOrderLinePromotion
+    description: Resolves order lines to applied promotions and discount conditions.
+    row_count: 25000000
+    unique_members: false
+    members:
+      - {name: SalesOrderLine}
+      - {name: SalesPromotion}
+    ref_parents:
+      - {name: SalesPriceConditionType}
+    columns:
+      - {name: DiscountAmount, type: money, nullable: false}
+      - {name: DiscountRate, type: "decimal(9,6)", nullable: true}
+  - name: SalesOrderToShipmentRequest
+    description: Resolves sales order lines to shipment request identifiers for downstream logistics.
+    row_count: 45000000
+    unique_members: false
+    members:
+      - {name: SalesOrderLine}
+      - {name: Product}
+      - {name: Customer}
+    columns:
+      - {name: RequestedQuantity, type: "decimal(18,4)", nullable: false}
+facts:
+  - name: SalesOrderBooking
+    description: Booked sales order quantity and value at order-line grain.
+    type: transaction
+    grain: "One row per sales order line booking event."
+    row_count: 75000000
+    columnstore: true
+    date_roles: [Order, RequestedShip, RequestedDelivery]
+    time_roles: [Order]
+    dimensions:
+      - {name: SalesOrderHeader}
+      - {name: SalesOrderLine}
+      - {name: Customer}
+      - {name: Product}
+      - {name: Plant, role: Selling, nullable: true}
+      - {name: SalesChannelSegment}
+      - {name: SalesTerritoryPod}
+    ref_parents:
+      - {name: SalesOrderLifecycleStatus}
+      - {name: UnitOfMeasure}
+      - {name: Currency}
+    measures:
+      - {name: OrderedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: GrossSalesAmount, type: money, aggregation: sum}
+      - {name: NetSalesAmount, type: money, aggregation: sum}
+  - name: SalesOrderAllocation
+    description: Inventory allocation transaction for sales demand.
+    type: transaction
+    grain: "One row per allocation event for a sales order line and fulfillment promise."
+    row_count: 65000000
+    date_roles: [Allocation, PromiseShip]
+    time_roles: [Allocation]
+    dimensions:
+      - {name: SalesOrderLine}
+      - {name: SalesFulfillmentPromise}
+      - {name: Product}
+      - {name: Plant, role: Fulfillment}
+    ref_parents:
+      - {name: SalesAllocationStatus}
+      - {name: UnitOfMeasure}
+    degenerate:
+      - {name: AllocationDocumentNumber, type: "nvarchar(40)"}
+    measures:
+      - {name: RequestedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: AllocatedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: UnallocatedQuantity, type: "decimal(18,4)", aggregation: sum}
+  - name: SalesFulfillmentCycle
+    description: Accumulating order-to-cash fulfillment cycle by sales order line.
+    type: accumulating_snapshot
+    grain: "One row per sales order line tracked from booking through invoice."
+    row_count: 45000000
+    date_roles: [Order, Allocation, Pick, Pack, Ship, Delivery, Invoice]
+    dimensions:
+      - {name: SalesOrderHeader}
+      - {name: SalesOrderLine}
+      - {name: Customer}
+      - {name: Product}
+      - {name: Plant, role: Fulfillment}
+    ref_parents:
+      - {name: SalesOrderLifecycleStatus}
+      - {name: SalesAllocationStatus}
+      - {name: Currency}
+    measures:
+      - {name: OrderedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: ShippedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: InvoicedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: InvoicedAmount, type: money, aggregation: sum}
+  - name: SalesBackorderSnapshot
+    description: Daily backorder exposure by customer, product, and order line.
+    type: periodic_snapshot
+    grain: "One row per day, sales order line, product, customer, and backorder reason."
+    row_count: 55000000
+    date_roles: [Snapshot, RequestedDelivery]
+    dimensions:
+      - {name: SalesOrderLine}
+      - {name: Customer}
+      - {name: Product}
+      - {name: Plant, role: Fulfillment}
+    ref_parents:
+      - {name: SalesBackorderReason}
+      - {name: UnitOfMeasure}
+      - {name: Currency}
+    measures:
+      - {name: BackorderQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: BackorderAmount, type: money, aggregation: sum}
+      - {name: BackorderAgeDays, type: int, aggregation: avg}
+  - name: SalesCreditExposureSnapshot
+    description: Daily customer credit exposure from open orders and receivables.
+    type: periodic_snapshot
+    grain: "One row per day, customer, business unit, and credit profile."
+    row_count: 12000000
+    date_roles: [Snapshot]
+    dimensions:
+      - {name: Customer}
+      - {name: BusinessUnit, nullable: true}
+      - {name: SalesCustomerCreditProfile}
+    ref_parents:
+      - {name: SalesCreditStatus}
+      - {name: Currency}
+    measures:
+      - {name: CreditLimitAmount, type: money, aggregation: max}
+      - {name: OpenOrderAmount, type: money, aggregation: sum}
+      - {name: ReceivableAmount, type: money, aggregation: sum}
+      - {name: AvailableCreditAmount, type: money, aggregation: sum}
+

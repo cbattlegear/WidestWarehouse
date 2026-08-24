@@ -1,0 +1,14 @@
+MaintenanceDowntimeReasonKey,DowntimeReasonCode,DowntimeReasonName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MDR000001,Summit MaintenanceDowntimeReason 1,-1,1,2026-08-24T00:00:00.000
+2,MDR000002,Evergreen MaintenanceDowntimeReason 2,-1,1,2026-08-24T00:00:00.000
+3,MDR000003,Delta MaintenanceDowntimeReason 3,-1,1,2026-08-24T00:00:00.000
+4,MDR000004,Zenith MaintenanceDowntimeReason 4,-1,1,2026-08-24T00:00:00.000
+5,MDR000005,Northstar MaintenanceDowntimeReason 5,-1,1,2026-08-24T00:00:00.000
+6,MDR000006,Pioneer MaintenanceDowntimeReason 6,-1,1,2026-08-24T00:00:00.000
+7,MDR000007,Atlas MaintenanceDowntimeReason 7,-1,1,2026-08-24T00:00:00.000
+8,MDR000008,Keystone MaintenanceDowntimeReason 8,-1,1,2026-08-24T00:00:00.000
+9,MDR000009,Willow MaintenanceDowntimeReason 9,-1,1,2026-08-24T00:00:00.000
+10,MDR000010,Junction MaintenanceDowntimeReason 10,-1,1,2026-08-24T00:00:00.000
+11,MDR000011,Unity MaintenanceDowntimeReason 11,-1,1,2026-08-24T00:00:00.000
+12,MDR000012,Delta MaintenanceDowntimeReason 12,-1,1,2026-08-24T00:00:00.000

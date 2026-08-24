@@ -1,0 +1,22 @@
+ProductionLotFamilyKey,ProductionLotFamilyCode,ProductionLotFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,PLF000001,Meridian ProductionLotFamily 1,1,1,2026-08-24T00:00:00.000
+2,PLF000002,Riverton ProductionLotFamily 2,1,1,2026-08-24T00:00:00.000
+3,PLF000003,Cedar ProductionLotFamily 3,1,1,2026-08-24T00:00:00.000
+4,PLF000004,Riverton ProductionLotFamily 4,1,1,2026-08-24T00:00:00.000
+5,PLF000005,Unity ProductionLotFamily 5,1,1,2026-08-24T00:00:00.000
+6,PLF000006,Delta ProductionLotFamily 6,1,1,2026-08-24T00:00:00.000
+7,PLF000007,Ion ProductionLotFamily 7,1,1,2026-08-24T00:00:00.000
+8,PLF000008,Quartz ProductionLotFamily 8,1,1,2026-08-24T00:00:00.000
+9,PLF000009,Quartz ProductionLotFamily 9,1,1,2026-08-24T00:00:00.000
+10,PLF000010,Keystone ProductionLotFamily 10,1,1,2026-08-24T00:00:00.000
+11,PLF000011,Summit ProductionLotFamily 11,1,1,2026-08-24T00:00:00.000
+12,PLF000012,Delta ProductionLotFamily 12,1,1,2026-08-24T00:00:00.000
+13,PLF000013,Quartz ProductionLotFamily 13,1,1,2026-08-24T00:00:00.000
+14,PLF000014,Quartz ProductionLotFamily 14,1,1,2026-08-24T00:00:00.000
+15,PLF000015,Zenith ProductionLotFamily 15,1,1,2026-08-24T00:00:00.000
+16,PLF000016,Zenith ProductionLotFamily 16,1,1,2026-08-24T00:00:00.000
+17,PLF000017,Summit ProductionLotFamily 17,1,1,2026-08-24T00:00:00.000
+18,PLF000018,Titan ProductionLotFamily 18,1,1,2026-08-24T00:00:00.000
+19,PLF000019,Forge ProductionLotFamily 19,1,1,2026-08-24T00:00:00.000
+20,PLF000020,Ion ProductionLotFamily 20,1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,12 @@
+LogisticsCustomsStatusKey,CustomsStatusCode,CustomsStatusName,AllowsBorderRelease,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,LCS000001,Unity LogisticsCustomsStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,LCS000002,Titan LogisticsCustomsStatus 2,0,-1,1,2026-08-24T00:00:00.000
+3,LCS000003,Summit LogisticsCustomsStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,LCS000004,Titan LogisticsCustomsStatus 4,0,-1,1,2026-08-24T00:00:00.000
+5,LCS000005,Quartz LogisticsCustomsStatus 5,1,-1,1,2026-08-24T00:00:00.000
+6,LCS000006,Forge LogisticsCustomsStatus 6,0,-1,1,2026-08-24T00:00:00.000
+7,LCS000007,Orion LogisticsCustomsStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,LCS000008,Meridian LogisticsCustomsStatus 8,0,-1,1,2026-08-24T00:00:00.000
+9,LCS000009,Granite LogisticsCustomsStatus 9,1,-1,1,2026-08-24T00:00:00.000
+10,LCS000010,Beacon LogisticsCustomsStatus 10,0,-1,1,2026-08-24T00:00:00.000

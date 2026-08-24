@@ -1,0 +1,18 @@
+EnergySourceKey,EnergySourceCode,EnergySourceName,EnergySourceDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,ES000001,Delta EnergySource 1,EnergySource starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,ES000002,Beacon EnergySource 2,EnergySource starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,ES000003,Pioneer EnergySource 3,EnergySource starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,ES000004,Ion EnergySource 4,EnergySource starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,ES000005,Junction EnergySource 5,EnergySource starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,ES000006,Delta EnergySource 6,EnergySource starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,ES000007,Quartz EnergySource 7,EnergySource starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,ES000008,Keystone EnergySource 8,EnergySource starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,ES000009,Evergreen EnergySource 9,EnergySource starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,ES000010,Ion EnergySource 10,EnergySource starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,ES000011,Pioneer EnergySource 11,EnergySource starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,ES000012,Titan EnergySource 12,EnergySource starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,ES000013,Liberty EnergySource 13,EnergySource starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,ES000014,Orion EnergySource 14,EnergySource starter record 14,1,-1,1,2026-08-24T00:00:00.000
+15,ES000015,Junction EnergySource 15,EnergySource starter record 15,0,-1,1,2026-08-24T00:00:00.000
+16,ES000016,Beacon EnergySource 16,EnergySource starter record 16,1,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,12 @@
+MaintenanceStrategyKey,StrategyCode,MaintenanceStrategyName,MaintenanceStrategyDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,MS000001,Summit MaintenanceStrategy 1,MaintenanceStrategy starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,MS000002,Atlas MaintenanceStrategy 2,MaintenanceStrategy starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,MS000003,Meridian MaintenanceStrategy 3,MaintenanceStrategy starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,MS000004,Harbor MaintenanceStrategy 4,MaintenanceStrategy starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,MS000005,Quartz MaintenanceStrategy 5,MaintenanceStrategy starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,MS000006,Delta MaintenanceStrategy 6,MaintenanceStrategy starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,MS000007,Zenith MaintenanceStrategy 7,MaintenanceStrategy starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,MS000008,Beacon MaintenanceStrategy 8,MaintenanceStrategy starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,MS000009,Cedar MaintenanceStrategy 9,MaintenanceStrategy starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,MS000010,Willow MaintenanceStrategy 10,MaintenanceStrategy starter record 10,0,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,22 @@
+LogisticsCarrierGroupKey,LogisticsCarrierGroupCode,LogisticsCarrierGroupName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,LCG000001,Granite LogisticsCarrierGroup 1,1,1,2026-08-24T00:00:00.000
+2,LCG000002,Summit LogisticsCarrierGroup 2,1,1,2026-08-24T00:00:00.000
+3,LCG000003,Delta LogisticsCarrierGroup 3,1,1,2026-08-24T00:00:00.000
+4,LCG000004,Granite LogisticsCarrierGroup 4,1,1,2026-08-24T00:00:00.000
+5,LCG000005,Keystone LogisticsCarrierGroup 5,1,1,2026-08-24T00:00:00.000
+6,LCG000006,Forge LogisticsCarrierGroup 6,1,1,2026-08-24T00:00:00.000
+7,LCG000007,Keystone LogisticsCarrierGroup 7,1,1,2026-08-24T00:00:00.000
+8,LCG000008,Zenith LogisticsCarrierGroup 8,1,1,2026-08-24T00:00:00.000
+9,LCG000009,Beacon LogisticsCarrierGroup 9,1,1,2026-08-24T00:00:00.000
+10,LCG000010,Summit LogisticsCarrierGroup 10,1,1,2026-08-24T00:00:00.000
+11,LCG000011,Summit LogisticsCarrierGroup 11,1,1,2026-08-24T00:00:00.000
+12,LCG000012,Vertex LogisticsCarrierGroup 12,1,1,2026-08-24T00:00:00.000
+13,LCG000013,Meridian LogisticsCarrierGroup 13,1,1,2026-08-24T00:00:00.000
+14,LCG000014,Keystone LogisticsCarrierGroup 14,1,1,2026-08-24T00:00:00.000
+15,LCG000015,Northstar LogisticsCarrierGroup 15,1,1,2026-08-24T00:00:00.000
+16,LCG000016,Vertex LogisticsCarrierGroup 16,1,1,2026-08-24T00:00:00.000
+17,LCG000017,Liberty LogisticsCarrierGroup 17,1,1,2026-08-24T00:00:00.000
+18,LCG000018,Evergreen LogisticsCarrierGroup 18,1,1,2026-08-24T00:00:00.000
+19,LCG000019,Ion LogisticsCarrierGroup 19,1,1,2026-08-24T00:00:00.000
+20,LCG000020,Granite LogisticsCarrierGroup 20,1,1,2026-08-24T00:00:00.000

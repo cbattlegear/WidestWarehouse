@@ -1,0 +1,20 @@
+EnergySourceCategoryKey,EnergySourceCategoryCode,EnergySourceCategoryName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,ESC000001,Zenith EnergySourceCategory 1,1,1,2026-08-24T00:00:00.000
+2,ESC000002,Willow EnergySourceCategory 2,1,1,2026-08-24T00:00:00.000
+3,ESC000003,Liberty EnergySourceCategory 3,1,1,2026-08-24T00:00:00.000
+4,ESC000004,Pioneer EnergySourceCategory 4,1,1,2026-08-24T00:00:00.000
+5,ESC000005,Meridian EnergySourceCategory 5,1,1,2026-08-24T00:00:00.000
+6,ESC000006,Harbor EnergySourceCategory 6,1,1,2026-08-24T00:00:00.000
+7,ESC000007,Summit EnergySourceCategory 7,1,1,2026-08-24T00:00:00.000
+8,ESC000008,Summit EnergySourceCategory 8,1,1,2026-08-24T00:00:00.000
+9,ESC000009,Orion EnergySourceCategory 9,1,1,2026-08-24T00:00:00.000
+10,ESC000010,Willow EnergySourceCategory 10,1,1,2026-08-24T00:00:00.000
+11,ESC000011,Quartz EnergySourceCategory 11,1,1,2026-08-24T00:00:00.000
+12,ESC000012,Zenith EnergySourceCategory 12,1,1,2026-08-24T00:00:00.000
+13,ESC000013,Unity EnergySourceCategory 13,1,1,2026-08-24T00:00:00.000
+14,ESC000014,Orion EnergySourceCategory 14,1,1,2026-08-24T00:00:00.000
+15,ESC000015,Liberty EnergySourceCategory 15,1,1,2026-08-24T00:00:00.000
+16,ESC000016,Quartz EnergySourceCategory 16,1,1,2026-08-24T00:00:00.000
+17,ESC000017,Pioneer EnergySourceCategory 17,1,1,2026-08-24T00:00:00.000
+18,ESC000018,Willow EnergySourceCategory 18,1,1,2026-08-24T00:00:00.000

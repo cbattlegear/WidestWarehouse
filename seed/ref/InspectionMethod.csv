@@ -1,0 +1,27 @@
+InspectionMethodKey,MethodCode,InspectionMethodName,InspectionMethodDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,IM000001,Pioneer InspectionMethod 1,InspectionMethod starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,IM000002,Meridian InspectionMethod 2,InspectionMethod starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,IM000003,Granite InspectionMethod 3,InspectionMethod starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,IM000004,Northstar InspectionMethod 4,InspectionMethod starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,IM000005,Delta InspectionMethod 5,InspectionMethod starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,IM000006,Orion InspectionMethod 6,InspectionMethod starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,IM000007,Liberty InspectionMethod 7,InspectionMethod starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,IM000008,Atlas InspectionMethod 8,InspectionMethod starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,IM000009,Forge InspectionMethod 9,InspectionMethod starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,IM000010,Beacon InspectionMethod 10,InspectionMethod starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,IM000011,Granite InspectionMethod 11,InspectionMethod starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,IM000012,Orion InspectionMethod 12,InspectionMethod starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,IM000013,Willow InspectionMethod 13,InspectionMethod starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,IM000014,Forge InspectionMethod 14,InspectionMethod starter record 14,1,-1,1,2026-08-24T00:00:00.000
+15,IM000015,Cedar InspectionMethod 15,InspectionMethod starter record 15,0,-1,1,2026-08-24T00:00:00.000
+16,IM000016,Northstar InspectionMethod 16,InspectionMethod starter record 16,1,-1,1,2026-08-24T00:00:00.000
+17,IM000017,Delta InspectionMethod 17,InspectionMethod starter record 17,1,-1,1,2026-08-24T00:00:00.000
+18,IM000018,Forge InspectionMethod 18,InspectionMethod starter record 18,1,-1,1,2026-08-24T00:00:00.000
+19,IM000019,Evergreen InspectionMethod 19,InspectionMethod starter record 19,1,-1,1,2026-08-24T00:00:00.000
+20,IM000020,Cedar InspectionMethod 20,InspectionMethod starter record 20,0,-1,1,2026-08-24T00:00:00.000
+21,IM000021,Summit InspectionMethod 21,InspectionMethod starter record 21,1,-1,1,2026-08-24T00:00:00.000
+22,IM000022,Granite InspectionMethod 22,InspectionMethod starter record 22,1,-1,1,2026-08-24T00:00:00.000
+23,IM000023,Atlas InspectionMethod 23,InspectionMethod starter record 23,1,-1,1,2026-08-24T00:00:00.000
+24,IM000024,Northstar InspectionMethod 24,InspectionMethod starter record 24,1,-1,1,2026-08-24T00:00:00.000
+25,IM000025,Keystone InspectionMethod 25,InspectionMethod starter record 25,0,-1,1,2026-08-24T00:00:00.000

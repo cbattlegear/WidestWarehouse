@@ -1,0 +1,12 @@
+FinanceCostComponentClassKey,FinanceCostComponentClassCode,FinanceCostComponentClassName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,FCCC000001,Granite FinanceCostComponentClass 1,1,1,2026-08-24T00:00:00.000
+2,FCCC000002,Unity FinanceCostComponentClass 2,1,1,2026-08-24T00:00:00.000
+3,FCCC000003,Willow FinanceCostComponentClass 3,1,1,2026-08-24T00:00:00.000
+4,FCCC000004,Riverton FinanceCostComponentClass 4,1,1,2026-08-24T00:00:00.000
+5,FCCC000005,Harbor FinanceCostComponentClass 5,1,1,2026-08-24T00:00:00.000
+6,FCCC000006,Meridian FinanceCostComponentClass 6,1,1,2026-08-24T00:00:00.000
+7,FCCC000007,Atlas FinanceCostComponentClass 7,1,1,2026-08-24T00:00:00.000
+8,FCCC000008,Delta FinanceCostComponentClass 8,1,1,2026-08-24T00:00:00.000
+9,FCCC000009,Titan FinanceCostComponentClass 9,1,1,2026-08-24T00:00:00.000
+10,FCCC000010,Pioneer FinanceCostComponentClass 10,1,1,2026-08-24T00:00:00.000

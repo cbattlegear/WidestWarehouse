@@ -1,0 +1,17 @@
+services:
+  loader:
+    # Defaults to a local build. Set LOADER_IMAGE to run the published GHCR image
+    # instead, e.g. ghcr.io/cbattlegear/widestwarehouse-loader:latest
+    image: ${LOADER_IMAGE:-widestwarehouse-loader:local}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

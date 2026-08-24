@@ -1,0 +1,12 @@
+EngineeringDocumentTypeKey,DocumentTypeCode,DocumentTypeName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,EDT000001,Junction EngineeringDocumentType 1,-1,1,2026-08-24T00:00:00.000
+2,EDT000002,Quartz EngineeringDocumentType 2,-1,1,2026-08-24T00:00:00.000
+3,EDT000003,Vertex EngineeringDocumentType 3,-1,1,2026-08-24T00:00:00.000
+4,EDT000004,Zenith EngineeringDocumentType 4,-1,1,2026-08-24T00:00:00.000
+5,EDT000005,Willow EngineeringDocumentType 5,-1,1,2026-08-24T00:00:00.000
+6,EDT000006,Harbor EngineeringDocumentType 6,-1,1,2026-08-24T00:00:00.000
+7,EDT000007,Keystone EngineeringDocumentType 7,-1,1,2026-08-24T00:00:00.000
+8,EDT000008,Liberty EngineeringDocumentType 8,-1,1,2026-08-24T00:00:00.000
+9,EDT000009,Beacon EngineeringDocumentType 9,-1,1,2026-08-24T00:00:00.000
+10,EDT000010,Atlas EngineeringDocumentType 10,-1,1,2026-08-24T00:00:00.000

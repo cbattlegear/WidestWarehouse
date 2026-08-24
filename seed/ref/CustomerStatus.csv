@@ -1,0 +1,12 @@
+CustomerStatusKey,StatusCode,CustomerStatusName,CustomerStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,CS000001,Ion CustomerStatus 1,CustomerStatus starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,CS000002,Quartz CustomerStatus 2,CustomerStatus starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,CS000003,Orion CustomerStatus 3,CustomerStatus starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,CS000004,Quartz CustomerStatus 4,CustomerStatus starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,CS000005,Keystone CustomerStatus 5,CustomerStatus starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,CS000006,Forge CustomerStatus 6,CustomerStatus starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,CS000007,Cedar CustomerStatus 7,CustomerStatus starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,CS000008,Delta CustomerStatus 8,CustomerStatus starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,CS000009,Zenith CustomerStatus 9,CustomerStatus starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,CS000010,Ion CustomerStatus 10,CustomerStatus starter record 10,0,-1,1,2026-08-24T00:00:00.000

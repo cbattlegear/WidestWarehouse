@@ -1,0 +1,14 @@
+ProductionDowntimeReasonKey,DowntimeReasonCode,DowntimeReasonName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,PDR000001,Willow ProductionDowntimeReason 1,-1,1,2026-08-24T00:00:00.000
+2,PDR000002,Orion ProductionDowntimeReason 2,-1,1,2026-08-24T00:00:00.000
+3,PDR000003,Keystone ProductionDowntimeReason 3,-1,1,2026-08-24T00:00:00.000
+4,PDR000004,Granite ProductionDowntimeReason 4,-1,1,2026-08-24T00:00:00.000
+5,PDR000005,Granite ProductionDowntimeReason 5,-1,1,2026-08-24T00:00:00.000
+6,PDR000006,Forge ProductionDowntimeReason 6,-1,1,2026-08-24T00:00:00.000
+7,PDR000007,Northstar ProductionDowntimeReason 7,-1,1,2026-08-24T00:00:00.000
+8,PDR000008,Zenith ProductionDowntimeReason 8,-1,1,2026-08-24T00:00:00.000
+9,PDR000009,Riverton ProductionDowntimeReason 9,-1,1,2026-08-24T00:00:00.000
+10,PDR000010,Atlas ProductionDowntimeReason 10,-1,1,2026-08-24T00:00:00.000
+11,PDR000011,Titan ProductionDowntimeReason 11,-1,1,2026-08-24T00:00:00.000
+12,PDR000012,Unity ProductionDowntimeReason 12,-1,1,2026-08-24T00:00:00.000

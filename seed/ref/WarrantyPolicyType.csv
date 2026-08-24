@@ -1,0 +1,10 @@
+WarrantyPolicyTypeKey,WarrantyPolicyTypeCode,WarrantyPolicyTypeName,RequiresRegistration,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,WPT000001,Vertex WarrantyPolicyType 1,1,1,1,2026-08-24T00:00:00.000
+2,WPT000002,Evergreen WarrantyPolicyType 2,0,1,1,2026-08-24T00:00:00.000
+3,WPT000003,Harbor WarrantyPolicyType 3,1,1,1,2026-08-24T00:00:00.000
+4,WPT000004,Keystone WarrantyPolicyType 4,0,1,1,2026-08-24T00:00:00.000
+5,WPT000005,Northstar WarrantyPolicyType 5,1,1,1,2026-08-24T00:00:00.000
+6,WPT000006,Ion WarrantyPolicyType 6,0,1,1,2026-08-24T00:00:00.000
+7,WPT000007,Granite WarrantyPolicyType 7,1,1,1,2026-08-24T00:00:00.000
+8,WPT000008,Liberty WarrantyPolicyType 8,0,1,1,2026-08-24T00:00:00.000

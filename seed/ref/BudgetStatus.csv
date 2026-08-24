@@ -1,0 +1,12 @@
+BudgetStatusKey,StatusCode,BudgetStatusName,BudgetStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,BS000001,Meridian BudgetStatus 1,BudgetStatus starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,BS000002,Meridian BudgetStatus 2,BudgetStatus starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,BS000003,Vertex BudgetStatus 3,BudgetStatus starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,BS000004,Keystone BudgetStatus 4,BudgetStatus starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,BS000005,Beacon BudgetStatus 5,BudgetStatus starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,BS000006,Orion BudgetStatus 6,BudgetStatus starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,BS000007,Harbor BudgetStatus 7,BudgetStatus starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,BS000008,Liberty BudgetStatus 8,BudgetStatus starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,BS000009,Granite BudgetStatus 9,BudgetStatus starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,BS000010,Delta BudgetStatus 10,BudgetStatus starter record 10,0,-1,1,2026-08-24T00:00:00.000

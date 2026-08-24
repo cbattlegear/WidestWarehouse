@@ -1,0 +1,12 @@
+SupplierQualificationStatusKey,StatusCode,SupplierQualificationStatusName,SupplierQualificationStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SQS000001,Atlas SupplierQualificationStatus 1,SupplierQualificationStatus starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,SQS000002,Summit SupplierQualificationStatus 2,SupplierQualificationStatus starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,SQS000003,Delta SupplierQualificationStatus 3,SupplierQualificationStatus starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,SQS000004,Northstar SupplierQualificationStatus 4,SupplierQualificationStatus starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,SQS000005,Zenith SupplierQualificationStatus 5,SupplierQualificationStatus starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,SQS000006,Orion SupplierQualificationStatus 6,SupplierQualificationStatus starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,SQS000007,Atlas SupplierQualificationStatus 7,SupplierQualificationStatus starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,SQS000008,Keystone SupplierQualificationStatus 8,SupplierQualificationStatus starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,SQS000009,Atlas SupplierQualificationStatus 9,SupplierQualificationStatus starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,SQS000010,Unity SupplierQualificationStatus 10,SupplierQualificationStatus starter record 10,0,1,1,2026-08-24T00:00:00.000

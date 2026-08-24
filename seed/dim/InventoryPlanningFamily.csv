@@ -1,0 +1,18 @@
+InventoryPlanningFamilyKey,InventoryPlanningFamilyCode,InventoryPlanningFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,IPF000001,Beacon InventoryPlanningFamily 1,1,1,2026-08-24T00:00:00.000
+2,IPF000002,Vertex InventoryPlanningFamily 2,1,1,2026-08-24T00:00:00.000
+3,IPF000003,Quartz InventoryPlanningFamily 3,1,1,2026-08-24T00:00:00.000
+4,IPF000004,Summit InventoryPlanningFamily 4,1,1,2026-08-24T00:00:00.000
+5,IPF000005,Pioneer InventoryPlanningFamily 5,1,1,2026-08-24T00:00:00.000
+6,IPF000006,Evergreen InventoryPlanningFamily 6,1,1,2026-08-24T00:00:00.000
+7,IPF000007,Liberty InventoryPlanningFamily 7,1,1,2026-08-24T00:00:00.000
+8,IPF000008,Unity InventoryPlanningFamily 8,1,1,2026-08-24T00:00:00.000
+9,IPF000009,Harbor InventoryPlanningFamily 9,1,1,2026-08-24T00:00:00.000
+10,IPF000010,Harbor InventoryPlanningFamily 10,1,1,2026-08-24T00:00:00.000
+11,IPF000011,Quartz InventoryPlanningFamily 11,1,1,2026-08-24T00:00:00.000
+12,IPF000012,Forge InventoryPlanningFamily 12,1,1,2026-08-24T00:00:00.000
+13,IPF000013,Ion InventoryPlanningFamily 13,1,1,2026-08-24T00:00:00.000
+14,IPF000014,Liberty InventoryPlanningFamily 14,1,1,2026-08-24T00:00:00.000
+15,IPF000015,Evergreen InventoryPlanningFamily 15,1,1,2026-08-24T00:00:00.000
+16,IPF000016,Meridian InventoryPlanningFamily 16,1,1,2026-08-24T00:00:00.000

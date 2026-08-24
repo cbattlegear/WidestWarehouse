@@ -1,0 +1,37 @@
+EngineeringDisciplineKey,EngineeringDisciplineCode,EngineeringDomainKey,EngineeringDisciplineName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,-1,0,1900-01-01T00:00:00.000
+1,ED000001,10,Forge EngineeringDiscipline 1,1,1,2026-08-24T00:00:00.000
+2,ED000002,10,Cedar EngineeringDiscipline 2,1,1,2026-08-24T00:00:00.000
+3,ED000003,6,Keystone EngineeringDiscipline 3,1,1,2026-08-24T00:00:00.000
+4,ED000004,10,Willow EngineeringDiscipline 4,1,1,2026-08-24T00:00:00.000
+5,ED000005,2,Summit EngineeringDiscipline 5,1,1,2026-08-24T00:00:00.000
+6,ED000006,3,Ion EngineeringDiscipline 6,1,1,2026-08-24T00:00:00.000
+7,ED000007,1,Atlas EngineeringDiscipline 7,1,1,2026-08-24T00:00:00.000
+8,ED000008,9,Meridian EngineeringDiscipline 8,1,1,2026-08-24T00:00:00.000
+9,ED000009,8,Meridian EngineeringDiscipline 9,1,1,2026-08-24T00:00:00.000
+10,ED000010,5,Forge EngineeringDiscipline 10,1,1,2026-08-24T00:00:00.000
+11,ED000011,4,Meridian EngineeringDiscipline 11,1,1,2026-08-24T00:00:00.000
+12,ED000012,9,Cedar EngineeringDiscipline 12,1,1,2026-08-24T00:00:00.000
+13,ED000013,5,Granite EngineeringDiscipline 13,1,1,2026-08-24T00:00:00.000
+14,ED000014,2,Ion EngineeringDiscipline 14,1,1,2026-08-24T00:00:00.000
+15,ED000015,7,Keystone EngineeringDiscipline 15,1,1,2026-08-24T00:00:00.000
+16,ED000016,5,Riverton EngineeringDiscipline 16,1,1,2026-08-24T00:00:00.000
+17,ED000017,9,Liberty EngineeringDiscipline 17,1,1,2026-08-24T00:00:00.000
+18,ED000018,5,Keystone EngineeringDiscipline 18,1,1,2026-08-24T00:00:00.000
+19,ED000019,7,Orion EngineeringDiscipline 19,1,1,2026-08-24T00:00:00.000
+20,ED000020,6,Pioneer EngineeringDiscipline 20,1,1,2026-08-24T00:00:00.000
+21,ED000021,7,Evergreen EngineeringDiscipline 21,1,1,2026-08-24T00:00:00.000
+22,ED000022,2,Granite EngineeringDiscipline 22,1,1,2026-08-24T00:00:00.000
+23,ED000023,8,Summit EngineeringDiscipline 23,1,1,2026-08-24T00:00:00.000
+24,ED000024,1,Keystone EngineeringDiscipline 24,1,1,2026-08-24T00:00:00.000
+25,ED000025,1,Quartz EngineeringDiscipline 25,1,1,2026-08-24T00:00:00.000
+26,ED000026,10,Junction EngineeringDiscipline 26,1,1,2026-08-24T00:00:00.000
+27,ED000027,9,Ion EngineeringDiscipline 27,1,1,2026-08-24T00:00:00.000
+28,ED000028,6,Quartz EngineeringDiscipline 28,1,1,2026-08-24T00:00:00.000
+29,ED000029,1,Evergreen EngineeringDiscipline 29,1,1,2026-08-24T00:00:00.000
+30,ED000030,5,Meridian EngineeringDiscipline 30,1,1,2026-08-24T00:00:00.000
+31,ED000031,9,Liberty EngineeringDiscipline 31,1,1,2026-08-24T00:00:00.000
+32,ED000032,2,Quartz EngineeringDiscipline 32,1,1,2026-08-24T00:00:00.000
+33,ED000033,4,Granite EngineeringDiscipline 33,1,1,2026-08-24T00:00:00.000
+34,ED000034,2,Northstar EngineeringDiscipline 34,1,1,2026-08-24T00:00:00.000
+35,ED000035,4,Granite EngineeringDiscipline 35,1,1,2026-08-24T00:00:00.000

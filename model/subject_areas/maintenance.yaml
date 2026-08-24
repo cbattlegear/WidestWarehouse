@@ -1,0 +1,526 @@
+subject_area: maintenance
+reference:
+- name: MaintenanceWorkType
+  description: MaintenanceWorkType lookup values.
+  business_key:
+    name: WorkTypeCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: WorkTypeName
+    type: "nvarchar(120)"
+    nullable: false
+- name: MaintenanceOrderStatus
+  description: MaintenanceOrderStatus lookup values.
+  business_key:
+    name: OrderStatusCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: OrderStatusName
+    type: "nvarchar(120)"
+    nullable: false
+- name: MaintenanceFailureSeverity
+  description: MaintenanceFailureSeverity lookup values.
+  business_key:
+    name: FailureSeverityCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: FailureSeverityName
+    type: "nvarchar(120)"
+    nullable: false
+- name: MaintenanceConditionType
+  description: MaintenanceConditionType lookup values.
+  business_key:
+    name: ConditionTypeCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: ConditionTypeName
+    type: "nvarchar(120)"
+    nullable: false
+- name: MaintenanceDowntimeReason
+  description: MaintenanceDowntimeReason lookup values.
+  business_key:
+    name: DowntimeReasonCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: DowntimeReasonName
+    type: "nvarchar(120)"
+    nullable: false
+hierarchies:
+- name: MaintenanceAssetTaxonomy
+  schema: dim
+  description: MaintenanceAssetTaxonomy subject hierarchy.
+  levels:
+  - name: MaintenanceAssetSystem
+    description: MaintenanceAssetSystem level for maintenanceassettaxonomy subject hierarchy.
+    row_count: 20
+  - name: MaintenanceAssetClass
+    description: MaintenanceAssetClass level for maintenanceassettaxonomy subject hierarchy.
+    row_count: 100
+  - name: MaintenanceAssetSubClass
+    description: MaintenanceAssetSubClass level for maintenanceassettaxonomy subject hierarchy.
+    row_count: 360
+  - name: MaintenanceAssetComponentType
+    description: MaintenanceAssetComponentType level for maintenanceassettaxonomy subject hierarchy.
+    row_count: 1400
+- name: MaintenanceFailureTaxonomy
+  schema: dim
+  description: MaintenanceFailureTaxonomy subject hierarchy.
+  levels:
+  - name: MaintenanceFailureDomain
+    description: MaintenanceFailureDomain level for maintenancefailuretaxonomy subject hierarchy.
+    row_count: 16
+  - name: MaintenanceFailureMode
+    description: MaintenanceFailureMode level for maintenancefailuretaxonomy subject hierarchy.
+    row_count: 160
+  - name: MaintenanceFailureCause
+    description: MaintenanceFailureCause level for maintenancefailuretaxonomy subject hierarchy.
+    row_count: 700
+  - name: MaintenanceFailureRemedy
+    description: MaintenanceFailureRemedy level for maintenancefailuretaxonomy subject hierarchy.
+    row_count: 1500
+- name: MaintenancePlanningTaxonomy
+  schema: dim
+  description: MaintenancePlanningTaxonomy subject hierarchy.
+  levels:
+  - name: MaintenancePlanFamily
+    description: MaintenancePlanFamily level for maintenanceplanningtaxonomy subject hierarchy.
+    row_count: 14
+  - name: MaintenancePlanClass
+    description: MaintenancePlanClass level for maintenanceplanningtaxonomy subject hierarchy.
+    row_count: 90
+  - name: MaintenanceTaskGroup
+    description: MaintenanceTaskGroup level for maintenanceplanningtaxonomy subject hierarchy.
+    row_count: 300
+  - name: MaintenanceTaskType
+    description: MaintenanceTaskType level for maintenanceplanningtaxonomy subject hierarchy.
+    row_count: 1200
+- name: MaintenanceCrewTaxonomy
+  schema: dim
+  description: MaintenanceCrewTaxonomy subject hierarchy.
+  levels:
+  - name: MaintenanceRegion
+    description: MaintenanceRegion level for maintenancecrewtaxonomy subject hierarchy.
+    row_count: 8
+  - name: MaintenanceTrade
+    description: MaintenanceTrade level for maintenancecrewtaxonomy subject hierarchy.
+    row_count: 45
+  - name: MaintenanceSkillGroup
+    description: MaintenanceSkillGroup level for maintenancecrewtaxonomy subject hierarchy.
+    row_count: 180
+  - name: MaintenanceCrewRole
+    description: MaintenanceCrewRole level for maintenancecrewtaxonomy subject hierarchy.
+    row_count: 650
+dimensions:
+- name: MaintenanceWorkRequest
+  description: Maintenance work request before order creation.
+  row_count: 400000
+  business_key:
+    name: WorkRequestNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: MaintenanceWorkRequestName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Asset
+  - name: Plant
+  - name: Employee
+    role: Requester
+    nullable: true
+  ref_parents:
+  - name: Priority
+  - name: MaintenanceWorkType
+  - name: MaintenanceOrderStatus
+  scd: type2
+- name: MaintenanceWorkOrder
+  description: Maintenance order for corrective and preventive work.
+  row_count: 350000
+  business_key:
+    name: MaintenanceWorkOrderNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: MaintenanceWorkOrderName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: MaintenanceWorkRequest
+    nullable: true
+  - name: Asset
+  - name: CostCenter
+  - name: MaintenanceTaskType
+  ref_parents:
+  - name: MaintenanceWorkType
+  - name: MaintenanceOrderStatus
+  - name: Priority
+  scd: type2
+- name: MaintenancePmPlan
+  description: Preventive maintenance plan definition.
+  row_count: 65000
+  business_key:
+    name: PmPlanNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: MaintenancePmPlanName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Asset
+    nullable: true
+  - name: MaintenancePlanClass
+  ref_parents:
+  - name: UnitOfMeasure
+  - name: MaintenanceWorkType
+  - name: RecordStatus
+  scd: type2
+- name: MaintenanceSparePart
+  description: Maintenance spare part planning attributes.
+  row_count: 180000
+  business_key:
+    name: SparePartNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: MaintenanceSparePartName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Product
+  - name: MaintenanceAssetComponentType
+  ref_parents:
+  - name: UnitOfMeasure
+  - name: HazardClass
+  scd: type2
+- name: MaintenanceCrew
+  description: Maintenance crew responsible for field work.
+  row_count: 18000
+  business_key:
+    name: MaintenanceCrewCode
+    type: "nvarchar(40)"
+  columns:
+  - name: MaintenanceCrewName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: MaintenanceCrewRole
+  - name: CostCenter
+  ref_parents: []
+  scd: type2
+- name: MaintenanceConditionPoint
+  description: Condition monitoring point on an asset.
+  row_count: 250000
+  business_key:
+    name: ConditionPointNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: MaintenanceConditionPointName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Asset
+  - name: MaintenanceAssetComponentType
+  ref_parents:
+  - name: MaintenanceConditionType
+  - name: UnitOfMeasure
+  scd: type2
+bridges:
+- name: MaintenanceAssetFailureMode
+  description: Permitted failure modes for assets.
+  row_count: 300000
+  members:
+  - name: Asset
+  - name: MaintenanceFailureMode
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+  ref_parents:
+  - name: MaintenanceFailureSeverity
+- name: MaintenanceOrderSparePart
+  description: Spare parts planned or consumed by maintenance orders.
+  row_count: 900000
+  members:
+  - name: MaintenanceWorkOrder
+  - name: MaintenanceSparePart
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+  ref_parents:
+  - name: UnitOfMeasure
+- name: MaintenanceCrewEmployee
+  description: Employees assigned to maintenance crews.
+  row_count: 120000
+  members:
+  - name: MaintenanceCrew
+  - name: Employee
+  - name: MaintenanceCrewRole
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+facts:
+- name: MaintenanceWorkOrderLifecycle
+  description: Maintenance order lifecycle milestones and durations.
+  type: accumulating_snapshot
+  grain: One row per maintenance work order lifecycle.
+  row_count: 350000
+  date_roles:
+  - Requested
+  - Approved
+  - Scheduled
+  - Started
+  - Completed
+  - Closed
+  dimensions:
+  - name: MaintenanceWorkOrder
+  - name: MaintenanceWorkRequest
+    nullable: true
+  - name: Asset
+  - name: Plant
+  - name: MaintenanceCrew
+    nullable: true
+  ref_parents:
+  - name: MaintenanceWorkType
+  - name: MaintenanceOrderStatus
+  degenerate:
+  - name: MaintenanceWorkOrderNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: MaintenanceLaborConfirmation
+  description: Labor confirmations posted to maintenance orders.
+  type: transaction
+  grain: One row per employee labor confirmation.
+  row_count: 1200000
+  columnstore: true
+  date_roles:
+  - Confirmation
+  time_roles:
+  - Confirmation
+  dimensions:
+  - name: MaintenanceWorkOrder
+  - name: Asset
+  - name: Employee
+    role: Technician
+  - name: MaintenanceCrew
+    nullable: true
+  - name: CostCenter
+  ref_parents:
+  - name: MaintenanceWorkType
+  degenerate:
+  - name: LaborConfirmationNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: MaintenanceSparePartUsage
+  description: Spare part issues and returns for maintenance orders.
+  type: transaction
+  grain: One row per spare part movement.
+  row_count: 900000
+  columnstore: true
+  date_roles:
+  - Movement
+  time_roles:
+  - Movement
+  dimensions:
+  - name: MaintenanceWorkOrder
+  - name: MaintenanceSparePart
+  - name: Asset
+  - name: Plant
+  - name: CostCenter
+  ref_parents:
+  - name: UnitOfMeasure
+  - name: TransactionType
+  degenerate:
+  - name: MaterialDocumentNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: MaintenanceConditionReading
+  description: Condition monitoring readings collected from assets.
+  type: transaction
+  grain: One row per condition monitoring reading.
+  row_count: 3000000
+  columnstore: true
+  date_roles:
+  - Reading
+  time_roles:
+  - Reading
+  dimensions:
+  - name: MaintenanceConditionPoint
+  - name: Asset
+  - name: Plant
+  - name: WorkCenter
+    nullable: true
+  ref_parents:
+  - name: MaintenanceConditionType
+  - name: UnitOfMeasure
+  degenerate:
+  - name: ReadingBatchNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: MaintenanceDowntimeAttribution
+  description: Downtime attributed to maintenance events.
+  type: transaction
+  grain: One row per downtime attribution event.
+  row_count: 650000
+  columnstore: true
+  date_roles:
+  - Start
+  - End
+  time_roles:
+  - Start
+  - End
+  dimensions:
+  - name: MaintenanceWorkOrder
+    nullable: true
+  - name: Asset
+  - name: Plant
+  - name: WorkCenter
+    nullable: true
+  ref_parents:
+  - name: MaintenanceDowntimeReason
+  - name: MaintenanceFailureSeverity
+  degenerate:
+  - name: DowntimeAttributionNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true

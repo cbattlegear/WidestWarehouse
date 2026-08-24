@@ -1,0 +1,16 @@
+SalesOrderLifecycleStatusKey,SalesOrderLifecycleStatusCode,SalesOrderLifecycleStatusName,IsTerminal,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SOLS000001,Ion SalesOrderLifecycleStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,SOLS000002,Summit SalesOrderLifecycleStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,SOLS000003,Zenith SalesOrderLifecycleStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,SOLS000004,Harbor SalesOrderLifecycleStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,SOLS000005,Unity SalesOrderLifecycleStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,SOLS000006,Vertex SalesOrderLifecycleStatus 6,1,-1,1,2026-08-24T00:00:00.000
+7,SOLS000007,Summit SalesOrderLifecycleStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,SOLS000008,Junction SalesOrderLifecycleStatus 8,1,-1,1,2026-08-24T00:00:00.000
+9,SOLS000009,Ion SalesOrderLifecycleStatus 9,1,-1,1,2026-08-24T00:00:00.000
+10,SOLS000010,Quartz SalesOrderLifecycleStatus 10,0,-1,1,2026-08-24T00:00:00.000
+11,SOLS000011,Orion SalesOrderLifecycleStatus 11,1,-1,1,2026-08-24T00:00:00.000
+12,SOLS000012,Keystone SalesOrderLifecycleStatus 12,1,-1,1,2026-08-24T00:00:00.000
+13,SOLS000013,Keystone SalesOrderLifecycleStatus 13,1,-1,1,2026-08-24T00:00:00.000
+14,SOLS000014,Forge SalesOrderLifecycleStatus 14,1,-1,1,2026-08-24T00:00:00.000

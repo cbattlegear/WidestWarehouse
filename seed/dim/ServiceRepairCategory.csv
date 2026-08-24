@@ -1,0 +1,37 @@
+ServiceRepairCategoryKey,ServiceRepairCategoryCode,ServiceRepairCategoryName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,SRC000001,Orion ServiceRepairCategory 1,1,1,2026-08-24T00:00:00.000
+2,SRC000002,Vertex ServiceRepairCategory 2,1,1,2026-08-24T00:00:00.000
+3,SRC000003,Titan ServiceRepairCategory 3,1,1,2026-08-24T00:00:00.000
+4,SRC000004,Northstar ServiceRepairCategory 4,1,1,2026-08-24T00:00:00.000
+5,SRC000005,Liberty ServiceRepairCategory 5,1,1,2026-08-24T00:00:00.000
+6,SRC000006,Meridian ServiceRepairCategory 6,1,1,2026-08-24T00:00:00.000
+7,SRC000007,Northstar ServiceRepairCategory 7,1,1,2026-08-24T00:00:00.000
+8,SRC000008,Titan ServiceRepairCategory 8,1,1,2026-08-24T00:00:00.000
+9,SRC000009,Keystone ServiceRepairCategory 9,1,1,2026-08-24T00:00:00.000
+10,SRC000010,Zenith ServiceRepairCategory 10,1,1,2026-08-24T00:00:00.000
+11,SRC000011,Unity ServiceRepairCategory 11,1,1,2026-08-24T00:00:00.000
+12,SRC000012,Willow ServiceRepairCategory 12,1,1,2026-08-24T00:00:00.000
+13,SRC000013,Cedar ServiceRepairCategory 13,1,1,2026-08-24T00:00:00.000
+14,SRC000014,Cedar ServiceRepairCategory 14,1,1,2026-08-24T00:00:00.000
+15,SRC000015,Keystone ServiceRepairCategory 15,1,1,2026-08-24T00:00:00.000
+16,SRC000016,Cedar ServiceRepairCategory 16,1,1,2026-08-24T00:00:00.000
+17,SRC000017,Cedar ServiceRepairCategory 17,1,1,2026-08-24T00:00:00.000
+18,SRC000018,Unity ServiceRepairCategory 18,1,1,2026-08-24T00:00:00.000
+19,SRC000019,Keystone ServiceRepairCategory 19,1,1,2026-08-24T00:00:00.000
+20,SRC000020,Unity ServiceRepairCategory 20,1,1,2026-08-24T00:00:00.000
+21,SRC000021,Cedar ServiceRepairCategory 21,1,1,2026-08-24T00:00:00.000
+22,SRC000022,Titan ServiceRepairCategory 22,1,1,2026-08-24T00:00:00.000
+23,SRC000023,Willow ServiceRepairCategory 23,1,1,2026-08-24T00:00:00.000
+24,SRC000024,Titan ServiceRepairCategory 24,1,1,2026-08-24T00:00:00.000
+25,SRC000025,Vertex ServiceRepairCategory 25,1,1,2026-08-24T00:00:00.000
+26,SRC000026,Riverton ServiceRepairCategory 26,1,1,2026-08-24T00:00:00.000
+27,SRC000027,Vertex ServiceRepairCategory 27,1,1,2026-08-24T00:00:00.000
+28,SRC000028,Zenith ServiceRepairCategory 28,1,1,2026-08-24T00:00:00.000
+29,SRC000029,Northstar ServiceRepairCategory 29,1,1,2026-08-24T00:00:00.000
+30,SRC000030,Titan ServiceRepairCategory 30,1,1,2026-08-24T00:00:00.000
+31,SRC000031,Evergreen ServiceRepairCategory 31,1,1,2026-08-24T00:00:00.000
+32,SRC000032,Orion ServiceRepairCategory 32,1,1,2026-08-24T00:00:00.000
+33,SRC000033,Beacon ServiceRepairCategory 33,1,1,2026-08-24T00:00:00.000
+34,SRC000034,Vertex ServiceRepairCategory 34,1,1,2026-08-24T00:00:00.000
+35,SRC000035,Delta ServiceRepairCategory 35,1,1,2026-08-24T00:00:00.000

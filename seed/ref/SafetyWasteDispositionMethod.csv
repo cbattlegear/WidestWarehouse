@@ -1,0 +1,18 @@
+SafetyWasteDispositionMethodKey,WasteDispositionMethodCode,WasteDispositionMethodName,RequiresManifest,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SWDM000001,Junction SafetyWasteDispositionMethod 1,1,-1,1,2026-08-24T00:00:00.000
+2,SWDM000002,Harbor SafetyWasteDispositionMethod 2,0,-1,1,2026-08-24T00:00:00.000
+3,SWDM000003,Summit SafetyWasteDispositionMethod 3,1,-1,1,2026-08-24T00:00:00.000
+4,SWDM000004,Summit SafetyWasteDispositionMethod 4,0,-1,1,2026-08-24T00:00:00.000
+5,SWDM000005,Pioneer SafetyWasteDispositionMethod 5,1,-1,1,2026-08-24T00:00:00.000
+6,SWDM000006,Orion SafetyWasteDispositionMethod 6,0,-1,1,2026-08-24T00:00:00.000
+7,SWDM000007,Junction SafetyWasteDispositionMethod 7,1,-1,1,2026-08-24T00:00:00.000
+8,SWDM000008,Summit SafetyWasteDispositionMethod 8,0,-1,1,2026-08-24T00:00:00.000
+9,SWDM000009,Evergreen SafetyWasteDispositionMethod 9,1,-1,1,2026-08-24T00:00:00.000
+10,SWDM000010,Harbor SafetyWasteDispositionMethod 10,0,-1,1,2026-08-24T00:00:00.000
+11,SWDM000011,Evergreen SafetyWasteDispositionMethod 11,1,-1,1,2026-08-24T00:00:00.000
+12,SWDM000012,Meridian SafetyWasteDispositionMethod 12,0,-1,1,2026-08-24T00:00:00.000
+13,SWDM000013,Quartz SafetyWasteDispositionMethod 13,1,-1,1,2026-08-24T00:00:00.000
+14,SWDM000014,Pioneer SafetyWasteDispositionMethod 14,0,-1,1,2026-08-24T00:00:00.000
+15,SWDM000015,Granite SafetyWasteDispositionMethod 15,1,-1,1,2026-08-24T00:00:00.000
+16,SWDM000016,Keystone SafetyWasteDispositionMethod 16,0,-1,1,2026-08-24T00:00:00.000

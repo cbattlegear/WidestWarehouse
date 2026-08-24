@@ -1,0 +1,9 @@
+PurchaseOrderStatusGroupKey,GroupCode,PurchaseOrderStatusGroupName,PurchaseOrderStatusGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,POSG000001,Beacon PurchaseOrderStatusGroup 1,PurchaseOrderStatusGroup starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,POSG000002,Harbor PurchaseOrderStatusGroup 2,PurchaseOrderStatusGroup starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,POSG000003,Willow PurchaseOrderStatusGroup 3,PurchaseOrderStatusGroup starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,POSG000004,Granite PurchaseOrderStatusGroup 4,PurchaseOrderStatusGroup starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,POSG000005,Riverton PurchaseOrderStatusGroup 5,PurchaseOrderStatusGroup starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,POSG000006,Zenith PurchaseOrderStatusGroup 6,PurchaseOrderStatusGroup starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,POSG000007,Atlas PurchaseOrderStatusGroup 7,PurchaseOrderStatusGroup starter record 7,1,-1,1,2026-08-24T00:00:00.000

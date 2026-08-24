@@ -1,0 +1,12 @@
+SourcingStrategyKey,StrategyCode,SourcingStrategyName,SourcingStrategyDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SS000001,Delta SourcingStrategy 1,SourcingStrategy starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,SS000002,Pioneer SourcingStrategy 2,SourcingStrategy starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,SS000003,Zenith SourcingStrategy 3,SourcingStrategy starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,SS000004,Unity SourcingStrategy 4,SourcingStrategy starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,SS000005,Meridian SourcingStrategy 5,SourcingStrategy starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,SS000006,Granite SourcingStrategy 6,SourcingStrategy starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,SS000007,Granite SourcingStrategy 7,SourcingStrategy starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,SS000008,Liberty SourcingStrategy 8,SourcingStrategy starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,SS000009,Harbor SourcingStrategy 9,SourcingStrategy starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,SS000010,Vertex SourcingStrategy 10,SourcingStrategy starter record 10,0,1,1,2026-08-24T00:00:00.000

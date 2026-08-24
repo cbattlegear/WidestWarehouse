@@ -1,0 +1,14 @@
+ClaimStatusKey,StatusCode,ClaimStatusName,ClaimStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,CS000001,Ion ClaimStatus 1,ClaimStatus starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,CS000002,Granite ClaimStatus 2,ClaimStatus starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,CS000003,Northstar ClaimStatus 3,ClaimStatus starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,CS000004,Zenith ClaimStatus 4,ClaimStatus starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,CS000005,Atlas ClaimStatus 5,ClaimStatus starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,CS000006,Vertex ClaimStatus 6,ClaimStatus starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,CS000007,Evergreen ClaimStatus 7,ClaimStatus starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,CS000008,Summit ClaimStatus 8,ClaimStatus starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,CS000009,Junction ClaimStatus 9,ClaimStatus starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,CS000010,Unity ClaimStatus 10,ClaimStatus starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,CS000011,Unity ClaimStatus 11,ClaimStatus starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,CS000012,Vertex ClaimStatus 12,ClaimStatus starter record 12,1,-1,1,2026-08-24T00:00:00.000

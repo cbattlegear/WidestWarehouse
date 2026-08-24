@@ -1,0 +1,12 @@
+EngineeringDomainKey,EngineeringDomainCode,EngineeringDomainName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,ED000001,Quartz EngineeringDomain 1,1,1,2026-08-24T00:00:00.000
+2,ED000002,Orion EngineeringDomain 2,1,1,2026-08-24T00:00:00.000
+3,ED000003,Evergreen EngineeringDomain 3,1,1,2026-08-24T00:00:00.000
+4,ED000004,Willow EngineeringDomain 4,1,1,2026-08-24T00:00:00.000
+5,ED000005,Northstar EngineeringDomain 5,1,1,2026-08-24T00:00:00.000
+6,ED000006,Granite EngineeringDomain 6,1,1,2026-08-24T00:00:00.000
+7,ED000007,Pioneer EngineeringDomain 7,1,1,2026-08-24T00:00:00.000
+8,ED000008,Forge EngineeringDomain 8,1,1,2026-08-24T00:00:00.000
+9,ED000009,Quartz EngineeringDomain 9,1,1,2026-08-24T00:00:00.000
+10,ED000010,Beacon EngineeringDomain 10,1,1,2026-08-24T00:00:00.000

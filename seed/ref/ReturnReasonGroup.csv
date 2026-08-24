@@ -1,0 +1,10 @@
+ReturnReasonGroupKey,GroupCode,ReturnReasonGroupName,ReturnReasonGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,RRG000001,Atlas ReturnReasonGroup 1,ReturnReasonGroup starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,RRG000002,Zenith ReturnReasonGroup 2,ReturnReasonGroup starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,RRG000003,Atlas ReturnReasonGroup 3,ReturnReasonGroup starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,RRG000004,Granite ReturnReasonGroup 4,ReturnReasonGroup starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,RRG000005,Evergreen ReturnReasonGroup 5,ReturnReasonGroup starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,RRG000006,Evergreen ReturnReasonGroup 6,ReturnReasonGroup starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,RRG000007,Keystone ReturnReasonGroup 7,ReturnReasonGroup starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,RRG000008,Northstar ReturnReasonGroup 8,ReturnReasonGroup starter record 8,1,-1,1,2026-08-24T00:00:00.000

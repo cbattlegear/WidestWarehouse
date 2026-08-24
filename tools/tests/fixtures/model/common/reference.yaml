@@ -1,0 +1,11 @@
+reference:
+  - name: UnitOfMeasure
+    business_key: {name: UnitOfMeasureCode, type: "nvarchar(20)"}
+    seed_values:
+      - [EA, Each]
+    columns:
+      - {name: UnitOfMeasureName, type: "nvarchar(60)", nullable: false}
+  - name: ProductStatus
+    business_key: {name: StatusCode, type: "nvarchar(20)"}
+    columns:
+      - {name: StatusName, type: "nvarchar(60)", nullable: false}

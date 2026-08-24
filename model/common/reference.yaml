@@ -1,0 +1,2017 @@
+reference:
+  - name: SourceSystem
+    description: Operational source applications and external feeds.
+    business_key:
+      name: SourceSystemCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: SourceSystemName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: SystemCategory
+        type: "nvarchar(40)"
+        nullable: false
+      - name: IsAuthoritative
+        type: bit
+        nullable: false
+        default: '0'
+    seed_values:
+      - - ERP
+        - Enterprise resource planning
+        - Internal
+        - 1
+      - - MES
+        - Manufacturing execution
+        - Internal
+        - 1
+      - - QMS
+        - Quality management
+        - Internal
+        - 1
+      - - WMS
+        - Warehouse management
+        - Internal
+        - 1
+      - - CRM
+        - Customer relationship
+        - Internal
+        - 1
+  - name: RecordStatus
+    description: Lifecycle status for durable master data records.
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 6
+    columns:
+      - name: StatusName
+        type: "nvarchar(60)"
+        nullable: false
+      - name: IsCurrentStatus
+        type: bit
+        nullable: false
+        default: '1'
+      - name: SortOrder
+        type: int
+        nullable: false
+        default: '0'
+    seed_values:
+      - - ACTIVE
+        - Active
+        - 1
+        - 10
+      - - INACTIVE
+        - Inactive
+        - 0
+        - 20
+      - - PENDING
+        - Pending
+        - 1
+        - 30
+      - - RETIRED
+        - Retired
+        - 0
+        - 40
+  - name: UnitOfMeasureClass
+    description: Classes of units of measure.
+    business_key:
+      name: ClassCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: ClassName
+        type: "nvarchar(80)"
+        nullable: false
+      - name: BaseUnitCode
+        type: "nvarchar(20)"
+        nullable: false
+      - name: IsPhysicalMeasure
+        type: bit
+        nullable: false
+        default: '1'
+    seed_values:
+      - - MASS
+        - Mass
+        - KG
+        - 1
+      - - LENGTH
+        - Length
+        - M
+        - 1
+      - - VOLUME
+        - Volume
+        - L
+        - 1
+      - - COUNT
+        - Count
+        - EA
+        - 0
+      - - TIME
+        - Time
+        - HR
+        - 0
+      - - ENERGY
+        - Energy
+        - KWH
+        - 1
+  - name: UnitOfMeasure
+    description: Units used to quantify materials, resources, and measures.
+    business_key:
+      name: UomCode
+      type: "nvarchar(30)"
+    seed_rows: 45
+    columns:
+      - name: UomName
+        type: "nvarchar(80)"
+        nullable: false
+      - name: Symbol
+        type: "nvarchar(20)"
+        nullable: false
+      - name: ConversionFactorToBase
+        type: "decimal(18,8)"
+        nullable: false
+        default: '1'
+    parents:
+      - name: UnitOfMeasureClass
+    seed_values:
+      - - EA
+        - Each
+        - ea
+        - '1'
+      - - KG
+        - Kilogram
+        - kg
+        - '1'
+      - - G
+        - Gram
+        - g
+        - '0.001'
+      - - LB
+        - Pound
+        - lb
+        - '0.45359237'
+      - - M
+        - Meter
+        - m
+        - '1'
+      - - L
+        - Liter
+        - L
+        - '1'
+      - - HR
+        - Hour
+        - hr
+        - '1'
+  - name: CurrencyRegion
+    description: Currency market or monetary region.
+    business_key:
+      name: RegionCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: RegionName
+        type: "nvarchar(80)"
+        nullable: false
+      - name: DefaultCurrencyCode
+        type: "char(3)"
+        nullable: false
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    seed_values:
+      - - NA
+        - North America
+        - USD
+        - 1
+      - - EU
+        - Europe
+        - EUR
+        - 1
+      - - APAC
+        - Asia Pacific
+        - JPY
+        - 1
+      - - LATAM
+        - Latin America
+        - BRL
+        - 1
+      - - MEA
+        - Middle East and Africa
+        - AED
+        - 1
+  - name: Currency
+    description: ISO currencies used in commercial and financial processes.
+    business_key:
+      name: CurrencyCode
+      type: "nvarchar(30)"
+    seed_rows: 30
+    columns:
+      - name: CurrencyName
+        type: "nvarchar(80)"
+        nullable: false
+      - name: MinorUnitCount
+        type: tinyint
+        nullable: false
+        default: '2'
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: CurrencyRegion
+    seed_values:
+      - - USD
+        - US Dollar
+        - 2
+        - 1
+      - - EUR
+        - Euro
+        - 2
+        - 1
+      - - GBP
+        - Pound Sterling
+        - 2
+        - 1
+      - - JPY
+        - Japanese Yen
+        - 0
+        - 1
+      - - CAD
+        - Canadian Dollar
+        - 2
+        - 1
+  - name: Continent
+    description: Global continent lookup for geography.
+    business_key:
+      name: ContinentCode
+      type: "nvarchar(30)"
+    seed_rows: 7
+    columns:
+      - name: ContinentName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ContinentDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: Region
+    description: Geographic sales and operations regions.
+    business_key:
+      name: RegionCode
+      type: "nvarchar(30)"
+    seed_rows: 18
+    columns:
+      - name: RegionName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: RegionDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: Continent
+  - name: Country
+    description: Countries and territories by ISO-style code.
+    business_key:
+      name: CountryCode
+      type: "nvarchar(30)"
+    seed_rows: 250
+    columns:
+      - name: CountryName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: CountryDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: Region
+  - name: Language
+    description: Languages used for labels, documents, and customer communications.
+    business_key:
+      name: LanguageCode
+      type: "nvarchar(30)"
+    seed_rows: 40
+    columns:
+      - name: LanguageName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: LanguageDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: TimeZone
+    description: Time zones used by sites and event timestamps.
+    business_key:
+      name: TimeZoneCode
+      type: "nvarchar(30)"
+    seed_rows: 60
+    columns:
+      - name: TimeZoneName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: TimeZoneDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: Region
+  - name: Severity
+    description: Generic severity rating shared by events and findings.
+    business_key:
+      name: SeverityCode
+      type: "nvarchar(30)"
+    seed_rows: 6
+    columns:
+      - name: SeverityName
+        type: "nvarchar(60)"
+        nullable: false
+      - name: SeverityRank
+        type: tinyint
+        nullable: false
+      - name: RequiresEscalation
+        type: bit
+        nullable: false
+        default: '0'
+    seed_values:
+      - - INFO
+        - Informational
+        - 1
+        - 0
+      - - LOW
+        - Low
+        - 2
+        - 0
+      - - MEDIUM
+        - Medium
+        - 3
+        - 0
+      - - HIGH
+        - High
+        - 4
+        - 1
+      - - CRITICAL
+        - Critical
+        - 5
+        - 1
+  - name: Priority
+    description: Generic work prioritization scale.
+    business_key:
+      name: PriorityCode
+      type: "nvarchar(30)"
+    seed_rows: 6
+    columns:
+      - name: PriorityName
+        type: "nvarchar(60)"
+        nullable: false
+      - name: PriorityRank
+        type: tinyint
+        nullable: false
+      - name: TargetResponseHours
+        type: int
+        nullable: true
+    seed_values:
+      - - P1
+        - Critical
+        - 1
+        - 1
+      - - P2
+        - High
+        - 2
+        - 4
+      - - P3
+        - Medium
+        - 3
+        - 24
+      - - P4
+        - Low
+        - 4
+        - 72
+      - - P5
+        - Backlog
+        - 5
+        - 168
+  - name: ApprovalStatus
+    description: Approval workflow states.
+    business_key:
+      name: ApprovalStatusCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: ApprovalStatusName
+        type: "nvarchar(60)"
+        nullable: false
+      - name: IsFinal
+        type: bit
+        nullable: false
+        default: '0'
+      - name: SortOrder
+        type: int
+        nullable: false
+        default: '0'
+    seed_values:
+      - - DRAFT
+        - Draft
+        - 0
+        - 10
+      - - SUBMITTED
+        - Submitted
+        - 0
+        - 20
+      - - APPROVED
+        - Approved
+        - 1
+        - 30
+      - - REJECTED
+        - Rejected
+        - 1
+        - 40
+      - - CANCELLED
+        - Cancelled
+        - 1
+        - 50
+  - name: TransactionType
+    description: Generic transaction direction and accounting behavior.
+    business_key:
+      name: TransactionTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 20
+    columns:
+      - name: TransactionTypeName
+        type: "nvarchar(80)"
+        nullable: false
+      - name: DebitCreditIndicator
+        type: "char(1)"
+        nullable: true
+      - name: AffectsInventory
+        type: bit
+        nullable: false
+        default: '0'
+    seed_values:
+      - - RECEIPT
+        - Receipt
+        - D
+        - 1
+      - - ISSUE
+        - Issue
+        - C
+        - 1
+      - - TRANSFER
+        - Transfer
+        - null
+        - 1
+      - - ADJUSTMENT
+        - Adjustment
+        - null
+        - 1
+  - name: AdjustmentReason
+    description: Reasons for quantity, cost, or balance adjustments.
+    business_key:
+      name: ReasonCode
+      type: "nvarchar(30)"
+    seed_rows: 30
+    columns:
+      - name: ReasonName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: RequiresApproval
+        type: bit
+        nullable: false
+        default: '0'
+      - name: IsShrinkage
+        type: bit
+        nullable: false
+        default: '0'
+    seed_values:
+      - - CYCLE_COUNT
+        - Cycle count variance
+        - 1
+        - 0
+      - - DAMAGE
+        - Damaged material
+        - 1
+        - 1
+      - - EXPIRATION
+        - Expired material
+        - 1
+        - 1
+      - - ROUNDING
+        - Rounding correction
+        - 0
+        - 0
+  - name: YesNoFlag
+    description: Standard yes/no/unknown flag values.
+    business_key:
+      name: FlagCode
+      type: "nvarchar(30)"
+    seed_rows: 3
+    columns:
+      - name: FlagName
+        type: "nvarchar(30)"
+        nullable: false
+      - name: BooleanValue
+        type: bit
+        nullable: true
+      - name: SortOrder
+        type: int
+        nullable: false
+        default: '0'
+    seed_values:
+      - - Y
+        - 'Yes'
+        - 1
+        - 1
+      - - N
+        - 'No'
+        - 0
+        - 2
+      - - U
+        - Unknown
+        - null
+        - 3
+  - name: MeasurementSystem
+    description: Measurement systems used for engineering and operations.
+    business_key:
+      name: MeasurementSystemCode
+      type: "nvarchar(30)"
+    seed_rows: 4
+    columns:
+      - name: MeasurementSystemName
+        type: "nvarchar(60)"
+        nullable: false
+      - name: DefaultLengthUomCode
+        type: "nvarchar(20)"
+        nullable: false
+      - name: DefaultMassUomCode
+        type: "nvarchar(20)"
+        nullable: false
+    seed_values:
+      - - METRIC
+        - Metric
+        - M
+        - KG
+      - - US_CUSTOMARY
+        - US customary
+        - FT
+        - LB
+      - - IMPERIAL
+        - Imperial
+        - FT
+        - LB
+  - name: ComplianceStandard
+    description: External standards and regulatory frameworks.
+    business_key:
+      name: StandardCode
+      type: "nvarchar(30)"
+    seed_rows: 25
+    columns:
+      - name: ComplianceStandardName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ComplianceStandardDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: HazardClass
+    description: Hazardous material and workplace hazard classifications.
+    business_key:
+      name: HazardClassCode
+      type: "nvarchar(30)"
+    seed_rows: 18
+    columns:
+      - name: HazardClassName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: HazardClassDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: ComplianceStandard
+  - name: WorkOrderStatusGroup
+    description: Groups for work order lifecycle states
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: WorkOrderStatusGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: WorkOrderStatusGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    seed_values:
+      - - PRE
+        - Pre-release
+        - Pre-release statuses
+        - 1
+      - - OPEN
+        - Open
+        - Executable statuses
+        - 1
+      - - HOLD
+        - Hold
+        - Blocked statuses
+        - 1
+      - - DONE
+        - Done
+        - Terminal statuses
+        - 1
+  - name: WorkOrderStatus
+    description: Detailed work order lifecycle states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 14
+    columns:
+      - name: WorkOrderStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: WorkOrderStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: WorkOrderStatusGroup
+  - name: WorkOrderTypeGroup
+    description: Groups of manufacturing work orders
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 6
+    columns:
+      - name: WorkOrderTypeGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: WorkOrderTypeGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: WorkOrderType
+    description: Manufacturing work order types
+    business_key:
+      name: TypeCode
+      type: "nvarchar(30)"
+    seed_rows: 15
+    columns:
+      - name: WorkOrderTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: WorkOrderTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: WorkOrderTypeGroup
+  - name: OperationStatusGroup
+    description: Groups of routing operation states
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 6
+    columns:
+      - name: OperationStatusGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: OperationStatusGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: OperationStatus
+    description: Routing and shop-floor operation states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: OperationStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: OperationStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: OperationStatusGroup
+  - name: ProductionMethod
+    description: Manufacturing production methods
+    business_key:
+      name: MethodCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: ProductionMethodName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ProductionMethodDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: RoutingType
+    description: Routing and process plan types
+    business_key:
+      name: RoutingTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: RoutingTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: RoutingTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: ScheduleStatus
+    description: Production schedule states
+    business_key:
+      name: ScheduleStatusCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: ScheduleStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ScheduleStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: ScrapReasonGroup
+    description: Groups of production scrap reasons
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: ScrapReasonGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ScrapReasonGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: ScrapReason
+    description: Specific scrap reasons recorded on the shop floor
+    business_key:
+      name: ReasonCode
+      type: "nvarchar(30)"
+    seed_rows: 35
+    columns:
+      - name: ScrapReasonName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ScrapReasonDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: ScrapReasonGroup
+  - name: DefectSeverity
+    description: Quality defect severity levels
+    business_key:
+      name: DefectSeverityCode
+      type: "nvarchar(30)"
+    seed_rows: 6
+    columns:
+      - name: DefectSeverityName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: DefectSeverityDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: Severity
+  - name: DefectCategory
+    description: High-level quality defect categories
+    business_key:
+      name: CategoryCode
+      type: "nvarchar(30)"
+    seed_rows: 20
+    columns:
+      - name: DefectCategoryName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: DefectCategoryDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: DefectType
+    description: Specific quality defect types
+    business_key:
+      name: DefectTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 60
+    columns:
+      - name: DefectTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: DefectTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: DefectCategory
+  - name: InspectionResult
+    description: Standard inspection outcomes
+    business_key:
+      name: ResultCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: InspectionResultName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: InspectionResultDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    seed_values:
+      - - PASS
+        - Pass
+        - Accepted without defect
+        - 1
+      - - FAIL
+        - Fail
+        - Rejected by criteria
+        - 1
+      - - CONDITIONAL
+        - Conditional pass
+        - Accepted with concession
+        - 1
+      - - REWORK
+        - Rework required
+        - Requires rework
+        - 1
+  - name: InspectionMethod
+    description: Quality inspection methods
+    business_key:
+      name: MethodCode
+      type: "nvarchar(30)"
+    seed_rows: 25
+    columns:
+      - name: InspectionMethodName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: InspectionMethodDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: SampleDisposition
+    description: Disposition of sampled units
+    business_key:
+      name: DispositionCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: SampleDispositionName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: SampleDispositionDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: NonconformanceStatus
+    description: Nonconformance lifecycle states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: NonconformanceStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: NonconformanceStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: MaintenanceStrategy
+    description: Maintenance planning strategies
+    business_key:
+      name: StrategyCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: MaintenanceStrategyName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: MaintenanceStrategyDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: MaintenanceType
+    description: Maintenance work types
+    business_key:
+      name: TypeCode
+      type: "nvarchar(30)"
+    seed_rows: 16
+    columns:
+      - name: MaintenanceTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: MaintenanceTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: FailureModeGroup
+    description: Groups of asset failure modes
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: FailureModeGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: FailureModeGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    seed_values:
+      - - MECHANICAL
+        - Mechanical
+        - Mechanical failures
+        - 1
+      - - ELECTRICAL
+        - Electrical
+        - Electrical failures
+        - 1
+      - - CONTROL
+        - Control
+        - Automation and controls failures
+        - 1
+      - - PROCESS
+        - Process
+        - Process-induced failures
+        - 1
+  - name: FailureMode
+    description: Specific equipment failure modes
+    business_key:
+      name: FailureModeCode
+      type: "nvarchar(30)"
+    seed_rows: 50
+    columns:
+      - name: FailureModeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: FailureModeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: FailureModeGroup
+  - name: FailureCauseGroup
+    description: Groups of root causes for failures
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: FailureCauseGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: FailureCauseGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: FailureCause
+    description: Specific failure root causes
+    business_key:
+      name: CauseCode
+      type: "nvarchar(30)"
+    seed_rows: 50
+    columns:
+      - name: FailureCauseName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: FailureCauseDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: FailureCauseGroup
+  - name: AssetStatusGroup
+    description: Groups for asset lifecycle states
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 7
+    columns:
+      - name: AssetStatusGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: AssetStatusGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: AssetStatus
+    description: Asset lifecycle and operating states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 16
+    columns:
+      - name: AssetStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: AssetStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: AssetStatusGroup
+  - name: WorkRequestStatus
+    description: Maintenance request states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: WorkRequestStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: WorkRequestStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: StockStatusGroup
+    description: Groups for inventory stock statuses
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: StockStatusGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: StockStatusGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: StockStatus
+    description: Inventory availability and hold statuses
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 18
+    columns:
+      - name: StockStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: StockStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: StockStatusGroup
+  - name: MovementTypeGroup
+    description: Groups of inventory movement types
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 9
+    columns:
+      - name: MovementTypeGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: MovementTypeGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    seed_values:
+      - - RECEIPT
+        - Receipts
+        - Inbound movement types
+        - 1
+      - - ISSUE
+        - Issues
+        - Outbound movement types
+        - 1
+      - - TRANSFER
+        - Transfers
+        - Location transfer types
+        - 1
+      - - ADJUST
+        - Adjustments
+        - Inventory correction types
+        - 1
+  - name: MovementType
+    description: Inventory movement transaction types
+    business_key:
+      name: MovementTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 40
+    columns:
+      - name: MovementTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: MovementTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: MovementTypeGroup
+  - name: InventoryValuationMethod
+    description: Inventory costing and valuation methods
+    business_key:
+      name: MethodCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: InventoryValuationMethodName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: InventoryValuationMethodDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: LotStatus
+    description: Lot and batch lifecycle statuses
+    business_key:
+      name: LotStatusCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: LotStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: LotStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: WarehouseZoneType
+    description: Warehouse zone classifications
+    business_key:
+      name: ZoneTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: WarehouseZoneTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: WarehouseZoneTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: CycleCountStatus
+    description: Cycle count execution states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: CycleCountStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: CycleCountStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: PurchaseOrderStatusGroup
+    description: Groups for purchase order states
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 7
+    columns:
+      - name: PurchaseOrderStatusGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: PurchaseOrderStatusGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: PurchaseOrderStatus
+    description: Purchase order lifecycle states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 14
+    columns:
+      - name: PurchaseOrderStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: PurchaseOrderStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: PurchaseOrderStatusGroup
+  - name: SupplierQualificationStatus
+    description: Supplier qualification outcomes
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: SupplierQualificationStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: SupplierQualificationStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: IncotermCode
+    description: International commercial terms
+    business_key:
+      name: IncotermCode
+      type: "nvarchar(30)"
+    seed_rows: 16
+    columns:
+      - name: IncotermCodeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: IncotermCodeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: PaymentTerm
+    description: Payment term definitions
+    business_key:
+      name: PaymentTermCode
+      type: "nvarchar(30)"
+    seed_rows: 18
+    columns:
+      - name: PaymentTermName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: PaymentTermDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: SourcingStrategy
+    description: Procurement sourcing strategies
+    business_key:
+      name: StrategyCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: SourcingStrategyName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: SourcingStrategyDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: ContractStatus
+    description: Procurement contract lifecycle states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: ContractStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ContractStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: SalesOrderStatusGroup
+    description: Groups for sales order states
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: SalesOrderStatusGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: SalesOrderStatusGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: SalesOrderStatus
+    description: Sales order lifecycle states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 14
+    columns:
+      - name: SalesOrderStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: SalesOrderStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: SalesOrderStatusGroup
+  - name: CustomerStatus
+    description: Customer account lifecycle states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: CustomerStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: CustomerStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: PriceListType
+    description: Commercial price list types
+    business_key:
+      name: TypeCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: PriceListTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: PriceListTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: ReturnReasonGroup
+    description: Groups of return reasons
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: ReturnReasonGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ReturnReasonGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: ReturnReason
+    description: Customer and supplier return reasons
+    business_key:
+      name: ReasonCode
+      type: "nvarchar(30)"
+    seed_rows: 30
+    columns:
+      - name: ReturnReasonName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ReturnReasonDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: ReturnReasonGroup
+  - name: ShipmentStatusGroup
+    description: Groups for shipment states
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 7
+    columns:
+      - name: ShipmentStatusGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ShipmentStatusGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: ShipmentStatus
+    description: Outbound and inbound shipment states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 15
+    columns:
+      - name: ShipmentStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ShipmentStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: ShipmentStatusGroup
+  - name: FreightClass
+    description: Freight classification codes
+    business_key:
+      name: FreightClassCode
+      type: "nvarchar(30)"
+    seed_rows: 18
+    columns:
+      - name: FreightClassName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: FreightClassDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: CarrierServiceLevel
+    description: Carrier service levels
+    business_key:
+      name: ServiceLevelCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: CarrierServiceLevelName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: CarrierServiceLevelDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: TransportMode
+    description: Modes used to transport goods
+    business_key:
+      name: TransportModeCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: TransportModeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: TransportModeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: PackagingType
+    description: Packaging forms and containers
+    business_key:
+      name: PackagingTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 18
+    columns:
+      - name: PackagingTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: PackagingTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: CustomsStatus
+    description: Customs clearance states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: CustomsStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: CustomsStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: PostingType
+    description: Financial posting classifications
+    business_key:
+      name: PostingTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 16
+    columns:
+      - name: PostingTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: PostingTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: CostElementType
+    description: Cost element classifications
+    business_key:
+      name: CostElementTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: CostElementTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: CostElementTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: BudgetStatus
+    description: Budget lifecycle states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: BudgetStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: BudgetStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: TaxCode
+    description: Tax jurisdictions and rates
+    business_key:
+      name: TaxCode
+      type: "nvarchar(30)"
+    seed_rows: 25
+    columns:
+      - name: TaxCodeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: TaxCodeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: InvoiceStatus
+    description: Invoice lifecycle states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: InvoiceStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: InvoiceStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: PaymentStatus
+    description: Payment lifecycle states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: PaymentStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: PaymentStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    seed_values:
+      - - OPEN
+        - Open
+        - Awaiting payment
+        - 1
+      - - PARTIAL
+        - Partial
+        - Partially paid
+        - 1
+      - - PAID
+        - Paid
+        - Fully paid
+        - 1
+      - - DISPUTED
+        - Disputed
+        - Under dispute
+        - 1
+  - name: EmploymentType
+    description: Employee employment categories
+    business_key:
+      name: EmploymentTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 8
+    columns:
+      - name: EmploymentTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: EmploymentTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: ShiftCode
+    description: Standard operating shift codes
+    business_key:
+      name: ShiftCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: ShiftCodeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ShiftCodeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: LaborGrade
+    description: Labor skill and grade bands
+    business_key:
+      name: LaborGradeCode
+      type: "nvarchar(30)"
+    seed_rows: 14
+    columns:
+      - name: LaborGradeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: LaborGradeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: TrainingStatus
+    description: Employee training completion states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: TrainingStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: TrainingStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: IncidentCategory
+    description: EHS incident categories
+    business_key:
+      name: CategoryCode
+      type: "nvarchar(30)"
+    seed_rows: 18
+    columns:
+      - name: IncidentCategoryName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: IncidentCategoryDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: IncidentSeverityGroup
+    description: Groups for EHS incident severity
+    business_key:
+      name: GroupCode
+      type: "nvarchar(30)"
+    seed_rows: 5
+    columns:
+      - name: IncidentSeverityGroupName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: IncidentSeverityGroupDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: IncidentStatus
+    description: EHS incident lifecycle states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: IncidentStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: IncidentStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    parents:
+      - name: IncidentSeverityGroup
+  - name: PermitType
+    description: Environmental and work permit types
+    business_key:
+      name: PermitTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 15
+    columns:
+      - name: PermitTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: PermitTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: WasteType
+    description: Waste material types
+    business_key:
+      name: WasteTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 20
+    columns:
+      - name: WasteTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: WasteTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: EnergySource
+    description: Energy source categories
+    business_key:
+      name: EnergySourceCode
+      type: "nvarchar(30)"
+    seed_rows: 16
+    columns:
+      - name: EnergySourceName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: EnergySourceDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: EmissionScope
+    description: Greenhouse gas protocol emission scopes
+    business_key:
+      name: EmissionScopeCode
+      type: "nvarchar(30)"
+    seed_rows: 4
+    columns:
+      - name: EmissionScopeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: EmissionScopeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+    seed_values:
+      - - SCOPE1
+        - Scope 1
+        - Direct emissions
+        - 1
+      - - SCOPE2
+        - Scope 2
+        - Purchased energy emissions
+        - 1
+      - - SCOPE3
+        - Scope 3
+        - Value chain emissions
+        - 1
+  - name: MeterReadingType
+    description: Utility meter reading types
+    business_key:
+      name: ReadingTypeCode
+      type: "nvarchar(30)"
+    seed_rows: 10
+    columns:
+      - name: MeterReadingTypeName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: MeterReadingTypeDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: ClaimStatus
+    description: Warranty claim lifecycle states
+    business_key:
+      name: StatusCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: ClaimStatusName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: ClaimStatusDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'
+  - name: WarrantyDisposition
+    description: Warranty claim dispositions
+    business_key:
+      name: DispositionCode
+      type: "nvarchar(30)"
+    seed_rows: 12
+    columns:
+      - name: WarrantyDispositionName
+        type: "nvarchar(100)"
+        nullable: false
+      - name: WarrantyDispositionDescription
+        type: "nvarchar(250)"
+        nullable: true
+      - name: IsActive
+        type: bit
+        nullable: false
+        default: '1'

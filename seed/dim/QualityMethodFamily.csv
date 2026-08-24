@@ -1,0 +1,12 @@
+QualityMethodFamilyKey,QualityMethodFamilyCode,QualityMethodFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,QMF000001,Harbor QualityMethodFamily 1,1,1,2026-08-24T00:00:00.000
+2,QMF000002,Cedar QualityMethodFamily 2,1,1,2026-08-24T00:00:00.000
+3,QMF000003,Forge QualityMethodFamily 3,1,1,2026-08-24T00:00:00.000
+4,QMF000004,Titan QualityMethodFamily 4,1,1,2026-08-24T00:00:00.000
+5,QMF000005,Pioneer QualityMethodFamily 5,1,1,2026-08-24T00:00:00.000
+6,QMF000006,Willow QualityMethodFamily 6,1,1,2026-08-24T00:00:00.000
+7,QMF000007,Zenith QualityMethodFamily 7,1,1,2026-08-24T00:00:00.000
+8,QMF000008,Vertex QualityMethodFamily 8,1,1,2026-08-24T00:00:00.000
+9,QMF000009,Forge QualityMethodFamily 9,1,1,2026-08-24T00:00:00.000
+10,QMF000010,Unity QualityMethodFamily 10,1,1,2026-08-24T00:00:00.000

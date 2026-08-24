@@ -1,0 +1,26 @@
+SafetyChemicalFamilyKey,SafetyChemicalFamilyCode,SafetyChemicalFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,SCF000001,Liberty SafetyChemicalFamily 1,1,1,2026-08-24T00:00:00.000
+2,SCF000002,Vertex SafetyChemicalFamily 2,1,1,2026-08-24T00:00:00.000
+3,SCF000003,Liberty SafetyChemicalFamily 3,1,1,2026-08-24T00:00:00.000
+4,SCF000004,Quartz SafetyChemicalFamily 4,1,1,2026-08-24T00:00:00.000
+5,SCF000005,Quartz SafetyChemicalFamily 5,1,1,2026-08-24T00:00:00.000
+6,SCF000006,Quartz SafetyChemicalFamily 6,1,1,2026-08-24T00:00:00.000
+7,SCF000007,Zenith SafetyChemicalFamily 7,1,1,2026-08-24T00:00:00.000
+8,SCF000008,Cedar SafetyChemicalFamily 8,1,1,2026-08-24T00:00:00.000
+9,SCF000009,Ion SafetyChemicalFamily 9,1,1,2026-08-24T00:00:00.000
+10,SCF000010,Cedar SafetyChemicalFamily 10,1,1,2026-08-24T00:00:00.000
+11,SCF000011,Orion SafetyChemicalFamily 11,1,1,2026-08-24T00:00:00.000
+12,SCF000012,Vertex SafetyChemicalFamily 12,1,1,2026-08-24T00:00:00.000
+13,SCF000013,Willow SafetyChemicalFamily 13,1,1,2026-08-24T00:00:00.000
+14,SCF000014,Vertex SafetyChemicalFamily 14,1,1,2026-08-24T00:00:00.000
+15,SCF000015,Orion SafetyChemicalFamily 15,1,1,2026-08-24T00:00:00.000
+16,SCF000016,Forge SafetyChemicalFamily 16,1,1,2026-08-24T00:00:00.000
+17,SCF000017,Junction SafetyChemicalFamily 17,1,1,2026-08-24T00:00:00.000
+18,SCF000018,Quartz SafetyChemicalFamily 18,1,1,2026-08-24T00:00:00.000
+19,SCF000019,Titan SafetyChemicalFamily 19,1,1,2026-08-24T00:00:00.000
+20,SCF000020,Forge SafetyChemicalFamily 20,1,1,2026-08-24T00:00:00.000
+21,SCF000021,Liberty SafetyChemicalFamily 21,1,1,2026-08-24T00:00:00.000
+22,SCF000022,Vertex SafetyChemicalFamily 22,1,1,2026-08-24T00:00:00.000
+23,SCF000023,Granite SafetyChemicalFamily 23,1,1,2026-08-24T00:00:00.000
+24,SCF000024,Beacon SafetyChemicalFamily 24,1,1,2026-08-24T00:00:00.000

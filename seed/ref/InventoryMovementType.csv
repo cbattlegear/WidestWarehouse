@@ -1,0 +1,18 @@
+InventoryMovementTypeKey,MovementTypeCode,MovementTypeName,QuantitySign,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,IMT000001,Cedar InventoryMovementType 1,1,-1,1,2026-08-24T00:00:00.000
+2,IMT000002,Titan InventoryMovementType 2,2,-1,1,2026-08-24T00:00:00.000
+3,IMT000003,Ion InventoryMovementType 3,3,-1,1,2026-08-24T00:00:00.000
+4,IMT000004,Junction InventoryMovementType 4,4,-1,1,2026-08-24T00:00:00.000
+5,IMT000005,Atlas InventoryMovementType 5,5,-1,1,2026-08-24T00:00:00.000
+6,IMT000006,Liberty InventoryMovementType 6,6,-1,1,2026-08-24T00:00:00.000
+7,IMT000007,Evergreen InventoryMovementType 7,7,-1,1,2026-08-24T00:00:00.000
+8,IMT000008,Beacon InventoryMovementType 8,8,-1,1,2026-08-24T00:00:00.000
+9,IMT000009,Liberty InventoryMovementType 9,9,-1,1,2026-08-24T00:00:00.000
+10,IMT000010,Beacon InventoryMovementType 10,10,-1,1,2026-08-24T00:00:00.000
+11,IMT000011,Meridian InventoryMovementType 11,11,-1,1,2026-08-24T00:00:00.000
+12,IMT000012,Orion InventoryMovementType 12,12,-1,1,2026-08-24T00:00:00.000
+13,IMT000013,Liberty InventoryMovementType 13,13,-1,1,2026-08-24T00:00:00.000
+14,IMT000014,Atlas InventoryMovementType 14,14,-1,1,2026-08-24T00:00:00.000
+15,IMT000015,Evergreen InventoryMovementType 15,15,-1,1,2026-08-24T00:00:00.000
+16,IMT000016,Vertex InventoryMovementType 16,16,-1,1,2026-08-24T00:00:00.000

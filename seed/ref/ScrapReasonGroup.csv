@@ -1,0 +1,10 @@
+ScrapReasonGroupKey,GroupCode,ScrapReasonGroupName,ScrapReasonGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SRG000001,Willow ScrapReasonGroup 1,ScrapReasonGroup starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,SRG000002,Meridian ScrapReasonGroup 2,ScrapReasonGroup starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,SRG000003,Titan ScrapReasonGroup 3,ScrapReasonGroup starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,SRG000004,Pioneer ScrapReasonGroup 4,ScrapReasonGroup starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,SRG000005,Ion ScrapReasonGroup 5,ScrapReasonGroup starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,SRG000006,Liberty ScrapReasonGroup 6,ScrapReasonGroup starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,SRG000007,Willow ScrapReasonGroup 7,ScrapReasonGroup starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,SRG000008,Zenith ScrapReasonGroup 8,ScrapReasonGroup starter record 8,1,-1,1,2026-08-24T00:00:00.000

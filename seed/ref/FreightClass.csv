@@ -1,0 +1,20 @@
+FreightClassKey,FreightClassCode,FreightClassName,FreightClassDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,FC000001,Liberty FreightClass 1,FreightClass starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,FC000002,Granite FreightClass 2,FreightClass starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,FC000003,Zenith FreightClass 3,FreightClass starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,FC000004,Titan FreightClass 4,FreightClass starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,FC000005,Northstar FreightClass 5,FreightClass starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,FC000006,Delta FreightClass 6,FreightClass starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,FC000007,Ion FreightClass 7,FreightClass starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,FC000008,Cedar FreightClass 8,FreightClass starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,FC000009,Beacon FreightClass 9,FreightClass starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,FC000010,Ion FreightClass 10,FreightClass starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,FC000011,Orion FreightClass 11,FreightClass starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,FC000012,Forge FreightClass 12,FreightClass starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,FC000013,Forge FreightClass 13,FreightClass starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,FC000014,Ion FreightClass 14,FreightClass starter record 14,1,-1,1,2026-08-24T00:00:00.000
+15,FC000015,Junction FreightClass 15,FreightClass starter record 15,0,-1,1,2026-08-24T00:00:00.000
+16,FC000016,Junction FreightClass 16,FreightClass starter record 16,1,-1,1,2026-08-24T00:00:00.000
+17,FC000017,Orion FreightClass 17,FreightClass starter record 17,1,-1,1,2026-08-24T00:00:00.000
+18,FC000018,Quartz FreightClass 18,FreightClass starter record 18,1,-1,1,2026-08-24T00:00:00.000

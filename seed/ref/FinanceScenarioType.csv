@@ -1,0 +1,12 @@
+FinanceScenarioTypeKey,ScenarioTypeCode,ScenarioTypeName,IsActualScenario,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,FST000001,Willow FinanceScenarioType 1,1,-1,1,2026-08-24T00:00:00.000
+2,FST000002,Beacon FinanceScenarioType 2,1,-1,1,2026-08-24T00:00:00.000
+3,FST000003,Meridian FinanceScenarioType 3,1,-1,1,2026-08-24T00:00:00.000
+4,FST000004,Vertex FinanceScenarioType 4,1,-1,1,2026-08-24T00:00:00.000
+5,FST000005,Ion FinanceScenarioType 5,0,-1,1,2026-08-24T00:00:00.000
+6,FST000006,Beacon FinanceScenarioType 6,1,-1,1,2026-08-24T00:00:00.000
+7,FST000007,Delta FinanceScenarioType 7,1,-1,1,2026-08-24T00:00:00.000
+8,FST000008,Titan FinanceScenarioType 8,1,-1,1,2026-08-24T00:00:00.000
+9,FST000009,Harbor FinanceScenarioType 9,1,-1,1,2026-08-24T00:00:00.000
+10,FST000010,Granite FinanceScenarioType 10,0,-1,1,2026-08-24T00:00:00.000

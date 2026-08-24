@@ -1,0 +1,12 @@
+EnergyUtilityCategoryKey,EnergyUtilityCategoryCode,EnergyUtilityCategoryName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,EUC000001,Ion EnergyUtilityCategory 1,1,1,2026-08-24T00:00:00.000
+2,EUC000002,Riverton EnergyUtilityCategory 2,1,1,2026-08-24T00:00:00.000
+3,EUC000003,Vertex EnergyUtilityCategory 3,1,1,2026-08-24T00:00:00.000
+4,EUC000004,Granite EnergyUtilityCategory 4,1,1,2026-08-24T00:00:00.000
+5,EUC000005,Forge EnergyUtilityCategory 5,1,1,2026-08-24T00:00:00.000
+6,EUC000006,Northstar EnergyUtilityCategory 6,1,1,2026-08-24T00:00:00.000
+7,EUC000007,Titan EnergyUtilityCategory 7,1,1,2026-08-24T00:00:00.000
+8,EUC000008,Northstar EnergyUtilityCategory 8,1,1,2026-08-24T00:00:00.000
+9,EUC000009,Zenith EnergyUtilityCategory 9,1,1,2026-08-24T00:00:00.000
+10,EUC000010,Titan EnergyUtilityCategory 10,1,1,2026-08-24T00:00:00.000

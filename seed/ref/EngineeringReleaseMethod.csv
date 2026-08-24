@@ -1,0 +1,8 @@
+EngineeringReleaseMethodKey,ReleaseMethodCode,ReleaseMethodName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,ERM000001,Cedar EngineeringReleaseMethod 1,-1,1,2026-08-24T00:00:00.000
+2,ERM000002,Evergreen EngineeringReleaseMethod 2,-1,1,2026-08-24T00:00:00.000
+3,ERM000003,Ion EngineeringReleaseMethod 3,-1,1,2026-08-24T00:00:00.000
+4,ERM000004,Zenith EngineeringReleaseMethod 4,-1,1,2026-08-24T00:00:00.000
+5,ERM000005,Evergreen EngineeringReleaseMethod 5,-1,1,2026-08-24T00:00:00.000
+6,ERM000006,Beacon EngineeringReleaseMethod 6,-1,1,2026-08-24T00:00:00.000

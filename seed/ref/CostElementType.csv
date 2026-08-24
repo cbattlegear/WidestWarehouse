@@ -1,0 +1,14 @@
+CostElementTypeKey,CostElementTypeCode,CostElementTypeName,CostElementTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,CET000001,Northstar CostElementType 1,CostElementType starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,CET000002,Atlas CostElementType 2,CostElementType starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,CET000003,Unity CostElementType 3,CostElementType starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,CET000004,Titan CostElementType 4,CostElementType starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,CET000005,Beacon CostElementType 5,CostElementType starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,CET000006,Titan CostElementType 6,CostElementType starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,CET000007,Northstar CostElementType 7,CostElementType starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,CET000008,Atlas CostElementType 8,CostElementType starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,CET000009,Meridian CostElementType 9,CostElementType starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,CET000010,Junction CostElementType 10,CostElementType starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,CET000011,Ion CostElementType 11,CostElementType starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,CET000012,Cedar CostElementType 12,CostElementType starter record 12,1,-1,1,2026-08-24T00:00:00.000

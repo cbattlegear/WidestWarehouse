@@ -1,0 +1,20 @@
+RoutingProcessFamilyKey,RoutingProcessFamilyCode,RoutingProcessFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,RPF000001,Summit RoutingProcessFamily 1,1,1,2026-08-24T00:00:00.000
+2,RPF000002,Willow RoutingProcessFamily 2,1,1,2026-08-24T00:00:00.000
+3,RPF000003,Riverton RoutingProcessFamily 3,1,1,2026-08-24T00:00:00.000
+4,RPF000004,Pioneer RoutingProcessFamily 4,1,1,2026-08-24T00:00:00.000
+5,RPF000005,Unity RoutingProcessFamily 5,1,1,2026-08-24T00:00:00.000
+6,RPF000006,Vertex RoutingProcessFamily 6,1,1,2026-08-24T00:00:00.000
+7,RPF000007,Evergreen RoutingProcessFamily 7,1,1,2026-08-24T00:00:00.000
+8,RPF000008,Pioneer RoutingProcessFamily 8,1,1,2026-08-24T00:00:00.000
+9,RPF000009,Titan RoutingProcessFamily 9,1,1,2026-08-24T00:00:00.000
+10,RPF000010,Quartz RoutingProcessFamily 10,1,1,2026-08-24T00:00:00.000
+11,RPF000011,Liberty RoutingProcessFamily 11,1,1,2026-08-24T00:00:00.000
+12,RPF000012,Pioneer RoutingProcessFamily 12,1,1,2026-08-24T00:00:00.000
+13,RPF000013,Liberty RoutingProcessFamily 13,1,1,2026-08-24T00:00:00.000
+14,RPF000014,Unity RoutingProcessFamily 14,1,1,2026-08-24T00:00:00.000
+15,RPF000015,Atlas RoutingProcessFamily 15,1,1,2026-08-24T00:00:00.000
+16,RPF000016,Riverton RoutingProcessFamily 16,1,1,2026-08-24T00:00:00.000
+17,RPF000017,Junction RoutingProcessFamily 17,1,1,2026-08-24T00:00:00.000
+18,RPF000018,Titan RoutingProcessFamily 18,1,1,2026-08-24T00:00:00.000

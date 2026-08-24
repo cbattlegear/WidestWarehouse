@@ -1,0 +1,14 @@
+SalesBackorderReasonKey,BackorderReasonCode,BackorderReasonName,IsSupplyRelated,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SBR000001,Keystone SalesBackorderReason 1,1,-1,1,2026-08-24T00:00:00.000
+2,SBR000002,Harbor SalesBackorderReason 2,1,-1,1,2026-08-24T00:00:00.000
+3,SBR000003,Meridian SalesBackorderReason 3,1,-1,1,2026-08-24T00:00:00.000
+4,SBR000004,Meridian SalesBackorderReason 4,1,-1,1,2026-08-24T00:00:00.000
+5,SBR000005,Keystone SalesBackorderReason 5,0,-1,1,2026-08-24T00:00:00.000
+6,SBR000006,Northstar SalesBackorderReason 6,1,-1,1,2026-08-24T00:00:00.000
+7,SBR000007,Junction SalesBackorderReason 7,1,-1,1,2026-08-24T00:00:00.000
+8,SBR000008,Willow SalesBackorderReason 8,1,-1,1,2026-08-24T00:00:00.000
+9,SBR000009,Evergreen SalesBackorderReason 9,1,-1,1,2026-08-24T00:00:00.000
+10,SBR000010,Willow SalesBackorderReason 10,0,-1,1,2026-08-24T00:00:00.000
+11,SBR000011,Northstar SalesBackorderReason 11,1,-1,1,2026-08-24T00:00:00.000
+12,SBR000012,Vertex SalesBackorderReason 12,1,-1,1,2026-08-24T00:00:00.000

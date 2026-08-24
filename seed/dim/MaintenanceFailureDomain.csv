@@ -1,0 +1,18 @@
+MaintenanceFailureDomainKey,MaintenanceFailureDomainCode,MaintenanceFailureDomainName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MFD000001,Granite MaintenanceFailureDomain 1,1,1,2026-08-24T00:00:00.000
+2,MFD000002,Evergreen MaintenanceFailureDomain 2,1,1,2026-08-24T00:00:00.000
+3,MFD000003,Delta MaintenanceFailureDomain 3,1,1,2026-08-24T00:00:00.000
+4,MFD000004,Vertex MaintenanceFailureDomain 4,1,1,2026-08-24T00:00:00.000
+5,MFD000005,Willow MaintenanceFailureDomain 5,1,1,2026-08-24T00:00:00.000
+6,MFD000006,Cedar MaintenanceFailureDomain 6,1,1,2026-08-24T00:00:00.000
+7,MFD000007,Willow MaintenanceFailureDomain 7,1,1,2026-08-24T00:00:00.000
+8,MFD000008,Quartz MaintenanceFailureDomain 8,1,1,2026-08-24T00:00:00.000
+9,MFD000009,Delta MaintenanceFailureDomain 9,1,1,2026-08-24T00:00:00.000
+10,MFD000010,Unity MaintenanceFailureDomain 10,1,1,2026-08-24T00:00:00.000
+11,MFD000011,Unity MaintenanceFailureDomain 11,1,1,2026-08-24T00:00:00.000
+12,MFD000012,Zenith MaintenanceFailureDomain 12,1,1,2026-08-24T00:00:00.000
+13,MFD000013,Riverton MaintenanceFailureDomain 13,1,1,2026-08-24T00:00:00.000
+14,MFD000014,Willow MaintenanceFailureDomain 14,1,1,2026-08-24T00:00:00.000
+15,MFD000015,Unity MaintenanceFailureDomain 15,1,1,2026-08-24T00:00:00.000
+16,MFD000016,Harbor MaintenanceFailureDomain 16,1,1,2026-08-24T00:00:00.000

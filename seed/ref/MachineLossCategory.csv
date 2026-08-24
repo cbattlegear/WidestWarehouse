@@ -1,0 +1,14 @@
+MachineLossCategoryKey,LossCategoryCode,LossCategoryName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MLC000001,Atlas MachineLossCategory 1,-1,1,2026-08-24T00:00:00.000
+2,MLC000002,Delta MachineLossCategory 2,-1,1,2026-08-24T00:00:00.000
+3,MLC000003,Quartz MachineLossCategory 3,-1,1,2026-08-24T00:00:00.000
+4,MLC000004,Northstar MachineLossCategory 4,-1,1,2026-08-24T00:00:00.000
+5,MLC000005,Zenith MachineLossCategory 5,-1,1,2026-08-24T00:00:00.000
+6,MLC000006,Liberty MachineLossCategory 6,-1,1,2026-08-24T00:00:00.000
+7,MLC000007,Cedar MachineLossCategory 7,-1,1,2026-08-24T00:00:00.000
+8,MLC000008,Titan MachineLossCategory 8,-1,1,2026-08-24T00:00:00.000
+9,MLC000009,Liberty MachineLossCategory 9,-1,1,2026-08-24T00:00:00.000
+10,MLC000010,Junction MachineLossCategory 10,-1,1,2026-08-24T00:00:00.000
+11,MLC000011,Meridian MachineLossCategory 11,-1,1,2026-08-24T00:00:00.000
+12,MLC000012,Junction MachineLossCategory 12,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,14 @@
+CarrierServiceLevelKey,ServiceLevelCode,CarrierServiceLevelName,CarrierServiceLevelDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,CSL000001,Liberty CarrierServiceLevel 1,CarrierServiceLevel starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,CSL000002,Unity CarrierServiceLevel 2,CarrierServiceLevel starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,CSL000003,Riverton CarrierServiceLevel 3,CarrierServiceLevel starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,CSL000004,Zenith CarrierServiceLevel 4,CarrierServiceLevel starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,CSL000005,Delta CarrierServiceLevel 5,CarrierServiceLevel starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,CSL000006,Harbor CarrierServiceLevel 6,CarrierServiceLevel starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,CSL000007,Willow CarrierServiceLevel 7,CarrierServiceLevel starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,CSL000008,Pioneer CarrierServiceLevel 8,CarrierServiceLevel starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,CSL000009,Unity CarrierServiceLevel 9,CarrierServiceLevel starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,CSL000010,Orion CarrierServiceLevel 10,CarrierServiceLevel starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,CSL000011,Orion CarrierServiceLevel 11,CarrierServiceLevel starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,CSL000012,Granite CarrierServiceLevel 12,CarrierServiceLevel starter record 12,1,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,14 @@
+MachineSensorTypeKey,SensorTypeCode,SensorTypeName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MST000001,Vertex MachineSensorType 1,-1,1,2026-08-24T00:00:00.000
+2,MST000002,Liberty MachineSensorType 2,-1,1,2026-08-24T00:00:00.000
+3,MST000003,Junction MachineSensorType 3,-1,1,2026-08-24T00:00:00.000
+4,MST000004,Cedar MachineSensorType 4,-1,1,2026-08-24T00:00:00.000
+5,MST000005,Northstar MachineSensorType 5,-1,1,2026-08-24T00:00:00.000
+6,MST000006,Granite MachineSensorType 6,-1,1,2026-08-24T00:00:00.000
+7,MST000007,Summit MachineSensorType 7,-1,1,2026-08-24T00:00:00.000
+8,MST000008,Summit MachineSensorType 8,-1,1,2026-08-24T00:00:00.000
+9,MST000009,Quartz MachineSensorType 9,-1,1,2026-08-24T00:00:00.000
+10,MST000010,Zenith MachineSensorType 10,-1,1,2026-08-24T00:00:00.000
+11,MST000011,Orion MachineSensorType 11,-1,1,2026-08-24T00:00:00.000
+12,MST000012,Keystone MachineSensorType 12,-1,1,2026-08-24T00:00:00.000

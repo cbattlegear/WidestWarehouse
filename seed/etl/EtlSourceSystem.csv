@@ -1,0 +1,7 @@
+SourceSystemId,SourceSystemCode,SourceSystemName,ConnectionName,IsActive,CreatedAtUtc
+1,ERP,Enterprise Resource Planning,erp-primary,1,2026-08-24T00:00:00.000
+2,MES,Manufacturing Execution,mes-primary,1,2026-08-24T00:00:00.000
+3,WMS,Warehouse Management,wms-primary,1,2026-08-24T00:00:00.000
+4,CMMS,Maintenance Management,cmms-primary,1,2026-08-24T00:00:00.000
+5,LIMS,Laboratory Information,lims-primary,1,2026-08-24T00:00:00.000
+6,SCADA,Plant Telemetry,scada-primary,1,2026-08-24T00:00:00.000

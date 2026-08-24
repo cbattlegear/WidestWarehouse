@@ -1,0 +1,12 @@
+PurchaseRequisitionStatusKey,RequisitionStatusCode,RequisitionStatusName,AllowsPurchaseOrderCreation,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,PRS000001,Orion PurchaseRequisitionStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,PRS000002,Meridian PurchaseRequisitionStatus 2,0,-1,1,2026-08-24T00:00:00.000
+3,PRS000003,Quartz PurchaseRequisitionStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,PRS000004,Titan PurchaseRequisitionStatus 4,0,-1,1,2026-08-24T00:00:00.000
+5,PRS000005,Atlas PurchaseRequisitionStatus 5,1,-1,1,2026-08-24T00:00:00.000
+6,PRS000006,Ion PurchaseRequisitionStatus 6,0,-1,1,2026-08-24T00:00:00.000
+7,PRS000007,Unity PurchaseRequisitionStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,PRS000008,Cedar PurchaseRequisitionStatus 8,0,-1,1,2026-08-24T00:00:00.000
+9,PRS000009,Titan PurchaseRequisitionStatus 9,1,-1,1,2026-08-24T00:00:00.000
+10,PRS000010,Unity PurchaseRequisitionStatus 10,0,-1,1,2026-08-24T00:00:00.000

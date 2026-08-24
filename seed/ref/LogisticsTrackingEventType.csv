@@ -1,0 +1,37 @@
+LogisticsTrackingEventTypeKey,TrackingEventTypeCode,TrackingEventTypeName,IndicatesException,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,LTET000001,Meridian LogisticsTrackingEventType 1,1,-1,1,2026-08-24T00:00:00.000
+2,LTET000002,Harbor LogisticsTrackingEventType 2,0,-1,1,2026-08-24T00:00:00.000
+3,LTET000003,Atlas LogisticsTrackingEventType 3,1,-1,1,2026-08-24T00:00:00.000
+4,LTET000004,Northstar LogisticsTrackingEventType 4,0,-1,1,2026-08-24T00:00:00.000
+5,LTET000005,Meridian LogisticsTrackingEventType 5,1,-1,1,2026-08-24T00:00:00.000
+6,LTET000006,Atlas LogisticsTrackingEventType 6,0,-1,1,2026-08-24T00:00:00.000
+7,LTET000007,Harbor LogisticsTrackingEventType 7,1,-1,1,2026-08-24T00:00:00.000
+8,LTET000008,Granite LogisticsTrackingEventType 8,0,-1,1,2026-08-24T00:00:00.000
+9,LTET000009,Willow LogisticsTrackingEventType 9,1,-1,1,2026-08-24T00:00:00.000
+10,LTET000010,Quartz LogisticsTrackingEventType 10,0,-1,1,2026-08-24T00:00:00.000
+11,LTET000011,Cedar LogisticsTrackingEventType 11,1,-1,1,2026-08-24T00:00:00.000
+12,LTET000012,Liberty LogisticsTrackingEventType 12,0,-1,1,2026-08-24T00:00:00.000
+13,LTET000013,Keystone LogisticsTrackingEventType 13,1,-1,1,2026-08-24T00:00:00.000
+14,LTET000014,Titan LogisticsTrackingEventType 14,0,-1,1,2026-08-24T00:00:00.000
+15,LTET000015,Titan LogisticsTrackingEventType 15,1,-1,1,2026-08-24T00:00:00.000
+16,LTET000016,Junction LogisticsTrackingEventType 16,0,-1,1,2026-08-24T00:00:00.000
+17,LTET000017,Riverton LogisticsTrackingEventType 17,1,-1,1,2026-08-24T00:00:00.000
+18,LTET000018,Keystone LogisticsTrackingEventType 18,0,-1,1,2026-08-24T00:00:00.000
+19,LTET000019,Zenith LogisticsTrackingEventType 19,1,-1,1,2026-08-24T00:00:00.000
+20,LTET000020,Zenith LogisticsTrackingEventType 20,0,-1,1,2026-08-24T00:00:00.000
+21,LTET000021,Pioneer LogisticsTrackingEventType 21,1,-1,1,2026-08-24T00:00:00.000
+22,LTET000022,Beacon LogisticsTrackingEventType 22,0,-1,1,2026-08-24T00:00:00.000
+23,LTET000023,Evergreen LogisticsTrackingEventType 23,1,-1,1,2026-08-24T00:00:00.000
+24,LTET000024,Ion LogisticsTrackingEventType 24,0,-1,1,2026-08-24T00:00:00.000
+25,LTET000025,Granite LogisticsTrackingEventType 25,1,-1,1,2026-08-24T00:00:00.000
+26,LTET000026,Orion LogisticsTrackingEventType 26,0,-1,1,2026-08-24T00:00:00.000
+27,LTET000027,Harbor LogisticsTrackingEventType 27,1,-1,1,2026-08-24T00:00:00.000
+28,LTET000028,Northstar LogisticsTrackingEventType 28,0,-1,1,2026-08-24T00:00:00.000
+29,LTET000029,Delta LogisticsTrackingEventType 29,1,-1,1,2026-08-24T00:00:00.000
+30,LTET000030,Vertex LogisticsTrackingEventType 30,0,-1,1,2026-08-24T00:00:00.000
+31,LTET000031,Forge LogisticsTrackingEventType 31,1,-1,1,2026-08-24T00:00:00.000
+32,LTET000032,Evergreen LogisticsTrackingEventType 32,0,-1,1,2026-08-24T00:00:00.000
+33,LTET000033,Cedar LogisticsTrackingEventType 33,1,-1,1,2026-08-24T00:00:00.000
+34,LTET000034,Atlas LogisticsTrackingEventType 34,0,-1,1,2026-08-24T00:00:00.000
+35,LTET000035,Atlas LogisticsTrackingEventType 35,1,-1,1,2026-08-24T00:00:00.000

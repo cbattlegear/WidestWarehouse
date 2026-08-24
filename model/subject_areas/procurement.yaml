@@ -1,0 +1,334 @@
+subject_area: procurement
+reference:
+  - name: PurchaseRequisitionStatus
+    description: Lifecycle states for purchase requisitions.
+    business_key: {name: RequisitionStatusCode, type: "nvarchar(20)"}
+    seed_rows: 10
+    columns:
+      - {name: RequisitionStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: AllowsPurchaseOrderCreation, type: bit, nullable: false, default: "0"}
+  - name: PurchaseOrderLifecycleStatus
+    description: Lifecycle states for purchase orders and purchase order lines.
+    business_key: {name: PurchaseOrderLifecycleStatusCode, type: "nvarchar(20)"}
+    seed_rows: 12
+    columns:
+      - {name: PurchaseOrderLifecycleStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsTerminal, type: bit, nullable: false, default: "0"}
+  - name: PurchaseReceiptStatus
+    description: Goods receipt processing states for purchased materials and services.
+    business_key: {name: ReceiptStatusCode, type: "nvarchar(20)"}
+    seed_rows: 8
+    columns:
+      - {name: ReceiptStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsQuantityFinal, type: bit, nullable: false, default: "0"}
+  - name: PurchaseInvoiceMatchStatus
+    description: Three-way invoice matching outcomes for procurement invoices.
+    business_key: {name: InvoiceMatchStatusCode, type: "nvarchar(20)"}
+    seed_rows: 9
+    columns:
+      - {name: InvoiceMatchStatusName, type: "nvarchar(100)", nullable: false}
+      - {name: RequiresResolution, type: bit, nullable: false, default: "0"}
+  - name: PurchasePaymentTerm
+    description: Procurement payment terms assigned to suppliers, contracts, and orders.
+    business_key: {name: PaymentTermCode, type: "nvarchar(20)"}
+    seed_rows: 40
+    columns:
+      - {name: PaymentTermName, type: "nvarchar(100)", nullable: false}
+      - {name: NetDueDays, type: int, nullable: false}
+      - {name: DiscountDays, type: int, nullable: true}
+      - {name: DiscountRate, type: "decimal(9,6)", nullable: true}
+hierarchies:
+  - name: PurchaseCommodityHierarchy
+    schema: dim
+    description: Procurement commodity taxonomy from domain to commodity.
+    levels:
+      - name: PurchaseCommodityDomain
+        row_count: 12
+      - name: PurchaseCommodityCategory
+        row_count: 90
+      - name: PurchaseCommoditySubcategory
+        row_count: 500
+      - name: PurchaseCommodity
+        row_count: 2500
+  - name: PurchaseSourcingHierarchy
+    schema: dim
+    description: Sourcing organization responsibility from council to buyer desk.
+    levels:
+      - name: PurchaseSourcingCouncil
+        row_count: 8
+      - name: PurchaseSourcingPortfolio
+        row_count: 45
+      - name: PurchaseSourcingDesk
+        row_count: 240
+      - name: PurchaseBuyerAssignment
+        row_count: 1200
+  - name: PurchaseContractHierarchy
+    schema: dim
+    description: Supplier agreement hierarchy from program to contract line family.
+    levels:
+      - name: PurchaseContractProgram
+        row_count: 30
+      - name: PurchaseContractFamily
+        row_count: 180
+      - name: PurchaseContractSchedule
+        row_count: 1000
+      - name: PurchaseContractLineFamily
+        row_count: 6000
+  - name: PurchaseApprovalHierarchy
+    schema: dim
+    description: Purchasing approval and authority structure for requisitions and orders.
+    levels:
+      - name: PurchaseApprovalPolicy
+        row_count: 25
+      - name: PurchaseApprovalLevel
+        row_count: 120
+      - name: PurchaseApprovalRoute
+        row_count: 700
+      - name: PurchaseApprovalStep
+        row_count: 3500
+dimensions:
+  - name: PurchaseRequisition
+    description: Purchase requisition header and requester intent before sourcing or ordering.
+    scd: type2
+    row_count: 2500000
+    business_key: {name: RequisitionNumber, type: "nvarchar(40)"}
+    columns:
+      - {name: RequisitionName, type: "nvarchar(160)", nullable: false}
+      - {name: RequestedDeliveryDate, type: date, nullable: true}
+      - {name: UrgencyScore, type: int, nullable: true}
+    parents:
+      - {name: Plant}
+      - {name: Employee, role: Requester, nullable: true}
+      - {name: PurchaseApprovalStep}
+    ref_parents:
+      - {name: PurchaseRequisitionStatus}
+      - {name: Priority}
+  - name: PurchaseOrderHeader
+    description: Purchase order commercial header issued to a supplier.
+    scd: type2
+    row_count: 1800000
+    business_key: {name: PurchaseOrderNumber, type: "nvarchar(40)"}
+    columns:
+      - {name: PurchaseOrderName, type: "nvarchar(160)", nullable: false}
+      - {name: BuyerReference, type: "nvarchar(60)", nullable: true}
+      - {name: IncotermsCode, type: "nvarchar(20)", nullable: true}
+    parents:
+      - {name: Supplier}
+      - {name: Plant}
+      - {name: Employee, role: Buyer, nullable: true}
+      - {name: PurchaseBuyerAssignment}
+    ref_parents:
+      - {name: PurchaseOrderLifecycleStatus}
+      - {name: PurchasePaymentTerm}
+      - {name: Currency}
+  - name: PurchaseOrderLine
+    description: Purchase order line for material, service, or expense procurement.
+    scd: type2
+    row_count: 12000000
+    business_key: {name: PurchaseOrderLineCode, type: "nvarchar(60)"}
+    columns:
+      - {name: LineSequenceNumber, type: int, nullable: false}
+      - {name: LineDescription, type: "nvarchar(200)", nullable: true}
+      - {name: PromisedDeliveryDate, type: date, nullable: true}
+    parents:
+      - {name: PurchaseOrderHeader}
+      - {name: Product, nullable: true}
+      - {name: PurchaseCommodity}
+    ref_parents:
+      - {name: PurchaseOrderLifecycleStatus}
+      - {name: UnitOfMeasure}
+  - name: PurchaseSupplierContract
+    description: Supplier contract governing pricing, terms, and committed quantities.
+    scd: type2
+    row_count: 450000
+    business_key: {name: SupplierContractNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: SupplierContractName, type: "nvarchar(180)", nullable: false}
+      - {name: EffectiveDate, type: date, nullable: false}
+      - {name: ExpirationDate, type: date, nullable: true}
+      - {name: MinimumCommitmentAmount, type: money, nullable: true}
+    parents:
+      - {name: Supplier}
+      - {name: PurchaseContractLineFamily}
+      - {name: Employee, role: ContractOwner, nullable: true}
+    ref_parents:
+      - {name: Currency}
+      - {name: PurchasePaymentTerm}
+      - {name: ApprovalStatus}
+  - name: PurchaseRequestForQuote
+    description: RFQ event issued to suppliers for competitive sourcing.
+    scd: type2
+    row_count: 300000
+    business_key: {name: RequestForQuoteNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: RequestForQuoteName, type: "nvarchar(180)", nullable: false}
+      - {name: BidDueDate, type: date, nullable: true}
+      - {name: IsSealedBid, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: PurchaseCommodity}
+      - {name: Employee, role: SourcingOwner, nullable: true}
+    ref_parents:
+      - {name: ApprovalStatus}
+      - {name: Currency}
+  - name: PurchaseSupplierScorecard
+    description: Supplier scorecard definition used for quality, delivery, and cost evaluation.
+    row_count: 120000
+    business_key: {name: SupplierScorecardCode, type: "nvarchar(50)"}
+    columns:
+      - {name: SupplierScorecardName, type: "nvarchar(160)", nullable: false}
+      - {name: QualityWeight, type: "decimal(9,6)", nullable: false}
+      - {name: DeliveryWeight, type: "decimal(9,6)", nullable: false}
+      - {name: CostWeight, type: "decimal(9,6)", nullable: false}
+    parents:
+      - {name: Supplier}
+      - {name: PurchaseCommodity}
+bridges:
+  - name: PurchaseRequisitionToOrderLine
+    description: Resolves requisition demand to the purchase order lines that fulfill it.
+    row_count: 8000000
+    members:
+      - {name: PurchaseRequisition}
+      - {name: PurchaseOrderLine}
+    columns:
+      - {name: LinkedQuantity, type: "decimal(18,4)", nullable: false}
+  - name: PurchaseOrderLineToReceipt
+    description: Resolves purchase order lines to goods receipt postings.
+    row_count: 16000000
+    unique_members: false
+    members:
+      - {name: PurchaseOrderLine}
+      - {name: Product, nullable: true}
+      - {name: Plant}
+    ref_parents:
+      - {name: PurchaseReceiptStatus}
+    columns:
+      - {name: ReceivedQuantity, type: "decimal(18,4)", nullable: false}
+  - name: PurchaseContractProductAssignment
+    description: Resolves supplier contracts to covered products and commodities.
+    row_count: 2500000
+    members:
+      - {name: PurchaseSupplierContract}
+      - {name: Product, nullable: true}
+      - {name: PurchaseCommodity}
+    columns:
+      - {name: ContractUnitPriceAmount, type: money, nullable: true}
+      - {name: ContractQuantity, type: "decimal(18,4)", nullable: true}
+  - name: PurchaseRfqSupplierInvitation
+    description: Resolves RFQ events to invited suppliers and their response status.
+    row_count: 1200000
+    members:
+      - {name: PurchaseRequestForQuote}
+      - {name: Supplier}
+    ref_parents:
+      - {name: ApprovalStatus}
+    columns:
+      - {name: QuotedAmount, type: money, nullable: true}
+facts:
+  - name: PurchaseOrderSpend
+    description: Purchase order line spend commitment and ordered quantity transaction.
+    type: transaction
+    grain: "One row per purchase order line accounting distribution at order release."
+    row_count: 45000000
+    columnstore: true
+    date_roles: [Order, RequestedDelivery, PromisedDelivery]
+    dimensions:
+      - {name: PurchaseOrderHeader}
+      - {name: PurchaseOrderLine}
+      - {name: Supplier}
+      - {name: Product, nullable: true}
+      - {name: Plant}
+      - {name: CostCenter, nullable: true}
+    ref_parents:
+      - {name: PurchaseOrderLifecycleStatus}
+      - {name: UnitOfMeasure}
+      - {name: Currency}
+    degenerate:
+      - {name: PurchaseOrderDistributionNumber, type: "nvarchar(50)"}
+    measures:
+      - {name: OrderedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: UnitPriceAmount, type: money, aggregation: avg}
+      - {name: ExtendedAmount, type: money, aggregation: sum}
+  - name: PurchaseGoodsReceipt
+    description: Goods receipt transaction for purchased materials and services.
+    type: transaction
+    grain: "One row per goods receipt document line against a purchase order line."
+    row_count: 60000000
+    columnstore: true
+    date_roles: [Receipt, Posting, Document]
+    time_roles: [Receipt]
+    dimensions:
+      - {name: PurchaseOrderLine}
+      - {name: Supplier}
+      - {name: Product, nullable: true}
+      - {name: Plant}
+      - {name: Employee, role: Receiver, nullable: true}
+    ref_parents:
+      - {name: PurchaseReceiptStatus}
+      - {name: UnitOfMeasure}
+      - {name: Currency}
+    degenerate:
+      - {name: GoodsReceiptNumber, type: "nvarchar(40)"}
+      - {name: GoodsReceiptLineNumber, type: int}
+    measures:
+      - {name: ReceivedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: AcceptedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: RejectedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: ReceiptAmount, type: money, aggregation: sum}
+  - name: PurchaseInvoiceMatch
+    description: Invoice matching transaction comparing invoice, receipt, and order values.
+    type: transaction
+    grain: "One row per supplier invoice line matched to purchase order and receipt references."
+    row_count: 42000000
+    date_roles: [Invoice, Match, Posting]
+    dimensions:
+      - {name: PurchaseOrderLine}
+      - {name: Supplier}
+      - {name: Product, nullable: true}
+      - {name: CostCenter, nullable: true}
+    ref_parents:
+      - {name: PurchaseInvoiceMatchStatus}
+      - {name: Currency}
+    degenerate:
+      - {name: SupplierInvoiceNumber, type: "nvarchar(50)"}
+      - {name: SupplierInvoiceLineNumber, type: int}
+    measures:
+      - {name: InvoiceQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: InvoiceAmount, type: money, aggregation: sum}
+      - {name: QuantityVariance, type: "decimal(18,4)", aggregation: sum}
+      - {name: PriceVarianceAmount, type: money, aggregation: sum}
+  - name: PurchaseSupplierScoreSnapshot
+    description: Periodic supplier performance score snapshot by commodity.
+    type: periodic_snapshot
+    grain: "One row per month, supplier, commodity, and scorecard."
+    row_count: 5000000
+    date_roles: [Snapshot]
+    dimensions:
+      - {name: Supplier}
+      - {name: PurchaseCommodity}
+      - {name: PurchaseSupplierScorecard}
+    measures:
+      - {name: QualityScore, type: "decimal(9,4)", aggregation: avg}
+      - {name: DeliveryScore, type: "decimal(9,4)", aggregation: avg}
+      - {name: CostScore, type: "decimal(9,4)", aggregation: avg}
+      - {name: OverallScore, type: "decimal(9,4)", aggregation: avg}
+  - name: PurchaseSourcingCycle
+    description: Accumulating RFQ sourcing cycle from creation through award.
+    type: accumulating_snapshot
+    grain: "One row per RFQ and supplier quotation tracked through sourcing milestones."
+    row_count: 1500000
+    date_roles: [Create, Issue, BidDue, Award, Contract]
+    dimensions:
+      - {name: PurchaseRequestForQuote}
+      - {name: Supplier}
+      - {name: PurchaseCommodity}
+      - {name: Employee, role: SourcingOwner, nullable: true}
+    ref_parents:
+      - {name: ApprovalStatus}
+      - {name: Currency}
+    degenerate:
+      - {name: SupplierQuotationNumber, type: "nvarchar(50)"}
+    measures:
+      - {name: QuotedAmount, type: money, aggregation: sum}
+      - {name: AwardedAmount, type: money, aggregation: sum}
+      - {name: SavingsAmount, type: money, aggregation: sum, nullable: true}
+

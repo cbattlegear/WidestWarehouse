@@ -1,0 +1,297 @@
+subject_area: hr_labor
+
+reference:
+  - name: LaborEmploymentStatus
+    description: Employment lifecycle statuses used for workforce reporting.
+    business_key: {name: EmploymentStatusCode, type: "nvarchar(20)"}
+    seed_rows: 8
+    columns:
+      - {name: EmploymentStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsActiveStatus, type: bit, nullable: false, default: "1"}
+  - name: LaborPayType
+    description: Pay categories used on labor claims and cost rates.
+    business_key: {name: PayTypeCode, type: "nvarchar(20)"}
+    seed_rows: 12
+    columns:
+      - {name: PayTypeName, type: "nvarchar(80)", nullable: false}
+      - {name: IsPremiumPay, type: bit, nullable: false, default: "0"}
+  - name: LaborAbsenceReason
+    description: Standard reasons for employee absence and leave transactions.
+    business_key: {name: AbsenceReasonCode, type: "nvarchar(20)"}
+    seed_rows: 18
+    columns:
+      - {name: AbsenceReasonName, type: "nvarchar(100)", nullable: false}
+      - {name: IsPaidLeave, type: bit, nullable: false, default: "0"}
+  - name: LaborTrainingCompletionStatus
+    description: Status values for training course assignments and completions.
+    business_key: {name: TrainingCompletionStatusCode, type: "nvarchar(20)"}
+    seed_rows: 6
+    columns:
+      - {name: TrainingCompletionStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsCompletedStatus, type: bit, nullable: false, default: "0"}
+  - name: LaborClaimStatus
+    description: Approval and processing statuses for labor timesheet claims.
+    business_key: {name: LaborClaimStatusCode, type: "nvarchar(20)"}
+    seed_rows: 7
+    columns:
+      - {name: LaborClaimStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsFinalStatus, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: ApprovalStatus}
+
+hierarchies:
+  - name: LaborJobTaxonomy
+    schema: dim
+    description: Workforce job structure from broad family down to grade.
+    levels:
+      - name: LaborJobFamily
+        row_count: 12
+      - name: LaborJobFunction
+        row_count: 48
+      - name: LaborJobRole
+        row_count: 260
+      - name: LaborJobGrade
+        row_count: 34
+        columns:
+          - {name: LaborGradeBand, type: "nvarchar(30)", nullable: false}
+  - name: LaborCrewTaxonomy
+    schema: dim
+    description: Manufacturing crew organization from labor organization down to team.
+    levels:
+      - name: LaborCrewOrganization
+        row_count: 20
+      - name: LaborCrewArea
+        row_count: 160
+      - name: LaborCrew
+        row_count: 950
+      - name: LaborTeam
+        row_count: 2800
+  - name: LaborShiftTaxonomy
+    schema: dim
+    description: Shift planning hierarchy from pattern down to roster slot.
+    levels:
+      - name: LaborShiftPattern
+        row_count: 18
+      - name: LaborShiftRotation
+        row_count: 60
+      - name: LaborShift
+        row_count: 220
+      - name: LaborRosterSlot
+        row_count: 5000
+        columns:
+          - {name: StartSecondOfDay, type: int, nullable: false}
+          - {name: EndSecondOfDay, type: int, nullable: false}
+  - name: LaborSkillTaxonomy
+    schema: dim
+    description: Labor skill and certification classification for qualification tracking.
+    levels:
+      - name: LaborSkillDomain
+        row_count: 14
+      - name: LaborSkillCategory
+        row_count: 90
+      - name: LaborSkill
+        row_count: 1200
+      - name: LaborCertification
+        row_count: 1800
+        columns:
+          - {name: CertificationAuthority, type: "nvarchar(120)", nullable: true}
+          - {name: ValidityMonths, type: smallint, nullable: true}
+
+dimensions:
+  - name: LaborAssignment
+    description: Employee assignment to plant, business unit, cost center, and job grade.
+    scd: type2
+    row_count: 160000
+    business_key: {name: LaborAssignmentNumber, type: "nvarchar(40)"}
+    columns:
+      - {name: AssignmentName, type: "nvarchar(160)", nullable: false}
+      - {name: StandardWeeklyHours, type: "decimal(9,2)", nullable: false}
+      - {name: IsPrimaryAssignment, type: bit, nullable: false, default: "1"}
+    parents:
+      - {name: Employee}
+      - {name: Plant}
+      - {name: BusinessUnit}
+      - {name: CostCenter}
+      - {name: LaborJobGrade}
+    ref_parents:
+      - {name: LaborEmploymentStatus}
+  - name: LaborPosition
+    description: Approved labor position or requisition slot within the organization.
+    scd: type2
+    row_count: 85000
+    business_key: {name: PositionNumber, type: "nvarchar(40)"}
+    columns:
+      - {name: PositionTitle, type: "nvarchar(160)", nullable: false}
+      - {name: AuthorizedHeadcount, type: "decimal(12,2)", nullable: false}
+      - {name: IsUnionEligible, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: LaborJobGrade}
+      - {name: Plant}
+      - {name: CostCenter}
+  - name: LaborTrainingCourse
+    description: Training course catalog for compliance, skill, and operational training.
+    scd: type2
+    row_count: 4500
+    business_key: {name: TrainingCourseCode, type: "nvarchar(40)"}
+    columns:
+      - {name: TrainingCourseName, type: "nvarchar(200)", nullable: false}
+      - {name: DurationHours, type: "decimal(9,2)", nullable: true}
+      - {name: RenewalMonths, type: smallint, nullable: true}
+    parents:
+      - {name: LaborSkillCategory}
+  - name: LaborCostRate
+    description: Standard and negotiated labor cost rates for finance allocations.
+    scd: type2
+    row_count: 65000
+    business_key: {name: LaborCostRateCode, type: "nvarchar(50)"}
+    columns:
+      - {name: HourlyCostAmount, type: money, nullable: false}
+      - {name: OverheadCostAmount, type: money, nullable: true}
+      - {name: PremiumMultiplier, type: "decimal(9,4)", nullable: false, default: "1.0000"}
+    parents:
+      - {name: LaborJobGrade}
+      - {name: CostCenter}
+    ref_parents:
+      - {name: Currency}
+      - {name: LaborPayType}
+  - name: LaborLeaveEntitlement
+    description: Leave entitlement policy assigned to employees by employment class.
+    scd: type2
+    row_count: 24000
+    business_key: {name: LeaveEntitlementCode, type: "nvarchar(40)"}
+    columns:
+      - {name: LeaveEntitlementName, type: "nvarchar(140)", nullable: false}
+      - {name: AnnualHours, type: "decimal(9,2)", nullable: false}
+      - {name: CarryoverHours, type: "decimal(9,2)", nullable: true}
+    parents:
+      - {name: LaborJobGrade}
+    ref_parents:
+      - {name: LaborAbsenceReason}
+  - name: LaborOvertimePolicy
+    description: Overtime eligibility and premium calculation policy.
+    row_count: 850
+    business_key: {name: OvertimePolicyCode, type: "nvarchar(30)"}
+    columns:
+      - {name: OvertimePolicyName, type: "nvarchar(120)", nullable: false}
+      - {name: DailyThresholdHours, type: "decimal(9,2)", nullable: true}
+      - {name: WeeklyThresholdHours, type: "decimal(9,2)", nullable: true}
+      - {name: PremiumMultiplier, type: "decimal(9,4)", nullable: false}
+    parents:
+      - {name: LaborJobGrade}
+    ref_parents:
+      - {name: LaborPayType}
+
+bridges:
+  - name: LaborEmployeeCertification
+    description: Resolves employees to certifications they hold, including expiration tracking.
+    row_count: 520000
+    members:
+      - {name: Employee}
+      - {name: LaborCertification}
+    ref_parents:
+      - {name: RecordStatus}
+    columns:
+      - {name: IssuedDate, type: date, nullable: true}
+      - {name: ExpirationDate, type: date, nullable: true}
+      - {name: CertificationScore, type: "decimal(9,2)", nullable: true}
+  - name: LaborEmployeeCrew
+    description: Resolves employees to labor crews and teams over time.
+    row_count: 420000
+    members:
+      - {name: Employee}
+      - {name: LaborCrew}
+      - {name: LaborTeam}
+    columns:
+      - {name: AssignmentStartDate, type: date, nullable: false}
+      - {name: AssignmentEndDate, type: date, nullable: true}
+      - {name: AllocationRatio, type: "decimal(9,4)", nullable: false, default: "1.0000"}
+  - name: LaborEmployeeSkill
+    description: Resolves employees to skill proficiencies for workforce planning.
+    row_count: 780000
+    members:
+      - {name: Employee}
+      - {name: LaborSkill}
+    columns:
+      - {name: ProficiencyRating, type: "decimal(9,2)", nullable: true}
+      - {name: VerifiedDate, type: date, nullable: true}
+
+facts:
+  - name: LaborTimesheet
+    description: Approved and submitted labor claim lines from timekeeping systems.
+    type: transaction
+    grain: "One row per employee, labor assignment, pay type, and timesheet line."
+    row_count: 180000000
+    columnstore: true
+    date_roles: [Claim, Labor]
+    time_roles: [Start, End]
+    dimensions:
+      - {name: Employee}
+      - {name: LaborAssignment}
+      - {name: LaborRosterSlot, nullable: true}
+      - {name: WorkCenter, nullable: true}
+      - {name: CostCenter}
+    ref_parents:
+      - {name: LaborPayType}
+      - {name: LaborClaimStatus}
+      - {name: Currency}
+    degenerate:
+      - {name: TimesheetNumber, type: "nvarchar(40)"}
+      - {name: LaborClaimLineNumber, type: int}
+    measures:
+      - {name: RegularHours, type: "decimal(18,4)", aggregation: sum}
+      - {name: OvertimeHours, type: "decimal(18,4)", aggregation: sum}
+      - {name: LaborCostAmount, type: money, aggregation: sum}
+  - name: LaborAbsence
+    description: Employee absence and leave usage transactions.
+    type: transaction
+    grain: "One row per employee absence event and absence reason."
+    row_count: 9000000
+    date_roles: [Absence, Submitted, Approved]
+    time_roles: [Start, End]
+    dimensions:
+      - {name: Employee}
+      - {name: LaborAssignment}
+      - {name: LaborLeaveEntitlement, nullable: true}
+    ref_parents:
+      - {name: LaborAbsenceReason}
+      - {name: ApprovalStatus}
+    degenerate:
+      - {name: AbsenceRequestNumber, type: "nvarchar(40)"}
+    measures:
+      - {name: AbsenceHours, type: "decimal(18,4)", aggregation: sum}
+      - {name: PaidAbsenceHours, type: "decimal(18,4)", aggregation: sum}
+  - name: LaborHeadcountSnapshot
+    description: Periodic workforce headcount, capacity, and vacancy snapshot.
+    type: periodic_snapshot
+    grain: "One row per snapshot date, plant, cost center, job grade, and employment status."
+    row_count: 24000000
+    date_roles: [Snapshot]
+    dimensions:
+      - {name: Plant}
+      - {name: CostCenter}
+      - {name: BusinessUnit}
+      - {name: LaborJobGrade}
+    ref_parents:
+      - {name: LaborEmploymentStatus}
+    measures:
+      - {name: HeadcountQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: FullTimeEquivalentQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: OpenPositionQuantity, type: "decimal(18,4)", aggregation: sum}
+  - name: LaborTrainingCompletion
+    description: Employee training assignment, completion, and renewal activity.
+    type: accumulating_snapshot
+    grain: "One row per employee and training course assignment lifecycle."
+    row_count: 32000000
+    date_roles: [Assigned, Due, Completed, Expired]
+    dimensions:
+      - {name: Employee}
+      - {name: LaborTrainingCourse}
+      - {name: LaborCertification, nullable: true}
+      - {name: Plant}
+    ref_parents:
+      - {name: LaborTrainingCompletionStatus}
+    degenerate:
+      - {name: TrainingAssignmentNumber, type: "nvarchar(40)"}
+    measures:
+      - {name: TrainingHours, type: "decimal(18,4)", aggregation: sum}
+      - {name: CompletionScore, type: "decimal(9,2)", aggregation: avg, nullable: true}

@@ -1,0 +1,14 @@
+FinanceStatementSectionKey,FinanceStatementSectionCode,FinanceStatementSectionName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,FSS000001,Unity FinanceStatementSection 1,1,1,2026-08-24T00:00:00.000
+2,FSS000002,Orion FinanceStatementSection 2,1,1,2026-08-24T00:00:00.000
+3,FSS000003,Harbor FinanceStatementSection 3,1,1,2026-08-24T00:00:00.000
+4,FSS000004,Unity FinanceStatementSection 4,1,1,2026-08-24T00:00:00.000
+5,FSS000005,Beacon FinanceStatementSection 5,1,1,2026-08-24T00:00:00.000
+6,FSS000006,Junction FinanceStatementSection 6,1,1,2026-08-24T00:00:00.000
+7,FSS000007,Beacon FinanceStatementSection 7,1,1,2026-08-24T00:00:00.000
+8,FSS000008,Granite FinanceStatementSection 8,1,1,2026-08-24T00:00:00.000
+9,FSS000009,Evergreen FinanceStatementSection 9,1,1,2026-08-24T00:00:00.000
+10,FSS000010,Beacon FinanceStatementSection 10,1,1,2026-08-24T00:00:00.000
+11,FSS000011,Willow FinanceStatementSection 11,1,1,2026-08-24T00:00:00.000
+12,FSS000012,Riverton FinanceStatementSection 12,1,1,2026-08-24T00:00:00.000

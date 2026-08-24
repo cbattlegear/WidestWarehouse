@@ -1,0 +1,20 @@
+EnergyProjectPortfolioKey,EnergyProjectPortfolioCode,EnergyProjectPortfolioName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,EPP000001,Pioneer EnergyProjectPortfolio 1,1,1,2026-08-24T00:00:00.000
+2,EPP000002,Beacon EnergyProjectPortfolio 2,1,1,2026-08-24T00:00:00.000
+3,EPP000003,Summit EnergyProjectPortfolio 3,1,1,2026-08-24T00:00:00.000
+4,EPP000004,Pioneer EnergyProjectPortfolio 4,1,1,2026-08-24T00:00:00.000
+5,EPP000005,Delta EnergyProjectPortfolio 5,1,1,2026-08-24T00:00:00.000
+6,EPP000006,Willow EnergyProjectPortfolio 6,1,1,2026-08-24T00:00:00.000
+7,EPP000007,Pioneer EnergyProjectPortfolio 7,1,1,2026-08-24T00:00:00.000
+8,EPP000008,Pioneer EnergyProjectPortfolio 8,1,1,2026-08-24T00:00:00.000
+9,EPP000009,Harbor EnergyProjectPortfolio 9,1,1,2026-08-24T00:00:00.000
+10,EPP000010,Meridian EnergyProjectPortfolio 10,1,1,2026-08-24T00:00:00.000
+11,EPP000011,Beacon EnergyProjectPortfolio 11,1,1,2026-08-24T00:00:00.000
+12,EPP000012,Unity EnergyProjectPortfolio 12,1,1,2026-08-24T00:00:00.000
+13,EPP000013,Vertex EnergyProjectPortfolio 13,1,1,2026-08-24T00:00:00.000
+14,EPP000014,Willow EnergyProjectPortfolio 14,1,1,2026-08-24T00:00:00.000
+15,EPP000015,Quartz EnergyProjectPortfolio 15,1,1,2026-08-24T00:00:00.000
+16,EPP000016,Evergreen EnergyProjectPortfolio 16,1,1,2026-08-24T00:00:00.000
+17,EPP000017,Zenith EnergyProjectPortfolio 17,1,1,2026-08-24T00:00:00.000
+18,EPP000018,Vertex EnergyProjectPortfolio 18,1,1,2026-08-24T00:00:00.000

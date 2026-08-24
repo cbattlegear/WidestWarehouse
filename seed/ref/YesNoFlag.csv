@@ -1,0 +1,5 @@
+YesNoFlagKey,FlagCode,FlagName,BooleanValue,SortOrder,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,0,-1,0,1900-01-01T00:00:00.000
+1,Y,Yes,1,1,1,1,2026-08-24T00:00:00.000
+2,N,No,0,2,1,1,2026-08-24T00:00:00.000
+3,U,Unknown,,3,1,1,2026-08-24T00:00:00.000

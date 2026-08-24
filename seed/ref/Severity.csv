@@ -1,0 +1,7 @@
+SeverityKey,SeverityCode,SeverityName,SeverityRank,RequiresEscalation,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,0,-1,0,1900-01-01T00:00:00.000
+1,INFO,Informational,1,0,-1,1,2026-08-24T00:00:00.000
+2,LOW,Low,2,0,-1,1,2026-08-24T00:00:00.000
+3,MEDIUM,Medium,3,0,-1,1,2026-08-24T00:00:00.000
+4,HIGH,High,4,1,-1,1,2026-08-24T00:00:00.000
+5,CRITICAL,Critical,5,1,-1,1,2026-08-24T00:00:00.000

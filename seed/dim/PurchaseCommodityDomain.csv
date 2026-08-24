@@ -1,0 +1,14 @@
+PurchaseCommodityDomainKey,PurchaseCommodityDomainCode,PurchaseCommodityDomainName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,PCD000001,Liberty PurchaseCommodityDomain 1,1,1,2026-08-24T00:00:00.000
+2,PCD000002,Unity PurchaseCommodityDomain 2,1,1,2026-08-24T00:00:00.000
+3,PCD000003,Ion PurchaseCommodityDomain 3,1,1,2026-08-24T00:00:00.000
+4,PCD000004,Harbor PurchaseCommodityDomain 4,1,1,2026-08-24T00:00:00.000
+5,PCD000005,Quartz PurchaseCommodityDomain 5,1,1,2026-08-24T00:00:00.000
+6,PCD000006,Beacon PurchaseCommodityDomain 6,1,1,2026-08-24T00:00:00.000
+7,PCD000007,Willow PurchaseCommodityDomain 7,1,1,2026-08-24T00:00:00.000
+8,PCD000008,Liberty PurchaseCommodityDomain 8,1,1,2026-08-24T00:00:00.000
+9,PCD000009,Summit PurchaseCommodityDomain 9,1,1,2026-08-24T00:00:00.000
+10,PCD000010,Pioneer PurchaseCommodityDomain 10,1,1,2026-08-24T00:00:00.000
+11,PCD000011,Forge PurchaseCommodityDomain 11,1,1,2026-08-24T00:00:00.000
+12,PCD000012,Quartz PurchaseCommodityDomain 12,1,1,2026-08-24T00:00:00.000

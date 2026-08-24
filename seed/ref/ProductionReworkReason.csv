@@ -1,0 +1,14 @@
+ProductionReworkReasonKey,ReworkReasonCode,ReworkReasonName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,PRR000001,Pioneer ProductionReworkReason 1,-1,1,2026-08-24T00:00:00.000
+2,PRR000002,Delta ProductionReworkReason 2,-1,1,2026-08-24T00:00:00.000
+3,PRR000003,Junction ProductionReworkReason 3,-1,1,2026-08-24T00:00:00.000
+4,PRR000004,Evergreen ProductionReworkReason 4,-1,1,2026-08-24T00:00:00.000
+5,PRR000005,Cedar ProductionReworkReason 5,-1,1,2026-08-24T00:00:00.000
+6,PRR000006,Riverton ProductionReworkReason 6,-1,1,2026-08-24T00:00:00.000
+7,PRR000007,Willow ProductionReworkReason 7,-1,1,2026-08-24T00:00:00.000
+8,PRR000008,Vertex ProductionReworkReason 8,-1,1,2026-08-24T00:00:00.000
+9,PRR000009,Orion ProductionReworkReason 9,-1,1,2026-08-24T00:00:00.000
+10,PRR000010,Vertex ProductionReworkReason 10,-1,1,2026-08-24T00:00:00.000
+11,PRR000011,Willow ProductionReworkReason 11,-1,1,2026-08-24T00:00:00.000
+12,PRR000012,Harbor ProductionReworkReason 12,-1,1,2026-08-24T00:00:00.000

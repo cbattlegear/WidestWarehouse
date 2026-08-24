@@ -1,0 +1,14 @@
+SupplierRiskClassKey,RiskClassCode,SeverityKey,RecordStatusKey,RiskClassName,RiskClassDescription,OwnerName,EffectiveStartDate,EffectiveEndDate,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,-1,Unknown,N/A,Unknown,1900-01-01,1900-01-01,0,-1,0,1900-01-01T00:00:00.000
+1,SRC000001,2,3,Vertex SupplierRiskClass 1,SupplierRiskClass starter record 1,Devon Hughes,2020-01-02,2021-01-01,1,1,1,2026-08-24T00:00:00.000
+2,SRC000002,5,1,Granite SupplierRiskClass 2,SupplierRiskClass starter record 2,Finley Garcia,2020-01-03,2021-01-02,1,1,1,2026-08-24T00:00:00.000
+3,SRC000003,1,3,Titan SupplierRiskClass 3,SupplierRiskClass starter record 3,Devon Garcia,2020-01-04,2021-01-03,1,1,1,2026-08-24T00:00:00.000
+4,SRC000004,2,3,Northstar SupplierRiskClass 4,SupplierRiskClass starter record 4,Taylor Chen,2020-01-05,2021-01-04,1,1,1,2026-08-24T00:00:00.000
+5,SRC000005,4,4,Harbor SupplierRiskClass 5,SupplierRiskClass starter record 5,Devon Martin,2020-01-06,2021-01-05,0,1,1,2026-08-24T00:00:00.000
+6,SRC000006,4,4,Orion SupplierRiskClass 6,SupplierRiskClass starter record 6,Quinn Adams,2020-01-07,2021-01-06,1,1,1,2026-08-24T00:00:00.000
+7,SRC000007,2,1,Summit SupplierRiskClass 7,SupplierRiskClass starter record 7,Alex Evans,2020-01-08,2021-01-07,1,1,1,2026-08-24T00:00:00.000
+8,SRC000008,2,3,Summit SupplierRiskClass 8,SupplierRiskClass starter record 8,Harper Diaz,2020-01-09,2021-01-08,1,1,1,2026-08-24T00:00:00.000
+9,SRC000009,1,1,Willow SupplierRiskClass 9,SupplierRiskClass starter record 9,Devon Martin,2020-01-10,2021-01-09,1,1,1,2026-08-24T00:00:00.000
+10,SRC000010,5,2,Titan SupplierRiskClass 10,SupplierRiskClass starter record 10,Jordan Diaz,2020-01-11,2021-01-10,0,1,1,2026-08-24T00:00:00.000
+11,SRC000011,4,4,Unity SupplierRiskClass 11,SupplierRiskClass starter record 11,Morgan Garcia,2020-01-12,2021-01-11,1,1,1,2026-08-24T00:00:00.000
+12,SRC000012,1,2,Orion SupplierRiskClass 12,SupplierRiskClass starter record 12,Alex Evans,2020-01-13,2021-01-12,1,1,1,2026-08-24T00:00:00.000

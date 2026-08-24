@@ -1,0 +1,10 @@
+EnergyEfficiencyProjectStatusKey,EfficiencyProjectStatusCode,EfficiencyProjectStatusName,IsCompletedStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,EEPS000001,Orion EnergyEfficiencyProjectStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,EEPS000002,Ion EnergyEfficiencyProjectStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,EEPS000003,Quartz EnergyEfficiencyProjectStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,EEPS000004,Keystone EnergyEfficiencyProjectStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,EEPS000005,Quartz EnergyEfficiencyProjectStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,EEPS000006,Liberty EnergyEfficiencyProjectStatus 6,1,-1,1,2026-08-24T00:00:00.000
+7,EEPS000007,Ion EnergyEfficiencyProjectStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,EEPS000008,Liberty EnergyEfficiencyProjectStatus 8,1,-1,1,2026-08-24T00:00:00.000

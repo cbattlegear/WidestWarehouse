@@ -1,0 +1,8 @@
+OperationStatusGroupKey,GroupCode,OperationStatusGroupName,OperationStatusGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,OSG000001,Zenith OperationStatusGroup 1,OperationStatusGroup starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,OSG000002,Titan OperationStatusGroup 2,OperationStatusGroup starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,OSG000003,Orion OperationStatusGroup 3,OperationStatusGroup starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,OSG000004,Forge OperationStatusGroup 4,OperationStatusGroup starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,OSG000005,Liberty OperationStatusGroup 5,OperationStatusGroup starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,OSG000006,Evergreen OperationStatusGroup 6,OperationStatusGroup starter record 6,1,-1,1,2026-08-24T00:00:00.000

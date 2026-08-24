@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r tools/requirements.txt
+          pip install -r loader/requirements.txt
+          pip install pytest
+
+      - name: Validate model
+        run: python -m tools.generator.cli validate
+
+      - name: Run tests
+        run: python -m pytest tools/tests loader/tests -q
+
+      # sql/ is committed generated output. If it drifts from model/, the repository is
+      # lying about its own schema.
+      - name: Assert sql/ matches the model
+        run: |
+          python -m tools.generator.cli emit
+          if ! git diff --exit-code -- sql/; then
+            echo "::error::sql/ is out of date. Run scripts/rebuild_model.ps1 and commit the result."
+            exit 1
+          fi

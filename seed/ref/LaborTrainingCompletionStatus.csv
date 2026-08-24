@@ -1,0 +1,8 @@
+LaborTrainingCompletionStatusKey,TrainingCompletionStatusCode,TrainingCompletionStatusName,IsCompletedStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,LTCS000001,Northstar LaborTrainingCompletionStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,LTCS000002,Ion LaborTrainingCompletionStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,LTCS000003,Northstar LaborTrainingCompletionStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,LTCS000004,Ion LaborTrainingCompletionStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,LTCS000005,Quartz LaborTrainingCompletionStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,LTCS000006,Zenith LaborTrainingCompletionStatus 6,1,-1,1,2026-08-24T00:00:00.000

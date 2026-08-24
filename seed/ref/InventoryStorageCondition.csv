@@ -1,0 +1,14 @@
+InventoryStorageConditionKey,StorageConditionCode,StorageConditionName,RequiresMonitoring,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,ISC000001,Pioneer InventoryStorageCondition 1,1,-1,1,2026-08-24T00:00:00.000
+2,ISC000002,Cedar InventoryStorageCondition 2,0,-1,1,2026-08-24T00:00:00.000
+3,ISC000003,Pioneer InventoryStorageCondition 3,1,-1,1,2026-08-24T00:00:00.000
+4,ISC000004,Junction InventoryStorageCondition 4,0,-1,1,2026-08-24T00:00:00.000
+5,ISC000005,Granite InventoryStorageCondition 5,1,-1,1,2026-08-24T00:00:00.000
+6,ISC000006,Meridian InventoryStorageCondition 6,0,-1,1,2026-08-24T00:00:00.000
+7,ISC000007,Willow InventoryStorageCondition 7,1,-1,1,2026-08-24T00:00:00.000
+8,ISC000008,Evergreen InventoryStorageCondition 8,0,-1,1,2026-08-24T00:00:00.000
+9,ISC000009,Pioneer InventoryStorageCondition 9,1,-1,1,2026-08-24T00:00:00.000
+10,ISC000010,Meridian InventoryStorageCondition 10,0,-1,1,2026-08-24T00:00:00.000
+11,ISC000011,Evergreen InventoryStorageCondition 11,1,-1,1,2026-08-24T00:00:00.000
+12,ISC000012,Northstar InventoryStorageCondition 12,0,-1,1,2026-08-24T00:00:00.000

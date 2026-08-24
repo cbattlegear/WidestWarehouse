@@ -1,0 +1,8 @@
+DefectSeverityKey,DefectSeverityCode,SeverityKey,DefectSeverityName,DefectSeverityDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,DS000001,4,Unity DefectSeverity 1,DefectSeverity starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,DS000002,4,Forge DefectSeverity 2,DefectSeverity starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,DS000003,4,Liberty DefectSeverity 3,DefectSeverity starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,DS000004,3,Orion DefectSeverity 4,DefectSeverity starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,DS000005,4,Zenith DefectSeverity 5,DefectSeverity starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,DS000006,4,Zenith DefectSeverity 6,DefectSeverity starter record 6,1,1,1,2026-08-24T00:00:00.000

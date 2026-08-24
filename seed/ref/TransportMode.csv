@@ -1,0 +1,12 @@
+TransportModeKey,TransportModeCode,TransportModeName,TransportModeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,TM000001,Forge TransportMode 1,TransportMode starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,TM000002,Titan TransportMode 2,TransportMode starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,TM000003,Willow TransportMode 3,TransportMode starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,TM000004,Orion TransportMode 4,TransportMode starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,TM000005,Unity TransportMode 5,TransportMode starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,TM000006,Forge TransportMode 6,TransportMode starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,TM000007,Summit TransportMode 7,TransportMode starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,TM000008,Junction TransportMode 8,TransportMode starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,TM000009,Delta TransportMode 9,TransportMode starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,TM000010,Forge TransportMode 10,TransportMode starter record 10,0,1,1,2026-08-24T00:00:00.000

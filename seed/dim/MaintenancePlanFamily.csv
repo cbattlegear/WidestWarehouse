@@ -1,0 +1,16 @@
+MaintenancePlanFamilyKey,MaintenancePlanFamilyCode,MaintenancePlanFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MPF000001,Northstar MaintenancePlanFamily 1,1,1,2026-08-24T00:00:00.000
+2,MPF000002,Unity MaintenancePlanFamily 2,1,1,2026-08-24T00:00:00.000
+3,MPF000003,Titan MaintenancePlanFamily 3,1,1,2026-08-24T00:00:00.000
+4,MPF000004,Pioneer MaintenancePlanFamily 4,1,1,2026-08-24T00:00:00.000
+5,MPF000005,Atlas MaintenancePlanFamily 5,1,1,2026-08-24T00:00:00.000
+6,MPF000006,Orion MaintenancePlanFamily 6,1,1,2026-08-24T00:00:00.000
+7,MPF000007,Zenith MaintenancePlanFamily 7,1,1,2026-08-24T00:00:00.000
+8,MPF000008,Junction MaintenancePlanFamily 8,1,1,2026-08-24T00:00:00.000
+9,MPF000009,Liberty MaintenancePlanFamily 9,1,1,2026-08-24T00:00:00.000
+10,MPF000010,Summit MaintenancePlanFamily 10,1,1,2026-08-24T00:00:00.000
+11,MPF000011,Quartz MaintenancePlanFamily 11,1,1,2026-08-24T00:00:00.000
+12,MPF000012,Vertex MaintenancePlanFamily 12,1,1,2026-08-24T00:00:00.000
+13,MPF000013,Liberty MaintenancePlanFamily 13,1,1,2026-08-24T00:00:00.000
+14,MPF000014,Orion MaintenancePlanFamily 14,1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,16 @@
+WorkOrderStatusKey,StatusCode,WorkOrderStatusGroupKey,WorkOrderStatusName,WorkOrderStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,WOS000001,4,Atlas WorkOrderStatus 1,WorkOrderStatus starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,WOS000002,2,Ion WorkOrderStatus 2,WorkOrderStatus starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,WOS000003,2,Meridian WorkOrderStatus 3,WorkOrderStatus starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,WOS000004,2,Liberty WorkOrderStatus 4,WorkOrderStatus starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,WOS000005,3,Willow WorkOrderStatus 5,WorkOrderStatus starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,WOS000006,2,Vertex WorkOrderStatus 6,WorkOrderStatus starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,WOS000007,3,Northstar WorkOrderStatus 7,WorkOrderStatus starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,WOS000008,1,Keystone WorkOrderStatus 8,WorkOrderStatus starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,WOS000009,1,Cedar WorkOrderStatus 9,WorkOrderStatus starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,WOS000010,2,Atlas WorkOrderStatus 10,WorkOrderStatus starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,WOS000011,4,Summit WorkOrderStatus 11,WorkOrderStatus starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,WOS000012,3,Pioneer WorkOrderStatus 12,WorkOrderStatus starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,WOS000013,1,Keystone WorkOrderStatus 13,WorkOrderStatus starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,WOS000014,2,Riverton WorkOrderStatus 14,WorkOrderStatus starter record 14,1,1,1,2026-08-24T00:00:00.000

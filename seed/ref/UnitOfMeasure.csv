@@ -1,0 +1,9 @@
+UnitOfMeasureKey,UomCode,UnitOfMeasureClassKey,UomName,Symbol,ConversionFactorToBase,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0.00000000,-1,0,1900-01-01T00:00:00.000
+1,EA,6,Each,ea,1,1,1,2026-08-24T00:00:00.000
+2,KG,6,Kilogram,kg,1,1,1,2026-08-24T00:00:00.000
+3,G,2,Gram,g,0.001,1,1,2026-08-24T00:00:00.000
+4,LB,6,Pound,lb,0.45359237,1,1,2026-08-24T00:00:00.000
+5,M,5,Meter,m,1,1,1,2026-08-24T00:00:00.000
+6,L,1,Liter,L,1,1,1,2026-08-24T00:00:00.000
+7,HR,1,Hour,hr,1,1,1,2026-08-24T00:00:00.000

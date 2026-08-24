@@ -1,0 +1,14 @@
+MaintenanceFailureSeverityKey,FailureSeverityCode,FailureSeverityName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MFS000001,Northstar MaintenanceFailureSeverity 1,-1,1,2026-08-24T00:00:00.000
+2,MFS000002,Beacon MaintenanceFailureSeverity 2,-1,1,2026-08-24T00:00:00.000
+3,MFS000003,Forge MaintenanceFailureSeverity 3,-1,1,2026-08-24T00:00:00.000
+4,MFS000004,Keystone MaintenanceFailureSeverity 4,-1,1,2026-08-24T00:00:00.000
+5,MFS000005,Meridian MaintenanceFailureSeverity 5,-1,1,2026-08-24T00:00:00.000
+6,MFS000006,Ion MaintenanceFailureSeverity 6,-1,1,2026-08-24T00:00:00.000
+7,MFS000007,Liberty MaintenanceFailureSeverity 7,-1,1,2026-08-24T00:00:00.000
+8,MFS000008,Harbor MaintenanceFailureSeverity 8,-1,1,2026-08-24T00:00:00.000
+9,MFS000009,Atlas MaintenanceFailureSeverity 9,-1,1,2026-08-24T00:00:00.000
+10,MFS000010,Cedar MaintenanceFailureSeverity 10,-1,1,2026-08-24T00:00:00.000
+11,MFS000011,Cedar MaintenanceFailureSeverity 11,-1,1,2026-08-24T00:00:00.000
+12,MFS000012,Summit MaintenanceFailureSeverity 12,-1,1,2026-08-24T00:00:00.000

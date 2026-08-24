@@ -1,0 +1,8 @@
+WorkOrderTypeGroupKey,GroupCode,WorkOrderTypeGroupName,WorkOrderTypeGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,WOTG000001,Unity WorkOrderTypeGroup 1,WorkOrderTypeGroup starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,WOTG000002,Cedar WorkOrderTypeGroup 2,WorkOrderTypeGroup starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,WOTG000003,Harbor WorkOrderTypeGroup 3,WorkOrderTypeGroup starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,WOTG000004,Pioneer WorkOrderTypeGroup 4,WorkOrderTypeGroup starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,WOTG000005,Pioneer WorkOrderTypeGroup 5,WorkOrderTypeGroup starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,WOTG000006,Quartz WorkOrderTypeGroup 6,WorkOrderTypeGroup starter record 6,1,1,1,2026-08-24T00:00:00.000

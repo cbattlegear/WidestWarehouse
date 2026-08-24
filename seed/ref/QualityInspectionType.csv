@@ -1,0 +1,14 @@
+QualityInspectionTypeKey,InspectionTypeCode,InspectionTypeName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,QIT000001,Forge QualityInspectionType 1,-1,1,2026-08-24T00:00:00.000
+2,QIT000002,Riverton QualityInspectionType 2,-1,1,2026-08-24T00:00:00.000
+3,QIT000003,Junction QualityInspectionType 3,-1,1,2026-08-24T00:00:00.000
+4,QIT000004,Willow QualityInspectionType 4,-1,1,2026-08-24T00:00:00.000
+5,QIT000005,Granite QualityInspectionType 5,-1,1,2026-08-24T00:00:00.000
+6,QIT000006,Willow QualityInspectionType 6,-1,1,2026-08-24T00:00:00.000
+7,QIT000007,Quartz QualityInspectionType 7,-1,1,2026-08-24T00:00:00.000
+8,QIT000008,Cedar QualityInspectionType 8,-1,1,2026-08-24T00:00:00.000
+9,QIT000009,Junction QualityInspectionType 9,-1,1,2026-08-24T00:00:00.000
+10,QIT000010,Riverton QualityInspectionType 10,-1,1,2026-08-24T00:00:00.000
+11,QIT000011,Willow QualityInspectionType 11,-1,1,2026-08-24T00:00:00.000
+12,QIT000012,Titan QualityInspectionType 12,-1,1,2026-08-24T00:00:00.000

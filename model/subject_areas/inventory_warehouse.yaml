@@ -1,0 +1,329 @@
+subject_area: inventory_warehouse
+reference:
+  - name: InventoryStockStatus
+    description: Inventory availability and usability states for warehouse stock.
+    business_key: {name: StockStatusCode, type: "nvarchar(20)"}
+    seed_rows: 10
+    columns:
+      - {name: StockStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsAvailableForSale, type: bit, nullable: false, default: "0"}
+  - name: InventoryMovementType
+    description: Types of inventory movements recorded in warehouse operations.
+    business_key: {name: MovementTypeCode, type: "nvarchar(20)"}
+    seed_rows: 16
+    columns:
+      - {name: MovementTypeName, type: "nvarchar(80)", nullable: false}
+      - {name: QuantitySign, type: smallint, nullable: false}
+  - name: InventoryCountStatus
+    description: Lifecycle states for cycle count and physical inventory events.
+    business_key: {name: CountStatusCode, type: "nvarchar(20)"}
+    seed_rows: 8
+    columns:
+      - {name: CountStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: AllowsPosting, type: bit, nullable: false, default: "0"}
+  - name: InventoryStorageCondition
+    description: Required environmental conditions for inventory storage.
+    business_key: {name: StorageConditionCode, type: "nvarchar(20)"}
+    seed_rows: 12
+    columns:
+      - {name: StorageConditionName, type: "nvarchar(100)", nullable: false}
+      - {name: RequiresMonitoring, type: bit, nullable: false, default: "0"}
+  - name: InventoryAbcClass
+    description: ABC velocity and value classes for inventory planning.
+    business_key: {name: AbcClassCode, type: "nvarchar(10)"}
+    seed_rows: 5
+    columns:
+      - {name: AbcClassName, type: "nvarchar(60)", nullable: false}
+      - {name: CycleCountFrequencyDays, type: int, nullable: false}
+hierarchies:
+  - name: InventoryLocationHierarchy
+    schema: dim
+    description: Physical warehouse hierarchy from warehouse to storage bin.
+    levels:
+      - name: InventoryWarehouse
+        row_count: 120
+      - name: InventoryZone
+        row_count: 900
+      - name: InventoryAisle
+        row_count: 6000
+      - name: InventoryRack
+        row_count: 48000
+      - name: InventoryBin
+        row_count: 480000
+  - name: InventoryStorageTypeHierarchy
+    schema: dim
+    description: Storage capability hierarchy for warehouse handling constraints.
+    levels:
+      - name: InventoryStorageFamily
+        row_count: 12
+      - name: InventoryStorageType
+        row_count: 60
+      - name: InventoryStorageSubtype
+        row_count: 240
+      - name: InventoryStorageProfile
+        row_count: 1000
+  - name: InventoryHandlingHierarchy
+    schema: dim
+    description: Material handling equipment and method hierarchy.
+    levels:
+      - name: InventoryHandlingClass
+        row_count: 10
+      - name: InventoryHandlingMethod
+        row_count: 50
+      - name: InventoryHandlingEquipment
+        row_count: 250
+      - name: InventoryHandlingAttachment
+        row_count: 900
+  - name: InventoryPlanningHierarchy
+    schema: dim
+    description: Inventory policy segmentation from planning family to policy segment.
+    levels:
+      - name: InventoryPlanningFamily
+        row_count: 16
+      - name: InventoryPlanningSegment
+        row_count: 80
+      - name: InventoryReplenishmentGroup
+        row_count: 360
+      - name: InventoryPolicySegment
+        row_count: 1400
+dimensions:
+  - name: InventoryLot
+    description: Manufacturer or internal lot tracked for traceability and expiry.
+    scd: type2
+    row_count: 900000
+    business_key: {name: LotNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: LotDescription, type: "nvarchar(200)", nullable: true}
+      - {name: ManufactureDate, type: date, nullable: true}
+      - {name: ExpirationDate, type: date, nullable: true}
+      - {name: IsRestricted, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: Product}
+      - {name: Plant}
+    ref_parents:
+      - {name: InventoryStockStatus}
+  - name: InventorySerialNumber
+    description: Serialized unit identity for individually tracked inventory items.
+    scd: type2
+    row_count: 2500000
+    business_key: {name: SerialNumber, type: "nvarchar(80)"}
+    columns:
+      - {name: SerialDescription, type: "nvarchar(200)", nullable: true}
+      - {name: ActivationDate, type: date, nullable: true}
+      - {name: WarrantyEndDate, type: date, nullable: true}
+    parents:
+      - {name: Product}
+      - {name: InventoryLot, nullable: true}
+    ref_parents:
+      - {name: InventoryStockStatus}
+  - name: InventoryContainer
+    description: Reusable warehouse handling unit such as pallet, tote, or cage.
+    row_count: 750000
+    business_key: {name: ContainerNumber, type: "nvarchar(40)"}
+    columns:
+      - {name: ContainerName, type: "nvarchar(120)", nullable: false}
+      - {name: TareWeightKg, type: "decimal(18,4)", nullable: true}
+      - {name: CapacityQuantity, type: "decimal(18,4)", nullable: true}
+    parents:
+      - {name: InventoryStorageProfile}
+    ref_parents:
+      - {name: UnitOfMeasure}
+  - name: InventoryConsignmentOwner
+    description: External owner account for consigned inventory held in company facilities.
+    scd: type2
+    row_count: 15000
+    business_key: {name: ConsignmentOwnerCode, type: "nvarchar(40)"}
+    columns:
+      - {name: ConsignmentOwnerName, type: "nvarchar(160)", nullable: false}
+      - {name: OwnershipStartDate, type: date, nullable: true}
+      - {name: RequiresSegregation, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: Supplier, nullable: true}
+      - {name: Customer, nullable: true}
+  - name: InventorySafetyStockPolicy
+    description: Safety stock policy maintained for product and warehouse planning combinations.
+    scd: type2
+    row_count: 350000
+    business_key: {name: SafetyStockPolicyCode, type: "nvarchar(50)"}
+    columns:
+      - {name: MinimumQuantity, type: "decimal(18,4)", nullable: false}
+      - {name: MaximumQuantity, type: "decimal(18,4)", nullable: true}
+      - {name: ReorderPointQuantity, type: "decimal(18,4)", nullable: false}
+      - {name: ReviewCycleDays, type: int, nullable: false}
+    parents:
+      - {name: Product}
+      - {name: Plant}
+      - {name: InventoryPolicySegment}
+    ref_parents:
+      - {name: InventoryAbcClass}
+      - {name: UnitOfMeasure}
+  - name: InventoryDisposition
+    description: Disposition assignment for stock requiring inspection, quarantine, or scrap decision.
+    row_count: 60000
+    business_key: {name: DispositionCode, type: "nvarchar(30)"}
+    columns:
+      - {name: DispositionName, type: "nvarchar(120)", nullable: false}
+      - {name: AllowsShipment, type: bit, nullable: false, default: "0"}
+      - {name: RequiresApproval, type: bit, nullable: false, default: "0"}
+    ref_parents:
+      - {name: ApprovalStatus}
+      - {name: InventoryStockStatus}
+bridges:
+  - name: InventoryLotBinAssignment
+    description: Resolves lots to bins where quantities may be stored across locations.
+    row_count: 3000000
+    members:
+      - {name: InventoryLot}
+      - {name: InventoryBin}
+    ref_parents:
+      - {name: InventoryStockStatus}
+    columns:
+      - {name: AssignedQuantity, type: "decimal(18,4)", nullable: false}
+  - name: InventorySerialBinAssignment
+    description: Resolves serialized units to their current or historical bin assignment.
+    row_count: 5000000
+    members:
+      - {name: InventorySerialNumber}
+      - {name: InventoryBin}
+      - {name: InventoryContainer, nullable: true}
+    ref_parents:
+      - {name: InventoryStockStatus}
+    columns:
+      - {name: AssignmentSequenceNumber, type: int, nullable: false}
+  - name: InventoryPolicyProductAssignment
+    description: Assigns safety stock policies to product and plant combinations.
+    row_count: 500000
+    members:
+      - {name: InventorySafetyStockPolicy}
+      - {name: Product}
+      - {name: Plant}
+    ref_parents:
+      - {name: InventoryAbcClass}
+    columns:
+      - {name: TargetServiceRatio, type: "decimal(9,6)", nullable: true}
+  - name: InventoryContainerContent
+    description: Resolves containers to contained lots and serialized items.
+    row_count: 2500000
+    unique_members: false
+    members:
+      - {name: InventoryContainer}
+      - {name: InventoryLot, nullable: true}
+      - {name: InventorySerialNumber, nullable: true}
+    columns:
+      - {name: ContentQuantity, type: "decimal(18,4)", nullable: false}
+facts:
+  - name: InventoryMovement
+    description: One row per posted inventory movement transaction.
+    type: transaction
+    grain: "One row per product, lot or serial, location, and posted movement document line."
+    row_count: 180000000
+    columnstore: true
+    date_roles: [Posting, Document, Expiration]
+    time_roles: [Posting]
+    dimensions:
+      - {name: Product}
+      - {name: Plant}
+      - {name: InventoryBin}
+      - {name: InventoryLot, nullable: true}
+      - {name: InventorySerialNumber, nullable: true}
+      - {name: InventoryContainer, nullable: true}
+      - {name: Employee, role: PostedBy, nullable: true}
+    ref_parents:
+      - {name: InventoryMovementType}
+      - {name: InventoryStockStatus}
+      - {name: UnitOfMeasure}
+      - {name: AdjustmentReason, nullable: true}
+    degenerate:
+      - {name: InventoryDocumentNumber, type: "nvarchar(40)"}
+      - {name: InventoryDocumentLineNumber, type: int}
+    measures:
+      - {name: MovementQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: MovementValueAmount, type: money, aggregation: sum, nullable: true}
+      - {name: WeightKg, type: "decimal(18,4)", aggregation: sum, nullable: true}
+  - name: InventoryBalanceSnapshot
+    description: Daily inventory balance by product, status, and bin.
+    type: periodic_snapshot
+    grain: "One row per day, product, plant, bin, lot, serial, and stock status."
+    row_count: 95000000
+    columnstore: true
+    date_roles: [Snapshot]
+    dimensions:
+      - {name: Product}
+      - {name: Plant}
+      - {name: InventoryBin}
+      - {name: InventoryLot, nullable: true}
+      - {name: InventorySerialNumber, nullable: true}
+      - {name: InventoryConsignmentOwner, nullable: true}
+    ref_parents:
+      - {name: InventoryStockStatus}
+      - {name: UnitOfMeasure}
+    measures:
+      - {name: OnHandQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: AvailableQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: ReservedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: InventoryValueAmount, type: money, aggregation: sum}
+  - name: InventoryCycleCount
+    description: Cycle count transaction result comparing system and counted stock.
+    type: transaction
+    grain: "One row per cycle count count sheet line and counted product location."
+    row_count: 12000000
+    date_roles: [Count, Approval, Posting]
+    time_roles: [Count]
+    dimensions:
+      - {name: Product}
+      - {name: Plant}
+      - {name: InventoryBin}
+      - {name: Employee, role: Counter, nullable: true}
+      - {name: Employee, role: Approver, nullable: true}
+    ref_parents:
+      - {name: InventoryCountStatus}
+      - {name: UnitOfMeasure}
+    degenerate:
+      - {name: CountSheetNumber, type: "nvarchar(40)"}
+      - {name: CountSheetLineNumber, type: int}
+    measures:
+      - {name: SystemQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: CountedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: VarianceQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: VarianceValueAmount, type: money, aggregation: sum, nullable: true}
+  - name: InventoryPhysicalInventory
+    description: Physical inventory campaign line result for annual or wall-to-wall counts.
+    type: accumulating_snapshot
+    grain: "One row per physical inventory document line tracked from freeze through posting."
+    row_count: 2500000
+    date_roles: [Freeze, Count, Recount, Approval, Posting]
+    dimensions:
+      - {name: Product}
+      - {name: Plant}
+      - {name: InventoryBin}
+      - {name: InventoryLot, nullable: true}
+      - {name: Employee, role: CountLead, nullable: true}
+    ref_parents:
+      - {name: InventoryCountStatus}
+      - {name: UnitOfMeasure}
+    degenerate:
+      - {name: PhysicalInventoryNumber, type: "nvarchar(40)"}
+      - {name: PhysicalInventoryLineNumber, type: int}
+    measures:
+      - {name: FrozenQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: CountedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: AdjustmentQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: AdjustmentValueAmount, type: money, aggregation: sum, nullable: true}
+  - name: InventorySafetyStockSnapshot
+    description: Daily safety stock policy compliance and shortage exposure snapshot.
+    type: periodic_snapshot
+    grain: "One row per day, safety stock policy, product, and plant."
+    row_count: 18000000
+    date_roles: [Snapshot]
+    dimensions:
+      - {name: InventorySafetyStockPolicy}
+      - {name: Product}
+      - {name: Plant}
+    ref_parents:
+      - {name: InventoryAbcClass}
+      - {name: UnitOfMeasure}
+    measures:
+      - {name: OnHandQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: SafetyStockQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: ShortageQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: ShortageValueAmount, type: money, aggregation: sum, nullable: true}

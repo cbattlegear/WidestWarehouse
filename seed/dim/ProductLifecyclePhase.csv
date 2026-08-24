@@ -1,0 +1,14 @@
+ProductLifecyclePhaseKey,LifecyclePhaseCode,ApprovalStatusKey,RecordStatusKey,LifecyclePhaseName,LifecyclePhaseDescription,OwnerName,EffectiveStartDate,EffectiveEndDate,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,-1,Unknown,N/A,Unknown,1900-01-01,1900-01-01,0,-1,0,1900-01-01T00:00:00.000
+1,PLP000001,1,3,Junction ProductLifecyclePhase 1,ProductLifecyclePhase starter record 1,Casey Patel,2020-01-02,2021-01-01,1,1,1,2026-08-24T00:00:00.000
+2,PLP000002,2,2,Pioneer ProductLifecyclePhase 2,ProductLifecyclePhase starter record 2,Finley Diaz,2020-01-03,2021-01-02,1,1,1,2026-08-24T00:00:00.000
+3,PLP000003,1,3,Liberty ProductLifecyclePhase 3,ProductLifecyclePhase starter record 3,Riley Patel,2020-01-04,2021-01-03,1,1,1,2026-08-24T00:00:00.000
+4,PLP000004,5,3,Orion ProductLifecyclePhase 4,ProductLifecyclePhase starter record 4,Devon Adams,2020-01-05,2021-01-04,1,1,1,2026-08-24T00:00:00.000
+5,PLP000005,5,2,Quartz ProductLifecyclePhase 5,ProductLifecyclePhase starter record 5,Jordan Singh,2020-01-06,2021-01-05,0,1,1,2026-08-24T00:00:00.000
+6,PLP000006,1,1,Beacon ProductLifecyclePhase 6,ProductLifecyclePhase starter record 6,Quinn Khan,2020-01-07,2021-01-06,1,1,1,2026-08-24T00:00:00.000
+7,PLP000007,5,3,Liberty ProductLifecyclePhase 7,ProductLifecyclePhase starter record 7,Casey Diaz,2020-01-08,2021-01-07,1,1,1,2026-08-24T00:00:00.000
+8,PLP000008,4,3,Liberty ProductLifecyclePhase 8,ProductLifecyclePhase starter record 8,Morgan Khan,2020-01-09,2021-01-08,1,1,1,2026-08-24T00:00:00.000
+9,PLP000009,1,4,Willow ProductLifecyclePhase 9,ProductLifecyclePhase starter record 9,Finley Adams,2020-01-10,2021-01-09,1,1,1,2026-08-24T00:00:00.000
+10,PLP000010,2,2,Harbor ProductLifecyclePhase 10,ProductLifecyclePhase starter record 10,Jordan Patel,2020-01-11,2021-01-10,0,1,1,2026-08-24T00:00:00.000
+11,PLP000011,1,1,Atlas ProductLifecyclePhase 11,ProductLifecyclePhase starter record 11,Finley Reed,2020-01-12,2021-01-11,1,1,1,2026-08-24T00:00:00.000
+12,PLP000012,3,1,Delta ProductLifecyclePhase 12,ProductLifecyclePhase starter record 12,Devon Patel,2020-01-13,2021-01-12,1,1,1,2026-08-24T00:00:00.000

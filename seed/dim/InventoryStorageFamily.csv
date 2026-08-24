@@ -1,0 +1,14 @@
+InventoryStorageFamilyKey,InventoryStorageFamilyCode,InventoryStorageFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,ISF000001,Keystone InventoryStorageFamily 1,1,1,2026-08-24T00:00:00.000
+2,ISF000002,Northstar InventoryStorageFamily 2,1,1,2026-08-24T00:00:00.000
+3,ISF000003,Northstar InventoryStorageFamily 3,1,1,2026-08-24T00:00:00.000
+4,ISF000004,Meridian InventoryStorageFamily 4,1,1,2026-08-24T00:00:00.000
+5,ISF000005,Pioneer InventoryStorageFamily 5,1,1,2026-08-24T00:00:00.000
+6,ISF000006,Evergreen InventoryStorageFamily 6,1,1,2026-08-24T00:00:00.000
+7,ISF000007,Keystone InventoryStorageFamily 7,1,1,2026-08-24T00:00:00.000
+8,ISF000008,Riverton InventoryStorageFamily 8,1,1,2026-08-24T00:00:00.000
+9,ISF000009,Ion InventoryStorageFamily 9,1,1,2026-08-24T00:00:00.000
+10,ISF000010,Keystone InventoryStorageFamily 10,1,1,2026-08-24T00:00:00.000
+11,ISF000011,Junction InventoryStorageFamily 11,1,1,2026-08-24T00:00:00.000
+12,ISF000012,Harbor InventoryStorageFamily 12,1,1,2026-08-24T00:00:00.000

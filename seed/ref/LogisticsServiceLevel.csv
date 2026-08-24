@@ -1,0 +1,22 @@
+LogisticsServiceLevelKey,ServiceLevelCode,ServiceLevelName,TargetTransitDays,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,LSL000001,Quartz LogisticsServiceLevel 1,2,-1,1,2026-08-24T00:00:00.000
+2,LSL000002,Cedar LogisticsServiceLevel 2,3,-1,1,2026-08-24T00:00:00.000
+3,LSL000003,Willow LogisticsServiceLevel 3,4,-1,1,2026-08-24T00:00:00.000
+4,LSL000004,Titan LogisticsServiceLevel 4,5,-1,1,2026-08-24T00:00:00.000
+5,LSL000005,Zenith LogisticsServiceLevel 5,6,-1,1,2026-08-24T00:00:00.000
+6,LSL000006,Granite LogisticsServiceLevel 6,7,-1,1,2026-08-24T00:00:00.000
+7,LSL000007,Granite LogisticsServiceLevel 7,8,-1,1,2026-08-24T00:00:00.000
+8,LSL000008,Junction LogisticsServiceLevel 8,9,-1,1,2026-08-24T00:00:00.000
+9,LSL000009,Ion LogisticsServiceLevel 9,10,-1,1,2026-08-24T00:00:00.000
+10,LSL000010,Northstar LogisticsServiceLevel 10,11,-1,1,2026-08-24T00:00:00.000
+11,LSL000011,Orion LogisticsServiceLevel 11,12,-1,1,2026-08-24T00:00:00.000
+12,LSL000012,Pioneer LogisticsServiceLevel 12,13,-1,1,2026-08-24T00:00:00.000
+13,LSL000013,Delta LogisticsServiceLevel 13,14,-1,1,2026-08-24T00:00:00.000
+14,LSL000014,Harbor LogisticsServiceLevel 14,15,-1,1,2026-08-24T00:00:00.000
+15,LSL000015,Delta LogisticsServiceLevel 15,16,-1,1,2026-08-24T00:00:00.000
+16,LSL000016,Ion LogisticsServiceLevel 16,17,-1,1,2026-08-24T00:00:00.000
+17,LSL000017,Forge LogisticsServiceLevel 17,18,-1,1,2026-08-24T00:00:00.000
+18,LSL000018,Granite LogisticsServiceLevel 18,19,-1,1,2026-08-24T00:00:00.000
+19,LSL000019,Unity LogisticsServiceLevel 19,20,-1,1,2026-08-24T00:00:00.000
+20,LSL000020,Cedar LogisticsServiceLevel 20,21,-1,1,2026-08-24T00:00:00.000

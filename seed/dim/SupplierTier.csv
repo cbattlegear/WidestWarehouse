@@ -1,0 +1,22 @@
+SupplierTierKey,SupplierTierCode,RecordStatusKey,SupplierTierName,SupplierTierDescription,OwnerName,EffectiveStartDate,EffectiveEndDate,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,Unknown,1900-01-01,1900-01-01,0,-1,0,1900-01-01T00:00:00.000
+1,ST000001,1,Beacon SupplierTier 1,SupplierTier starter record 1,Harper Evans,2020-01-02,2021-01-01,1,1,1,2026-08-24T00:00:00.000
+2,ST000002,1,Pioneer SupplierTier 2,SupplierTier starter record 2,Devon Patel,2020-01-03,2021-01-02,1,1,1,2026-08-24T00:00:00.000
+3,ST000003,3,Junction SupplierTier 3,SupplierTier starter record 3,Quinn Adams,2020-01-04,2021-01-03,1,1,1,2026-08-24T00:00:00.000
+4,ST000004,1,Evergreen SupplierTier 4,SupplierTier starter record 4,Blair Khan,2020-01-05,2021-01-04,1,1,1,2026-08-24T00:00:00.000
+5,ST000005,3,Quartz SupplierTier 5,SupplierTier starter record 5,Riley Bennett,2020-01-06,2021-01-05,0,1,1,2026-08-24T00:00:00.000
+6,ST000006,3,Quartz SupplierTier 6,SupplierTier starter record 6,Casey Diaz,2020-01-07,2021-01-06,1,1,1,2026-08-24T00:00:00.000
+7,ST000007,1,Northstar SupplierTier 7,SupplierTier starter record 7,Harper Khan,2020-01-08,2021-01-07,1,1,1,2026-08-24T00:00:00.000
+8,ST000008,2,Granite SupplierTier 8,SupplierTier starter record 8,Jordan Garcia,2020-01-09,2021-01-08,1,1,1,2026-08-24T00:00:00.000
+9,ST000009,1,Quartz SupplierTier 9,SupplierTier starter record 9,Riley Adams,2020-01-10,2021-01-09,1,1,1,2026-08-24T00:00:00.000
+10,ST000010,2,Ion SupplierTier 10,SupplierTier starter record 10,Morgan Adams,2020-01-11,2021-01-10,0,1,1,2026-08-24T00:00:00.000
+11,ST000011,1,Forge SupplierTier 11,SupplierTier starter record 11,Emerson Adams,2020-01-12,2021-01-11,1,1,1,2026-08-24T00:00:00.000
+12,ST000012,3,Meridian SupplierTier 12,SupplierTier starter record 12,Riley Reed,2020-01-13,2021-01-12,1,1,1,2026-08-24T00:00:00.000
+13,ST000013,1,Titan SupplierTier 13,SupplierTier starter record 13,Taylor Garcia,2020-01-14,2021-01-13,1,1,1,2026-08-24T00:00:00.000
+14,ST000014,1,Junction SupplierTier 14,SupplierTier starter record 14,Casey Khan,2020-01-15,2021-01-14,1,1,1,2026-08-24T00:00:00.000
+15,ST000015,1,Unity SupplierTier 15,SupplierTier starter record 15,Morgan Martin,2020-01-16,2021-01-15,0,1,1,2026-08-24T00:00:00.000
+16,ST000016,2,Ion SupplierTier 16,SupplierTier starter record 16,Taylor Diaz,2020-01-17,2021-01-16,1,1,1,2026-08-24T00:00:00.000
+17,ST000017,3,Ion SupplierTier 17,SupplierTier starter record 17,Casey Singh,2020-01-18,2021-01-17,1,1,1,2026-08-24T00:00:00.000
+18,ST000018,3,Cedar SupplierTier 18,SupplierTier starter record 18,Morgan Chen,2020-01-19,2021-01-18,1,1,1,2026-08-24T00:00:00.000
+19,ST000019,4,Meridian SupplierTier 19,SupplierTier starter record 19,Quinn Singh,2020-01-20,2021-01-19,1,1,1,2026-08-24T00:00:00.000
+20,ST000020,4,Meridian SupplierTier 20,SupplierTier starter record 20,Devon Diaz,2020-01-21,2021-01-20,0,1,1,2026-08-24T00:00:00.000

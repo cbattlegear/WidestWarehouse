@@ -1,0 +1,12 @@
+ContractStatusKey,StatusCode,ContractStatusName,ContractStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,CS000001,Ion ContractStatus 1,ContractStatus starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,CS000002,Northstar ContractStatus 2,ContractStatus starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,CS000003,Junction ContractStatus 3,ContractStatus starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,CS000004,Liberty ContractStatus 4,ContractStatus starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,CS000005,Titan ContractStatus 5,ContractStatus starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,CS000006,Titan ContractStatus 6,ContractStatus starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,CS000007,Pioneer ContractStatus 7,ContractStatus starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,CS000008,Evergreen ContractStatus 8,ContractStatus starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,CS000009,Northstar ContractStatus 9,ContractStatus starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,CS000010,Delta ContractStatus 10,ContractStatus starter record 10,0,-1,1,2026-08-24T00:00:00.000

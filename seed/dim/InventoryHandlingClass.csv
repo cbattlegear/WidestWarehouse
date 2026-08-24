@@ -1,0 +1,12 @@
+InventoryHandlingClassKey,InventoryHandlingClassCode,InventoryHandlingClassName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,IHC000001,Liberty InventoryHandlingClass 1,1,1,2026-08-24T00:00:00.000
+2,IHC000002,Evergreen InventoryHandlingClass 2,1,1,2026-08-24T00:00:00.000
+3,IHC000003,Delta InventoryHandlingClass 3,1,1,2026-08-24T00:00:00.000
+4,IHC000004,Delta InventoryHandlingClass 4,1,1,2026-08-24T00:00:00.000
+5,IHC000005,Beacon InventoryHandlingClass 5,1,1,2026-08-24T00:00:00.000
+6,IHC000006,Ion InventoryHandlingClass 6,1,1,2026-08-24T00:00:00.000
+7,IHC000007,Ion InventoryHandlingClass 7,1,1,2026-08-24T00:00:00.000
+8,IHC000008,Willow InventoryHandlingClass 8,1,1,2026-08-24T00:00:00.000
+9,IHC000009,Summit InventoryHandlingClass 9,1,1,2026-08-24T00:00:00.000
+10,IHC000010,Delta InventoryHandlingClass 10,1,1,2026-08-24T00:00:00.000

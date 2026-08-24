@@ -1,0 +1,20 @@
+SalesPriceConditionTypeKey,PriceConditionTypeCode,PriceConditionTypeName,IsDiscountCondition,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SPCT000001,Willow SalesPriceConditionType 1,1,-1,1,2026-08-24T00:00:00.000
+2,SPCT000002,Northstar SalesPriceConditionType 2,1,-1,1,2026-08-24T00:00:00.000
+3,SPCT000003,Unity SalesPriceConditionType 3,1,-1,1,2026-08-24T00:00:00.000
+4,SPCT000004,Pioneer SalesPriceConditionType 4,1,-1,1,2026-08-24T00:00:00.000
+5,SPCT000005,Summit SalesPriceConditionType 5,0,-1,1,2026-08-24T00:00:00.000
+6,SPCT000006,Cedar SalesPriceConditionType 6,1,-1,1,2026-08-24T00:00:00.000
+7,SPCT000007,Willow SalesPriceConditionType 7,1,-1,1,2026-08-24T00:00:00.000
+8,SPCT000008,Harbor SalesPriceConditionType 8,1,-1,1,2026-08-24T00:00:00.000
+9,SPCT000009,Junction SalesPriceConditionType 9,1,-1,1,2026-08-24T00:00:00.000
+10,SPCT000010,Junction SalesPriceConditionType 10,0,-1,1,2026-08-24T00:00:00.000
+11,SPCT000011,Vertex SalesPriceConditionType 11,1,-1,1,2026-08-24T00:00:00.000
+12,SPCT000012,Liberty SalesPriceConditionType 12,1,-1,1,2026-08-24T00:00:00.000
+13,SPCT000013,Titan SalesPriceConditionType 13,1,-1,1,2026-08-24T00:00:00.000
+14,SPCT000014,Meridian SalesPriceConditionType 14,1,-1,1,2026-08-24T00:00:00.000
+15,SPCT000015,Junction SalesPriceConditionType 15,0,-1,1,2026-08-24T00:00:00.000
+16,SPCT000016,Delta SalesPriceConditionType 16,1,-1,1,2026-08-24T00:00:00.000
+17,SPCT000017,Cedar SalesPriceConditionType 17,1,-1,1,2026-08-24T00:00:00.000
+18,SPCT000018,Unity SalesPriceConditionType 18,1,-1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,10 @@
+MaintenanceRegionKey,MaintenanceRegionCode,MaintenanceRegionName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MR000001,Summit MaintenanceRegion 1,1,1,2026-08-24T00:00:00.000
+2,MR000002,Summit MaintenanceRegion 2,1,1,2026-08-24T00:00:00.000
+3,MR000003,Keystone MaintenanceRegion 3,1,1,2026-08-24T00:00:00.000
+4,MR000004,Junction MaintenanceRegion 4,1,1,2026-08-24T00:00:00.000
+5,MR000005,Meridian MaintenanceRegion 5,1,1,2026-08-24T00:00:00.000
+6,MR000006,Northstar MaintenanceRegion 6,1,1,2026-08-24T00:00:00.000
+7,MR000007,Northstar MaintenanceRegion 7,1,1,2026-08-24T00:00:00.000
+8,MR000008,Beacon MaintenanceRegion 8,1,1,2026-08-24T00:00:00.000

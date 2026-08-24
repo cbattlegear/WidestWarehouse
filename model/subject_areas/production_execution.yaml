@@ -1,0 +1,568 @@
+subject_area: production_execution
+reference:
+- name: ProductionOrderStatus
+  description: ProductionOrderStatus lookup values.
+  business_key:
+    name: OrderStatusCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: OrderStatusName
+    type: "nvarchar(120)"
+    nullable: false
+- name: ProductionRunType
+  description: ProductionRunType lookup values.
+  business_key:
+    name: RunTypeCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: RunTypeName
+    type: "nvarchar(120)"
+    nullable: false
+- name: ProductionScrapReason
+  description: ProductionScrapReason lookup values.
+  business_key:
+    name: ScrapReasonCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: ScrapReasonName
+    type: "nvarchar(120)"
+    nullable: false
+- name: ProductionReworkReason
+  description: ProductionReworkReason lookup values.
+  business_key:
+    name: ReworkReasonCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: ReworkReasonName
+    type: "nvarchar(120)"
+    nullable: false
+- name: ProductionDowntimeReason
+  description: ProductionDowntimeReason lookup values.
+  business_key:
+    name: DowntimeReasonCode
+    type: "nvarchar(30)"
+  seed_rows: 12
+  columns:
+  - name: DowntimeReasonName
+    type: "nvarchar(120)"
+    nullable: false
+hierarchies:
+- name: ProductionScheduleTaxonomy
+  schema: dim
+  description: ProductionScheduleTaxonomy subject hierarchy.
+  levels:
+  - name: ProductionScheduleHorizon
+    description: ProductionScheduleHorizon level for productionscheduletaxonomy subject hierarchy.
+    row_count: 5
+  - name: ProductionScheduleBucket
+    description: ProductionScheduleBucket level for productionscheduletaxonomy subject hierarchy.
+    row_count: 20
+  - name: ProductionScheduleFamily
+    description: ProductionScheduleFamily level for productionscheduletaxonomy subject hierarchy.
+    row_count: 90
+  - name: ProductionScheduleSegment
+    description: ProductionScheduleSegment level for productionscheduletaxonomy subject hierarchy.
+    row_count: 400
+- name: ProductionProcessTaxonomy
+  schema: dim
+  description: ProductionProcessTaxonomy subject hierarchy.
+  levels:
+  - name: ProductionProcessArea
+    description: ProductionProcessArea level for productionprocesstaxonomy subject hierarchy.
+    row_count: 14
+  - name: ProductionProcessLine
+    description: ProductionProcessLine level for productionprocesstaxonomy subject hierarchy.
+    row_count: 70
+  - name: ProductionProcessCell
+    description: ProductionProcessCell level for productionprocesstaxonomy subject hierarchy.
+    row_count: 260
+  - name: ProductionProcessStep
+    description: ProductionProcessStep level for productionprocesstaxonomy subject hierarchy.
+    row_count: 1500
+- name: ProductionLaborTaxonomy
+  schema: dim
+  description: ProductionLaborTaxonomy subject hierarchy.
+  levels:
+  - name: ProductionLaborRegion
+    description: ProductionLaborRegion level for productionlabortaxonomy subject hierarchy.
+    row_count: 8
+  - name: ProductionLaborPool
+    description: ProductionLaborPool level for productionlabortaxonomy subject hierarchy.
+    row_count: 40
+  - name: ProductionCrewType
+    description: ProductionCrewType level for productionlabortaxonomy subject hierarchy.
+    row_count: 140
+  - name: ProductionCrewRole
+    description: ProductionCrewRole level for productionlabortaxonomy subject hierarchy.
+    row_count: 600
+- name: ProductionLotTaxonomy
+  schema: dim
+  description: ProductionLotTaxonomy subject hierarchy.
+  levels:
+  - name: ProductionLotFamily
+    description: ProductionLotFamily level for productionlottaxonomy subject hierarchy.
+    row_count: 20
+  - name: ProductionLotClass
+    description: ProductionLotClass level for productionlottaxonomy subject hierarchy.
+    row_count: 120
+  - name: ProductionLotGrade
+    description: ProductionLotGrade level for productionlottaxonomy subject hierarchy.
+    row_count: 360
+  - name: ProductionLotDispositionGroup
+    description: ProductionLotDispositionGroup level for productionlottaxonomy subject hierarchy.
+    row_count: 900
+dimensions:
+- name: ProductionWorkOrder
+  description: Manufacturing work order header.
+  row_count: 250000
+  business_key:
+    name: WorkOrderNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: ProductionWorkOrderName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Product
+  - name: Plant
+  - name: ProductionScheduleSegment
+  ref_parents:
+  - name: ProductionOrderStatus
+  - name: UnitOfMeasure
+  scd: type2
+- name: ProductionOperation
+  description: Executable work order operation definition.
+  row_count: 900000
+  business_key:
+    name: ProductionOperationNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: ProductionOperationName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: ProductionWorkOrder
+  - name: WorkCenter
+  - name: ProductionProcessStep
+  ref_parents:
+  - name: ProductionOrderStatus
+  scd: type2
+- name: ProductionRun
+  description: Production run or campaign instance.
+  row_count: 400000
+  business_key:
+    name: ProductionRunNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: ProductionRunName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: ProductionWorkOrder
+  - name: ProductionLotDispositionGroup
+  ref_parents:
+  - name: ProductionRunType
+  - name: ProductionOrderStatus
+  scd: type2
+- name: ProductionShift
+  description: Production shift definition including crew assignment.
+  row_count: 12000
+  business_key:
+    name: ProductionShiftCode
+    type: "nvarchar(40)"
+  columns:
+  - name: ProductionShiftName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Plant
+  - name: ProductionCrewType
+  ref_parents:
+  - name: TimeZone
+- name: ProductionCrew
+  description: Crew roster group used in execution reporting.
+  row_count: 25000
+  business_key:
+    name: ProductionCrewCode
+    type: "nvarchar(40)"
+  columns:
+  - name: ProductionCrewName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: ProductionCrewRole
+  - name: CostCenter
+  ref_parents: []
+  scd: type2
+- name: ProductionLot
+  description: Manufacturing batch or lot instance.
+  row_count: 1000000
+  business_key:
+    name: ProductionLotNumber
+    type: "nvarchar(40)"
+  columns:
+  - name: ProductionLotName
+    type: "nvarchar(200)"
+    nullable: false
+  - name: RevisionCode
+    type: "nvarchar(20)"
+    nullable: true
+  - name: ActiveFlag
+    type: bit
+    nullable: false
+    default: '1'
+  - name: StandardValue
+    type: "decimal(18,4)"
+    nullable: true
+  parents:
+  - name: Product
+  - name: Plant
+  - name: ProductionLotDispositionGroup
+  ref_parents:
+  - name: UnitOfMeasure
+  - name: RecordStatus
+  scd: type2
+bridges:
+- name: ProductionWorkOrderEmployee
+  description: Associates employees with production work orders.
+  row_count: 850000
+  members:
+  - name: ProductionWorkOrder
+  - name: Employee
+  - name: ProductionCrewRole
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+- name: ProductionLotGenealogy
+  description: Parent-child genealogy between production lots.
+  row_count: 1200000
+  members:
+  - name: ProductionLot
+    role: Parent
+  - name: ProductionLot
+    role: Child
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+  ref_parents:
+  - name: UnitOfMeasure
+- name: ProductionOperationWorkCenter
+  description: Eligible work centers for production operations.
+  row_count: 300000
+  members:
+  - name: ProductionOperation
+  - name: WorkCenter
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+- name: ProductionRunCrewAssignment
+  description: Crew assignments to production runs.
+  row_count: 500000
+  members:
+  - name: ProductionRun
+  - name: ProductionCrew
+  - name: ProductionShift
+  columns:
+  - name: SequenceNumber
+    type: int
+    nullable: true
+  - name: QuantityValue
+    type: "decimal(18,6)"
+    nullable: true
+  - name: AllocationPercent
+    type: "decimal(9,4)"
+    nullable: true
+facts:
+- name: ProductionWorkOrderLifecycle
+  description: Work order lifecycle milestone measurements.
+  type: accumulating_snapshot
+  grain: One row per production work order lifecycle.
+  row_count: 250000
+  date_roles:
+  - Created
+  - Released
+  - Started
+  - Completed
+  - Closed
+  dimensions:
+  - name: ProductionWorkOrder
+  - name: Product
+  - name: Plant
+  ref_parents:
+  - name: ProductionOrderStatus
+  - name: UnitOfMeasure
+  degenerate:
+  - name: WorkOrderNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: ProductionOperationConfirmation
+  description: Operator confirmations for executed operations.
+  type: transaction
+  grain: One row per operation confirmation event.
+  row_count: 3500000
+  columnstore: true
+  date_roles:
+  - Confirmation
+  time_roles:
+  - Confirmation
+  dimensions:
+  - name: ProductionOperation
+  - name: ProductionWorkOrder
+  - name: Product
+  - name: WorkCenter
+  - name: Employee
+    role: Operator
+    nullable: true
+  - name: ProductionShift
+  ref_parents:
+  - name: UnitOfMeasure
+  - name: ProductionOrderStatus
+  degenerate:
+  - name: ConfirmationNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: ProductionRunYield
+  description: Yield and throughput results by production run.
+  type: transaction
+  grain: One row per production run and lot output.
+  row_count: 900000
+  columnstore: true
+  date_roles:
+  - Start
+  - Finish
+  time_roles:
+  - Start
+  - Finish
+  dimensions:
+  - name: ProductionRun
+  - name: ProductionLot
+  - name: Product
+  - name: Plant
+  - name: WorkCenter
+  ref_parents:
+  - name: ProductionRunType
+  - name: UnitOfMeasure
+  degenerate:
+  - name: RunTicketNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: ProductionScrapReworkEvent
+  description: Scrap and rework events recorded during execution.
+  type: transaction
+  grain: One row per scrap or rework event.
+  row_count: 1300000
+  columnstore: true
+  date_roles:
+  - Event
+  time_roles:
+  - Event
+  dimensions:
+  - name: ProductionWorkOrder
+  - name: ProductionOperation
+  - name: Product
+  - name: WorkCenter
+  - name: Employee
+    role: Recorder
+    nullable: true
+  - name: ProductionLot
+    nullable: true
+  ref_parents:
+  - name: ProductionScrapReason
+    nullable: true
+  - name: ProductionReworkReason
+    nullable: true
+  - name: Severity
+  - name: UnitOfMeasure
+  degenerate:
+  - name: EventNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: ProductionDowntimeEvent
+  description: Production downtime events captured from execution systems.
+  type: transaction
+  grain: One row per downtime event affecting a work center.
+  row_count: 700000
+  columnstore: true
+  date_roles:
+  - Start
+  - End
+  time_roles:
+  - Start
+  - End
+  dimensions:
+  - name: Plant
+  - name: WorkCenter
+  - name: ProductionRun
+    nullable: true
+  - name: ProductionShift
+  ref_parents:
+  - name: ProductionDowntimeReason
+  - name: Severity
+  degenerate:
+  - name: DowntimeEventNumber
+    type: "nvarchar(40)"
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true
+- name: ProductionShiftOutputSnapshot
+  description: Shift output and yield snapshot.
+  type: periodic_snapshot
+  grain: "One row per shift, work center, product, and date."
+  row_count: 1800000
+  columnstore: true
+  date_roles:
+  - Snapshot
+  dimensions:
+  - name: ProductionShift
+  - name: ProductionCrew
+  - name: WorkCenter
+  - name: Product
+  - name: Plant
+  ref_parents:
+  - name: UnitOfMeasure
+  measures:
+  - name: EventCount
+    type: int
+    nullable: false
+  - name: QuantityAmount
+    type: "decimal(18,4)"
+    nullable: true
+  - name: DurationMinutes
+    type: "decimal(18,4)"
+    nullable: true
+  - name: CostAmount
+    type: money
+    nullable: true

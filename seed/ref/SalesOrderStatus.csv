@@ -1,0 +1,16 @@
+SalesOrderStatusKey,StatusCode,SalesOrderStatusGroupKey,SalesOrderStatusName,SalesOrderStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SOS000001,1,Junction SalesOrderStatus 1,SalesOrderStatus starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,SOS000002,2,Delta SalesOrderStatus 2,SalesOrderStatus starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,SOS000003,1,Liberty SalesOrderStatus 3,SalesOrderStatus starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,SOS000004,7,Liberty SalesOrderStatus 4,SalesOrderStatus starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,SOS000005,4,Quartz SalesOrderStatus 5,SalesOrderStatus starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,SOS000006,3,Liberty SalesOrderStatus 6,SalesOrderStatus starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,SOS000007,4,Junction SalesOrderStatus 7,SalesOrderStatus starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,SOS000008,5,Meridian SalesOrderStatus 8,SalesOrderStatus starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,SOS000009,5,Riverton SalesOrderStatus 9,SalesOrderStatus starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,SOS000010,3,Granite SalesOrderStatus 10,SalesOrderStatus starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,SOS000011,8,Summit SalesOrderStatus 11,SalesOrderStatus starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,SOS000012,6,Willow SalesOrderStatus 12,SalesOrderStatus starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,SOS000013,3,Unity SalesOrderStatus 13,SalesOrderStatus starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,SOS000014,3,Vertex SalesOrderStatus 14,SalesOrderStatus starter record 14,1,1,1,2026-08-24T00:00:00.000

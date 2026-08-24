@@ -1,0 +1,6 @@
+TransactionTypeKey,TransactionTypeCode,TransactionTypeName,DebitCreditIndicator,AffectsInventory,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N,0,-1,0,1900-01-01T00:00:00.000
+1,RECEIPT,Receipt,D,1,1,1,2026-08-24T00:00:00.000
+2,ISSUE,Issue,C,1,1,1,2026-08-24T00:00:00.000
+3,TRANSFER,Transfer,,1,1,1,2026-08-24T00:00:00.000
+4,ADJUSTMENT,Adjustment,,1,1,1,2026-08-24T00:00:00.000

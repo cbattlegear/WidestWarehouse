@@ -1,0 +1,16 @@
+LaborGradeKey,LaborGradeCode,LaborGradeName,LaborGradeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,LG000001,Vertex LaborGrade 1,LaborGrade starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,LG000002,Quartz LaborGrade 2,LaborGrade starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,LG000003,Forge LaborGrade 3,LaborGrade starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,LG000004,Zenith LaborGrade 4,LaborGrade starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,LG000005,Junction LaborGrade 5,LaborGrade starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,LG000006,Meridian LaborGrade 6,LaborGrade starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,LG000007,Cedar LaborGrade 7,LaborGrade starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,LG000008,Keystone LaborGrade 8,LaborGrade starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,LG000009,Delta LaborGrade 9,LaborGrade starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,LG000010,Beacon LaborGrade 10,LaborGrade starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,LG000011,Titan LaborGrade 11,LaborGrade starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,LG000012,Keystone LaborGrade 12,LaborGrade starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,LG000013,Atlas LaborGrade 13,LaborGrade starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,LG000014,Summit LaborGrade 14,LaborGrade starter record 14,1,-1,1,2026-08-24T00:00:00.000

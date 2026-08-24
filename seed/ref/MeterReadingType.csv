@@ -1,0 +1,12 @@
+MeterReadingTypeKey,ReadingTypeCode,MeterReadingTypeName,MeterReadingTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,MRT000001,Orion MeterReadingType 1,MeterReadingType starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,MRT000002,Keystone MeterReadingType 2,MeterReadingType starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,MRT000003,Orion MeterReadingType 3,MeterReadingType starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,MRT000004,Titan MeterReadingType 4,MeterReadingType starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,MRT000005,Beacon MeterReadingType 5,MeterReadingType starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,MRT000006,Zenith MeterReadingType 6,MeterReadingType starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,MRT000007,Zenith MeterReadingType 7,MeterReadingType starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,MRT000008,Liberty MeterReadingType 8,MeterReadingType starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,MRT000009,Delta MeterReadingType 9,MeterReadingType starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,MRT000010,Meridian MeterReadingType 10,MeterReadingType starter record 10,0,-1,1,2026-08-24T00:00:00.000

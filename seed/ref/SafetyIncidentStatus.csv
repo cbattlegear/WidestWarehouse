@@ -1,0 +1,10 @@
+SafetyIncidentStatusKey,SafetyIncidentStatusCode,SafetyIncidentStatusName,IsClosedStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SIS000001,Pioneer SafetyIncidentStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,SIS000002,Liberty SafetyIncidentStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,SIS000003,Granite SafetyIncidentStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,SIS000004,Forge SafetyIncidentStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,SIS000005,Summit SafetyIncidentStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,SIS000006,Orion SafetyIncidentStatus 6,1,-1,1,2026-08-24T00:00:00.000
+7,SIS000007,Junction SafetyIncidentStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,SIS000008,Ion SafetyIncidentStatus 8,1,-1,1,2026-08-24T00:00:00.000

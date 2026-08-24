@@ -1,0 +1,7 @@
+ProductDivisionKey,ProductDivisionCode,ProductDivisionName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,PD000001,Northstar ProductDivision 1,1,1,2026-08-24T00:00:00.000
+2,PD000002,Quartz ProductDivision 2,1,1,2026-08-24T00:00:00.000
+3,PD000003,Unity ProductDivision 3,1,1,2026-08-24T00:00:00.000
+4,PD000004,Unity ProductDivision 4,1,1,2026-08-24T00:00:00.000
+5,PD000005,Summit ProductDivision 5,1,1,2026-08-24T00:00:00.000

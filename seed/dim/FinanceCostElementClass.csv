@@ -1,0 +1,17 @@
+FinanceCostElementClassKey,FinanceCostElementClassCode,FinanceCostElementClassName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,FCEC000001,Keystone FinanceCostElementClass 1,1,1,2026-08-24T00:00:00.000
+2,FCEC000002,Harbor FinanceCostElementClass 2,1,1,2026-08-24T00:00:00.000
+3,FCEC000003,Harbor FinanceCostElementClass 3,1,1,2026-08-24T00:00:00.000
+4,FCEC000004,Willow FinanceCostElementClass 4,1,1,2026-08-24T00:00:00.000
+5,FCEC000005,Beacon FinanceCostElementClass 5,1,1,2026-08-24T00:00:00.000
+6,FCEC000006,Northstar FinanceCostElementClass 6,1,1,2026-08-24T00:00:00.000
+7,FCEC000007,Atlas FinanceCostElementClass 7,1,1,2026-08-24T00:00:00.000
+8,FCEC000008,Meridian FinanceCostElementClass 8,1,1,2026-08-24T00:00:00.000
+9,FCEC000009,Beacon FinanceCostElementClass 9,1,1,2026-08-24T00:00:00.000
+10,FCEC000010,Junction FinanceCostElementClass 10,1,1,2026-08-24T00:00:00.000
+11,FCEC000011,Forge FinanceCostElementClass 11,1,1,2026-08-24T00:00:00.000
+12,FCEC000012,Willow FinanceCostElementClass 12,1,1,2026-08-24T00:00:00.000
+13,FCEC000013,Forge FinanceCostElementClass 13,1,1,2026-08-24T00:00:00.000
+14,FCEC000014,Summit FinanceCostElementClass 14,1,1,2026-08-24T00:00:00.000
+15,FCEC000015,Titan FinanceCostElementClass 15,1,1,2026-08-24T00:00:00.000

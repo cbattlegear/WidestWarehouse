@@ -1,0 +1,10 @@
+SalesRouteToMarketKey,SalesRouteToMarketCode,SalesRouteToMarketName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,SRTM000001,Northstar SalesRouteToMarket 1,1,1,2026-08-24T00:00:00.000
+2,SRTM000002,Cedar SalesRouteToMarket 2,1,1,2026-08-24T00:00:00.000
+3,SRTM000003,Zenith SalesRouteToMarket 3,1,1,2026-08-24T00:00:00.000
+4,SRTM000004,Atlas SalesRouteToMarket 4,1,1,2026-08-24T00:00:00.000
+5,SRTM000005,Willow SalesRouteToMarket 5,1,1,2026-08-24T00:00:00.000
+6,SRTM000006,Liberty SalesRouteToMarket 6,1,1,2026-08-24T00:00:00.000
+7,SRTM000007,Northstar SalesRouteToMarket 7,1,1,2026-08-24T00:00:00.000
+8,SRTM000008,Ion SalesRouteToMarket 8,1,1,2026-08-24T00:00:00.000

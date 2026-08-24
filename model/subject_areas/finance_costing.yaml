@@ -1,0 +1,340 @@
+subject_area: finance_costing
+reference:
+  - name: FinancePostingStatus
+    description: Posting and reversal status for finance journal and ledger entries.
+    business_key: {name: PostingStatusCode, type: "nvarchar(20)"}
+    seed_rows: 10
+    columns:
+      - {name: PostingStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: AllowsReporting, type: bit, nullable: false, default: "1"}
+  - name: FinanceJournalSource
+    description: Source modules and interfaces creating financial journal entries.
+    business_key: {name: JournalSourceCode, type: "nvarchar(30)"}
+    seed_rows: 25
+    columns:
+      - {name: JournalSourceName, type: "nvarchar(120)", nullable: false}
+      - {name: IsSubledgerSource, type: bit, nullable: false, default: "1"}
+  - name: FinanceCostingMethod
+    description: Costing methods used for standard, actual, and moving average costs.
+    business_key: {name: CostingMethodCode, type: "nvarchar(20)"}
+    seed_rows: 8
+    columns:
+      - {name: CostingMethodName, type: "nvarchar(100)", nullable: false}
+      - {name: UsesStandardCost, type: bit, nullable: false, default: "0"}
+  - name: FinanceVarianceType
+    description: Manufacturing and purchase variance categories for cost analysis.
+    business_key: {name: VarianceTypeCode, type: "nvarchar(30)"}
+    seed_rows: 20
+    columns:
+      - {name: VarianceTypeName, type: "nvarchar(120)", nullable: false}
+      - {name: IsManufacturingVariance, type: bit, nullable: false, default: "1"}
+  - name: FinanceScenarioType
+    description: Financial planning scenarios for budget, forecast, and actual comparisons.
+    business_key: {name: ScenarioTypeCode, type: "nvarchar(20)"}
+    seed_rows: 10
+    columns:
+      - {name: ScenarioTypeName, type: "nvarchar(80)", nullable: false}
+      - {name: IsActualScenario, type: bit, nullable: false, default: "0"}
+hierarchies:
+  - name: FinanceLedgerHierarchy
+    schema: dim
+    description: Financial ledger reporting hierarchy below conformed accounts.
+    levels:
+      - name: FinanceStatementSection
+        row_count: 12
+      - name: FinanceReportingLine
+        row_count: 120
+      - name: FinanceAccountSet
+        row_count: 900
+      - name: FinancePostingBucket
+        row_count: 6000
+  - name: FinanceCostElementHierarchy
+    schema: dim
+    description: Cost element hierarchy for manufacturing and overhead analysis.
+    levels:
+      - name: FinanceCostElementClass
+        row_count: 15
+      - name: FinanceCostElementGroup
+        row_count: 90
+      - name: FinanceCostElement
+        row_count: 800
+      - name: FinanceCostElementDetail
+        row_count: 4500
+  - name: FinanceCostComponentHierarchy
+    schema: dim
+    description: Product cost component split hierarchy from major bucket to detailed component.
+    levels:
+      - name: FinanceCostComponentClass
+        row_count: 10
+      - name: FinanceCostComponentGroup
+        row_count: 80
+      - name: FinanceCostComponent
+        row_count: 600
+      - name: FinanceCostComponentDetail
+        row_count: 3000
+  - name: FinanceProfitabilityHierarchy
+    schema: dim
+    description: Profitability analysis hierarchy from segment to analytical object.
+    levels:
+      - name: FinanceProfitSegment
+        row_count: 20
+      - name: FinanceMarketSegment
+        row_count: 200
+      - name: FinanceProfitCenter
+        row_count: 1800
+      - name: FinanceProfitObject
+        row_count: 15000
+dimensions:
+  - name: FinanceJournalHeader
+    description: Journal entry header with source, ledger, currency, and approval context.
+    scd: type2
+    row_count: 12000000
+    business_key: {name: JournalEntryNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: JournalEntryName, type: "nvarchar(160)", nullable: true}
+      - {name: FiscalDocumentNumber, type: "nvarchar(60)", nullable: true}
+      - {name: ReversalJournalEntryNumber, type: "nvarchar(50)", nullable: true}
+    parents:
+      - {name: BusinessUnit}
+      - {name: Employee, role: Preparer, nullable: true}
+      - {name: Employee, role: Approver, nullable: true}
+    ref_parents:
+      - {name: FinancePostingStatus}
+      - {name: FinanceJournalSource}
+      - {name: Currency}
+  - name: FinanceJournalLine
+    description: Journal entry line posted to conformed GL account and cost objects.
+    scd: type2
+    row_count: 180000000
+    business_key: {name: JournalLineCode, type: "nvarchar(70)"}
+    columns:
+      - {name: JournalLineSequenceNumber, type: int, nullable: false}
+      - {name: LineMemo, type: "nvarchar(200)", nullable: true}
+      - {name: IsReversalLine, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: FinanceJournalHeader}
+      - {name: GlAccount}
+      - {name: CostCenter, nullable: true}
+      - {name: FinancePostingBucket}
+    ref_parents:
+      - {name: FinancePostingStatus}
+      - {name: Currency}
+  - name: FinanceProductCostVersion
+    description: Product cost version for standard, actual, and forecast costing runs.
+    scd: type2
+    row_count: 5000000
+    business_key: {name: ProductCostVersionCode, type: "nvarchar(60)"}
+    columns:
+      - {name: CostVersionName, type: "nvarchar(160)", nullable: false}
+      - {name: EffectiveDate, type: date, nullable: false}
+      - {name: ExpirationDate, type: date, nullable: true}
+    parents:
+      - {name: Product}
+      - {name: Plant}
+      - {name: FinanceCostComponentDetail}
+    ref_parents:
+      - {name: FinanceCostingMethod}
+      - {name: Currency}
+  - name: FinanceProductionSettlement
+    description: Production order settlement object assigning manufacturing costs to receivers.
+    scd: type2
+    row_count: 6000000
+    business_key: {name: ProductionSettlementNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: SettlementName, type: "nvarchar(160)", nullable: true}
+      - {name: SettlementPeriodCode, type: "nvarchar(20)", nullable: true}
+      - {name: IsFinalSettlement, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: Product}
+      - {name: Plant}
+      - {name: WorkCenter, nullable: true}
+      - {name: CostCenter, nullable: true}
+    ref_parents:
+      - {name: FinancePostingStatus}
+  - name: FinancePlanningVersion
+    description: Budget and forecast planning version for finance planning facts.
+    scd: type2
+    row_count: 25000
+    business_key: {name: PlanningVersionCode, type: "nvarchar(40)"}
+    columns:
+      - {name: PlanningVersionName, type: "nvarchar(160)", nullable: false}
+      - {name: VersionStartDate, type: date, nullable: false}
+      - {name: VersionEndDate, type: date, nullable: false}
+    parents:
+      - {name: BusinessUnit}
+    ref_parents:
+      - {name: FinanceScenarioType}
+      - {name: Currency}
+  - name: FinanceCurrencyRateSet
+    description: Currency exchange rate set by source, rate purpose, and valid calendar period.
+    row_count: 750000
+    business_key: {name: CurrencyRateSetCode, type: "nvarchar(50)"}
+    columns:
+      - {name: RateSetName, type: "nvarchar(160)", nullable: false}
+      - {name: RatePurposeCode, type: "nvarchar(30)", nullable: false}
+      - {name: EffectiveDate, type: date, nullable: false}
+    ref_parents:
+      - {name: Currency, role: From}
+      - {name: Currency, role: To}
+      - {name: SourceSystem}
+bridges:
+  - name: FinanceCostComponentAllocation
+    description: Resolves product cost versions to detailed cost components and cost elements.
+    row_count: 25000000
+    unique_members: false
+    members:
+      - {name: FinanceProductCostVersion}
+      - {name: FinanceCostComponentDetail}
+      - {name: FinanceCostElementDetail}
+    columns:
+      - {name: AllocationRatio, type: "decimal(9,6)", nullable: false}
+      - {name: ComponentCostAmount, type: money, nullable: true}
+  - name: FinanceJournalProfitabilityAssignment
+    description: Resolves journal lines to profitability analysis objects and allocation ratios.
+    row_count: 120000000
+    unique_members: false
+    members:
+      - {name: FinanceJournalLine}
+      - {name: FinanceProfitObject}
+      - {name: BusinessUnit}
+    columns:
+      - {name: AllocationRatio, type: "decimal(9,6)", nullable: false}
+      - {name: AllocatedAmount, type: money, nullable: true}
+facts:
+  - name: FinanceGlPosting
+    description: General ledger posting transaction at journal line and accounting object grain.
+    type: transaction
+    grain: "One row per posted journal entry line in functional and transaction currency."
+    row_count: 300000000
+    columnstore: true
+    date_roles: [Posting, Document, Entry]
+    time_roles: [Entry]
+    dimensions:
+      - {name: FinanceJournalHeader}
+      - {name: FinanceJournalLine}
+      - {name: GlAccount}
+      - {name: CostCenter, nullable: true}
+      - {name: BusinessUnit}
+      - {name: FinancePostingBucket}
+    ref_parents:
+      - {name: FinancePostingStatus}
+      - {name: FinanceJournalSource}
+      - {name: Currency}
+    degenerate:
+      - {name: AccountingDocumentNumber, type: "nvarchar(50)"}
+      - {name: AccountingDocumentLineNumber, type: int}
+    measures:
+      - {name: DebitAmount, type: money, aggregation: sum}
+      - {name: CreditAmount, type: money, aggregation: sum}
+      - {name: NetPostingAmount, type: money, aggregation: sum}
+      - {name: Quantity, type: "decimal(18,4)", aggregation: sum, nullable: true}
+  - name: FinanceProductCostSnapshot
+    description: Periodic product cost snapshot comparing standard and actual cost.
+    type: periodic_snapshot
+    grain: "One row per period, product, plant, cost version, and cost component detail."
+    row_count: 45000000
+    columnstore: true
+    date_roles: [Snapshot, Effective]
+    dimensions:
+      - {name: Product}
+      - {name: Plant}
+      - {name: FinanceProductCostVersion}
+      - {name: FinanceCostComponentDetail}
+      - {name: FinanceCostElementDetail}
+    ref_parents:
+      - {name: FinanceCostingMethod}
+      - {name: Currency}
+    measures:
+      - {name: StandardCostAmount, type: money, aggregation: sum}
+      - {name: ActualCostAmount, type: money, aggregation: sum}
+      - {name: CostVarianceAmount, type: money, aggregation: sum}
+      - {name: CostQuantity, type: "decimal(18,4)", aggregation: sum}
+  - name: FinanceProductionOrderSettlement
+    description: Production order settlement transaction distributing manufacturing costs.
+    type: transaction
+    grain: "One row per production settlement, cost element, product, and receiving object."
+    row_count: 35000000
+    date_roles: [Settlement, Posting]
+    dimensions:
+      - {name: FinanceProductionSettlement}
+      - {name: Product}
+      - {name: Plant}
+      - {name: WorkCenter, nullable: true}
+      - {name: CostCenter, nullable: true}
+      - {name: FinanceCostElementDetail}
+    ref_parents:
+      - {name: FinancePostingStatus}
+      - {name: Currency}
+    degenerate:
+      - {name: ProductionOrderNumber, type: "nvarchar(50)"}
+    measures:
+      - {name: SettledQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: SettledAmount, type: money, aggregation: sum}
+      - {name: WipReliefAmount, type: money, aggregation: sum}
+  - name: FinancePurchasePriceVariance
+    description: Purchase price variance transaction comparing standard, order, and invoice costs.
+    type: transaction
+    grain: "One row per supplier invoice line variance by product, supplier, and cost element."
+    row_count: 28000000
+    date_roles: [Posting, Invoice]
+    dimensions:
+      - {name: Product}
+      - {name: Plant}
+      - {name: Supplier}
+      - {name: CostCenter, nullable: true}
+      - {name: FinanceCostElementDetail}
+    ref_parents:
+      - {name: FinanceVarianceType}
+      - {name: Currency}
+    degenerate:
+      - {name: SupplierInvoiceNumber, type: "nvarchar(50)"}
+      - {name: PurchaseOrderNumber, type: "nvarchar(40)"}
+    measures:
+      - {name: InvoiceQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: StandardCostAmount, type: money, aggregation: sum}
+      - {name: ActualPriceAmount, type: money, aggregation: sum}
+      - {name: PurchasePriceVarianceAmount, type: money, aggregation: sum}
+  - name: FinanceManufacturingVariance
+    description: Manufacturing variance transaction for material, labor, overhead, and efficiency.
+    type: transaction
+    grain: "One row per manufacturing variance posting by order, product, and cost element."
+    row_count: 32000000
+    date_roles: [Posting, Production]
+    dimensions:
+      - {name: Product}
+      - {name: Plant}
+      - {name: WorkCenter, nullable: true}
+      - {name: CostCenter, nullable: true}
+      - {name: FinanceCostElementDetail}
+    ref_parents:
+      - {name: FinanceVarianceType}
+      - {name: Currency}
+    degenerate:
+      - {name: ProductionOrderNumber, type: "nvarchar(50)"}
+      - {name: OperationSequenceNumber, type: int}
+    measures:
+      - {name: StandardAmount, type: money, aggregation: sum}
+      - {name: ActualAmount, type: money, aggregation: sum}
+      - {name: VarianceAmount, type: money, aggregation: sum}
+      - {name: VarianceQuantity, type: "decimal(18,4)", aggregation: sum, nullable: true}
+  - name: FinanceBudgetForecast
+    description: Budget and forecast fact by account, cost center, product, and profitability object.
+    type: periodic_snapshot
+    grain: "One row per planning period, planning version, GL account, cost center, and profitability object."
+    row_count: 20000000
+    date_roles: [Snapshot, FiscalPeriod]
+    dimensions:
+      - {name: FinancePlanningVersion}
+      - {name: GlAccount}
+      - {name: CostCenter, nullable: true}
+      - {name: BusinessUnit}
+      - {name: Product, nullable: true}
+      - {name: FinanceProfitObject, nullable: true}
+    ref_parents:
+      - {name: FinanceScenarioType}
+      - {name: Currency}
+    measures:
+      - {name: BudgetAmount, type: money, aggregation: sum}
+      - {name: ForecastAmount, type: money, aggregation: sum}
+      - {name: BudgetQuantity, type: "decimal(18,4)", aggregation: sum, nullable: true}
+      - {name: ForecastQuantity, type: "decimal(18,4)", aggregation: sum, nullable: true}

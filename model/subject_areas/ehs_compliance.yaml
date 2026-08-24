@@ -1,0 +1,293 @@
+subject_area: ehs_compliance
+
+reference:
+  - name: SafetyIncidentStatus
+    description: Lifecycle statuses for safety incidents and near misses.
+    business_key: {name: SafetyIncidentStatusCode, type: "nvarchar(20)"}
+    seed_rows: 8
+    columns:
+      - {name: SafetyIncidentStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsClosedStatus, type: bit, nullable: false, default: "0"}
+  - name: SafetyInjuryClassification
+    description: Occupational injury classification used for recordability and severity reporting.
+    business_key: {name: InjuryClassificationCode, type: "nvarchar(20)"}
+    seed_rows: 12
+    columns:
+      - {name: InjuryClassificationName, type: "nvarchar(100)", nullable: false}
+      - {name: IsRecordable, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: Severity}
+  - name: SafetyPermitStatus
+    description: Permit-to-work lifecycle statuses.
+    business_key: {name: PermitStatusCode, type: "nvarchar(20)"}
+    seed_rows: 7
+    columns:
+      - {name: PermitStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsAuthorizedStatus, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: ApprovalStatus}
+  - name: SafetyAuditFindingStatus
+    description: Resolution statuses for safety audit findings.
+    business_key: {name: AuditFindingStatusCode, type: "nvarchar(20)"}
+    seed_rows: 7
+    columns:
+      - {name: AuditFindingStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsResolvedStatus, type: bit, nullable: false, default: "0"}
+  - name: SafetyWasteDispositionMethod
+    description: Disposition methods for regulated and nonregulated waste streams.
+    business_key: {name: WasteDispositionMethodCode, type: "nvarchar(20)"}
+    seed_rows: 16
+    columns:
+      - {name: WasteDispositionMethodName, type: "nvarchar(100)", nullable: false}
+      - {name: RequiresManifest, type: bit, nullable: false, default: "0"}
+
+hierarchies:
+  - name: SafetyHazardTaxonomy
+    schema: dim
+    description: Safety hazard classification from family down to specific condition.
+    levels:
+      - name: SafetyHazardFamily
+        row_count: 12
+      - name: SafetyHazardCategory
+        row_count: 72
+      - name: SafetyHazardType
+        row_count: 420
+      - name: SafetyHazardCondition
+        row_count: 2600
+        columns:
+          - {name: DefaultRiskScore, type: "decimal(9,2)", nullable: true}
+  - name: SafetyRegulationTaxonomy
+    schema: dim
+    description: Compliance regulation structure from domain down to obligation.
+    levels:
+      - name: SafetyRegulationDomain
+        row_count: 10
+      - name: SafetyRegulationProgram
+        row_count: 65
+      - name: SafetyComplianceTopic
+        row_count: 350
+      - name: SafetyObligation
+        row_count: 3200
+        columns:
+          - {name: CitationReference, type: "nvarchar(80)", nullable: true}
+  - name: SafetyAuditTaxonomy
+    schema: dim
+    description: Audit structure from program down to checklist item.
+    levels:
+      - name: SafetyAuditProgram
+        row_count: 18
+      - name: SafetyAuditProtocol
+        row_count: 120
+      - name: SafetyAuditQuestionSet
+        row_count: 750
+      - name: SafetyAuditChecklistItem
+        row_count: 9000
+  - name: SafetyChemicalTaxonomy
+    schema: dim
+    description: Chemical inventory classification from family down to SDS document.
+    levels:
+      - name: SafetyChemicalFamily
+        row_count: 24
+      - name: SafetyChemicalCategory
+        row_count: 180
+      - name: SafetyChemicalSubstance
+        row_count: 11000
+      - name: SafetySdsDocument
+        row_count: 18000
+        columns:
+          - {name: SdsRevisionDate, type: date, nullable: true}
+
+dimensions:
+  - name: SafetyIncidentType
+    description: Standard incident and near-miss type classification.
+    row_count: 450
+    business_key: {name: SafetyIncidentTypeCode, type: "nvarchar(30)"}
+    columns:
+      - {name: SafetyIncidentTypeName, type: "nvarchar(120)", nullable: false}
+      - {name: IsNearMissEligible, type: bit, nullable: false, default: "1"}
+      - {name: IsRecordableEligible, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: SafetyHazardType}
+    ref_parents:
+      - {name: HazardClass}
+  - name: SafetyRiskAssessment
+    description: Risk assessment template and scoring method for hazards and tasks.
+    scd: type2
+    row_count: 65000
+    business_key: {name: RiskAssessmentNumber, type: "nvarchar(40)"}
+    columns:
+      - {name: RiskAssessmentName, type: "nvarchar(180)", nullable: false}
+      - {name: InitialRiskScore, type: "decimal(9,2)", nullable: true}
+      - {name: ResidualRiskScore, type: "decimal(9,2)", nullable: true}
+    parents:
+      - {name: Plant}
+      - {name: WorkCenter, nullable: true}
+      - {name: SafetyHazardCondition}
+  - name: SafetyPermitType
+    description: Permit-to-work type for high-risk operations and controlled work.
+    row_count: 320
+    business_key: {name: PermitTypeCode, type: "nvarchar(30)"}
+    columns:
+      - {name: PermitTypeName, type: "nvarchar(120)", nullable: false}
+      - {name: RequiresIsolation, type: bit, nullable: false, default: "0"}
+      - {name: RequiresGasTest, type: bit, nullable: false, default: "0"}
+    parents:
+      - {name: SafetyHazardCategory}
+  - name: SafetyPpeItem
+    description: Personal protective equipment items required by hazards and tasks.
+    scd: type2
+    row_count: 5200
+    business_key: {name: PpeItemCode, type: "nvarchar(40)"}
+    columns:
+      - {name: PpeItemName, type: "nvarchar(160)", nullable: false}
+      - {name: ReplacementCycleDays, type: smallint, nullable: true}
+      - {name: IsReusable, type: bit, nullable: false, default: "1"}
+    parents:
+      - {name: SafetyHazardCategory}
+    ref_parents:
+      - {name: UnitOfMeasure}
+  - name: SafetyWasteStream
+    description: Waste stream classification for environmental reporting and disposal.
+    scd: type2
+    row_count: 4200
+    business_key: {name: WasteStreamCode, type: "nvarchar(40)"}
+    columns:
+      - {name: WasteStreamName, type: "nvarchar(160)", nullable: false}
+      - {name: IsHazardousWaste, type: bit, nullable: false, default: "0"}
+      - {name: RegulatoryWasteCode, type: "nvarchar(40)", nullable: true}
+    parents:
+      - {name: Plant}
+    ref_parents:
+      - {name: SafetyWasteDispositionMethod}
+      - {name: UnitOfMeasure}
+  - name: SafetyCorrectiveActionType
+    description: Corrective and preventive action types for audit and incident closure.
+    row_count: 240
+    business_key: {name: CorrectiveActionTypeCode, type: "nvarchar(30)"}
+    columns:
+      - {name: CorrectiveActionTypeName, type: "nvarchar(120)", nullable: false}
+      - {name: DefaultDueDays, type: smallint, nullable: true}
+      - {name: RequiresVerification, type: bit, nullable: false, default: "1"}
+    ref_parents:
+      - {name: Priority}
+
+bridges:
+  - name: SafetyRiskAssessmentHazard
+    description: Resolves risk assessments to the hazard conditions evaluated.
+    row_count: 260000
+    members:
+      - {name: SafetyRiskAssessment}
+      - {name: SafetyHazardCondition}
+    columns:
+      - {name: AssessedRiskScore, type: "decimal(9,2)", nullable: true}
+      - {name: ControlEffectivenessScore, type: "decimal(9,2)", nullable: true}
+  - name: SafetyPermitEmployee
+    description: Resolves permit types to employees authorized or assigned to permitted work.
+    row_count: 1800000
+    members:
+      - {name: SafetyPermitType}
+      - {name: Employee}
+    columns:
+      - {name: AuthorizationStartDate, type: date, nullable: false}
+      - {name: AuthorizationEndDate, type: date, nullable: true}
+  - name: SafetyEmployeePpe
+    description: Resolves employees to assigned PPE items.
+    row_count: 940000
+    members:
+      - {name: Employee}
+      - {name: SafetyPpeItem}
+    columns:
+      - {name: IssuedDate, type: date, nullable: true}
+      - {name: ReplacementDueDate, type: date, nullable: true}
+      - {name: IssuedQuantity, type: "decimal(18,4)", nullable: false, default: "1"}
+
+facts:
+  - name: SafetyIncident
+    description: Reported safety incidents including injuries, spills, and property damage.
+    type: accumulating_snapshot
+    grain: "One row per reported safety incident lifecycle."
+    row_count: 6500000
+    date_roles: [Occurred, Reported, Closed]
+    time_roles: [Occurred, Reported]
+    dimensions:
+      - {name: Plant}
+      - {name: Site, nullable: true}
+      - {name: WorkCenter, nullable: true}
+      - {name: Employee, role: Injured, nullable: true}
+      - {name: Employee, role: Supervisor, nullable: true}
+      - {name: SafetyIncidentType}
+      - {name: SafetyHazardCondition, nullable: true}
+    ref_parents:
+      - {name: SafetyIncidentStatus}
+      - {name: SafetyInjuryClassification}
+      - {name: Severity}
+    degenerate:
+      - {name: SafetyIncidentNumber, type: "nvarchar(40)"}
+    measures:
+      - {name: InjuredPersonCount, type: int, aggregation: sum}
+      - {name: LostWorkdayCount, type: "decimal(18,4)", aggregation: sum}
+      - {name: EstimatedCostAmount, type: money, aggregation: sum, nullable: true}
+  - name: SafetyNearMiss
+    description: Near-miss observations and unsafe condition reports.
+    type: transaction
+    grain: "One row per near-miss observation submitted by an employee."
+    row_count: 18000000
+    date_roles: [Observed, Submitted]
+    time_roles: [Observed]
+    dimensions:
+      - {name: Plant}
+      - {name: WorkCenter, nullable: true}
+      - {name: Employee, role: Reporter, nullable: true}
+      - {name: SafetyIncidentType}
+      - {name: SafetyHazardCondition}
+    ref_parents:
+      - {name: SafetyIncidentStatus}
+      - {name: Severity}
+    degenerate:
+      - {name: NearMissNumber, type: "nvarchar(40)"}
+    measures:
+      - {name: ObservationCount, type: int, aggregation: sum}
+      - {name: PotentialRiskScore, type: "decimal(9,2)", aggregation: avg, nullable: true}
+  - name: SafetyAuditFinding
+    description: Safety audit findings with corrective action tracking.
+    type: accumulating_snapshot
+    grain: "One row per audit checklist finding and corrective action lifecycle."
+    row_count: 11000000
+    date_roles: [Audit, Finding, Due, Verified, Closed]
+    dimensions:
+      - {name: Plant}
+      - {name: WorkCenter, nullable: true}
+      - {name: Employee, role: Auditor, nullable: true}
+      - {name: SafetyAuditChecklistItem}
+      - {name: SafetyCorrectiveActionType}
+      - {name: SafetyObligation, nullable: true}
+    ref_parents:
+      - {name: SafetyAuditFindingStatus}
+      - {name: Priority}
+      - {name: ComplianceStandard}
+    degenerate:
+      - {name: AuditNumber, type: "nvarchar(40)"}
+      - {name: FindingNumber, type: "nvarchar(40)"}
+    measures:
+      - {name: FindingCount, type: int, aggregation: sum}
+      - {name: CorrectiveActionCostAmount, type: money, aggregation: sum, nullable: true}
+  - name: SafetyWasteShipment
+    description: Waste shipment and disposal quantities for environmental compliance.
+    type: transaction
+    grain: "One row per waste shipment line by waste stream and disposition method."
+    row_count: 4200000
+    date_roles: [Shipment, Disposal]
+    dimensions:
+      - {name: Plant}
+      - {name: Supplier, role: Hauler, nullable: true}
+      - {name: Supplier, role: DisposalFacility, nullable: true}
+      - {name: SafetyWasteStream}
+    ref_parents:
+      - {name: SafetyWasteDispositionMethod}
+      - {name: UnitOfMeasure}
+    degenerate:
+      - {name: WasteManifestNumber, type: "nvarchar(50)"}
+      - {name: WasteShipmentLineNumber, type: int}
+    measures:
+      - {name: WasteQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: DisposalCostAmount, type: money, aggregation: sum}

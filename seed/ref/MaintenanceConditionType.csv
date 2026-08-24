@@ -1,0 +1,14 @@
+MaintenanceConditionTypeKey,ConditionTypeCode,ConditionTypeName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MCT000001,Liberty MaintenanceConditionType 1,-1,1,2026-08-24T00:00:00.000
+2,MCT000002,Liberty MaintenanceConditionType 2,-1,1,2026-08-24T00:00:00.000
+3,MCT000003,Willow MaintenanceConditionType 3,-1,1,2026-08-24T00:00:00.000
+4,MCT000004,Unity MaintenanceConditionType 4,-1,1,2026-08-24T00:00:00.000
+5,MCT000005,Granite MaintenanceConditionType 5,-1,1,2026-08-24T00:00:00.000
+6,MCT000006,Junction MaintenanceConditionType 6,-1,1,2026-08-24T00:00:00.000
+7,MCT000007,Quartz MaintenanceConditionType 7,-1,1,2026-08-24T00:00:00.000
+8,MCT000008,Delta MaintenanceConditionType 8,-1,1,2026-08-24T00:00:00.000
+9,MCT000009,Zenith MaintenanceConditionType 9,-1,1,2026-08-24T00:00:00.000
+10,MCT000010,Vertex MaintenanceConditionType 10,-1,1,2026-08-24T00:00:00.000
+11,MCT000011,Granite MaintenanceConditionType 11,-1,1,2026-08-24T00:00:00.000
+12,MCT000012,Zenith MaintenanceConditionType 12,-1,1,2026-08-24T00:00:00.000

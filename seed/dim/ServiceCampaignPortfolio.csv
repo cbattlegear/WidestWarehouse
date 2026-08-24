@@ -1,0 +1,16 @@
+ServiceCampaignPortfolioKey,ServiceCampaignPortfolioCode,ServiceCampaignPortfolioName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,SCP000001,Pioneer ServiceCampaignPortfolio 1,1,1,2026-08-24T00:00:00.000
+2,SCP000002,Orion ServiceCampaignPortfolio 2,1,1,2026-08-24T00:00:00.000
+3,SCP000003,Liberty ServiceCampaignPortfolio 3,1,1,2026-08-24T00:00:00.000
+4,SCP000004,Unity ServiceCampaignPortfolio 4,1,1,2026-08-24T00:00:00.000
+5,SCP000005,Liberty ServiceCampaignPortfolio 5,1,1,2026-08-24T00:00:00.000
+6,SCP000006,Liberty ServiceCampaignPortfolio 6,1,1,2026-08-24T00:00:00.000
+7,SCP000007,Keystone ServiceCampaignPortfolio 7,1,1,2026-08-24T00:00:00.000
+8,SCP000008,Junction ServiceCampaignPortfolio 8,1,1,2026-08-24T00:00:00.000
+9,SCP000009,Zenith ServiceCampaignPortfolio 9,1,1,2026-08-24T00:00:00.000
+10,SCP000010,Forge ServiceCampaignPortfolio 10,1,1,2026-08-24T00:00:00.000
+11,SCP000011,Granite ServiceCampaignPortfolio 11,1,1,2026-08-24T00:00:00.000
+12,SCP000012,Evergreen ServiceCampaignPortfolio 12,1,1,2026-08-24T00:00:00.000
+13,SCP000013,Evergreen ServiceCampaignPortfolio 13,1,1,2026-08-24T00:00:00.000
+14,SCP000014,Cedar ServiceCampaignPortfolio 14,1,1,2026-08-24T00:00:00.000

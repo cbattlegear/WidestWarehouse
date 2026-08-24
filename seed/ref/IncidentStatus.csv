@@ -1,0 +1,12 @@
+IncidentStatusKey,StatusCode,IncidentSeverityGroupKey,IncidentStatusName,IncidentStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,IS000001,4,Unity IncidentStatus 1,IncidentStatus starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,IS000002,4,Forge IncidentStatus 2,IncidentStatus starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,IS000003,3,Atlas IncidentStatus 3,IncidentStatus starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,IS000004,1,Keystone IncidentStatus 4,IncidentStatus starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,IS000005,2,Ion IncidentStatus 5,IncidentStatus starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,IS000006,2,Harbor IncidentStatus 6,IncidentStatus starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,IS000007,5,Beacon IncidentStatus 7,IncidentStatus starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,IS000008,2,Atlas IncidentStatus 8,IncidentStatus starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,IS000009,2,Quartz IncidentStatus 9,IncidentStatus starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,IS000010,2,Forge IncidentStatus 10,IncidentStatus starter record 10,0,1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,10 @@
+EngineeringDocumentDomainKey,EngineeringDocumentDomainCode,EngineeringDocumentDomainName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,EDD000001,Granite EngineeringDocumentDomain 1,1,1,2026-08-24T00:00:00.000
+2,EDD000002,Meridian EngineeringDocumentDomain 2,1,1,2026-08-24T00:00:00.000
+3,EDD000003,Evergreen EngineeringDocumentDomain 3,1,1,2026-08-24T00:00:00.000
+4,EDD000004,Quartz EngineeringDocumentDomain 4,1,1,2026-08-24T00:00:00.000
+5,EDD000005,Atlas EngineeringDocumentDomain 5,1,1,2026-08-24T00:00:00.000
+6,EDD000006,Granite EngineeringDocumentDomain 6,1,1,2026-08-24T00:00:00.000
+7,EDD000007,Atlas EngineeringDocumentDomain 7,1,1,2026-08-24T00:00:00.000
+8,EDD000008,Vertex EngineeringDocumentDomain 8,1,1,2026-08-24T00:00:00.000

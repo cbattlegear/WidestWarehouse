@@ -1,0 +1,14 @@
+PurchaseOrderLifecycleStatusKey,PurchaseOrderLifecycleStatusCode,PurchaseOrderLifecycleStatusName,IsTerminal,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,POLS000001,Willow PurchaseOrderLifecycleStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,POLS000002,Delta PurchaseOrderLifecycleStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,POLS000003,Orion PurchaseOrderLifecycleStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,POLS000004,Zenith PurchaseOrderLifecycleStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,POLS000005,Delta PurchaseOrderLifecycleStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,POLS000006,Northstar PurchaseOrderLifecycleStatus 6,1,-1,1,2026-08-24T00:00:00.000
+7,POLS000007,Junction PurchaseOrderLifecycleStatus 7,1,-1,1,2026-08-24T00:00:00.000
+8,POLS000008,Granite PurchaseOrderLifecycleStatus 8,1,-1,1,2026-08-24T00:00:00.000
+9,POLS000009,Quartz PurchaseOrderLifecycleStatus 9,1,-1,1,2026-08-24T00:00:00.000
+10,POLS000010,Northstar PurchaseOrderLifecycleStatus 10,0,-1,1,2026-08-24T00:00:00.000
+11,POLS000011,Willow PurchaseOrderLifecycleStatus 11,1,-1,1,2026-08-24T00:00:00.000
+12,POLS000012,Quartz PurchaseOrderLifecycleStatus 12,1,-1,1,2026-08-24T00:00:00.000

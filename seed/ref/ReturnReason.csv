@@ -1,0 +1,32 @@
+ReturnReasonKey,ReasonCode,ReturnReasonGroupKey,ReturnReasonName,ReturnReasonDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,RR000001,8,Ion ReturnReason 1,ReturnReason starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,RR000002,5,Atlas ReturnReason 2,ReturnReason starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,RR000003,5,Zenith ReturnReason 3,ReturnReason starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,RR000004,6,Riverton ReturnReason 4,ReturnReason starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,RR000005,6,Meridian ReturnReason 5,ReturnReason starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,RR000006,7,Junction ReturnReason 6,ReturnReason starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,RR000007,2,Quartz ReturnReason 7,ReturnReason starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,RR000008,6,Quartz ReturnReason 8,ReturnReason starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,RR000009,1,Titan ReturnReason 9,ReturnReason starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,RR000010,3,Northstar ReturnReason 10,ReturnReason starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,RR000011,8,Titan ReturnReason 11,ReturnReason starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,RR000012,3,Liberty ReturnReason 12,ReturnReason starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,RR000013,5,Delta ReturnReason 13,ReturnReason starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,RR000014,6,Ion ReturnReason 14,ReturnReason starter record 14,1,1,1,2026-08-24T00:00:00.000
+15,RR000015,1,Beacon ReturnReason 15,ReturnReason starter record 15,0,1,1,2026-08-24T00:00:00.000
+16,RR000016,4,Riverton ReturnReason 16,ReturnReason starter record 16,1,1,1,2026-08-24T00:00:00.000
+17,RR000017,1,Junction ReturnReason 17,ReturnReason starter record 17,1,1,1,2026-08-24T00:00:00.000
+18,RR000018,6,Atlas ReturnReason 18,ReturnReason starter record 18,1,1,1,2026-08-24T00:00:00.000
+19,RR000019,1,Evergreen ReturnReason 19,ReturnReason starter record 19,1,1,1,2026-08-24T00:00:00.000
+20,RR000020,1,Atlas ReturnReason 20,ReturnReason starter record 20,0,1,1,2026-08-24T00:00:00.000
+21,RR000021,6,Ion ReturnReason 21,ReturnReason starter record 21,1,1,1,2026-08-24T00:00:00.000
+22,RR000022,5,Harbor ReturnReason 22,ReturnReason starter record 22,1,1,1,2026-08-24T00:00:00.000
+23,RR000023,6,Atlas ReturnReason 23,ReturnReason starter record 23,1,1,1,2026-08-24T00:00:00.000
+24,RR000024,7,Cedar ReturnReason 24,ReturnReason starter record 24,1,1,1,2026-08-24T00:00:00.000
+25,RR000025,8,Zenith ReturnReason 25,ReturnReason starter record 25,0,1,1,2026-08-24T00:00:00.000
+26,RR000026,8,Beacon ReturnReason 26,ReturnReason starter record 26,1,1,1,2026-08-24T00:00:00.000
+27,RR000027,4,Unity ReturnReason 27,ReturnReason starter record 27,1,1,1,2026-08-24T00:00:00.000
+28,RR000028,2,Unity ReturnReason 28,ReturnReason starter record 28,1,1,1,2026-08-24T00:00:00.000
+29,RR000029,6,Ion ReturnReason 29,ReturnReason starter record 29,1,1,1,2026-08-24T00:00:00.000
+30,RR000030,5,Unity ReturnReason 30,ReturnReason starter record 30,0,1,1,2026-08-24T00:00:00.000

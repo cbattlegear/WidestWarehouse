@@ -1,0 +1,27 @@
+PurchaseApprovalPolicyKey,PurchaseApprovalPolicyCode,PurchaseApprovalPolicyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,PAP000001,Delta PurchaseApprovalPolicy 1,1,1,2026-08-24T00:00:00.000
+2,PAP000002,Vertex PurchaseApprovalPolicy 2,1,1,2026-08-24T00:00:00.000
+3,PAP000003,Summit PurchaseApprovalPolicy 3,1,1,2026-08-24T00:00:00.000
+4,PAP000004,Pioneer PurchaseApprovalPolicy 4,1,1,2026-08-24T00:00:00.000
+5,PAP000005,Willow PurchaseApprovalPolicy 5,1,1,2026-08-24T00:00:00.000
+6,PAP000006,Meridian PurchaseApprovalPolicy 6,1,1,2026-08-24T00:00:00.000
+7,PAP000007,Harbor PurchaseApprovalPolicy 7,1,1,2026-08-24T00:00:00.000
+8,PAP000008,Delta PurchaseApprovalPolicy 8,1,1,2026-08-24T00:00:00.000
+9,PAP000009,Evergreen PurchaseApprovalPolicy 9,1,1,2026-08-24T00:00:00.000
+10,PAP000010,Unity PurchaseApprovalPolicy 10,1,1,2026-08-24T00:00:00.000
+11,PAP000011,Cedar PurchaseApprovalPolicy 11,1,1,2026-08-24T00:00:00.000
+12,PAP000012,Beacon PurchaseApprovalPolicy 12,1,1,2026-08-24T00:00:00.000
+13,PAP000013,Delta PurchaseApprovalPolicy 13,1,1,2026-08-24T00:00:00.000
+14,PAP000014,Harbor PurchaseApprovalPolicy 14,1,1,2026-08-24T00:00:00.000
+15,PAP000015,Beacon PurchaseApprovalPolicy 15,1,1,2026-08-24T00:00:00.000
+16,PAP000016,Orion PurchaseApprovalPolicy 16,1,1,2026-08-24T00:00:00.000
+17,PAP000017,Forge PurchaseApprovalPolicy 17,1,1,2026-08-24T00:00:00.000
+18,PAP000018,Junction PurchaseApprovalPolicy 18,1,1,2026-08-24T00:00:00.000
+19,PAP000019,Forge PurchaseApprovalPolicy 19,1,1,2026-08-24T00:00:00.000
+20,PAP000020,Ion PurchaseApprovalPolicy 20,1,1,2026-08-24T00:00:00.000
+21,PAP000021,Unity PurchaseApprovalPolicy 21,1,1,2026-08-24T00:00:00.000
+22,PAP000022,Riverton PurchaseApprovalPolicy 22,1,1,2026-08-24T00:00:00.000
+23,PAP000023,Summit PurchaseApprovalPolicy 23,1,1,2026-08-24T00:00:00.000
+24,PAP000024,Evergreen PurchaseApprovalPolicy 24,1,1,2026-08-24T00:00:00.000
+25,PAP000025,Titan PurchaseApprovalPolicy 25,1,1,2026-08-24T00:00:00.000

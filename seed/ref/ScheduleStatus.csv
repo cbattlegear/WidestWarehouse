@@ -1,0 +1,12 @@
+ScheduleStatusKey,ScheduleStatusCode,ScheduleStatusName,ScheduleStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SS000001,Zenith ScheduleStatus 1,ScheduleStatus starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,SS000002,Willow ScheduleStatus 2,ScheduleStatus starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,SS000003,Zenith ScheduleStatus 3,ScheduleStatus starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,SS000004,Keystone ScheduleStatus 4,ScheduleStatus starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,SS000005,Harbor ScheduleStatus 5,ScheduleStatus starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,SS000006,Zenith ScheduleStatus 6,ScheduleStatus starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,SS000007,Atlas ScheduleStatus 7,ScheduleStatus starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,SS000008,Ion ScheduleStatus 8,ScheduleStatus starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,SS000009,Beacon ScheduleStatus 9,ScheduleStatus starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,SS000010,Atlas ScheduleStatus 10,ScheduleStatus starter record 10,0,-1,1,2026-08-24T00:00:00.000

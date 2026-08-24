@@ -1,0 +1,6 @@
+PaymentStatusKey,StatusCode,PaymentStatusName,PaymentStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,OPEN,Open,Awaiting payment,1,-1,1,2026-08-24T00:00:00.000
+2,PARTIAL,Partial,Partially paid,1,-1,1,2026-08-24T00:00:00.000
+3,PAID,Paid,Fully paid,1,-1,1,2026-08-24T00:00:00.000
+4,DISPUTED,Disputed,Under dispute,1,-1,1,2026-08-24T00:00:00.000

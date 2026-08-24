@@ -1,0 +1,9 @@
+AssetStatusGroupKey,GroupCode,AssetStatusGroupName,AssetStatusGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,ASG000001,Orion AssetStatusGroup 1,AssetStatusGroup starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,ASG000002,Unity AssetStatusGroup 2,AssetStatusGroup starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,ASG000003,Summit AssetStatusGroup 3,AssetStatusGroup starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,ASG000004,Atlas AssetStatusGroup 4,AssetStatusGroup starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,ASG000005,Orion AssetStatusGroup 5,AssetStatusGroup starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,ASG000006,Titan AssetStatusGroup 6,AssetStatusGroup starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,ASG000007,Orion AssetStatusGroup 7,AssetStatusGroup starter record 7,1,-1,1,2026-08-24T00:00:00.000

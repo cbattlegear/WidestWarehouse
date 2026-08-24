@@ -1,0 +1,20 @@
+PaymentTermKey,PaymentTermCode,PaymentTermName,PaymentTermDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,PT000001,Ion PaymentTerm 1,PaymentTerm starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,PT000002,Unity PaymentTerm 2,PaymentTerm starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,PT000003,Ion PaymentTerm 3,PaymentTerm starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,PT000004,Meridian PaymentTerm 4,PaymentTerm starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,PT000005,Titan PaymentTerm 5,PaymentTerm starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,PT000006,Junction PaymentTerm 6,PaymentTerm starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,PT000007,Meridian PaymentTerm 7,PaymentTerm starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,PT000008,Cedar PaymentTerm 8,PaymentTerm starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,PT000009,Meridian PaymentTerm 9,PaymentTerm starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,PT000010,Summit PaymentTerm 10,PaymentTerm starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,PT000011,Cedar PaymentTerm 11,PaymentTerm starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,PT000012,Quartz PaymentTerm 12,PaymentTerm starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,PT000013,Summit PaymentTerm 13,PaymentTerm starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,PT000014,Pioneer PaymentTerm 14,PaymentTerm starter record 14,1,-1,1,2026-08-24T00:00:00.000
+15,PT000015,Liberty PaymentTerm 15,PaymentTerm starter record 15,0,-1,1,2026-08-24T00:00:00.000
+16,PT000016,Summit PaymentTerm 16,PaymentTerm starter record 16,1,-1,1,2026-08-24T00:00:00.000
+17,PT000017,Meridian PaymentTerm 17,PaymentTerm starter record 17,1,-1,1,2026-08-24T00:00:00.000
+18,PT000018,Orion PaymentTerm 18,PaymentTerm starter record 18,1,-1,1,2026-08-24T00:00:00.000

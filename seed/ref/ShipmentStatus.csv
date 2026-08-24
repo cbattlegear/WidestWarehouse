@@ -1,0 +1,17 @@
+ShipmentStatusKey,StatusCode,ShipmentStatusGroupKey,ShipmentStatusName,ShipmentStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SS000001,3,Evergreen ShipmentStatus 1,ShipmentStatus starter record 1,1,1,1,2026-08-24T00:00:00.000
+2,SS000002,5,Willow ShipmentStatus 2,ShipmentStatus starter record 2,1,1,1,2026-08-24T00:00:00.000
+3,SS000003,5,Liberty ShipmentStatus 3,ShipmentStatus starter record 3,1,1,1,2026-08-24T00:00:00.000
+4,SS000004,5,Quartz ShipmentStatus 4,ShipmentStatus starter record 4,1,1,1,2026-08-24T00:00:00.000
+5,SS000005,2,Evergreen ShipmentStatus 5,ShipmentStatus starter record 5,0,1,1,2026-08-24T00:00:00.000
+6,SS000006,3,Riverton ShipmentStatus 6,ShipmentStatus starter record 6,1,1,1,2026-08-24T00:00:00.000
+7,SS000007,1,Titan ShipmentStatus 7,ShipmentStatus starter record 7,1,1,1,2026-08-24T00:00:00.000
+8,SS000008,5,Cedar ShipmentStatus 8,ShipmentStatus starter record 8,1,1,1,2026-08-24T00:00:00.000
+9,SS000009,6,Northstar ShipmentStatus 9,ShipmentStatus starter record 9,1,1,1,2026-08-24T00:00:00.000
+10,SS000010,4,Vertex ShipmentStatus 10,ShipmentStatus starter record 10,0,1,1,2026-08-24T00:00:00.000
+11,SS000011,3,Orion ShipmentStatus 11,ShipmentStatus starter record 11,1,1,1,2026-08-24T00:00:00.000
+12,SS000012,3,Harbor ShipmentStatus 12,ShipmentStatus starter record 12,1,1,1,2026-08-24T00:00:00.000
+13,SS000013,1,Delta ShipmentStatus 13,ShipmentStatus starter record 13,1,1,1,2026-08-24T00:00:00.000
+14,SS000014,3,Forge ShipmentStatus 14,ShipmentStatus starter record 14,1,1,1,2026-08-24T00:00:00.000
+15,SS000015,5,Cedar ShipmentStatus 15,ShipmentStatus starter record 15,0,1,1,2026-08-24T00:00:00.000

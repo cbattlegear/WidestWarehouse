@@ -1,0 +1,7 @@
+CurrencyRegionKey,RegionCode,RegionName,DefaultCurrencyCode,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,UNK,0,-1,0,1900-01-01T00:00:00.000
+1,NA,North America,USD,1,-1,1,2026-08-24T00:00:00.000
+2,EU,Europe,EUR,1,-1,1,2026-08-24T00:00:00.000
+3,APAC,Asia Pacific,JPY,1,-1,1,2026-08-24T00:00:00.000
+4,LATAM,Latin America,BRL,1,-1,1,2026-08-24T00:00:00.000
+5,MEA,Middle East and Africa,AED,1,-1,1,2026-08-24T00:00:00.000

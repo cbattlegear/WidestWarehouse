@@ -1,0 +1,6 @@
+WorkOrderStatusGroupKey,GroupCode,WorkOrderStatusGroupName,WorkOrderStatusGroupDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,PRE,Pre-release,Pre-release statuses,1,1,1,2026-08-24T00:00:00.000
+2,OPEN,Open,Executable statuses,1,1,1,2026-08-24T00:00:00.000
+3,HOLD,Hold,Blocked statuses,1,1,1,2026-08-24T00:00:00.000
+4,DONE,Done,Terminal statuses,1,1,1,2026-08-24T00:00:00.000

@@ -1,0 +1,9 @@
+SafetyAuditFindingStatusKey,AuditFindingStatusCode,AuditFindingStatusName,IsResolvedStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,SAFS000001,Junction SafetyAuditFindingStatus 1,1,-1,1,2026-08-24T00:00:00.000
+2,SAFS000002,Harbor SafetyAuditFindingStatus 2,1,-1,1,2026-08-24T00:00:00.000
+3,SAFS000003,Unity SafetyAuditFindingStatus 3,1,-1,1,2026-08-24T00:00:00.000
+4,SAFS000004,Vertex SafetyAuditFindingStatus 4,1,-1,1,2026-08-24T00:00:00.000
+5,SAFS000005,Ion SafetyAuditFindingStatus 5,0,-1,1,2026-08-24T00:00:00.000
+6,SAFS000006,Cedar SafetyAuditFindingStatus 6,1,-1,1,2026-08-24T00:00:00.000
+7,SAFS000007,Willow SafetyAuditFindingStatus 7,1,-1,1,2026-08-24T00:00:00.000

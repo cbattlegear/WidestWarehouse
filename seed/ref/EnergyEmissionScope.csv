@@ -1,0 +1,7 @@
+EnergyEmissionScopeKey,EmissionScopeCode,EmissionScopeName,SortSequence,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,EES000001,Meridian EnergyEmissionScope 1,1,-1,1,2026-08-24T00:00:00.000
+2,EES000002,Liberty EnergyEmissionScope 2,2,-1,1,2026-08-24T00:00:00.000
+3,EES000003,Beacon EnergyEmissionScope 3,3,-1,1,2026-08-24T00:00:00.000
+4,EES000004,Quartz EnergyEmissionScope 4,4,-1,1,2026-08-24T00:00:00.000
+5,EES000005,Ion EnergyEmissionScope 5,5,-1,1,2026-08-24T00:00:00.000

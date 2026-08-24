@@ -1,0 +1,32 @@
+LogisticsTradeRegionKey,LogisticsTradeRegionCode,LogisticsTradeRegionName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,LTR000001,Zenith LogisticsTradeRegion 1,1,1,2026-08-24T00:00:00.000
+2,LTR000002,Zenith LogisticsTradeRegion 2,1,1,2026-08-24T00:00:00.000
+3,LTR000003,Beacon LogisticsTradeRegion 3,1,1,2026-08-24T00:00:00.000
+4,LTR000004,Forge LogisticsTradeRegion 4,1,1,2026-08-24T00:00:00.000
+5,LTR000005,Liberty LogisticsTradeRegion 5,1,1,2026-08-24T00:00:00.000
+6,LTR000006,Atlas LogisticsTradeRegion 6,1,1,2026-08-24T00:00:00.000
+7,LTR000007,Liberty LogisticsTradeRegion 7,1,1,2026-08-24T00:00:00.000
+8,LTR000008,Titan LogisticsTradeRegion 8,1,1,2026-08-24T00:00:00.000
+9,LTR000009,Orion LogisticsTradeRegion 9,1,1,2026-08-24T00:00:00.000
+10,LTR000010,Unity LogisticsTradeRegion 10,1,1,2026-08-24T00:00:00.000
+11,LTR000011,Beacon LogisticsTradeRegion 11,1,1,2026-08-24T00:00:00.000
+12,LTR000012,Forge LogisticsTradeRegion 12,1,1,2026-08-24T00:00:00.000
+13,LTR000013,Liberty LogisticsTradeRegion 13,1,1,2026-08-24T00:00:00.000
+14,LTR000014,Junction LogisticsTradeRegion 14,1,1,2026-08-24T00:00:00.000
+15,LTR000015,Evergreen LogisticsTradeRegion 15,1,1,2026-08-24T00:00:00.000
+16,LTR000016,Beacon LogisticsTradeRegion 16,1,1,2026-08-24T00:00:00.000
+17,LTR000017,Willow LogisticsTradeRegion 17,1,1,2026-08-24T00:00:00.000
+18,LTR000018,Delta LogisticsTradeRegion 18,1,1,2026-08-24T00:00:00.000
+19,LTR000019,Orion LogisticsTradeRegion 19,1,1,2026-08-24T00:00:00.000
+20,LTR000020,Willow LogisticsTradeRegion 20,1,1,2026-08-24T00:00:00.000
+21,LTR000021,Riverton LogisticsTradeRegion 21,1,1,2026-08-24T00:00:00.000
+22,LTR000022,Riverton LogisticsTradeRegion 22,1,1,2026-08-24T00:00:00.000
+23,LTR000023,Zenith LogisticsTradeRegion 23,1,1,2026-08-24T00:00:00.000
+24,LTR000024,Meridian LogisticsTradeRegion 24,1,1,2026-08-24T00:00:00.000
+25,LTR000025,Ion LogisticsTradeRegion 25,1,1,2026-08-24T00:00:00.000
+26,LTR000026,Summit LogisticsTradeRegion 26,1,1,2026-08-24T00:00:00.000
+27,LTR000027,Atlas LogisticsTradeRegion 27,1,1,2026-08-24T00:00:00.000
+28,LTR000028,Riverton LogisticsTradeRegion 28,1,1,2026-08-24T00:00:00.000
+29,LTR000029,Northstar LogisticsTradeRegion 29,1,1,2026-08-24T00:00:00.000
+30,LTR000030,Atlas LogisticsTradeRegion 30,1,1,2026-08-24T00:00:00.000

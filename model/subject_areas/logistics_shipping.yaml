@@ -1,0 +1,327 @@
+subject_area: logistics_shipping
+reference:
+  - name: LogisticsShipmentStatus
+    description: Lifecycle states for shipments, deliveries, and shipment lines.
+    business_key: {name: ShipmentStatusCode, type: "nvarchar(20)"}
+    seed_rows: 14
+    columns:
+      - {name: ShipmentStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: IsTerminal, type: bit, nullable: false, default: "0"}
+  - name: LogisticsServiceLevel
+    description: Carrier service levels used for delivery promises and rating.
+    business_key: {name: ServiceLevelCode, type: "nvarchar(20)"}
+    seed_rows: 20
+    columns:
+      - {name: ServiceLevelName, type: "nvarchar(100)", nullable: false}
+      - {name: TargetTransitDays, type: int, nullable: true}
+  - name: LogisticsFreightChargeType
+    description: Freight accessorial, base, fuel, duty, and handling charge categories.
+    business_key: {name: FreightChargeTypeCode, type: "nvarchar(20)"}
+    seed_rows: 30
+    columns:
+      - {name: FreightChargeTypeName, type: "nvarchar(100)", nullable: false}
+      - {name: IsAccessorial, type: bit, nullable: false, default: "0"}
+  - name: LogisticsTrackingEventType
+    description: Carrier and warehouse tracking event types across shipment lifecycle.
+    business_key: {name: TrackingEventTypeCode, type: "nvarchar(30)"}
+    seed_rows: 35
+    columns:
+      - {name: TrackingEventTypeName, type: "nvarchar(120)", nullable: false}
+      - {name: IndicatesException, type: bit, nullable: false, default: "0"}
+  - name: LogisticsCustomsStatus
+    description: Customs declaration statuses for international shipments.
+    business_key: {name: CustomsStatusCode, type: "nvarchar(20)"}
+    seed_rows: 10
+    columns:
+      - {name: CustomsStatusName, type: "nvarchar(80)", nullable: false}
+      - {name: AllowsBorderRelease, type: bit, nullable: false, default: "0"}
+hierarchies:
+  - name: LogisticsCarrierHierarchy
+    schema: dim
+    description: Carrier commercial hierarchy from group to contracted service.
+    levels:
+      - name: LogisticsCarrierGroup
+        row_count: 20
+      - name: LogisticsCarrier
+        row_count: 500
+      - name: LogisticsCarrierService
+        row_count: 3000
+      - name: LogisticsCarrierServiceOption
+        row_count: 12000
+  - name: LogisticsLaneHierarchy
+    schema: dim
+    description: Transportation lane hierarchy from region pair to detailed lane.
+    levels:
+      - name: LogisticsTradeRegion
+        row_count: 30
+      - name: LogisticsTradeCorridor
+        row_count: 300
+      - name: LogisticsTransportLane
+        row_count: 6000
+      - name: LogisticsLaneSegment
+        row_count: 40000
+  - name: LogisticsNodeHierarchy
+    schema: dim
+    description: Logistics network node hierarchy from network to dock door.
+    levels:
+      - name: LogisticsNetwork
+        row_count: 10
+      - name: LogisticsHub
+        row_count: 250
+      - name: LogisticsTerminal
+        row_count: 1800
+      - name: LogisticsDockDoor
+        row_count: 20000
+  - name: LogisticsTariffHierarchy
+    schema: dim
+    description: Customs tariff classification from chapter to tariff item.
+    levels:
+      - name: LogisticsTariffChapter
+        row_count: 100
+      - name: LogisticsTariffHeading
+        row_count: 1300
+      - name: LogisticsTariffSubheading
+        row_count: 6000
+      - name: LogisticsTariffItem
+        row_count: 25000
+dimensions:
+  - name: LogisticsShipmentHeader
+    description: Shipment header representing a carrier move from origin to destination.
+    scd: type2
+    row_count: 9000000
+    business_key: {name: ShipmentNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: ShipmentName, type: "nvarchar(160)", nullable: true}
+      - {name: ProNumber, type: "nvarchar(60)", nullable: true}
+      - {name: BillOfLadingNumber, type: "nvarchar(60)", nullable: true}
+    parents:
+      - {name: LogisticsCarrierServiceOption}
+      - {name: LogisticsLaneSegment}
+      - {name: Plant, role: Origin, nullable: true}
+      - {name: Customer, role: DestinationCustomer, nullable: true}
+    ref_parents:
+      - {name: LogisticsShipmentStatus}
+      - {name: LogisticsServiceLevel}
+  - name: LogisticsShipmentLine
+    description: Product shipment line associated with a shipment header and delivery.
+    scd: type2
+    row_count: 65000000
+    business_key: {name: ShipmentLineCode, type: "nvarchar(70)"}
+    columns:
+      - {name: ShipmentLineSequenceNumber, type: int, nullable: false}
+      - {name: HandlingUnitNumber, type: "nvarchar(60)", nullable: true}
+      - {name: DeliveryReferenceNumber, type: "nvarchar(60)", nullable: true}
+    parents:
+      - {name: LogisticsShipmentHeader}
+      - {name: Product}
+      - {name: Plant, role: Origin, nullable: true}
+    ref_parents:
+      - {name: LogisticsShipmentStatus}
+      - {name: UnitOfMeasure}
+  - name: LogisticsDelivery
+    description: Customer or intercompany delivery document scheduled for shipment.
+    scd: type2
+    row_count: 22000000
+    business_key: {name: DeliveryNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: DeliveryName, type: "nvarchar(160)", nullable: true}
+      - {name: RequestedDeliveryDate, type: date, nullable: true}
+      - {name: DeliveryPriorityScore, type: int, nullable: true}
+    parents:
+      - {name: Customer, nullable: true}
+      - {name: Plant, role: ShipFrom, nullable: true}
+      - {name: LogisticsDockDoor, role: Origin, nullable: true}
+    ref_parents:
+      - {name: LogisticsShipmentStatus}
+      - {name: Priority}
+  - name: LogisticsTransportLoad
+    description: Consolidated transport load containing deliveries or shipment lines.
+    scd: type2
+    row_count: 2500000
+    business_key: {name: TransportLoadNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: TransportLoadName, type: "nvarchar(160)", nullable: true}
+      - {name: PlannedDepartureDate, type: date, nullable: true}
+      - {name: PlannedArrivalDate, type: date, nullable: true}
+    parents:
+      - {name: LogisticsCarrierServiceOption}
+      - {name: LogisticsLaneSegment}
+      - {name: Employee, role: Planner, nullable: true}
+    ref_parents:
+      - {name: LogisticsShipmentStatus}
+  - name: LogisticsContainer
+    description: Ocean, air, rail, or truck container used for freight movement.
+    row_count: 1500000
+    business_key: {name: ContainerNumber, type: "nvarchar(50)"}
+    columns:
+      - {name: ContainerName, type: "nvarchar(120)", nullable: true}
+      - {name: ContainerSizeCode, type: "nvarchar(20)", nullable: true}
+      - {name: MaximumWeightKg, type: "decimal(18,4)", nullable: true}
+    parents:
+      - {name: LogisticsCarrier, nullable: true}
+    ref_parents:
+      - {name: UnitOfMeasure}
+  - name: LogisticsCustomsDeclaration
+    description: Customs declaration for regulated cross-border shipment movement.
+    scd: type2
+    row_count: 1800000
+    business_key: {name: CustomsDeclarationNumber, type: "nvarchar(60)"}
+    columns:
+      - {name: CustomsEntryNumber, type: "nvarchar(60)", nullable: true}
+      - {name: DeclarationValueAmount, type: money, nullable: true}
+      - {name: FilingDate, type: date, nullable: true}
+    parents:
+      - {name: LogisticsShipmentHeader}
+      - {name: LogisticsTariffItem}
+    ref_parents:
+      - {name: LogisticsCustomsStatus}
+      - {name: Country, role: Origin}
+      - {name: Country, role: Destination}
+      - {name: Currency}
+bridges:
+  - name: LogisticsShipmentToDelivery
+    description: Resolves shipments to the deliveries included in each shipment.
+    row_count: 30000000
+    unique_members: false
+    members:
+      - {name: LogisticsShipmentHeader}
+      - {name: LogisticsDelivery}
+    columns:
+      - {name: DeliveryQuantity, type: "decimal(18,4)", nullable: true}
+  - name: LogisticsShipmentLineToContainer
+    description: Resolves shipment lines to freight containers and packed quantities.
+    row_count: 45000000
+    unique_members: false
+    members:
+      - {name: LogisticsShipmentLine}
+      - {name: LogisticsContainer}
+    columns:
+      - {name: PackedQuantity, type: "decimal(18,4)", nullable: false}
+      - {name: PackedWeightKg, type: "decimal(18,4)", nullable: true}
+  - name: LogisticsLoadShipmentAssignment
+    description: Resolves transport loads to shipments assigned for execution.
+    row_count: 12000000
+    unique_members: false
+    members:
+      - {name: LogisticsTransportLoad}
+      - {name: LogisticsShipmentHeader}
+    columns:
+      - {name: PlannedSequenceNumber, type: int, nullable: true}
+  - name: LogisticsShipmentTariffAssignment
+    description: Resolves shipment lines to tariff items for customs and duties.
+    row_count: 60000000
+    unique_members: false
+    members:
+      - {name: LogisticsShipmentLine}
+      - {name: LogisticsTariffItem}
+    ref_parents:
+      - {name: LogisticsCustomsStatus}
+    columns:
+      - {name: DeclaredQuantity, type: "decimal(18,4)", nullable: false}
+facts:
+  - name: LogisticsShipmentExecution
+    description: Shipment execution transaction with shipped quantity, weight, and freight value.
+    type: transaction
+    grain: "One row per shipment line execution event."
+    row_count: 90000000
+    columnstore: true
+    date_roles: [Ship, PlannedDelivery, ActualDelivery]
+    time_roles: [Ship, ActualDelivery]
+    dimensions:
+      - {name: LogisticsShipmentHeader}
+      - {name: LogisticsShipmentLine}
+      - {name: LogisticsCarrierServiceOption}
+      - {name: LogisticsLaneSegment}
+      - {name: Product}
+      - {name: Customer, nullable: true}
+    ref_parents:
+      - {name: LogisticsShipmentStatus}
+      - {name: LogisticsServiceLevel}
+      - {name: UnitOfMeasure}
+      - {name: Currency}
+    measures:
+      - {name: ShippedQuantity, type: "decimal(18,4)", aggregation: sum}
+      - {name: ShippedWeightKg, type: "decimal(18,4)", aggregation: sum}
+      - {name: FreightAmount, type: money, aggregation: sum}
+  - name: LogisticsFreightCharge
+    description: Freight charge transaction from carrier rating, accrual, or invoice.
+    type: transaction
+    grain: "One row per freight charge type for a shipment or load."
+    row_count: 35000000
+    columnstore: true
+    date_roles: [Charge, Posting, Invoice]
+    dimensions:
+      - {name: LogisticsShipmentHeader, nullable: true}
+      - {name: LogisticsTransportLoad, nullable: true}
+      - {name: LogisticsCarrierServiceOption}
+      - {name: LogisticsLaneSegment}
+      - {name: Supplier, role: CarrierSupplier, nullable: true}
+    ref_parents:
+      - {name: LogisticsFreightChargeType}
+      - {name: Currency}
+    degenerate:
+      - {name: FreightInvoiceNumber, type: "nvarchar(50)"}
+    measures:
+      - {name: RatedChargeAmount, type: money, aggregation: sum}
+      - {name: ActualChargeAmount, type: money, aggregation: sum}
+      - {name: ChargeVarianceAmount, type: money, aggregation: sum}
+  - name: LogisticsTrackingEvent
+    description: Shipment tracking event transaction from carriers and logistics systems.
+    type: transaction
+    grain: "One row per tracking event for a shipment, load, delivery, or container."
+    row_count: 250000000
+    columnstore: true
+    date_roles: [Event]
+    time_roles: [Event]
+    dimensions:
+      - {name: LogisticsShipmentHeader, nullable: true}
+      - {name: LogisticsDelivery, nullable: true}
+      - {name: LogisticsTransportLoad, nullable: true}
+      - {name: LogisticsContainer, nullable: true}
+      - {name: LogisticsDockDoor, nullable: true}
+    ref_parents:
+      - {name: LogisticsTrackingEventType}
+      - {name: Severity, nullable: true}
+    degenerate:
+      - {name: TrackingReferenceNumber, type: "nvarchar(80)"}
+    measures:
+      - {name: EventCount, type: int, aggregation: sum}
+      - {name: EventSequenceNumber, type: int, aggregation: max}
+  - name: LogisticsDeliveryPerformance
+    description: Periodic delivery performance snapshot against promised and planned dates.
+    type: periodic_snapshot
+    grain: "One row per day, delivery, carrier service, and lane."
+    row_count: 40000000
+    date_roles: [Snapshot, PlannedDelivery, ActualDelivery]
+    dimensions:
+      - {name: LogisticsDelivery}
+      - {name: LogisticsCarrierServiceOption}
+      - {name: LogisticsLaneSegment}
+      - {name: Customer, nullable: true}
+    ref_parents:
+      - {name: LogisticsShipmentStatus}
+      - {name: LogisticsServiceLevel}
+    measures:
+      - {name: OnTimeDeliveryCount, type: int, aggregation: sum}
+      - {name: LateDeliveryCount, type: int, aggregation: sum}
+      - {name: TransitDays, type: int, aggregation: avg}
+      - {name: DelayDays, type: int, aggregation: avg}
+  - name: LogisticsCustomsClearanceCycle
+    description: Accumulating customs clearance cycle for regulated international shipments.
+    type: accumulating_snapshot
+    grain: "One row per customs declaration tracked from filing through border release."
+    row_count: 1800000
+    date_roles: [Filing, Submission, Hold, Release]
+    dimensions:
+      - {name: LogisticsCustomsDeclaration}
+      - {name: LogisticsShipmentHeader}
+      - {name: LogisticsTariffItem}
+    ref_parents:
+      - {name: LogisticsCustomsStatus}
+      - {name: Country, role: Origin}
+      - {name: Country, role: Destination}
+      - {name: Currency}
+    measures:
+      - {name: DeclaredValueAmount, type: money, aggregation: sum}
+      - {name: DutyAmount, type: money, aggregation: sum}
+      - {name: TaxAmount, type: money, aggregation: sum}

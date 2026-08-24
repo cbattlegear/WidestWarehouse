@@ -1,0 +1,11 @@
+WarrantyRmaStatusKey,WarrantyRmaStatusCode,WarrantyRmaStatusName,IsReceivedStatus,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,WRS000001,Granite WarrantyRmaStatus 1,1,1,1,2026-08-24T00:00:00.000
+2,WRS000002,Liberty WarrantyRmaStatus 2,1,1,1,2026-08-24T00:00:00.000
+3,WRS000003,Atlas WarrantyRmaStatus 3,1,1,1,2026-08-24T00:00:00.000
+4,WRS000004,Beacon WarrantyRmaStatus 4,1,1,1,2026-08-24T00:00:00.000
+5,WRS000005,Summit WarrantyRmaStatus 5,0,1,1,2026-08-24T00:00:00.000
+6,WRS000006,Liberty WarrantyRmaStatus 6,1,1,1,2026-08-24T00:00:00.000
+7,WRS000007,Unity WarrantyRmaStatus 7,1,1,1,2026-08-24T00:00:00.000
+8,WRS000008,Granite WarrantyRmaStatus 8,1,1,1,2026-08-24T00:00:00.000
+9,WRS000009,Delta WarrantyRmaStatus 9,1,1,1,2026-08-24T00:00:00.000

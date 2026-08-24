@@ -1,0 +1,27 @@
+FinanceJournalSourceKey,JournalSourceCode,JournalSourceName,IsSubledgerSource,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,FJS000001,Ion FinanceJournalSource 1,1,-1,1,2026-08-24T00:00:00.000
+2,FJS000002,Harbor FinanceJournalSource 2,1,-1,1,2026-08-24T00:00:00.000
+3,FJS000003,Titan FinanceJournalSource 3,1,-1,1,2026-08-24T00:00:00.000
+4,FJS000004,Zenith FinanceJournalSource 4,1,-1,1,2026-08-24T00:00:00.000
+5,FJS000005,Riverton FinanceJournalSource 5,0,-1,1,2026-08-24T00:00:00.000
+6,FJS000006,Keystone FinanceJournalSource 6,1,-1,1,2026-08-24T00:00:00.000
+7,FJS000007,Harbor FinanceJournalSource 7,1,-1,1,2026-08-24T00:00:00.000
+8,FJS000008,Summit FinanceJournalSource 8,1,-1,1,2026-08-24T00:00:00.000
+9,FJS000009,Granite FinanceJournalSource 9,1,-1,1,2026-08-24T00:00:00.000
+10,FJS000010,Evergreen FinanceJournalSource 10,0,-1,1,2026-08-24T00:00:00.000
+11,FJS000011,Delta FinanceJournalSource 11,1,-1,1,2026-08-24T00:00:00.000
+12,FJS000012,Keystone FinanceJournalSource 12,1,-1,1,2026-08-24T00:00:00.000
+13,FJS000013,Liberty FinanceJournalSource 13,1,-1,1,2026-08-24T00:00:00.000
+14,FJS000014,Titan FinanceJournalSource 14,1,-1,1,2026-08-24T00:00:00.000
+15,FJS000015,Unity FinanceJournalSource 15,0,-1,1,2026-08-24T00:00:00.000
+16,FJS000016,Riverton FinanceJournalSource 16,1,-1,1,2026-08-24T00:00:00.000
+17,FJS000017,Unity FinanceJournalSource 17,1,-1,1,2026-08-24T00:00:00.000
+18,FJS000018,Summit FinanceJournalSource 18,1,-1,1,2026-08-24T00:00:00.000
+19,FJS000019,Forge FinanceJournalSource 19,1,-1,1,2026-08-24T00:00:00.000
+20,FJS000020,Northstar FinanceJournalSource 20,0,-1,1,2026-08-24T00:00:00.000
+21,FJS000021,Forge FinanceJournalSource 21,1,-1,1,2026-08-24T00:00:00.000
+22,FJS000022,Keystone FinanceJournalSource 22,1,-1,1,2026-08-24T00:00:00.000
+23,FJS000023,Pioneer FinanceJournalSource 23,1,-1,1,2026-08-24T00:00:00.000
+24,FJS000024,Delta FinanceJournalSource 24,1,-1,1,2026-08-24T00:00:00.000
+25,FJS000025,Forge FinanceJournalSource 25,0,-1,1,2026-08-24T00:00:00.000

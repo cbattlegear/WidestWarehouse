@@ -1,0 +1,10 @@
+FinanceCostingMethodKey,CostingMethodCode,CostingMethodName,UsesStandardCost,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,0,-1,0,1900-01-01T00:00:00.000
+1,FCM000001,Titan FinanceCostingMethod 1,1,-1,1,2026-08-24T00:00:00.000
+2,FCM000002,Ion FinanceCostingMethod 2,0,-1,1,2026-08-24T00:00:00.000
+3,FCM000003,Atlas FinanceCostingMethod 3,1,-1,1,2026-08-24T00:00:00.000
+4,FCM000004,Willow FinanceCostingMethod 4,0,-1,1,2026-08-24T00:00:00.000
+5,FCM000005,Pioneer FinanceCostingMethod 5,1,-1,1,2026-08-24T00:00:00.000
+6,FCM000006,Northstar FinanceCostingMethod 6,0,-1,1,2026-08-24T00:00:00.000
+7,FCM000007,Zenith FinanceCostingMethod 7,1,-1,1,2026-08-24T00:00:00.000
+8,FCM000008,Harbor FinanceCostingMethod 8,0,-1,1,2026-08-24T00:00:00.000

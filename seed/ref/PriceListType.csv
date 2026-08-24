@@ -1,0 +1,10 @@
+PriceListTypeKey,TypeCode,PriceListTypeName,PriceListTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,PLT000001,Vertex PriceListType 1,PriceListType starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,PLT000002,Northstar PriceListType 2,PriceListType starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,PLT000003,Meridian PriceListType 3,PriceListType starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,PLT000004,Atlas PriceListType 4,PriceListType starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,PLT000005,Keystone PriceListType 5,PriceListType starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,PLT000006,Meridian PriceListType 6,PriceListType starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,PLT000007,Harbor PriceListType 7,PriceListType starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,PLT000008,Quartz PriceListType 8,PriceListType starter record 8,1,-1,1,2026-08-24T00:00:00.000

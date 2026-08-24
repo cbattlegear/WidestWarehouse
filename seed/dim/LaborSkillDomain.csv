@@ -1,0 +1,16 @@
+LaborSkillDomainKey,LaborSkillDomainCode,LaborSkillDomainName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,LSD000001,Pioneer LaborSkillDomain 1,1,1,2026-08-24T00:00:00.000
+2,LSD000002,Northstar LaborSkillDomain 2,1,1,2026-08-24T00:00:00.000
+3,LSD000003,Zenith LaborSkillDomain 3,1,1,2026-08-24T00:00:00.000
+4,LSD000004,Vertex LaborSkillDomain 4,1,1,2026-08-24T00:00:00.000
+5,LSD000005,Cedar LaborSkillDomain 5,1,1,2026-08-24T00:00:00.000
+6,LSD000006,Liberty LaborSkillDomain 6,1,1,2026-08-24T00:00:00.000
+7,LSD000007,Beacon LaborSkillDomain 7,1,1,2026-08-24T00:00:00.000
+8,LSD000008,Liberty LaborSkillDomain 8,1,1,2026-08-24T00:00:00.000
+9,LSD000009,Willow LaborSkillDomain 9,1,1,2026-08-24T00:00:00.000
+10,LSD000010,Delta LaborSkillDomain 10,1,1,2026-08-24T00:00:00.000
+11,LSD000011,Granite LaborSkillDomain 11,1,1,2026-08-24T00:00:00.000
+12,LSD000012,Liberty LaborSkillDomain 12,1,1,2026-08-24T00:00:00.000
+13,LSD000013,Ion LaborSkillDomain 13,1,1,2026-08-24T00:00:00.000
+14,LSD000014,Harbor LaborSkillDomain 14,1,1,2026-08-24T00:00:00.000

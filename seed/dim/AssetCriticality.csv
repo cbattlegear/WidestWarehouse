@@ -1,0 +1,12 @@
+AssetCriticalityKey,CriticalityCode,PriorityKey,RecordStatusKey,CriticalityName,CriticalityDescription,OwnerName,EffectiveStartDate,EffectiveEndDate,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,-1,-1,Unknown,N/A,Unknown,1900-01-01,1900-01-01,0,-1,0,1900-01-01T00:00:00.000
+1,AC000001,5,4,Beacon AssetCriticality 1,AssetCriticality starter record 1,Finley Singh,2020-01-02,2021-01-01,1,1,1,2026-08-24T00:00:00.000
+2,AC000002,1,3,Titan AssetCriticality 2,AssetCriticality starter record 2,Quinn Bennett,2020-01-03,2021-01-02,1,1,1,2026-08-24T00:00:00.000
+3,AC000003,4,4,Granite AssetCriticality 3,AssetCriticality starter record 3,Taylor Diaz,2020-01-04,2021-01-03,1,1,1,2026-08-24T00:00:00.000
+4,AC000004,4,3,Unity AssetCriticality 4,AssetCriticality starter record 4,Alex Reed,2020-01-05,2021-01-04,1,1,1,2026-08-24T00:00:00.000
+5,AC000005,3,2,Zenith AssetCriticality 5,AssetCriticality starter record 5,Devon Martin,2020-01-06,2021-01-05,0,1,1,2026-08-24T00:00:00.000
+6,AC000006,2,3,Evergreen AssetCriticality 6,AssetCriticality starter record 6,Taylor Reed,2020-01-07,2021-01-06,1,1,1,2026-08-24T00:00:00.000
+7,AC000007,5,2,Unity AssetCriticality 7,AssetCriticality starter record 7,Alex Khan,2020-01-08,2021-01-07,1,1,1,2026-08-24T00:00:00.000
+8,AC000008,3,2,Unity AssetCriticality 8,AssetCriticality starter record 8,Taylor Evans,2020-01-09,2021-01-08,1,1,1,2026-08-24T00:00:00.000
+9,AC000009,5,1,Liberty AssetCriticality 9,AssetCriticality starter record 9,Casey Singh,2020-01-10,2021-01-09,1,1,1,2026-08-24T00:00:00.000
+10,AC000010,5,1,Riverton AssetCriticality 10,AssetCriticality starter record 10,Casey Evans,2020-01-11,2021-01-10,0,1,1,2026-08-24T00:00:00.000

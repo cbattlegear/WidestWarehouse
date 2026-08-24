@@ -1,0 +1,10 @@
+MachineStateFamilyKey,MachineStateFamilyCode,MachineStateFamilyName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,MSF000001,Meridian MachineStateFamily 1,1,1,2026-08-24T00:00:00.000
+2,MSF000002,Cedar MachineStateFamily 2,1,1,2026-08-24T00:00:00.000
+3,MSF000003,Pioneer MachineStateFamily 3,1,1,2026-08-24T00:00:00.000
+4,MSF000004,Liberty MachineStateFamily 4,1,1,2026-08-24T00:00:00.000
+5,MSF000005,Forge MachineStateFamily 5,1,1,2026-08-24T00:00:00.000
+6,MSF000006,Riverton MachineStateFamily 6,1,1,2026-08-24T00:00:00.000
+7,MSF000007,Summit MachineStateFamily 7,1,1,2026-08-24T00:00:00.000
+8,MSF000008,Liberty MachineStateFamily 8,1,1,2026-08-24T00:00:00.000

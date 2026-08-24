@@ -1,0 +1,14 @@
+LotStatusKey,LotStatusCode,LotStatusName,LotStatusDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,LS000001,Vertex LotStatus 1,LotStatus starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,LS000002,Atlas LotStatus 2,LotStatus starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,LS000003,Northstar LotStatus 3,LotStatus starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,LS000004,Unity LotStatus 4,LotStatus starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,LS000005,Cedar LotStatus 5,LotStatus starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,LS000006,Unity LotStatus 6,LotStatus starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,LS000007,Northstar LotStatus 7,LotStatus starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,LS000008,Granite LotStatus 8,LotStatus starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,LS000009,Granite LotStatus 9,LotStatus starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,LS000010,Harbor LotStatus 10,LotStatus starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,LS000011,Delta LotStatus 11,LotStatus starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,LS000012,Beacon LotStatus 12,LotStatus starter record 12,1,-1,1,2026-08-24T00:00:00.000

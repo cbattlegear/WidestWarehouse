@@ -1,0 +1,11 @@
+dimensions:
+  - name: Date
+    explicit_key: true
+    business_key: {name: DateKey, type: int}
+    columns:
+      - {name: FullDate, type: date, nullable: false}
+  - name: TimeOfDay
+    explicit_key: true
+    business_key: {name: TimeOfDayKey, type: int}
+    columns:
+      - {name: TimeValue, type: "time(0)", nullable: false}

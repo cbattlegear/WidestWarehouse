@@ -1,0 +1,5 @@
+EmissionScopeKey,EmissionScopeCode,EmissionScopeName,EmissionScopeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,SCOPE1,Scope 1,Direct emissions,1,-1,1,2026-08-24T00:00:00.000
+2,SCOPE2,Scope 2,Purchased energy emissions,1,-1,1,2026-08-24T00:00:00.000
+3,SCOPE3,Scope 3,Value chain emissions,1,-1,1,2026-08-24T00:00:00.000

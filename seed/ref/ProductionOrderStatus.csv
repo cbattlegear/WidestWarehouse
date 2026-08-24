@@ -1,0 +1,14 @@
+ProductionOrderStatusKey,OrderStatusCode,OrderStatusName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,POS000001,Junction ProductionOrderStatus 1,-1,1,2026-08-24T00:00:00.000
+2,POS000002,Quartz ProductionOrderStatus 2,-1,1,2026-08-24T00:00:00.000
+3,POS000003,Vertex ProductionOrderStatus 3,-1,1,2026-08-24T00:00:00.000
+4,POS000004,Summit ProductionOrderStatus 4,-1,1,2026-08-24T00:00:00.000
+5,POS000005,Liberty ProductionOrderStatus 5,-1,1,2026-08-24T00:00:00.000
+6,POS000006,Atlas ProductionOrderStatus 6,-1,1,2026-08-24T00:00:00.000
+7,POS000007,Zenith ProductionOrderStatus 7,-1,1,2026-08-24T00:00:00.000
+8,POS000008,Delta ProductionOrderStatus 8,-1,1,2026-08-24T00:00:00.000
+9,POS000009,Delta ProductionOrderStatus 9,-1,1,2026-08-24T00:00:00.000
+10,POS000010,Granite ProductionOrderStatus 10,-1,1,2026-08-24T00:00:00.000
+11,POS000011,Granite ProductionOrderStatus 11,-1,1,2026-08-24T00:00:00.000
+12,POS000012,Pioneer ProductionOrderStatus 12,-1,1,2026-08-24T00:00:00.000

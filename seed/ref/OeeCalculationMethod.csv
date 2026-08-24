@@ -1,0 +1,14 @@
+OeeCalculationMethodKey,CalculationMethodCode,CalculationMethodName,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,-1,0,1900-01-01T00:00:00.000
+1,OCM000001,Cedar OeeCalculationMethod 1,-1,1,2026-08-24T00:00:00.000
+2,OCM000002,Liberty OeeCalculationMethod 2,-1,1,2026-08-24T00:00:00.000
+3,OCM000003,Titan OeeCalculationMethod 3,-1,1,2026-08-24T00:00:00.000
+4,OCM000004,Summit OeeCalculationMethod 4,-1,1,2026-08-24T00:00:00.000
+5,OCM000005,Beacon OeeCalculationMethod 5,-1,1,2026-08-24T00:00:00.000
+6,OCM000006,Ion OeeCalculationMethod 6,-1,1,2026-08-24T00:00:00.000
+7,OCM000007,Willow OeeCalculationMethod 7,-1,1,2026-08-24T00:00:00.000
+8,OCM000008,Titan OeeCalculationMethod 8,-1,1,2026-08-24T00:00:00.000
+9,OCM000009,Willow OeeCalculationMethod 9,-1,1,2026-08-24T00:00:00.000
+10,OCM000010,Meridian OeeCalculationMethod 10,-1,1,2026-08-24T00:00:00.000
+11,OCM000011,Keystone OeeCalculationMethod 11,-1,1,2026-08-24T00:00:00.000
+12,OCM000012,Atlas OeeCalculationMethod 12,-1,1,2026-08-24T00:00:00.000

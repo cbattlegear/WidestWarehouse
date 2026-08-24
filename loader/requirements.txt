@@ -1,0 +1,6 @@
+apscheduler==3.11.2
+pyodbc==5.3.0
+pandas==2.2.2
+python-dotenv==1.2.2
+structlog==24.1.0
+tenacity==8.3.0

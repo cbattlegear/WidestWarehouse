@@ -1,0 +1,10 @@
+InventoryValuationMethodKey,MethodCode,InventoryValuationMethodName,InventoryValuationMethodDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,IVM000001,Harbor InventoryValuationMethod 1,InventoryValuationMethod starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,IVM000002,Atlas InventoryValuationMethod 2,InventoryValuationMethod starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,IVM000003,Pioneer InventoryValuationMethod 3,InventoryValuationMethod starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,IVM000004,Unity InventoryValuationMethod 4,InventoryValuationMethod starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,IVM000005,Beacon InventoryValuationMethod 5,InventoryValuationMethod starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,IVM000006,Summit InventoryValuationMethod 6,InventoryValuationMethod starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,IVM000007,Granite InventoryValuationMethod 7,InventoryValuationMethod starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,IVM000008,Orion InventoryValuationMethod 8,InventoryValuationMethod starter record 8,1,-1,1,2026-08-24T00:00:00.000

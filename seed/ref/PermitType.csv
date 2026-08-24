@@ -1,0 +1,17 @@
+PermitTypeKey,PermitTypeCode,PermitTypeName,PermitTypeDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,PT000001,Liberty PermitType 1,PermitType starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,PT000002,Unity PermitType 2,PermitType starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,PT000003,Unity PermitType 3,PermitType starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,PT000004,Liberty PermitType 4,PermitType starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,PT000005,Pioneer PermitType 5,PermitType starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,PT000006,Ion PermitType 6,PermitType starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,PT000007,Meridian PermitType 7,PermitType starter record 7,1,-1,1,2026-08-24T00:00:00.000
+8,PT000008,Pioneer PermitType 8,PermitType starter record 8,1,-1,1,2026-08-24T00:00:00.000
+9,PT000009,Cedar PermitType 9,PermitType starter record 9,1,-1,1,2026-08-24T00:00:00.000
+10,PT000010,Unity PermitType 10,PermitType starter record 10,0,-1,1,2026-08-24T00:00:00.000
+11,PT000011,Pioneer PermitType 11,PermitType starter record 11,1,-1,1,2026-08-24T00:00:00.000
+12,PT000012,Orion PermitType 12,PermitType starter record 12,1,-1,1,2026-08-24T00:00:00.000
+13,PT000013,Riverton PermitType 13,PermitType starter record 13,1,-1,1,2026-08-24T00:00:00.000
+14,PT000014,Delta PermitType 14,PermitType starter record 14,1,-1,1,2026-08-24T00:00:00.000
+15,PT000015,Titan PermitType 15,PermitType starter record 15,0,-1,1,2026-08-24T00:00:00.000

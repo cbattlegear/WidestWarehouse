@@ -1,0 +1,9 @@
+ContinentKey,ContinentCode,ContinentName,ContinentDescription,IsActive,SourceSystemKey,BatchId,LoadedAtUtc
+-1,UNKNOWN,Unknown,N/A,0,-1,0,1900-01-01T00:00:00.000
+1,C000001,Delta Continent 1,Continent starter record 1,1,-1,1,2026-08-24T00:00:00.000
+2,C000002,Cedar Continent 2,Continent starter record 2,1,-1,1,2026-08-24T00:00:00.000
+3,C000003,Delta Continent 3,Continent starter record 3,1,-1,1,2026-08-24T00:00:00.000
+4,C000004,Beacon Continent 4,Continent starter record 4,1,-1,1,2026-08-24T00:00:00.000
+5,C000005,Liberty Continent 5,Continent starter record 5,0,-1,1,2026-08-24T00:00:00.000
+6,C000006,Junction Continent 6,Continent starter record 6,1,-1,1,2026-08-24T00:00:00.000
+7,C000007,Evergreen Continent 7,Continent starter record 7,1,-1,1,2026-08-24T00:00:00.000
