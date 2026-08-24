@@ -1,5 +1,8 @@
 # WidestWarehouse
 
+[![CI](https://github.com/cbattlegear/WidestWarehouse/actions/workflows/ci.yml/badge.svg)](https://github.com/cbattlegear/WidestWarehouse/actions/workflows/ci.yml)
+[![Publish loader image](https://github.com/cbattlegear/WidestWarehouse/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/cbattlegear/WidestWarehouse/actions/workflows/docker-publish.yml)
+
 An example SQL Server data warehouse for a large manufacturing company, built as a
 **snowflake schema with 869 tables**.
 
