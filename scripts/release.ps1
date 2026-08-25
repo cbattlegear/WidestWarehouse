@@ -97,16 +97,33 @@ try {
     }
 
     Write-Host '==> Stamp version and changelog' -ForegroundColor Cyan
-    Invoke-ReleaseCli @('set', $target) | Write-Host
+    $alreadyStamped = $false
+    if ($current -eq $target) {
+        # Either the very first release, whose changelog section was written by hand, or a
+        # re-run after a partial release. Re-stamping would fail on an empty Unreleased
+        # section, so verify the existing state instead of rewriting it.
+        try {
+            Invoke-ReleaseCli @('notes', '--version', $target) | Out-Null
+            $alreadyStamped = $true
+            Write-Host "    $target is already stamped and documented; tagging only."
+        } catch {
+            throw "version.py is already at $target but CHANGELOG.md has no notes for it. Add them, or pick a new version."
+        }
+    }
+    if (-not $alreadyStamped) {
+        Invoke-ReleaseCli @('set', $target) | Write-Host
+    }
 
     # Prove the tag we are about to create will survive the workflow's guard.
     Invoke-ReleaseCli @('check', '--tag', $tag) | Write-Host
 
     Write-Host '==> Commit and tag' -ForegroundColor Cyan
-    Invoke-Checked -Exe 'git' -Arguments @('add', 'loader/app/version.py', 'CHANGELOG.md') `
-        -ErrorMessage 'git add failed.' | Out-Null
-    Invoke-Checked -Exe 'git' -Arguments @('commit', '-m', "Release $tag") `
-        -ErrorMessage 'git commit failed.' | Out-Null
+    if (-not $alreadyStamped) {
+        Invoke-Checked -Exe 'git' -Arguments @('add', 'loader/app/version.py', 'CHANGELOG.md') `
+            -ErrorMessage 'git add failed.' | Out-Null
+        Invoke-Checked -Exe 'git' -Arguments @('commit', '-m', "Release $tag") `
+            -ErrorMessage 'git commit failed.' | Out-Null
+    }
     Invoke-Checked -Exe 'git' -Arguments @('tag', '-a', $tag, '-m', "Release $tag") `
         -ErrorMessage 'git tag failed.' | Out-Null
 
