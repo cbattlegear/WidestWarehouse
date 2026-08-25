@@ -135,13 +135,16 @@ jobs:
           VERSION: ${{ needs.build-and-push.outputs.version }}
           DIGEST: ${{ needs.build-and-push.outputs.digest }}
         run: |
+          # github.repository preserves its original casing, but Docker references must be
+          # lowercase, so the pull command in the notes has to be normalised by hand.
+          image="$(echo "${REGISTRY}/${IMAGE_NAME}" | tr '[:upper:]' '[:lower:]')"
           {
             python -m tools.release.cli notes --version "$VERSION"
             echo
             echo "## Container image"
             echo
             echo '```'
-            echo "docker pull ${REGISTRY}/${IMAGE_NAME}:${VERSION}"
+            echo "docker pull ${image}:${VERSION}"
             echo '```'
             echo
             echo "Digest: \`${DIGEST}\`"
