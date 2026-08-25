@@ -194,7 +194,7 @@ to `main` and on `v*` tags, tagged with the branch, the commit SHA, the semver v
 | `pipeline`     | `*/15 * * * *`   | `generate_batch` → `load_staging` → `merge_dimensions` → `load_facts`, all in one transaction |
 | `data_quality` | `0 * * * *`      | Row counts and orphan-FK scans; results to `etl.DqResult` |
 | `housekeeping` | `0 2 * * *`      | Purges old landing files and applies retention |
-| `analytics`    | `*/30 * * * *`   | Runs randomized read-only BI queries and logs their timings |
+| `analytics`    | `*/5 * * * *`    | Runs randomized read-only BI queries and logs their timings |
 
 Each cycle:
 

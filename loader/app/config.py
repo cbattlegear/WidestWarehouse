@@ -57,7 +57,7 @@ class LoaderConfig:
     pipeline_cron: str = "*/15 * * * *"
     dq_cron: str = "0 * * * *"
     housekeeping_cron: str = "0 2 * * *"
-    analytics_cron: str = "*/30 * * * *"
+    analytics_cron: str = "*/5 * * * *"
     analytics_queries_per_run: int = 10
     analytics_query_timeout_seconds: int = 60
     analytics_seed: int | None = None
@@ -97,7 +97,7 @@ class LoaderConfig:
             pipeline_cron=source.get("PIPELINE_CRON", source.get("BATCH_PIPELINE_CRON", "*/15 * * * *")),
             dq_cron=source.get("DQ_CRON", "0 * * * *"),
             housekeeping_cron=source.get("HOUSEKEEPING_CRON", "0 2 * * *"),
-            analytics_cron=source.get("ANALYTICS_CRON", "*/30 * * * *"),
+            analytics_cron=source.get("ANALYTICS_CRON", "*/5 * * * *"),
             analytics_queries_per_run=_int(source, "ANALYTICS_QUERIES_PER_RUN", 10),
             analytics_query_timeout_seconds=_int(source, "ANALYTICS_QUERY_TIMEOUT_SECONDS", 60),
             analytics_seed=_optional_int(source, "ANALYTICS_SEED"),
