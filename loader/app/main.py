@@ -19,7 +19,7 @@ from .etl_control import (
     process_lock,
     record_step,
 )
-from .jobs import data_quality, generate_batch, housekeeping, load_facts, load_staging, merge_dimensions
+from .jobs import analytics, data_quality, generate_batch, housekeeping, load_facts, load_staging, merge_dimensions
 from .logging_config import configure_logging
 
 MISFIRE_GRACE_SECONDS = 3600
@@ -107,6 +107,34 @@ def run_single(config: LoaderConfig, job_name: str, job) -> None:
         logger.exception("job_failed", batch_id=batch_id, job_name=job_name, error=str(exc))
 
 
+def run_analytics(config: LoaderConfig) -> None:
+    """Read-only workload. It deliberately skips the batch-run bookkeeping and the
+    application lock so a long analytical query can never block the load pipeline."""
+    logger = structlog.get_logger("loader.analytics")
+    started = time.perf_counter()
+    conn = None
+    try:
+        conn = db.connect(config)
+        ctx = BatchContext(
+            config,
+            -1,
+            "analytics",
+            Path(config.landing_dir),
+            logger.bind(job_name="analytics"),
+        )
+        analytics.run(ctx, conn)
+        # Nothing was written, but SELECTs still open a transaction under autocommit=False.
+        conn.rollback()
+        logger.info("analytics_finished", duration_seconds=round(time.perf_counter() - started, 3))
+    except MissingWarehouseSchema as exc:
+        logger.error("warehouse_schema_missing", job_name="analytics", error=str(exc))
+    except Exception as exc:
+        logger.exception("analytics_failed", error=str(exc))
+    finally:
+        if conn is not None:
+            conn.close()
+
+
 def build_scheduler(config: LoaderConfig) -> BlockingScheduler:
     # A cycle can outlast its trigger interval; without grace APScheduler silently skips runs.
     scheduler = BlockingScheduler(timezone="UTC")
@@ -135,6 +163,16 @@ def build_scheduler(config: LoaderConfig) -> BlockingScheduler:
         cron_trigger(config.housekeeping_cron),
         args=[config, "housekeeping", housekeeping.run],
         id="housekeeping",
+        max_instances=1,
+        coalesce=True,
+        misfire_grace_time=MISFIRE_GRACE_SECONDS,
+        replace_existing=True,
+    )
+    scheduler.add_job(
+        run_analytics,
+        cron_trigger(config.analytics_cron),
+        args=[config],
+        id="analytics",
         max_instances=1,
         coalesce=True,
         misfire_grace_time=MISFIRE_GRACE_SECONDS,

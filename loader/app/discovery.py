@@ -134,7 +134,12 @@ def table_load_config(conn) -> dict[tuple[str, str], dict[str, Any]]:
     return result
 
 
-def fact_foreign_keys(conn, fact_table: str) -> list[ForeignKeyInfo]:
+def outgoing_foreign_keys(conn, schema: str, table: str) -> list[ForeignKeyInfo]:
+    """Every FK from `schema.table` into a dim or ref table.
+
+    Walking these repeatedly is what lets a caller climb a snowflake branch from a
+    fact all the way up to its top-level ancestor.
+    """
     rows = db.query(
         conn,
         """
@@ -147,10 +152,10 @@ def fact_foreign_keys(conn, fact_table: str) -> list[ForeignKeyInfo]:
         JOIN sys.tables pt ON pt.object_id = fkc.referenced_object_id
         JOIN sys.schemas ps ON ps.schema_id = pt.schema_id
         JOIN sys.columns pc ON pc.object_id = pt.object_id AND pc.column_id = fkc.referenced_column_id
-        WHERE cs.name = 'fact' AND ct.name = ? AND ps.name IN ('dim', 'ref')
+        WHERE cs.name = ? AND ct.name = ? AND ps.name IN ('dim', 'ref')
         ORDER BY cc.name
         """,
-        [fact_table],
+        [schema, table],
     )
     return [
         ForeignKeyInfo(
@@ -163,3 +168,7 @@ def fact_foreign_keys(conn, fact_table: str) -> list[ForeignKeyInfo]:
         )
         for r in rows
     ]
+
+
+def fact_foreign_keys(conn, fact_table: str) -> list[ForeignKeyInfo]:
+    return outgoing_foreign_keys(conn, "fact", fact_table)

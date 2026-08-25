@@ -31,7 +31,7 @@ def test_batch_ids_are_unique(monkeypatch: pytest.MonkeyPatch) -> None:
 def test_scheduler_wiring(tmp_path: Path) -> None:
     scheduler = build_scheduler(cfg(tmp_path))
     jobs = {job.id: job for job in scheduler.get_jobs()}
-    assert set(jobs) == {"pipeline", "data_quality", "housekeeping"}
+    assert set(jobs) == {"pipeline", "data_quality", "housekeeping", "analytics"}
     assert all(job.max_instances == 1 and job.coalesce for job in jobs.values())
 
 

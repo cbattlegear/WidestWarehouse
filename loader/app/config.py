@@ -35,6 +35,16 @@ def _int(env: Mapping[str, str], name: str, default: int, minimum: int = 1) -> i
     return value
 
 
+def _optional_int(env: Mapping[str, str], name: str) -> int | None:
+    raw = env.get(name)
+    if raw is None or raw == "":
+        return None
+    try:
+        return int(raw)
+    except ValueError as exc:
+        raise ConfigError(f"{name} must be an integer") from exc
+
+
 @dataclass(frozen=True)
 class LoaderConfig:
     server: str
@@ -47,6 +57,10 @@ class LoaderConfig:
     pipeline_cron: str = "*/15 * * * *"
     dq_cron: str = "0 * * * *"
     housekeeping_cron: str = "0 2 * * *"
+    analytics_cron: str = "*/30 * * * *"
+    analytics_queries_per_run: int = 10
+    analytics_query_timeout_seconds: int = 60
+    analytics_seed: int | None = None
     batch_rows_per_cycle: int = 1000
     landing_dir: Path = Path("/data/landing")
     run_on_startup: bool = True
@@ -83,6 +97,10 @@ class LoaderConfig:
             pipeline_cron=source.get("PIPELINE_CRON", source.get("BATCH_PIPELINE_CRON", "*/15 * * * *")),
             dq_cron=source.get("DQ_CRON", "0 * * * *"),
             housekeeping_cron=source.get("HOUSEKEEPING_CRON", "0 2 * * *"),
+            analytics_cron=source.get("ANALYTICS_CRON", "*/30 * * * *"),
+            analytics_queries_per_run=_int(source, "ANALYTICS_QUERIES_PER_RUN", 10),
+            analytics_query_timeout_seconds=_int(source, "ANALYTICS_QUERY_TIMEOUT_SECONDS", 60),
+            analytics_seed=_optional_int(source, "ANALYTICS_SEED"),
             batch_rows_per_cycle=_int(source, "BATCH_ROWS_PER_CYCLE", 1000),
             landing_dir=Path(source.get("LANDING_DIR", "/data/landing")),
             run_on_startup=_bool(source.get("RUN_ON_STARTUP"), True),

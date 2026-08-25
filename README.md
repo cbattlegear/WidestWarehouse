@@ -194,6 +194,7 @@ to `main` and on `v*` tags, tagged with the branch, the commit SHA, the semver v
 | `pipeline`     | `*/15 * * * *`   | `generate_batch` → `load_staging` → `merge_dimensions` → `load_facts`, all in one transaction |
 | `data_quality` | `0 * * * *`      | Row counts and orphan-FK scans; results to `etl.DqResult` |
 | `housekeeping` | `0 2 * * *`      | Purges old landing files and applies retention |
+| `analytics`    | `*/30 * * * *`   | Runs randomized read-only BI queries and logs their timings |
 
 Each cycle:
 
@@ -212,6 +213,39 @@ reloads its own rows. Failures roll back and land in `etl.LoadError`.
 
 Configuration lives in `loader/.env` (see `.env.example`); `RUN_ON_STARTUP=true` triggers an
 immediate cycle, and the container `HEALTHCHECK` verifies database connectivity.
+
+### Randomized analytics workload
+
+The `analytics` job simulates BI users browsing the warehouse. It reads the SQL Server
+catalog, picks a random fact table, walks 1–3 random foreign-key branches up to four levels
+into the snowflake, and assembles one of three query shapes:
+
+| Shape              | Looks like |
+|--------------------|------------|
+| `aggregate_rollup` | Grouped `SUM`/`AVG`/`MIN`/`MAX` over the fact measures, sometimes with a `HAVING` |
+| `top_n_measure`    | The same rollup ordered by a measure, `TOP (10\|25\|50\|100)` |
+| `distinct_count`   | Row counts plus `COUNT(DISTINCT ...)` per attribute combination |
+
+Roughly half the queries also get a date-key `BETWEEN` filter anchored on the server's
+current year, so the window always overlaps freshly loaded data.
+
+The job is deliberately different from the others:
+
+- **Read-only by construction** — no tables are written, no result sets are persisted, and
+  the connection is rolled back when the run ends.
+- **Lock-free** — it does not take the pipeline application lock or write `etl.BatchRun`, so a
+  slow analytical query can never block or delay a load cycle.
+- **Failure-isolated** — one bad query is logged with its full SQL and the run continues.
+
+Every identifier comes from the catalog, so the generated SQL always matches the deployed
+schema. Each query logs an `analytics_query_completed` event with its shape, fact table,
+snowflake depth, `duration_ms`, and `row_count`; the run ends with an `analytics_completed`
+summary. Set `ANALYTICS_SEED` to an integer to replay the exact same query set — useful when
+you want a repeatable benchmark rather than a random one.
+
+```powershell
+docker compose logs -f loader | Select-String analytics_query_completed
+```
 
 ---
 
