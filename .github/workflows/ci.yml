@@ -31,6 +31,11 @@ jobs:
       - name: Run tests
         run: python -m pytest tools/tests loader/tests -q
 
+      # The version in the image must always be documented. Catching this on main is far
+      # cheaper than discovering it when a release tag is rejected.
+      - name: Assert the current version has changelog notes
+        run: python -m tools.release.cli notes --version "$(python -m tools.release.cli current)" > /dev/null
+
       # sql/ is committed generated output. If it drifts from model/, the repository is
       # lying about its own schema.
       - name: Assert sql/ matches the model

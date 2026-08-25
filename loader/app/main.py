@@ -21,6 +21,7 @@ from .etl_control import (
 )
 from .jobs import analytics, data_quality, generate_batch, housekeeping, load_facts, load_staging, merge_dimensions
 from .logging_config import configure_logging
+from .version import __version__, build_revision
 
 MISFIRE_GRACE_SECONDS = 3600
 
@@ -188,6 +189,9 @@ def main() -> int:
         Path(config.landing_dir).mkdir(parents=True, exist_ok=True)
         scheduler = build_scheduler(config)
         log = structlog.get_logger("loader.main")
+        # First line in the container log, so a support question about behaviour can
+        # always be tied back to an exact image.
+        log.info("loader_starting", version=__version__, revision=build_revision())
 
         def stop(signum, _frame):
             log.info("shutdown_signal", signal=signum)

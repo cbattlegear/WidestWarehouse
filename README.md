@@ -106,11 +106,13 @@ model/                    YAML metadata — the source of truth
   subject_areas/*.yaml    14 subject areas
 tools/generator/          model loader, validator, DDL/index/view emitters, CLI
 tools/seeder/             deterministic starter-data emitter (CSV + BULK INSERT)
+tools/release/            semver + changelog helpers used by CI and release.ps1
 tools/tests/              generator unit tests
 sql/                      GENERATED. build_all.sql + 00_database .. 95_seed
 seed/                     GENERATED. starter-data CSVs
 loader/                   scheduled batch-load container (Python + APScheduler)
-scripts/                  rebuild_model.ps1, deploy.ps1, verify_schema.sql, count_tables.sql
+scripts/                  rebuild_model.ps1, deploy.ps1, release.ps1, verify_schema.sql
+CHANGELOG.md              what changed in each released version
 ```
 
 ---
@@ -169,18 +171,75 @@ Compose runs **one service: the loader**. It connects out to the SQL Server you 
 step 1.
 
 To run the published image instead of building locally, set `LOADER_IMAGE` before
-`docker compose up`:
+`docker compose up`. Pin a major version so you pick up fixes without ever being upgraded
+across a breaking change:
 
 ```powershell
-$env:LOADER_IMAGE = 'ghcr.io/cbattlegear/widestwarehouse-loader:latest'
+$env:LOADER_IMAGE = 'ghcr.io/cbattlegear/widestwarehouse-loader:1'
 docker compose pull
 docker compose up -d --no-build
 ```
 
-Images are built and pushed to GHCR by
-[`.github/workflows/docker-publish.yml`](.github/workflows/docker-publish.yml) on every push
-to `main` and on `v*` tags, tagged with the branch, the commit SHA, the semver version, and
-`latest`. Pull requests build the image to validate the Dockerfile but never publish.
+---
+
+## Releases and image tags
+
+The loader container is versioned with [Semantic Versioning](https://semver.org/), and
+`loader/app/version.py` is the single source of truth. `CHANGELOG.md` records what changed
+in each version.
+
+Because the loader discovers the warehouse shape from the SQL Server catalog at runtime, a
+schema change is only *breaking* when it changes what the loader requires of a database:
+
+| Bump      | Means |
+|-----------|-------|
+| **MAJOR** | Needs a newer warehouse schema, or drops/renames an environment variable |
+| **MINOR** | New jobs, new configuration with a safe default, backwards-compatible additions |
+| **PATCH** | Bug fixes, dependency bumps, docs |
+
+### Published tags
+
+| Tag             | Points at | Use it when |
+|-----------------|-----------|-------------|
+| `1.4.2`         | One exact release, forever | You want reproducible deployments |
+| `1.4`           | Latest patch of 1.4 | You want bug fixes only |
+| `1`             | Latest 1.x release | **Recommended** — fixes and features, never a breaking change |
+| `latest`        | Newest stable release | Demos and quick starts |
+| `edge`          | Newest `main` commit | You want unreleased changes |
+| `sha-<commit>`  | One exact build | Debugging or pinning to a commit |
+
+`latest` only ever moves to a stable, tagged release — never to a `main` push and never to a
+pre-release such as `v2.0.0-rc.1`. Unreleased work lives on `edge`.
+
+Every image carries `org.opencontainers.image.version` and `.revision` labels, and the
+loader logs `loader_starting` with its version and the commit it was built from, so a
+running container can always be traced back to a source revision:
+
+```powershell
+docker inspect ghcr.io/cbattlegear/widestwarehouse-loader:1 --format '{{json .Config.Labels}}'
+```
+
+### Cutting a release
+
+Describe the change under `## [Unreleased]` in `CHANGELOG.md` as you go, then:
+
+```powershell
+.\scripts\release.ps1 -Bump minor -Push
+```
+
+That bumps `version.py`, dates the Unreleased section, runs the tests, commits, creates an
+annotated `v*` tag, and pushes. Pushing the tag is what triggers a release — the workflow
+then verifies the tag matches `version.py` and the changelog **before building anything**,
+builds and pushes the image, and creates the GitHub Release with notes taken from
+`CHANGELOG.md`.
+
+Drop `-Push` to review the commit and tag locally first. Pre-releases work too
+(`-Version 2.0.0-rc.1`); they are marked as pre-releases on GitHub and deliberately do not
+move `latest`, `1`, or `1.4`.
+
+Images are built by
+[`.github/workflows/docker-publish.yml`](.github/workflows/docker-publish.yml). Pull requests
+build the image to validate the Dockerfile but never publish.
 
 ---
 
@@ -256,6 +315,7 @@ pip install -r tools\requirements.txt
 python -m tools.generator.cli validate     # model validation only
 python -m tools.generator.cli stats        # table budget by schema
 python -m tools.generator.cli emit         # regenerate sql\
+python -m tools.release.cli current        # loader version
 python -m pytest tools\tests loader\tests -q
 ```
 

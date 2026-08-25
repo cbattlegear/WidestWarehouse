@@ -4,12 +4,17 @@ on:
   push:
     branches: [main]
     tags: ['v*']
+    # Path filters are deliberately not evaluated for tag pushes by GitHub, so a `v*`
+    # tag always triggers a release even if the tagged commit touched nothing under
+    # loader/. Do not "fix" this by adding a branches-only filter.
     paths:
       - 'loader/**'
+      - 'CHANGELOG.md'
       - '.github/workflows/docker-publish.yml'
   pull_request:
     paths:
       - 'loader/**'
+      - 'CHANGELOG.md'
       - '.github/workflows/docker-publish.yml'
   workflow_dispatch:
 
@@ -18,13 +23,37 @@ env:
   IMAGE_NAME: ${{ github.repository }}-loader
 
 jobs:
+  # A tag that disagrees with app/version.py would publish an image that lies about
+  # itself, so the tag is validated before anything is built.
+  guard:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Verify tag matches version.py and CHANGELOG.md
+        run: python -m tools.release.cli check --tag "${{ github.ref }}"
+
   build-and-push:
+    needs: [guard]
+    # A skipped `needs` job would skip this one too, so branch and PR builds have to
+    # explicitly accept the guard being skipped.
+    if: always() && (needs.guard.result == 'success' || needs.guard.result == 'skipped')
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
       attestations: write
       id-token: write
+    outputs:
+      digest: ${{ steps.build.outputs.digest }}
+      version: ${{ steps.meta.outputs.version }}
 
     steps:
       - name: Check out
@@ -47,13 +76,16 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          # `latest` is managed explicitly below so it only ever points at a stable release.
+          flavor: latest=false
           tags: |
-            type=ref,event=branch
-            type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/tags/v') && !contains(github.ref, '-') }}
+            type=raw,value=edge,enable={{is_default_branch}}
+            type=ref,event=pr
             type=sha,format=long
-            type=raw,value=latest,enable={{is_default_branch}}
           labels: |
             org.opencontainers.image.title=WidestWarehouse loader
             org.opencontainers.image.description=Scheduled batch loader for the WidestWarehouse SQL Server data warehouse
@@ -69,6 +101,9 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            LOADER_VERSION=${{ steps.meta.outputs.version }}
+            LOADER_REVISION=${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -79,3 +114,48 @@ jobs:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           subject-digest: ${{ steps.build.outputs.digest }}
           push-to-registry: true
+
+  release:
+    needs: [build-and-push]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Build release notes
+        env:
+          VERSION: ${{ needs.build-and-push.outputs.version }}
+          DIGEST: ${{ needs.build-and-push.outputs.digest }}
+        run: |
+          {
+            python -m tools.release.cli notes --version "$VERSION"
+            echo
+            echo "## Container image"
+            echo
+            echo '```'
+            echo "docker pull ${REGISTRY}/${IMAGE_NAME}:${VERSION}"
+            echo '```'
+            echo
+            echo "Digest: \`${DIGEST}\`"
+          } > release-notes.md
+          cat release-notes.md
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ needs.build-and-push.outputs.version }}
+        run: |
+          prerelease=""
+          if [[ "$VERSION" == *-* ]]; then prerelease="--prerelease"; fi
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "v${VERSION}" \
+            --notes-file release-notes.md \
+            $prerelease
