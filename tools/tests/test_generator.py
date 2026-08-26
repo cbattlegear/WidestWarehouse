@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import filecmp
+import re
 import shutil
 from pathlib import Path
 
@@ -83,3 +84,30 @@ def test_emit_is_deterministic(tmp_path: Path):
 
 def test_fixture_model_validates():
     assert validate_model(load_model(FIXTURE_MODEL)) == []
+
+
+def test_emit_preserves_static_folders_and_builds_them_in_order(tmp_path: Path):
+    """Hand-written SQL must survive `emit` and still make it into build_all.sql.
+
+    This is the guarantee that makes sql/75_procedures/ safe to hand-author. If emit ever
+    starts wiping static folders, six stored procedures disappear silently.
+    """
+    out = tmp_path / "sql"
+    static = out / "75_procedures"
+    static.mkdir(parents=True)
+    handwritten = static / "10_usp_Example.sql"
+    handwritten.write_text("-- hand written\n", encoding="utf-8")
+
+    main(["--model", str(FIXTURE_MODEL), "emit", "--out", str(out)])
+
+    assert handwritten.exists(), "emit deleted hand-written SQL"
+    assert handwritten.read_text(encoding="utf-8") == "-- hand written\n"
+
+    build = (out / "build_all.sql").read_text(encoding="utf-8")
+    assert ":r ./75_procedures/10_usp_Example.sql" in build
+
+    # Every include must appear in numeric folder order, with 75 slotted in among them
+    # rather than appended at the end.
+    included = re.findall(r":r \./(\d+)_", build)
+    assert "75" in included
+    assert included == sorted(included)

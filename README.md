@@ -94,6 +94,10 @@ the next generator run. Schema changes are made in `model/*.yaml` and re-emitted
 .\scripts\rebuild_model.ps1
 ```
 
+The **one exception** is `sql/75_procedures/`, which is hand-written and never touched by the
+generator — see [Fixed stored procedures](#fixed-stored-procedures). Adding a file there does
+require re-running `emit` so `build_all.sql` picks it up, and CI fails if you forget.
+
 ---
 
 ## Repository layout
@@ -108,7 +112,8 @@ tools/generator/          model loader, validator, DDL/index/view emitters, CLI
 tools/seeder/             deterministic starter-data emitter (CSV + BULK INSERT)
 tools/release/            semver + changelog helpers used by CI and release.ps1
 tools/tests/              generator unit tests
-sql/                      GENERATED. build_all.sql + 00_database .. 95_seed
+sql/                      GENERATED, except 75_procedures/. build_all.sql + 00_database .. 95_seed
+sql/75_procedures/        hand-written reporting procedures (the fixed analytics workload)
 seed/                     GENERATED. starter-data CSVs
 loader/                   scheduled batch-load container (Python + APScheduler)
 scripts/                  rebuild_model.ps1, deploy.ps1, release.ps1, verify_schema.sql
@@ -253,7 +258,7 @@ build the image to validate the Dockerfile but never publish.
 | `pipeline`     | `*/15 * * * *`   | `generate_batch` → `load_staging` → `merge_dimensions` → `load_facts`, all in one transaction |
 | `data_quality` | `0 * * * *`      | Row counts and orphan-FK scans; results to `etl.DqResult` |
 | `housekeeping` | `0 2 * * *`      | Purges old landing files and applies retention |
-| `analytics`    | `*/5 * * * *`    | Runs randomized read-only BI queries and logs their timings |
+| `analytics`    | `*/5 * * * *`    | Runs the fixed stored procedures, then randomized read-only BI queries, logging every timing |
 
 Each cycle:
 
@@ -273,11 +278,51 @@ reloads its own rows. Failures roll back and land in `etl.LoadError`.
 Configuration lives in `loader/.env` (see `.env.example`); `RUN_ON_STARTUP=true` triggers an
 immediate cycle, and the container `HEALTHCHECK` verifies database connectivity.
 
-### Randomized analytics workload
+### Analytics workload
 
-The `analytics` job simulates BI users browsing the warehouse. It reads the SQL Server
-catalog, picks a random fact table, walks 1–3 random foreign-key branches up to four levels
-into the snowflake, and assembles one of three query shapes:
+The `analytics` job simulates BI users browsing the warehouse. It has two halves that run
+back to back on every cycle: a **fixed** set of stored procedures, then a **randomized**
+set of ad-hoc queries.
+
+#### Fixed stored procedures
+
+Randomized queries are different every run, so their timings cannot be compared to each
+other. The procedures in the `rpt` schema always execute the same statements over the same
+rolling windows, which makes them a stable baseline — useful for spotting a regression
+after an index, statistics, or hardware change.
+
+| Procedure | What it exercises |
+|-----------|-------------------|
+| `rpt.usp_OeePerformanceByPlant` | OEE snapshot facts rolled up by plant and month |
+| `rpt.usp_QualityResultMixByProductFamily` | Product → Subfamily → Family, with a windowed share-of-total |
+| `rpt.usp_MachineDowntimeRanking` | `TOP` + `DENSE_RANK` over machine state events — a sort-heavy plan |
+| `rpt.usp_SafetyIncidentTrend` | Incident counts and lost workdays by plant, month, and severity |
+| `rpt.usp_ManufacturingVarianceByProductLine` | The deep one: five joins up a single product branch |
+| `rpt.usp_ProductionThroughputByShift` | Confirmations by shift and work center |
+
+Each procedure logs an `analytics_procedure_completed` event with its `duration_ms`,
+`row_count`, and `result_sets`.
+
+**Adding your own** is just dropping a `.sql` file into `sql/75_procedures/` and re-running
+`emit` to refresh `build_all.sql`. That folder is the one place under `sql/` that is *not*
+generated — the generator never rewrites or deletes it — but it is still folded into the
+build in numeric order. Two rules:
+
+- **Take no parameters.** The loader discovers procedures by name and executes them with a
+  bare `EXEC`. SQL Server does not report T-SQL default values (`sys.parameters.has_default_value`
+  is only populated for CLR procedures), so a procedure that takes any parameter is skipped
+  rather than guessed at.
+- **Don't write to the database.** The whole job runs read-only and rolls back.
+
+Set `ANALYTICS_RUN_PROCEDURES=false` to skip this half, or `ANALYTICS_PROCEDURE_SCHEMA` to
+point it at a different schema. If the schema doesn't exist the job logs a warning and
+carries on, so an older deployment won't break.
+
+#### Randomized queries
+
+The second half reads the SQL Server catalog, picks a random fact table, walks 1–3 random
+foreign-key branches up to four levels into the snowflake, and assembles one of three query
+shapes:
 
 | Shape              | Looks like |
 |--------------------|------------|
@@ -294,7 +339,7 @@ The job is deliberately different from the others:
   the connection is rolled back when the run ends.
 - **Lock-free** — it does not take the pipeline application lock or write `etl.BatchRun`, so a
   slow analytical query can never block or delay a load cycle.
-- **Failure-isolated** — one bad query is logged with its full SQL and the run continues.
+- **Failure-isolated** — one bad query or procedure is logged and the run continues.
 
 Every identifier comes from the catalog, so the generated SQL always matches the deployed
 schema. Each query logs an `analytics_query_completed` event with its shape, fact table,
@@ -303,7 +348,7 @@ summary. Set `ANALYTICS_SEED` to an integer to replay the exact same query set �
 you want a repeatable benchmark rather than a random one.
 
 ```powershell
-docker compose logs -f loader | Select-String analytics_query_completed
+docker compose logs -f loader | Select-String "analytics_procedure_completed|analytics_query_completed"
 ```
 
 ---

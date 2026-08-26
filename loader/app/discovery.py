@@ -172,3 +172,31 @@ def outgoing_foreign_keys(conn, schema: str, table: str) -> list[ForeignKeyInfo]
 
 def fact_foreign_keys(conn, fact_table: str) -> list[ForeignKeyInfo]:
     return outgoing_foreign_keys(conn, "fact", fact_table)
+
+
+def list_procedures(conn, schema: str) -> list[str]:
+    """Parameterless stored procedures in `schema`, in name order.
+
+    Procedures that take parameters are excluded rather than guessed at: SQL Server does
+    not expose T-SQL default values in sys.parameters (has_default_value is only populated
+    for CLR procedures), so there is no reliable way to tell whether calling one with no
+    arguments would succeed.
+    """
+    return [
+        r["ProcedureName"]
+        for r in db.query(
+            conn,
+            """
+            SELECT p.name AS ProcedureName
+            FROM sys.procedures p
+            JOIN sys.schemas s ON s.schema_id = p.schema_id
+            WHERE s.name = ?
+              AND NOT EXISTS (
+                  SELECT 1 FROM sys.parameters prm
+                  WHERE prm.object_id = p.object_id AND prm.is_output = 0
+              )
+            ORDER BY p.name
+            """,
+            [schema],
+        )
+    ]

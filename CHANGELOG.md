@@ -17,6 +17,23 @@ shape from the SQL Server catalog at runtime rather than hardcoding it, a schema
 
 ## [Unreleased]
 
+### Added
+
+- **Fixed stored-procedure workload** — six reporting procedures in the new `rpt` schema
+  (`sql/75_procedures/`) that the `analytics` job runs at the start of every cycle. Because
+  they execute identical statements over identical rolling windows on each run, their
+  timings are comparable between cycles, which the randomized queries are not.
+- `ANALYTICS_RUN_PROCEDURES` (default `true`) and `ANALYTICS_PROCEDURE_SCHEMA` (default
+  `rpt`) to control the new half of the workload.
+- `sql/75_procedures/` is the first **static** SQL folder: the generator never rewrites or
+  deletes it, but still includes it in `build_all.sql` in numeric order, so hand-written SQL
+  and generated SQL can coexist.
+
+### Changed
+
+- The `analytics` job no longer exits early when the `fact` schema is missing — the
+  procedures still run. A missing reporting schema logs a warning rather than failing.
+
 ## [1.0.0] - 2026-08-25
 
 First tagged release. The warehouse, seed data, loader, and analytics workload are all

@@ -61,6 +61,8 @@ class LoaderConfig:
     analytics_queries_per_run: int = 10
     analytics_query_timeout_seconds: int = 60
     analytics_seed: int | None = None
+    analytics_run_procedures: bool = True
+    analytics_procedure_schema: str = "rpt"
     batch_rows_per_cycle: int = 1000
     landing_dir: Path = Path("/data/landing")
     run_on_startup: bool = True
@@ -101,6 +103,8 @@ class LoaderConfig:
             analytics_queries_per_run=_int(source, "ANALYTICS_QUERIES_PER_RUN", 10),
             analytics_query_timeout_seconds=_int(source, "ANALYTICS_QUERY_TIMEOUT_SECONDS", 60),
             analytics_seed=_optional_int(source, "ANALYTICS_SEED"),
+            analytics_run_procedures=_bool(source.get("ANALYTICS_RUN_PROCEDURES"), True),
+            analytics_procedure_schema=source.get("ANALYTICS_PROCEDURE_SCHEMA", "rpt"),
             batch_rows_per_cycle=_int(source, "BATCH_ROWS_PER_CYCLE", 1000),
             landing_dir=Path(source.get("LANDING_DIR", "/data/landing")),
             run_on_startup=_bool(source.get("RUN_ON_STARTUP"), True),

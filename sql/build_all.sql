@@ -114,6 +114,13 @@
 :r ./70_views/22_quality.sql
 :r ./70_views/23_sales_fulfillment.sql
 :r ./70_views/24_warranty_service.sql
+:r ./75_procedures/00_schema.sql
+:r ./75_procedures/10_usp_OeePerformanceByPlant.sql
+:r ./75_procedures/20_usp_QualityResultMixByProductFamily.sql
+:r ./75_procedures/30_usp_MachineDowntimeRanking.sql
+:r ./75_procedures/40_usp_SafetyIncidentTrend.sql
+:r ./75_procedures/50_usp_ManufacturingVarianceByProductLine.sql
+:r ./75_procedures/60_usp_ProductionThroughputByShift.sql
 :r ./80_etl_control/10_etl.sql
 :r ./90_staging/10_conformed.sql
 :r ./90_staging/11_ehs_compliance.sql

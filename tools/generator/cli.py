@@ -4,7 +4,7 @@ import argparse
 from pathlib import Path
 
 from .constraint_emitter import emit_constraints
-from .ddl_emitter import FOLDERS, emit_tables, ensure_output_dirs
+from .ddl_emitter import BUILD_FOLDERS, emit_tables, ensure_output_dirs
 from .index_emitter import emit_indexes
 from .model_loader import load_model
 from .staging_emitter import emit_staging
@@ -25,7 +25,7 @@ def _write_build_all(out: Path) -> None:
         ":ON ERROR EXIT",
         "",
     ]
-    for folder in FOLDERS:
+    for folder in BUILD_FOLDERS:
         for file in sorted((out / folder).glob("*.sql"), key=lambda p: p.name.lower()):
             rel = file.relative_to(out)
             lines.append(f":r ./{rel.as_posix()}")

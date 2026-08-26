@@ -1,8 +1,9 @@
-"""Randomized analytics workload.
+"""Analytics workload: a fixed set of stored procedures plus randomized ad-hoc queries.
 
-Generates plausible BI-style queries against whatever star/snowflake shape is actually
-deployed, runs them, and logs how long each took. Nothing is written to the database:
-this job is read-only by construction.
+The procedures in the reporting schema always run the same statements, which makes their
+timings comparable between cycles. The randomized half generates plausible BI-style
+queries against whatever star/snowflake shape is actually deployed. Neither writes to the
+database: this job is read-only by construction.
 
 Every identifier comes from the SQL Server catalog, so the generated SQL is always
 valid for the deployed schema and never contains caller-supplied text.
@@ -214,29 +215,95 @@ def build_random_query(cache: SchemaCache, rng: random.Random, fact_tables: list
     return GeneratedQuery(shape=shape, fact_table=fact_table, sql=sql, depth=max_depth_used)
 
 
+def run_procedures(ctx: BatchContext, conn) -> dict[str, int]:
+    """Run every parameterless procedure in the reporting schema, in name order.
+
+    This is the fixed half of the workload. The randomized queries differ every cycle, so
+    their timings cannot be compared run to run; these always execute the same statements
+    against the same windows, which makes them a usable baseline.
+    """
+    config = ctx.config
+    schema = config.analytics_procedure_schema
+    counts = {"procedures.succeeded": 0, "procedures.failed": 0}
+
+    if not discovery.schema_exists(conn, schema):
+        # An older warehouse simply has no rpt schema. Skip rather than fail the run.
+        ctx.logger.warning("no_procedure_schema", procedure_schema=schema)
+        return counts
+
+    procedures = discovery.list_procedures(conn, schema)
+    if not procedures:
+        ctx.logger.warning("no_procedures_found", procedure_schema=schema)
+        return counts
+
+    for name in procedures:
+        qualified = f"{db.quote_name(schema)}.{db.quote_name(name)}"
+        started = time.perf_counter()
+        try:
+            cursor = conn.cursor()
+            cursor.execute(f"EXEC {qualified};")
+            # A procedure may return several result sets; drain them all so the timing
+            # covers the whole call rather than just the first one.
+            row_count = 0
+            result_sets = 0
+            while True:
+                if cursor.description is not None:
+                    row_count += len(cursor.fetchall())
+                    result_sets += 1
+                if not cursor.nextset():
+                    break
+            elapsed_ms = round((time.perf_counter() - started) * 1000, 1)
+            counts["procedures.succeeded"] += 1
+            ctx.logger.info(
+                "analytics_procedure_completed",
+                procedure=f"{schema}.{name}",
+                duration_ms=elapsed_ms,
+                row_count=row_count,
+                result_sets=result_sets,
+            )
+        except Exception as exc:
+            elapsed_ms = round((time.perf_counter() - started) * 1000, 1)
+            counts["procedures.failed"] += 1
+            ctx.logger.error(
+                "analytics_procedure_failed",
+                procedure=f"{schema}.{name}",
+                duration_ms=elapsed_ms,
+                error=str(exc),
+            )
+    return counts
+
+
 def run(ctx: BatchContext, conn) -> dict[str, int]:
+    config = ctx.config
+    counts: dict[str, int] = {}
+
+    # pyodbc exposes the query timeout on the connection, not the cursor. Set it before
+    # the procedures run so it covers them too.
+    try:
+        conn.timeout = config.analytics_query_timeout_seconds
+    except Exception:  # pragma: no cover - driver without timeout support
+        ctx.logger.warning("analytics_timeout_unsupported")
+
+    if config.analytics_run_procedures:
+        counts.update(run_procedures(ctx, conn))
+
     if not discovery.schema_exists(conn, "fact"):
         ctx.logger.warning("no_fact_schema", job_name=ctx.job_name)
-        return {}
+        ctx.row_counts.update(counts)
+        return counts
     fact_tables = discovery.list_tables(conn, "fact")
     if not fact_tables:
         ctx.logger.warning("no_fact_tables", job_name=ctx.job_name)
-        return {}
+        ctx.row_counts.update(counts)
+        return counts
 
-    config = ctx.config
     seed = config.analytics_seed if config.analytics_seed is not None else random.randrange(1_000_000)
     rng = random.Random(seed)
     cache = SchemaCache(conn)
     ctx.logger.info("analytics_started", seed=seed, query_count=config.analytics_queries_per_run)
 
-    counts = {"analytics.succeeded": 0, "analytics.failed": 0, "analytics.skipped": 0}
+    counts.update({"analytics.succeeded": 0, "analytics.failed": 0, "analytics.skipped": 0})
     total_ms = 0.0
-
-    # pyodbc exposes the query timeout on the connection, not the cursor.
-    try:
-        conn.timeout = config.analytics_query_timeout_seconds
-    except Exception:  # pragma: no cover - driver without timeout support
-        ctx.logger.warning("analytics_timeout_unsupported")
 
     for index in range(config.analytics_queries_per_run):
         generated = build_random_query(cache, rng, fact_tables)
@@ -279,7 +346,11 @@ def run(ctx: BatchContext, conn) -> dict[str, int]:
         "analytics_completed",
         seed=seed,
         total_duration_ms=round(total_ms, 1),
-        **{k.replace("analytics.", ""): v for k, v in counts.items()},
+        **{
+            k.replace("analytics.", ""): v
+            for k, v in counts.items()
+            if k.startswith("analytics.")
+        },
     )
     ctx.row_counts.update(counts)
     return counts

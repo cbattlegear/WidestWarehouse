@@ -20,6 +20,17 @@ FOLDERS = [
     "90_staging",
 ]
 
+# Hand-authored SQL that emit must never touch but build_all.sql must still include.
+# Anything listed here is committed source, not generated output: `emit` leaves it alone
+# and only folds it into the build order.
+STATIC_FOLDERS = [
+    "75_procedures",
+]
+
+# The order files are applied in. Folder names are numerically prefixed, so sorting by
+# name is the build order.
+BUILD_FOLDERS = sorted(FOLDERS + STATIC_FOLDERS)
+
 
 def q(name: str) -> str:
     return f"[{name}]"
@@ -135,6 +146,7 @@ def database_sql() -> str:
 
 def ensure_output_dirs(out: Path) -> None:
     out.mkdir(parents=True, exist_ok=True)
+    # Only generated folders are wiped. STATIC_FOLDERS hold committed hand-written SQL.
     for folder in FOLDERS:
         path = out / folder
         path.mkdir(parents=True, exist_ok=True)
