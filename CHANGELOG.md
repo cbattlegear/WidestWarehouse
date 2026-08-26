@@ -17,6 +17,8 @@ shape from the SQL Server catalog at runtime rather than hardcoding it, a schema
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-08-26
+
 ### Added
 
 - **Fixed stored-procedure workload** — six reporting procedures in the new `rpt` schema
@@ -55,5 +57,6 @@ verified end to end against SQL Server 2022.
 - **Published image** at `ghcr.io/cbattlegear/widestwarehouse-loader` with build provenance
   attestation.
 
-[Unreleased]: https://github.com/cbattlegear/WidestWarehouse/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/cbattlegear/WidestWarehouse/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/cbattlegear/WidestWarehouse/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/cbattlegear/WidestWarehouse/releases/tag/v1.0.0
